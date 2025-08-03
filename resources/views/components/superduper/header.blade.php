@@ -1,248 +1,208 @@
-<header class="fixed z-50 w-full py-4 transition-all duration-300 bg-transparent md:py-6">
-    <div class="px-4 mx-auto container-default">
-        <div class="flex items-center justify-between gap-x-4 md:gap-x-8">
-            <!-- Header Logo -->
-            <a href="{{ route('home') }}" class="relative z-10 flex-shrink-0">
-                @php
-                    $brandLogo = $siteSettings->logo ?? null;
-                    $brandName = $generalSettings->brand_name ?? $siteSettings->name ?? config('app.name', 'SuperDuper');
-                @endphp
+<!-- ============================================================== -->
+<!-- Top header  -->
+<!-- ============================================================== -->
+<!-- Start Navigation -->
+<div class="header">
+    <!-- Main header -->
+    <div class="main_header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-2 col-md-2 col-sm-3 col-4">
+                    <a class="nav-brand" href="#">
+                        @php
+                            $brandLogo = $siteSettings->logo ?? null;
+                            $brandName = $generalSettings->brand_name ?? $siteSettings->name ?? config('app.name', 'SuperDuper');
+                        @endphp
 
-                @if($brandLogo)
-                    <img src="{{ Storage::url($brandLogo) }}"
-                         alt="{{ $brandName }}"
-                         class="w-auto h-10 md:h-12"
-                    />
-                @else
-                    <div class="flex items-center">
-                        <span class="text-xl font-bold md:text-2xl text-primary-800 dark:text-white header-brand-text">{{ $brandName }}</span>
-                    </div>
-                @endif
-            </a>
-
-            <!-- Header Navigation -->
-            <div class="menu-block-wrapper lg:static">
-                <div class="fixed inset-0 z-40 menu-overlay bg-primary-900/70 backdrop-blur-sm lg:hidden" style="display: none;"></div>
-                <nav class="menu-block fixed top-0 right-0 bottom-0 w-[280px] text-secondary-600 md:w-[320px] bg-primary-600 dark:bg-primary-800 z-50 shadow-2xl overflow-y-auto transform translate-x-full transition-transform duration-300 lg:static lg:translate-x-0 lg:w-auto lg:bg-transparent lg:shadow-none lg:overflow-visible lg:dark:bg-transparent" id="append-menu-header">
-                    <!-- Mobile Menu Header -->
-                    <div class="flex items-center justify-between p-4 lg:hidden">
-                        <div class="flex items-center go-back text-primary-800 dark:text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                            </svg>
-                            <span>Back</span>
-                        </div>
-                        <div class="font-medium current-menu-title text-primary-800 dark:text-white"></div>
-                        <div class="text-2xl cursor-pointer mobile-menu-close text-primary-800 dark:text-white">&times;</div>
-                    </div>
-
-                    @php
-                        use Datlechin\FilamentMenuBuilder\Models\Menu;
-                        $menu = Menu::location('header');
-                    @endphp
-
-                    <ul class="p-4 text-lg site-menu-main lg:p-0 lg:flex lg:items-center lg:space-x-1">
-                        @if($menu)
-                            @foreach($menu->menuItems as $index => $item)
-                                @php
-                                    $hasChildren = count($item->children) > 0;
-                                    $menuId = 'submenu-' . ($index + 1);
-                                @endphp
-
-                                <li class="nav-item mb-3 lg:mb-0 lg:relative {{ $hasChildren ? 'nav-item-has-children' : '' }}">
-                                    <a href="{{ $item->url }}"
-                                       class="nav-link-item flex items-center justify-between hover:text-primary-600 dark:text-white dark:hover:text-primary-200 header-nav-link font-medium py-2 lg:px-3 !text-secondary-600 lg:hover:bg-primary-600 lg:dark:hover:bg-primary-700 transition-colors {{ $hasChildren ? 'drop-trigger' : '' }}"
-                                       @if($item->target) target="{{ $item->target }}" @endif>
-                                        <span>{{ $item->title }}</span>
-                                        @if($hasChildren)
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 lg:h-5 lg:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                            </svg>
-                                        @endif
-                                    </a>
-
-                                    @if($hasChildren)
-                                        <ul class="sub-menu pl-4 mt-2 lg:absolute lg:left-0 lg:top-full lg:mt-1 lg:pl-0 lg:min-w-[200px] lg:bg-white lg:dark:bg-primary-800 lg:shadow-lg lg:opacity-0 lg:invisible lg:transform lg:translate-y-2 lg:transition-all lg:group-hover:opacity-100 lg:group-hover:visible lg:group-hover:translate-y-0 lg:z-20" id="{{ $menuId }}">
-                                            @foreach($item->children as $childIndex => $childItem)
-                                                @php
-                                                    $hasGrandchildren = count($childItem->children) > 0;
-                                                    $submenuId = $menuId . '-' . ($childIndex + 1);
-                                                @endphp
-
-                                                <li class="sub-menu--item mb-2 lg:mb-0 {{ $hasGrandchildren ? 'nav-item-has-children' : '' }}">
-                                                    <a href="{{ $childItem->url }}"
-                                                       class="block px-3 py-2 transition-colors text-primary-800 hover:text-primary-600 dark:text-white dark:hover:text-primary-200 lg:text-primary-800 lg:hover:bg-primary-50 lg:dark:hover:bg-primary-700 lg:rounded"
-                                                       @if($hasGrandchildren) data-menu-get="h3" class="flex items-center justify-between drop-trigger" @endif
-                                                       @if($childItem->target) target="{{ $childItem->target }}" @endif>
-                                                        <span>{{ $childItem->title }}</span>
-                                                        @if($hasGrandchildren)
-                                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                                                            </svg>
-                                                        @endif
-                                                    </a>
-
-                                                    @if($hasGrandchildren)
-                                                        <ul class="sub-menu pl-4 mt-2 lg:absolute lg:left-full lg:top-0 lg:pl-0 lg:mt-0 lg:min-w-[200px] lg:bg-white lg:dark:bg-primary-800 lg:shadow-lg lg:opacity-0 lg:invisible lg:transform lg:translate-x-2 lg:transition-all lg:group-hover:opacity-100 lg:group-hover:visible lg:group-hover:translate-x-0" id="{{ $submenuId }}">
-                                                            @foreach($childItem->children as $grandchildItem)
-                                                                <li class="mb-2 sub-menu--item lg:mb-0">
-                                                                    <a href="{{ $grandchildItem->url }}"
-                                                                       class="block px-3 py-2 transition-colors text-primary-800 hover:text-primary-600 dark:text-white dark:hover:text-primary-200 lg:text-primary-800 lg:hover:bg-primary-50 lg:dark:hover:bg-primary-700 lg:rounded"
-                                                                       @if($grandchildItem->target) target="{{ $grandchildItem->target }}" @endif>
-                                                                        {{ $grandchildItem->title }}
-                                                                    </a>
-                                                                </li>
-                                                            @endforeach
-                                                        </ul>
-                                                    @endif
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    @endif
-                                </li>
-                            @endforeach
+                        @if($brandLogo)
+                            <img src="{{ Storage::url($brandLogo) }}"
+                                alt="{{ $brandName }}"
+                                class="logo"
+                            />
+                        @else
+                            <div class="flex items-center">
+                                <span class="text-xl font-bold md:text-2xl text-primary-800 dark:text-white header-brand-text">{{ $brandName }}</span>
+                            </div>
                         @endif
+                    </a>
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-9 col-8">
+                    <!-- Show on Mobile & iPad -->
+                    <div class="blocks shop_cart d-xl-none d-lg-none">
+                        <div class="single_shop_cart">
+                            <div class="ss_cart_left">
+                                <a class="cart_box" data-toggle="collapse" href="#mySearch" role="button" aria-expanded="false" aria-controls="mySearch"><i class="ti-search"></i></a>
+                            </div>
+                        </div>
+                    </div>
 
-                        <!-- Admin Panel Button for Mobile -->
-                        <li class="pt-4 mt-6 mb-4 nav-item lg:hidden">
-                            <a href="admin/login" class="block w-full">
-                                <div class="relative px-4 py-3 text-sm font-medium text-center text-black transition-all duration-300 rounded-md bg-secondary-600 hover:bg-secondary-700">
-                                    Admin Panel
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                    <!-- Show on Desktop -->
+                    <div class="blocks shop_cart d-none d-xl-block d-lg-block">
+                        <div class="single_shop_cart">
+                            <div class="ss_cart_left">
+                                <a href="javascript:void(0)" class="cart_box"><i class="lni lni-phone"></i></a>
+                            </div>
+                            <div class="ss_cart_content">
+                                <strong>Call Us:</strong>
+                                <span>+91 855 606 8402</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blocks search_blocks d-none d-xl-block d-lg-block">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search entire store here...">
+                            <div class="input-group-append">
+                            <button class="btn search_btn" type="button"><i class="ti-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <!-- Header Event - Admin Panel Button for Desktop -->
-            <div class="flex items-center gap-4 md:gap-6">
-                <a href="admin/login" class="relative z-10 hidden sm:inline-block group">
-                    <div class="px-4 py-2 text-sm font-medium transition-all duration-300 btn md:text-base bg-secondary-600 hover:bg-secondary-700">Admin Panel</div>
-                    <div class="absolute inset-0 -z-10 translate-x-[3px] translate-y-[3px] bg-primary-700 transition-all duration-300 ease-linear group-hover:translate-x-0 group-hover:translate-y-0"></div>
-                </a>
-
-                <div class="block lg:hidden">
-                    <button id="openBtn" class="flex flex-col items-center justify-center w-10 h-10 rounded-md hamburger-menu mobile-menu-trigger focus:outline-none focus:ring-2 focus:ring-primary-600">
-                        <span class="block w-6 h-0.5 bg-white dark:bg-white mb-1.5 transition-transform hamburger-line"></span>
-                        <span class="block w-6 h-0.5 bg-white dark:bg-white mb-1.5 transition-opacity hamburger-line"></span>
-                        <span class="block w-6 h-0.5 bg-white dark:bg-white transition-transform hamburger-line"></span>
-                    </button>
+        </div>
+        <div class="collapse" id="mySearch">
+            <div class="blocks search_blocks">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search entire store here...">
+                    <div class="input-group-append">
+                    <button class="btn search_btn" type="button"><i class="ti-search"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</header>
 
-@push('js')
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const menuTrigger = document.querySelector('.mobile-menu-trigger');
-    const menuOverlay = document.querySelector('.menu-overlay');
-    const menuBlock = document.querySelector('.menu-block');
-    const menuClose = document.querySelector('.mobile-menu-close');
-    const dropTriggers = document.querySelectorAll('.drop-trigger');
-    const goBack = document.querySelector('.go-back');
-    const currentMenuTitle = document.querySelector('.current-menu-title');
-    const header = document.querySelector('header');
+    <div class="header_nav">
+        <div class="container">
+            <div class="row align-item-center">
+                <div class="col-lg-3 col-md-4 col-sm-8 col-10">
+                    <!-- For Desktop -->
+                    @php
+                        use Datlechin\FilamentMenuBuilder\Models\Menu;
+                        $menu = Menu::location('header');
+                    @endphp
+                    <div class="shopby_categories d-none d-xl-block d-lg-block">
+                        <a class="shop_category" data-toggle="collapse" href="#myCategories" role="button" aria-expanded="false" aria-controls="myCategories"><i class="ti-menu"></i>Shop By categories</a>
+                        <div class="collapse" id="myCategories">
+                            <div id="cats_menu">
+                                <ul>
+                                    <li class="active has-sub"><a href="#"><span>Category</span></a>
+                                        <ul>
+                                                <li><a href="#"><span>Grocery</span></a></li>
+                                                <li><a href="#"><span>Organic</span></a></li>
+                                                <li><a href="#"><span>Electronics</span></a></li>
+                                                <li><a href="#"><span>Fashion</span></a></li>
+                                                <li><a href="#"><span>Education</span></a></li>
+                                                <li><a href="#"><span>Beauty</span></a></li>
+                                        </ul>
+                                        <ul>
+                                                <li class="has-sub"><a href="#"><span>Digital</span></a>
+                                                <ul>
+                                                    <li><a href="#"><span>Sub Product</span></a></li>
+                                                    <li><a href="#"><span>Sub Product</span></a></li>
+                                                    <li><a href="#"><span>Sub Product</span></a></li>
+                                                    <li><a href="#"><span>Sub Product</span></a></li>
+                                                </ul>
+                                                </li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub"><a href="#"><span>Brand</span></a>
+                                        <ul>
+                                                <li><a href="#"><span>Nike</span></a></li>
+                                                <li><a href="#"><span>Apple</span></a></li>
+                                                <li><a href="#"><span>Hackerl</span></a></li>
+                                                <li><a href="#"><span>Tuffan</span></a></li>
+                                                <li><a href="#"><span>Orio</span></a></li>
+                                                <li><a href="#"><span>Kite</span></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub"><a href="#"><span>Pages</span></a>
+                                        <ul>
+                                                <li><a href="#"><span>About Us</span></a></li>
+                                                <li><a href="#"><span>Blog grid</span></a></li>
+                                                <li><a href="#"><span>Blog Detail</span></a></li>
+                                                <li><a href="#"><span>Add To Cart</span></a></li>
+                                                <li><a href="#"><span>Payment</span></a></li>
+                                                <li><a href="#"><span>FAQ's</span></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub"><a href="#"><span>Products</span></a>
+                                        <ul>
+                                                <li><a href="#"><span>3 Columns products</span></a></li>
+                                                <li><a href="#"><span>4 Columns products</span></a></li>
+                                                <li><a href="#"><span>5 Columns products</span></a></li>
+                                                <li><a href="#"><span>6 Columns products</span></a></li>
+                                                <li><a href="#"><span>7 Columns products</span></a></li>
+                                                <li><a href="#"><span>8 Columns products</span></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#"><span>Features</span></a></li>
+                                    <li><a href="#"><span>Contact</span></a></li>
+                                    <li class="has-sub"><a href="#"><span>Layouts</span></a>
+                                        <ul>
+                                                <li><a href="#"><span>With Left Sidebar</span></a></li>
+                                                <li><a href="#"><span>With Right Sidebar</span></a></li>
+                                                <li><a href="#"><span>Full Width banner</span></a></li>
+                                                <li><a href="#"><span>Slider Banner</span></a></li>
+                                                <li><a href="#"><span>Fill Width Search</span></a></li>
+                                                <li><a href="#"><span>Boxed Layout</span></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#"><span>Buy Odex</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
-    // Improved menu toggle function
-    function toggleMenu() {
-        menuBlock.classList.toggle('translate-x-full');
-        document.body.classList.toggle('overflow-hidden');
-        menuOverlay.style.display = menuBlock.classList.contains('translate-x-full') ? 'none' : 'block';
+                    <!-- For Mobile -->
+                    <div class="shopby_categories d-xl-none d-lg-none">
+                        <a class="shop_category" href="#" onclick="openLeftMenu()"><i class="ti-menu"></i>Shop By categories</a>
+                    </div>
 
-        // Animate hamburger to X
-        const spans = menuTrigger.querySelectorAll('span');
-        if (!menuBlock.classList.contains('translate-x-full')) {
-            spans[0].classList.add('rotate-45', 'translate-y-2');
-            spans[1].classList.add('opacity-0');
-            spans[2].classList.add('-rotate-45', '-translate-y-2');
-        } else {
-            spans[0].classList.remove('rotate-45', 'translate-y-2');
-            spans[1].classList.remove('opacity-0');
-            spans[2].classList.remove('-rotate-45', '-translate-y-2');
-        }
-    }
+                </div>
 
-    menuTrigger.addEventListener('click', toggleMenu);
-    menuOverlay.addEventListener('click', toggleMenu);
-    menuClose.addEventListener('click', toggleMenu);
+                <div class="col-lg-9 col-md-8 col-sm-4 col-2">
+                    <nav id="navigation" class="navigation navigation-landscape">
+                        <div class="nav-header">
+                            <div class="nav-toggle"></div>
+                        </div>
+                        <div class="nav-menus-wrapper" style="transition-property: none;">
+                            <ul class="nav-menu">
+                                @if($menu)
+                                    @foreach($menu->menuItems as $index => $item)
+                                        @php
+                                            $hasChildren = count($item->children) > 0;
+                                            $menuId = 'submenu-' . ($index + 1);
+                                        @endphp
 
-    // Handle scroll for header background
-    function handleScroll() {
-        if (window.scrollY > 25) {
-            header.classList.add('header-scrolled');
-        } else {
-            header.classList.remove('header-scrolled');
-        }
-    }
+                                        <li>
+                                            <a href="{{ $item->url }}">{{ $item->title }} {{ $hasGrandchildren ? '<span class="submenu-indicator"></span>' : '' }}</a>
+                                            @if($hasChildren)
+                                                <ul class="nav-dropdown nav-submenu">
+                                                    @foreach($item->children as $childIndex => $childItem)
+                                                        @php
+                                                            $hasGrandchildren = count($childItem->children) > 0;
+                                                            $submenuId = $menuId . '-' . ($childIndex + 1);
+                                                        @endphp
+                                                        <li><a href="{{ $childItem->url }}">{{ $childItem->title }}</a></li>
+                                                    @endforeach
+                                                </ul>
+                                            @endif
+                                        </li>
+                                    @endforeach
+                                @endif
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
+    </div>
 
-    function setupMobileMenu() {
-        if (window.innerWidth < 1024) {
-            // Reset any previously opened submenus
-            document.querySelectorAll('.sub-menu').forEach(menu => {
-                menu.style.display = 'none';
-            });
-
-            document.querySelector('.site-menu-main').style.display = 'block';
-
-            if (goBack) goBack.style.display = 'none';
-
-            dropTriggers.forEach(trigger => {
-                trigger.addEventListener('click', function(e) {
-                    if (window.innerWidth < 1024) {
-                        e.preventDefault();
-                        const parent = this.parentElement;
-                        const submenu = parent.querySelector('.sub-menu');
-                        const title = this.querySelector('span').textContent;
-
-                        if (submenu) {
-                            const siblingMenus = parent.parentElement.querySelectorAll('.sub-menu');
-                            siblingMenus.forEach(menu => {
-                                if (menu !== submenu) menu.style.display = 'none';
-                            });
-
-                            submenu.style.display = 'block';
-                            currentMenuTitle.textContent = title;
-                            parent.parentElement.style.display = 'none';
-                            goBack.style.display = 'flex';
-                        }
-                    }
-                });
-            });
-
-            // Back button functionality
-            goBack.addEventListener('click', function() {
-                const activeSubmenu = document.querySelector('.sub-menu[style="display: block;"]');
-                if (activeSubmenu) {
-                    activeSubmenu.style.display = 'none';
-                    activeSubmenu.parentElement.parentElement.style.display = 'block';
-
-                    if (activeSubmenu.parentElement.parentElement.classList.contains('site-menu-main')) {
-                        currentMenuTitle.textContent = '';
-                        this.style.display = 'none';
-                    } else {
-                        const parentTrigger = activeSubmenu.parentElement.parentElement.previousElementSibling;
-                        if (parentTrigger && parentTrigger.classList.contains('drop-trigger')) {
-                            currentMenuTitle.textContent = parentTrigger.querySelector('span').textContent;
-                        }
-                    }
-                }
-            });
-        }
-    }
-
-    // Initial setup
-    setupMobileMenu();
-
-    // Re-setup on resize
-    window.addEventListener('resize', function() {
-        setupMobileMenu();
-    });
-});
-</script>
-@endpush
+</div>
+<!-- End Navigation -->
+<div class="clearfix"></div>
+<!-- ============================================================== -->
+<!-- Top header  -->
+<!-- ============================================================== -->

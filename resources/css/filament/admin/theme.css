@@ -6,10 +6,10 @@
 :root {
   --sidebar-width: 280px;
   --transition-speed: 0.2s;
-  --primary-rgb: 45, 43, 141; /* #2D2B8D */
-  --secondary-rgb: 255, 201, 3; /* #FFC903 */
-  --primary-gradient: linear-gradient(145deg, #524ED5, #2D2B8D);
-  --secondary-gradient: linear-gradient(145deg, #FFD333, #FFC903);
+  --primary-rgb: 1, 103, 37;
+  --secondary-rgb: 220, 49, 28;
+  --primary-gradient: linear-gradient(145deg, #017a2c, #016725);
+  --secondary-gradient: linear-gradient(145deg, #e4412d, #dc311c);
   --hover-gradient: linear-gradient(145deg, rgba(var(--primary-rgb), 0.08), rgba(var(--secondary-rgb), 0.08));
   --dark-hover-gradient: linear-gradient(145deg, rgba(var(--primary-rgb), 0.15), rgba(var(--secondary-rgb), 0.05));
 }
@@ -32,7 +32,7 @@ body {
     @apply bg-white;
 }
 .fi-main {
-  @apply mt-0 mb-0 bg-white dark:bg-gray-900 shadow-none transition-all duration-300;
+  @apply mt-0 mb-0 transition-all duration-300 bg-white shadow-none dark:bg-gray-900;
 }
 
 .dark .fi-main {
@@ -84,7 +84,7 @@ body {
 }
 
 .fi-sidebar-nav-groups {
-  @apply gap-y-6 px-3 py-4;
+  @apply px-3 py-4 gap-y-6;
 }
 
 .fi-sidebar-group {
@@ -92,7 +92,7 @@ body {
 }
 
 .fi-sidebar-group-label {
-  @apply text-xs font-bold text-primary-600 dark:text-primary-400 uppercase tracking-wider px-4 mb-2;
+  @apply px-4 mb-2 text-xs font-bold tracking-wider uppercase text-primary-600 dark:text-primary-400;
 }
 
 .dark .fi-sidebar-group-label {
@@ -119,7 +119,7 @@ body {
   background: rgba(var(--primary-rgb), 0.12); /* More visible solid color */
   /* Or use a custom gradient for more pop: */
   /* background: linear-gradient(90deg, #FFD33322 0%, #2D2B8D11 100%); */
-  @apply shadow-sm transform transition-all duration-200 ease-out border-l-2 border-l-secondary-500;
+  @apply transition-all duration-200 ease-out transform border-l-2 shadow-sm border-l-secondary-500;
   box-shadow: 0 3px 10px -2px rgba(var(--primary-rgb), 0.15), 0 1px 2px rgba(var(--secondary-rgb), 0.1);
 }
 
@@ -141,14 +141,14 @@ body {
 
 .fi-sidebar-item a:hover > span,
 .fi-sidebar-item a:focus > span {
-  @apply text-primary-700 dark:text-primary-200 font-medium;
+  @apply font-medium text-primary-700 dark:text-primary-200;
   text-shadow: 0px 0.5px 0px rgba(var(--primary-rgb), 0.3);
 }
 
 /* Active state */
 .fi-sidebar-item-active a {
   background: var(--primary-gradient);
-  @apply text-white shadow-md border-l-0;
+  @apply text-white border-l-0 shadow-md;
   box-shadow: 0 4px 12px -2px rgba(var(--primary-rgb), 0.6), 0 2px 4px rgba(var(--secondary-rgb), 0.15);
 }
 
@@ -163,7 +163,7 @@ body {
 }
 
 .fi-sidebar-item-active a > span {
-  @apply text-white font-semibold;
+  @apply font-semibold text-white;
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -171,7 +171,7 @@ body {
 .fi-sidebar-item-active a:hover,
 .fi-sidebar-item-active a:focus {
   background: var(--primary-gradient);
-  @apply text-white shadow-md border-l-0;
+  @apply text-white border-l-0 shadow-md;
   box-shadow: 0 4px 12px -2px rgba(var(--primary-rgb), 0.4), 0 2px 4px rgba(var(--secondary-rgb), 0.1);
   filter: none;
 }
@@ -184,13 +184,13 @@ body {
 
 .fi-sidebar-item-active a:hover > span,
 .fi-sidebar-item-active a:focus > span {
-  @apply text-white font-semibold; /* No color change, always white */
+  @apply font-semibold text-white; /* No color change, always white */
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
 }
 
 /* CONTENT SECTIONS */
 .fi-section {
-  @apply rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden transition-all duration-200 shadow-sm hover:shadow-md;
+  @apply overflow-hidden transition-all duration-200 border border-gray-200 shadow-sm rounded-xl dark:border-gray-800 hover:shadow-md;
   background: linear-gradient(145deg, #ffffff, #f8f9fa);
 }
 
@@ -221,7 +221,7 @@ body {
 .fi-ta-ctn,
 .fi-wi-stats-overview-stat,
 .fi-fo-repeater-item {
-  @apply rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm transition-all duration-200;
+  @apply transition-all duration-200 border border-gray-100 shadow-sm rounded-xl dark:border-gray-800;
   background: white;
 }
 
@@ -251,16 +251,16 @@ body {
 
 .fi-input,
 .fi-select select {
-  @apply rounded-lg border-gray-300 dark:border-gray-700 shadow-sm;
+  @apply border-gray-300 rounded-lg shadow-sm dark:border-gray-700;
   @apply focus:border-primary-500;
 }
 
 .fi-input-wrp:focus-within {
-  @apply ring-2 ring-primary-100 dark:ring-primary-900/30 rounded-lg;
+  @apply rounded-lg ring-2 ring-primary-100 dark:ring-primary-900/30;
 }
 
 .fi-btn {
-  @apply rounded-lg shadow-sm transition-all duration-200 transform;
+  @apply transition-all duration-200 transform rounded-lg shadow-sm;
 }
 
 .fi-btn:not(:disabled):hover {
@@ -364,7 +364,7 @@ body {
 
 /* DROPDOWN MENUS */
 .fi-dropdown-panel {
-  @apply rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 overflow-hidden;
+  @apply overflow-hidden border border-gray-100 shadow-lg rounded-xl dark:border-gray-800;
   background: white;
 }
 
@@ -373,7 +373,7 @@ body {
 }
 
 .fi-dropdown-panel-heading {
-  @apply text-sm font-medium text-primary-700 dark:text-primary-300 px-4 pt-2 pb-0;
+  @apply px-4 pt-2 pb-0 text-sm font-medium text-primary-700 dark:text-primary-300;
 }
 
 .fi-dropdown-list {
@@ -395,7 +395,7 @@ body {
 
 /* TABLES */
 .fi-ta-header-cell {
-  /* @apply  ; */
+  /* @apply ; */
 }
 
 .fi-ta-row {
@@ -449,17 +449,17 @@ body {
 }
 
 .fi-tabs-item {
-  @apply text-sm font-medium rounded-t-lg transition-colors duration-150;
+  @apply text-sm font-medium transition-colors duration-150 rounded-t-lg;
 }
 
 /* Improved Tabs Hover */
 .fi-tabs-item:not(.fi-tabs-item-active):hover {
-    @apply border-t-2 border-t-secondary-500 text-primary-700 dark:text-primary-400 relative;
+    @apply relative border-t-2 border-t-secondary-500 text-primary-700 dark:text-primary-400;
   box-shadow: inset 0 1px 0 rgba(var(--secondary-rgb), 0.3);
 }
 
 .fi-tabs-item-active {
-  @apply border-t-2 border-t-secondary-500 text-primary-700 dark:text-primary-400 relative;
+  @apply relative border-t-2 border-t-secondary-500 text-primary-700 dark:text-primary-400;
 }
 
 .fi-tabs-item-active::after {
@@ -492,7 +492,7 @@ body {
 
 /* MODALS */
 .fi-modal-window {
-  @apply bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden border border-gray-100 dark:border-gray-800;
+  @apply overflow-hidden bg-white border border-gray-100 shadow-2xl dark:bg-gray-900 rounded-2xl dark:border-gray-800;
 }
 
 .fi-modal-header {
@@ -512,7 +512,7 @@ body {
 
 /* NOTIFICATIONS */
 .fi-notification {
-  @apply rounded-xl shadow-lg border border-gray-100 dark:border-gray-800;
+  @apply border border-gray-100 shadow-lg rounded-xl dark:border-gray-800;
   background: white;
 }
 
@@ -535,7 +535,7 @@ body {
 }
 
 .fi-sidebar::-webkit-scrollbar-thumb {
-  @apply bg-primary-200 dark:bg-primary-800 rounded-full;
+  @apply rounded-full bg-primary-200 dark:bg-primary-800;
 }
 
 .fi-sidebar::-webkit-scrollbar-thumb:hover {
@@ -559,5 +559,5 @@ body {
 }
 
 .fi-fo-field-wrp-helper-text {
-    @apply overflow-hidden break-words text-sm text-gray-500 dark:text-gray-300;
+    @apply overflow-hidden text-sm text-gray-500 break-words dark:text-gray-300;
 }

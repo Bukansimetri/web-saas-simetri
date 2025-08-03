@@ -4,28 +4,28 @@
 
 :root {
   /* Primary Colors */
-  --color-primary-50: #EEEEFB;
-  --color-primary-100: #DCDCF7;
-  --color-primary-200: #B9B8EF;
-  --color-primary-300: #9795E6;
-  --color-primary-400: #7471DE;
-  --color-primary-500: #524ED5;
-  --color-primary-600: #413CAD;
-  --color-primary-700: #342F8A;
-  --color-primary-800: #2D2B8D;
-  --color-primary-900: #1E1C5A;
+  --color-primary-50: #e6f5ea;
+  --color-primary-100: #c2e6cc;
+  --color-primary-200: #9ad6ab;
+  --color-primary-300: #6dc689;
+  --color-primary-400: #44b96f;
+  --color-primary-500: #016725; /* Base color */
+  --color-primary-600: #015a20;
+  --color-primary-700: #014c1b;
+  --color-primary-800: #003f16;
+  --color-primary-900: #00260d;
 
   /* Secondary Colors */
-  --color-secondary-50: #FFFBEB;
-  --color-secondary-100: #FFF6D6;
-  --color-secondary-200: #FFEDAD;
-  --color-secondary-300: #FFE585;
-  --color-secondary-400: #FFDC5C;
-  --color-secondary-500: #FFD333;
-  --color-secondary-600: #FFC903;
-  --color-secondary-700: #E6B500;
-  --color-secondary-800: #BF9600;
-  --color-secondary-900: #997800;
+  --color-secondary-50: #ffefed;
+  --color-secondary-100: #ffd5d0;
+  --color-secondary-200: #ffb8ad;
+  --color-secondary-300: #ff9a8a;
+  --color-secondary-400: #ff7c67;
+  --color-secondary-500: #dc311c; /* Base color */
+  --color-secondary-600: #c22a18;
+  --color-secondary-700: #a82415;
+  --color-secondary-800: #8d1d11;
+  --color-secondary-900: #73160e;
 
   /* Background Colors */
   --color-background-white: #FFFFFF;
@@ -41,7 +41,7 @@
 }
 
 .header-scrolled {
-    @apply bg-primary-600 dark:bg-primary-900 shadow-md py-3 md:py-4;
+    @apply py-3 shadow-md bg-primary-600 dark:bg-primary-900 md:py-4;
 }
 
 .header-scrolled .header-nav-link {
@@ -86,10 +86,10 @@
     }
 
     .menu-block .nav-link-item {
-        @apply text-white border-b border-primary-800 pb-3 mb-2;
+        @apply pb-3 mb-2 text-white border-b border-primary-800;
     }
 
     .menu-block .sub-menu {
-        @apply bg-background-light dark:bg-primary-700 rounded-md;
+        @apply rounded-md bg-background-light dark:bg-primary-700;
     }
 }
