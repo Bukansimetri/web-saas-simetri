@@ -7,7 +7,7 @@
                     <span class="text-xs bg-primary-100 text-primary-600 px-2 py-0.5 rounded">v{{ env('APP_VERSION') }}</span>
                 </div>
                 <div class="flex gap-x-3">
-                    <a href="https://github.com/riodwanto/superduper-filament-starter-kit" target="_blank" class="flex items-center justify-center gap-1 text-sm font-semibold text-neutral-800 dark:text-neutral-400 hover:text-primary-700">
+                    <a href="https://github.com" target="_blank" class="flex items-center justify-center gap-1 text-sm font-semibold text-neutral-800 dark:text-neutral-400 hover:text-primary-700">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.483

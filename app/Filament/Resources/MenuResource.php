@@ -8,7 +8,7 @@ class MenuResource extends BaseMenuResource
 {
     protected static ?int $navigationSort = 0;
 
-    protected static ?string $navigationIcon = 'fluentui-navigation-16';
+    protected static ?string $navigationIcon = 'heroicon-o-adjustments-horizontal';
 
     public static function getNavigationGroup(): ?string
     {

@@ -1,8 +1,12 @@
 <?php
 
-use App\Livewire\SuperDuper\BlogList;
 use App\Livewire\SuperDuper\BlogDetails;
+use App\Livewire\SuperDuper\BlogList;
+use App\Livewire\SuperDuper\Pages\AboutUs;
 use App\Livewire\SuperDuper\Pages\ContactUs;
+use App\Livewire\SuperDuper\Pages\Faq;
+use App\Livewire\SuperDuper\Pages\Products;
+use App\Livewire\SuperDuper\Pages\SearchResult;
 use Illuminate\Support\Facades\Route;
 use Lab404\Impersonate\Services\ImpersonateManager;
 
@@ -17,38 +21,50 @@ use Lab404\Impersonate\Services\ImpersonateManager;
 |
 */
 
+/** Homa Page */
 Route::get('/', function () {
     return view('components.superduper.pages.home');
 })->name('home');
 
-Route::get('/blog', BlogList::class)->name('blog');
+/** Search Page */
+Route::get('/search/{q?}', SearchResult::class)->name('search.results');
 
-Route::get('/blog/{slug}', BlogDetails::class)->name('blog.show');
-
+/** Custom Page */
+Route::get('/about-us', AboutUs::class)->name('about-us');
+Route::get('/tnc', Faq::class)->name('tnc');
 Route::get('/contact-us', ContactUs::class)->name('contact-us');
 
+/** Blog Page */
+Route::get('/blog', BlogList::class)->name('blog');
+Route::get('/blog/{slug}', BlogDetails::class)->name('blog.show');
+
+/** Product Page */
+Route::get('/products', Products::class)->name('products.index');
+Route::get('/category/{productCategory}', Products::class)->name('products.category');
+Route::get('/tag/{tag}', Products::class)->name('products.tag');
+
+/** Unmanagable Page */
 Route::get('/privacy-policy', function () {
     return view('components.superduper.pages.coming-soon', ['page_type' => 'privacy']);
 })->name('privacy-policy');
-
 Route::get('/terms-conditions', function () {
     return view('components.superduper.pages.coming-soon', ['page_type' => 'privacy']);
 })->name('terms-conditions');
-
 Route::get('/coming-soon', function () {
     return view('components.superduper.pages.coming-soon', ['page_type' => 'generic']);
 })->name('coming-soon');
 
+/** Get in touch Function */
 Route::post('/contact', [App\Http\Controllers\ContactController::class, 'submit'])
     ->name('contact.submit');
 
-// TODO: Create actual blog preview component
-Route::post('/blog-preview', function() {
+/** Admin Panel Custom Page */
+Route::post('/blog-preview', function () {
     // Implementation pending
 })->name('blog.preview');
 
-Route::get('impersonate/leave', function() {
-    if(!app(ImpersonateManager::class)->isImpersonating()) {
+Route::get('impersonate/leave', function () {
+    if (! app(ImpersonateManager::class)->isImpersonating()) {
         return redirect('/');
     }
 
@@ -58,4 +74,3 @@ Route::get('impersonate/leave', function() {
         session()->pull('impersonate.back_to')
     );
 })->name('impersonate.leave')->middleware('web');
-

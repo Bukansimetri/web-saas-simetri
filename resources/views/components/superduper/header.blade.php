@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-2 col-md-2 col-sm-3 col-4">
-                    <a class="nav-brand" href="#">
+                    <a class="nav-brand" href="#" style="margin-top: 30%;">
                         @php
                             $brandLogo = $siteSettings->logo ?? null;
                             $brandName = $generalSettings->brand_name ?? $siteSettings->name ?? config('app.name', 'SuperDuper');
@@ -19,10 +19,6 @@
                                 alt="{{ $brandName }}"
                                 class="logo"
                             />
-                        @else
-                            <div class="flex items-center">
-                                <span class="text-xl font-bold md:text-2xl text-primary-800 dark:text-white header-brand-text">{{ $brandName }}</span>
-                            </div>
                         @endif
                     </a>
                 </div>
@@ -40,23 +36,15 @@
                     <div class="blocks shop_cart d-none d-xl-block d-lg-block">
                         <div class="single_shop_cart">
                             <div class="ss_cart_left">
-                                <a href="javascript:void(0)" class="cart_box"><i class="lni lni-phone"></i></a>
+                                <a href="https://wa.me/{{ $siteSettings->company_phone }}?text=Halo,%20saya%20tertarik%20dengan%20produk%20Anda" class="cart_box"><i class="lni lni-phone"></i></a>
                             </div>
                             <div class="ss_cart_content">
                                 <strong>Call Us:</strong>
-                                <span>+91 855 606 8402</span>
+                                <span>{{ $siteSettings->company_phone }}</span>
                             </div>
                         </div>
                     </div>
-
-                    <div class="blocks search_blocks d-none d-xl-block d-lg-block">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search entire store here...">
-                            <div class="input-group-append">
-                            <button class="btn search_btn" type="button"><i class="ti-search"></i></button>
-                            </div>
-                        </div>
-                    </div>
+                    <livewire:superduper.pages.search-bar />
                 </div>
             </div>
         </div>
@@ -80,75 +68,31 @@
                     @php
                         use Datlechin\FilamentMenuBuilder\Models\Menu;
                         $menu = Menu::location('header');
+
+                        $productCategories = \App\Models\ProductCategory::where('is_active', true)
+                                ->orderBy('name')
+                                ->withCount('products')
+                                ->get();
                     @endphp
                     <div class="shopby_categories d-none d-xl-block d-lg-block">
                         <a class="shop_category" data-toggle="collapse" href="#myCategories" role="button" aria-expanded="false" aria-controls="myCategories"><i class="ti-menu"></i>Shop By categories</a>
                         <div class="collapse" id="myCategories">
                             <div id="cats_menu">
                                 <ul>
-                                    <li class="active has-sub"><a href="#"><span>Category</span></a>
-                                        <ul>
-                                                <li><a href="#"><span>Grocery</span></a></li>
-                                                <li><a href="#"><span>Organic</span></a></li>
-                                                <li><a href="#"><span>Electronics</span></a></li>
-                                                <li><a href="#"><span>Fashion</span></a></li>
-                                                <li><a href="#"><span>Education</span></a></li>
-                                                <li><a href="#"><span>Beauty</span></a></li>
-                                        </ul>
-                                        <ul>
-                                                <li class="has-sub"><a href="#"><span>Digital</span></a>
-                                                <ul>
-                                                    <li><a href="#"><span>Sub Product</span></a></li>
-                                                    <li><a href="#"><span>Sub Product</span></a></li>
-                                                    <li><a href="#"><span>Sub Product</span></a></li>
-                                                    <li><a href="#"><span>Sub Product</span></a></li>
-                                                </ul>
-                                                </li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-sub"><a href="#"><span>Brand</span></a>
-                                        <ul>
-                                                <li><a href="#"><span>Nike</span></a></li>
-                                                <li><a href="#"><span>Apple</span></a></li>
-                                                <li><a href="#"><span>Hackerl</span></a></li>
-                                                <li><a href="#"><span>Tuffan</span></a></li>
-                                                <li><a href="#"><span>Orio</span></a></li>
-                                                <li><a href="#"><span>Kite</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-sub"><a href="#"><span>Pages</span></a>
-                                        <ul>
-                                                <li><a href="#"><span>About Us</span></a></li>
-                                                <li><a href="#"><span>Blog grid</span></a></li>
-                                                <li><a href="#"><span>Blog Detail</span></a></li>
-                                                <li><a href="#"><span>Add To Cart</span></a></li>
-                                                <li><a href="#"><span>Payment</span></a></li>
-                                                <li><a href="#"><span>FAQ's</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-sub"><a href="#"><span>Products</span></a>
-                                        <ul>
-                                                <li><a href="#"><span>3 Columns products</span></a></li>
-                                                <li><a href="#"><span>4 Columns products</span></a></li>
-                                                <li><a href="#"><span>5 Columns products</span></a></li>
-                                                <li><a href="#"><span>6 Columns products</span></a></li>
-                                                <li><a href="#"><span>7 Columns products</span></a></li>
-                                                <li><a href="#"><span>8 Columns products</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#"><span>Features</span></a></li>
-                                    <li><a href="#"><span>Contact</span></a></li>
-                                    <li class="has-sub"><a href="#"><span>Layouts</span></a>
-                                        <ul>
-                                                <li><a href="#"><span>With Left Sidebar</span></a></li>
-                                                <li><a href="#"><span>With Right Sidebar</span></a></li>
-                                                <li><a href="#"><span>Full Width banner</span></a></li>
-                                                <li><a href="#"><span>Slider Banner</span></a></li>
-                                                <li><a href="#"><span>Fill Width Search</span></a></li>
-                                                <li><a href="#"><span>Boxed Layout</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#"><span>Buy Odex</span></a></li>
+                                    @foreach ($productCategories as $category)
+                                        <li>
+                                            {{-- <a href="{{ route('shop.category', $category->slug) }}"> --}}
+                                            <a href="#">
+                                                <span>{{ $category->name }}</span>
+                                                @if($category->products_count > 0)
+                                                    <span class="badge badge-secondary">{{ $category->products_count }}</span>
+                                                @endif
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                    @if($productCategories->isEmpty())
+                                        <li class="text-center">No categories found</li>
+                                    @endif
                                 </ul>
                             </div>
                         </div>
@@ -176,7 +120,7 @@
                                         @endphp
 
                                         <li>
-                                            <a href="{{ $item->url }}">{{ $item->title }} {{ $hasGrandchildren ? '<span class="submenu-indicator"></span>' : '' }}</a>
+                                            <a href="{{ $item->url }}">{{ $item->title }} {{ $hasChildren ? '<span class="submenu-indicator"></span>' : '' }}</a>
                                             @if($hasChildren)
                                                 <ul class="nav-dropdown nav-submenu">
                                                     @foreach($item->children as $childIndex => $childItem)

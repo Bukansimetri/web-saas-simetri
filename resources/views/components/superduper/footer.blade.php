@@ -1,204 +1,186 @@
-<footer class="section-footer">
-    <div class="bg-color-denim-darkblue">
-        <div class="relative z-10">
-            <div class="pb-[60px] pt-20 lg:pb-20 lg:pt-[100px] xl:pt-[120px]">
-                <div class="container-default">
-                    <div class="flex flex-col items-center justify-center gap-16">
-                        <div class="max-w-[720px]">
-                            <h2 class="text-3xl font-medium leading-loose text-center text-gray-100 lg:text-5xl xl:text-4xl">
-                                Feel proud of everything you <br/> <span class="text-5xl font-bold text-secondary-600">Start</span> with <span class="text-5xl font-bold text-secondary-600">SuperDuper</span>
-                            </h2>
+@php
+    $socialLinks = [
+        'facebook' => $siteSocialSettings->facebook_url ?? null,
+        'twitter' => $siteSocialSettings->twitter_url ?? null,
+        'instagram' => $siteSocialSettings->instagram_url ?? null,
+        'linkedin' => $siteSocialSettings->linkedin_url ?? null,
+        'youtube' => $siteSocialSettings->youtube_url ?? null,
+        'tiktok' => $siteSocialSettings->tiktok_url ?? null,
+    ];
+
+    $productCategories = \App\Models\ProductCategory::where('is_active', true)
+            ->orderBy('name')
+            ->withCount('products')
+            ->get();
+@endphp
+<!-- ============================ Footer Start ================================== -->
+<footer class="dark-footer skin-dark-footer style-2">
+    <div class="before-footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 col-md-4">
+                    <div class="single_facts">
+                        <div class="facts_icon">
+                            <i class="ti-shopping-cart"></i>
                         </div>
-                        <a href="{{ $siteSettings->footer_cta_button_url ?? '#' }}"
-                            class="inline-block border border-gray-900 btn bg-secondary-700"><span>
-                                Get started— it\'s free
-                            </span></a>
+                        <div class="facts_caption">
+                            <h4>Your Order, Delivered Anywhere in Indonesia</h4>
+                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut</p>
+                        </div>
                     </div>
                 </div>
+
+                <div class="col-lg-4 col-md-4">
+                    <div class="single_facts">
+                        <div class="facts_icon">
+                            <i class="ti-money"></i>
+                        </div>
+                        <div class="facts_caption">
+                            <h4>Best Price In Jakarta</h4>
+                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+                    <div class="single_facts last">
+                        <div class="facts_icon">
+                            <i class="ti-headphone-alt"></i>
+                        </div>
+                        <div class="facts_caption">
+                            <h4>24x7 Online Support</h4>
+                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
+    </div>
 
-        <div class="bg-white horizontal-line"></div>
+    <div class="footer-middle">
+        <div class="container">
+            <div class="row">
 
-        <div class="text-white">
-            <div class="py-[60px] lg:py-20">
-                <div class="container-default">
-                    <div class="grid gap-x-8 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1fr_repeat(4,_auto)] xl:gap-x-10 xxl:gap-x-[134px]">
-                        <div class="flex flex-col gap-y-7 md:col-span-3 lg:col-span-1">
-                            <a href="{{ route('home') }}">
-                                @php
-                                    $brandLogo = $generalSettings->brand_logo ?? null;
-                                    $brandName = $generalSettings->brand_name ?? $siteSettings->name ?? config('app.name', 'SuperDuper');
-                                    $footerLogo = $siteSettings->footer_logo ?? $brandLogo;
-                                @endphp
+                <div class="col-lg-4 col-md-4">
+                    <div class="footer_widget">
+                        <h4 class="extream">Contact us</h4>
+                        <p>Let's here all about it! <a href="#" class="theme-cl">Get it touch</a></p>
 
-                                @if($footerLogo)
-                                    <img src="{{ Storage::url($footerLogo) }}" alt="{{ $brandName }}" width="220" height="auto" />
-                                @endif
-                            </a>
-
-                            <div>
-                                <div class="lg:max-w-[416px]">
-                                    {{ $siteSettings->description ?? '' }}
-                                </div>
-
-                                <a href="mailto:{{ $siteSettings->company_email ?? 'yourdemo@email.com' }}"
-                                    class="block my-6 transition-all duration-300 underline-offset-4 hover:underline">
-                                    {{ $siteSettings->company_email ?? 'yourdemo@email.com' }}
-                                </a>
-
-                                <div class="flex flex-wrap gap-5">
-                                    @php
-                                        $socialLinks = [
-                                            'facebook' => $siteSocialSettings->facebook_url ?? null,
-                                            'twitter' => $siteSocialSettings->twitter_url ?? null,
-                                            'instagram' => $siteSocialSettings->instagram_url ?? null,
-                                            'linkedin' => $siteSocialSettings->linkedin_url ?? null,
-                                            'youtube' => $siteSocialSettings->youtube_url ?? null,
-                                            'tiktok' => $siteSocialSettings->tiktok_url ?? null,
-                                        ];
-
-                                        $faIcons = [
-                                            'twitter' => 'fa-brands fa-x-twitter',
-                                            'facebook' => 'fa-brands fa-facebook-f',
-                                            'instagram' => 'fa-brands fa-instagram',
-                                            'linkedin' => 'fa-brands fa-linkedin-in',
-                                            'youtube' => 'fa-brands fa-youtube',
-                                            'tiktok' => 'fa-brands fa-tiktok',
-                                        ];
-                                    @endphp
-
-                                    @foreach($socialLinks as $platform => $url)
-                                        @if(!empty($url))
-                                            <a href="{{ $url }}" target="_blank" rel="noopener noreferrer"
-                                                class="flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-white bg-opacity-5 text-sm text-white transition-all duration-300 hover:bg-color-pale-gold hover:text-color-denim-darkblue"
-                                                aria-label="{{ $platform }}">
-                                                <i class="{{ $faIcons[$platform] ?? 'fa-brands fa-'.$platform }}"></i>
-                                            </a>
-                                        @endif
-                                    @endforeach
-
-                                    @if(empty(array_filter($socialLinks)))
-                                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
-                                            class="flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-white bg-opacity-5 text-sm text-white transition-all duration-300 hover:bg-color-pale-gold hover:text-color-denim-darkblue"
-                                            aria-label="twitter">
-                                            <i class="fa-brands fa-x-twitter"></i>
-                                        </a>
-                                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
-                                            class="flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-white bg-opacity-5 text-sm text-white transition-all duration-300 hover:bg-color-pale-gold hover:text-color-denim-darkblue"
-                                            aria-label="facebook">
-                                            <i class="fa-brands fa-facebook-f"></i>
-                                        </a>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex flex-col gap-y-7">
-                            <div class="text-xl font-semibold capitalize">
-                                Main
-                            </div>
-                            @php
-                                use Datlechin\FilamentMenuBuilder\Models\Menu;
-                                $footerMenu = Menu::location('footer');
-                            @endphp
-                            <ul class="flex flex-col gap-y-[10px] capitalize">
-                                @if($footerMenu)
-                                    @foreach($footerMenu->menuItems as $item)
-                                        <li>
-                                            <a href="{{ $item->url }}" @if($item->target) target="{{ $item->target }}" @endif
-                                                class="transition-all duration-300 ease-linear hover:opcity-100 underline-offset-4 opacity-80 hover:underline">
-                                                {{ $item->title }}
-                                            </a>
-                                        </li>
-                                    @endforeach
-                                @else
-                                    <li>
-                                        <a href="{{ route('home') }}"
-                                            class="transition-all duration-300 ease-linear hover:opcity-100 underline-offset-4 opacity-80 hover:underline">Home</a>
-                                    </li>
-                                @endif
+                        <div class="address_infos">
+                            <ul>
+                                <li><i class="ti-home theme-cl"></i>{{ $siteSettings->company_address }}</li>
+                                <li><i class="ti-email theme-cl"></i>{{ $siteSettings->company_email }}</li>
+                                <li><i class="ti-headphone-alt theme-cl"></i>{{ $siteSettings->company_phone }}</li>
                             </ul>
                         </div>
 
-                        <div class="flex flex-col gap-y-6">
-                            <div class="text-xl font-semibold capitalize">
-                                Sample Pages
-                            </div>
-                            @php
-                                $footerOthers = Menu::location('footer-2');
-                            @endphp
-                            <ul class="flex flex-col gap-y-[10px] capitalize">
-                                @if($footerOthers)
-                                    @foreach($footerOthers->menuItems as $item)
-                                        <li>
-                                            <a href="{{ $item->url }}" @if($item->target) target="{{ $item->target }}" @endif
-                                                class="transition-all duration-300 ease-linear hover:opcity-100 underline-offset-4 opacity-80 hover:underline">
-                                                {{ $item->title }}
-                                            </a>
-                                        </li>
-                                    @endforeach
-                                @endif
-                            </ul>
-                        </div>
-
-                        {{-- # TODO: Create Menu Module --}}
-                        <div class="flex flex-col gap-y-6">
-                            <div class="text-xl font-semibold capitalize">
-                                Resources
-                            </div>
-                            @php
-                                $footerOthers = Menu::location('footer-3');
-                            @endphp
-                            <ul class="flex flex-col gap-y-[10px] capitalize">
-                                @if($footerOthers)
-                                    @foreach($footerOthers->menuItems as $item)
-                                        <li>
-                                            <a href="{{ $item->url }}" @if($item->target) target="{{ $item->target }}" @endif
-                                                class="transition-all duration-300 ease-linear hover:opcity-100 underline-offset-4 opacity-80 hover:underline">
-                                                {{ $item->title }}
-                                            </a>
-                                        </li>
-                                    @endforeach
-                                @endif
-                            </ul>
-                        </div>
-
-                        {{-- # TODO: Create Menu Module --}}
-                        <div class="flex flex-col gap-y-6">
-                            <div class="text-xl font-semibold capitalize">
-                                Community
-                            </div>
-                            @php
-                                $footerOthers = Menu::location('footer-4');
-                            @endphp
-                            <ul class="flex flex-col gap-y-[10px] capitalize">
-                                @if($footerOthers)
-                                    @foreach($footerOthers->menuItems as $item)
-                                        <li>
-                                            <a href="{{ $item->url }}" @if($item->target) target="{{ $item->target }}" @endif
-                                                class="transition-all duration-300 ease-linear hover:opcity-100 underline-offset-4 opacity-80 hover:underline">
-                                                {{ $item->title }}
-                                            </a>
-                                        </li>
-                                    @endforeach
-                                @endif
-                            </ul>
-                        </div>
                     </div>
                 </div>
+
+                <div class="col-lg-2 col-md-2">
+                    <div class="footer_widget">
+
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-2">
+                    <div class="footer_widget">
+                        <h4 class="widget_title">Our Company</h4>
+                        <ul class="footer-menu">
+                            <li><a href="{{ route('home') }}">Home</a></li>
+                            <li><a href="{{ route('about-us') }}">About Us</a></li>
+                            <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-2">
+                    <div class="footer_widget">
+                        <h4 class="widget_title">Latest News</h4>
+                        <ul class="footer-menu">
+                            <li><a href="#">Offers & Deals</a></li>
+                            <li><a href="#">New Product</a></li>
+                            <li><a href="{{ route('blog') }}">New Article</a></li>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-2">
+                    <div class="footer_widget">
+                        <h4 class="widget_title">Customer Support</h4>
+                        <ul class="footer-menu">
+                            <li><a href="{{ route('blog') }}">Article</a></li>
+                            <li><a href="{{ route('tnc') }}">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
+    </div>
 
-        <div class="bg-white bg-opacity-5">
-            <div class="py-[18px]">
-                <div class="container-default">
-                    <div class="text-center text-white text-opacity-80">
-                        &copy; Copyright {{ date('Y') }}, {{ $siteSettings->copyright_text ?? 'All Rights Reserved' }}
-                        {{ $generalSettings->brand_name ?? $siteSettings->name ?? config('app.name', 'SuperDuper') }}
-                    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-lg-6 col-md-8">
+                    <p class="mb-0">Copyright {{ $siteSettings->copyright_text ?? 'All Rights Reserved' }}</p>
                 </div>
+
+                <div class="text-right col-lg-6 col-md-6">
+                    <ul class="footer_social_links">
+                        @foreach($socialLinks as $platform => $url)
+                            @if($url)
+                                <li>
+                                    <a href="{{ $url }}" target="_blank">
+                                        <i class="ti-{{ $platform }}"></i>
+                                    </a>
+                                </li>
+                            @endif
+                        @endforeach
+                    </ul>
+                </div>
+
             </div>
         </div>
     </div>
 </footer>
+<!-- ============================ Footer End ================================== -->
+
+<!-- Left Collapse navigation -->
+<div class="w3-ch-sideBar-left w3-bar-block w3-card-2 w3-animate-right"  style="display:none;right:0;" id="leftMenu">
+    <div class="rightMenu-scroll">
+        <div class="flixel">
+            <h4 class="cart_heading">Navigation</h4>
+            <button onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-large"><i class="ti-close"></i></button>
+        </div>
+
+        <div class="right-ch-sideBar">
+
+            <div class="side_navigation_collapse">
+                <div class="d-navigation">
+                    <ul id="side-menu">
+                        @foreach ($productCategories as $category)
+                            <li>
+                                {{-- <a href="{{ route('shop.category', $category->slug) }}"> --}}
+                                <a href="#">
+                                    <span>{{ $category->name }}</span>
+                                    @if($category->products_count > 0)
+                                        <span class="badge badge-secondary">{{ $category->products_count }}</span>
+                                    @endif
+                                </a>
+                            </li>
+                        @endforeach
+                        @if($productCategories->isEmpty())
+                            <li class="text-center">No categories found</li>
+                        @endif
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- Left Collapse navigation -->

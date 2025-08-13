@@ -37,11 +37,11 @@ class AdminPanelProvider extends PanelProvider
             ->login(Login::class)
             ->passwordReset(RequestPasswordReset::class)
             ->emailVerification(EmailVerification::class)
-            ->favicon(fn(GeneralSettings $settings) => Storage::url($settings->site_favicon))
-            ->brandName(fn(GeneralSettings $settings) => $settings->brand_name)
-            ->brandLogo(fn(GeneralSettings $settings) => Storage::url($settings->brand_logo))
-            ->brandLogoHeight(fn(GeneralSettings $settings) => $settings->brand_logoHeight)
-            ->colors(fn(GeneralSettings $settings) => $settings->site_theme)
+            ->favicon(fn (GeneralSettings $settings) => Storage::url($settings->site_favicon))
+            ->brandName(fn (GeneralSettings $settings) => $settings->brand_name)
+            ->brandLogo(fn (GeneralSettings $settings) => Storage::url($settings->brand_logo))
+            ->brandLogoHeight(fn (GeneralSettings $settings) => $settings->brand_logoHeight)
+            ->colors(fn (GeneralSettings $settings) => $settings->site_theme)
             ->databaseNotifications()->databaseNotificationsPolling('30s')
             ->globalSearchKeyBindings(['command+k', 'ctrl+k'])
             ->sidebarCollapsibleOnDesktop()
@@ -64,8 +64,8 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->navigationItems([
                 Navigation\NavigationItem::make(__('menu.nav_group.item.log_viewer'))
-                    ->visible(fn(): bool => auth()->user()->can('access_log_viewer'))
-                    ->url(config('app.url') . '/' . config('log-viewer.route_path'), shouldOpenInNewTab: true)
+                    ->visible(fn (): bool => auth()->user()->can('access_log_viewer'))
+                    ->url(config('app.url').'/'.config('log-viewer.route_path'), shouldOpenInNewTab: true)
                     ->icon('fluentui-document-bullet-list-multiple-20-o')
                     ->group(__('menu.nav_group.activities'))
                     ->sort(99),
@@ -73,11 +73,12 @@ class AdminPanelProvider extends PanelProvider
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->resources([
-                config('filament-logger.activity_resource')
+                config('filament-logger.activity_resource'),
             ])
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
                 Pages\Dashboard::class,
+                \App\Filament\Pages\CustomPageManager::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
@@ -94,7 +95,7 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-                FilamentRobotsMiddleware::class
+                FilamentRobotsMiddleware::class,
             ])
             ->authMiddleware([
                 Authenticate::class,
@@ -106,7 +107,7 @@ class AdminPanelProvider extends PanelProvider
                 \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make()
                     ->gridColumns([
                         'default' => 2,
-                        'sm' => 1
+                        'sm' => 1,
                     ])
                     ->sectionColumnSpan(1)
                     ->checkboxListColumns([
@@ -148,8 +149,8 @@ class AdminPanelProvider extends PanelProvider
                             ->description('Default menus')
                             ->collapsed(true)
                             ->collapsible(true)
-                            ->paginate(perPage: 5, condition: true)
-                    ])
+                            ->paginate(perPage: 5, condition: true),
+                    ]),
             ]);
     }
 }
