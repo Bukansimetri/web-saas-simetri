@@ -1,11 +1,8 @@
 /.phpunit.cache
 /node_modules
-# /public/build
-# /public/hot
-# /public/storage
-# /storage/*.key
-# /vendor
-# .env
+/public/build
+/public/hot
+/vendor
 .env.backup.*
 .env.production
 .phpunit.result.cache
@@ -20,3 +17,6 @@ yarn-error.log
 /-local
 /docs
 setup.php.disabled
+# /public/storage
+# /storage/*.key
+# .env
