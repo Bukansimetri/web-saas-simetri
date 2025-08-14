@@ -1,0 +1,29 @@
+runtime: php83 # Menggunakan runtime PHP 8.3
+env: standard
+
+# Konfigurasi untuk koneksi ke Cloud SQL
+# Ganti 'your-cloud-sql-instance-name' dengan nama koneksi instance Cloud SQL Anda yang sebenarnya.
+# Formatnya biasanya PROJECT_ID:REGION:INSTANCE_NAME
+# Contoh: simetri-minum-24:us-central1:my-laravel-db-instance
+beta_settings:
+  cloud_sql_instances: "simetri-minum-24:asia-southeast2:simetri-minum-twentyfour"
+
+# Laravel menyajikan aplikasi dari direktori 'public'
+runtime_config:
+  document_root: public
+
+handlers:
+  # Aturan untuk menyajikan file statis (CSS, JS, gambar, dll.)
+  # Ini penting agar browser dapat memuat aset-aset ini secara langsung
+  - url: /(.*\.(gif|png|jpg|jpeg|css|js|ico|woff|woff2|ttf|eot|svg))$
+    static_files: public/\1
+    upload: public/.*\.(gif|png|jpg|jpeg|css|js|ico|woff|woff2|ttf|eot|svg)$
+    # Opsional: Tambahkan header cache untuk aset statis
+    http_headers:
+      Cache-Control: "public, max-age=31536000"
+
+  # Semua request lainnya akan ditangani oleh aplikasi Laravel (index.php)
+  - url: /.*
+    script: auto
+    secure: always # Opsional: Mengarahkan semua traffic HTTP ke HTTPS
+    redirect_http_response_code: 301 # Menggunakan 301 (Moved Permanently) untuk redirect HTTPS
