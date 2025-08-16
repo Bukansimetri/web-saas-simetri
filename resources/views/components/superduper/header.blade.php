@@ -44,7 +44,7 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <livewire:superduper.pages.search-bar /> --}}
+                    <livewire:simetri.search-bar />
                 </div>
             </div>
         </div>

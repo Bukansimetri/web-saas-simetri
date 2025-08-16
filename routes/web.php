@@ -1,12 +1,12 @@
 <?php
 
+use App\Livewire\Simetri\SearchResult;
 use App\Livewire\SuperDuper\BlogDetails;
 use App\Livewire\SuperDuper\BlogList;
 use App\Livewire\SuperDuper\Pages\AboutUs;
 use App\Livewire\SuperDuper\Pages\ContactUs;
 use App\Livewire\SuperDuper\Pages\Faq;
 use App\Livewire\SuperDuper\Pages\Products;
-use App\Livewire\SuperDuper\Pages\SearchResult;
 use Illuminate\Support\Facades\Route;
 use Lab404\Impersonate\Services\ImpersonateManager;
 

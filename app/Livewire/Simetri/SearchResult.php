@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\SuperDuper\Pages;
+namespace App\Livewire\Simetri;
 
 use App\Models\Blog\Post;
 use App\Models\Product;
@@ -36,6 +36,6 @@ class SearchResult extends Component
 
     public function render()
     {
-        return view('livewire.superduper.pages.search-result')->layout('components.superduper.main');
+        return view('livewire.simetri.search-result')->layout('components.superduper.main');
     }
 }
