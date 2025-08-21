@@ -44,7 +44,11 @@
             <div class="mt-5 row align-items-center">
 
                 <div class="col-lg-5 col-md-12 hide-91">
-                    <img src="https://placehold.co/500x500" class="rounded img-fluid" alt="" />
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.325208721889!2d106.829504!3d-6.2207776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3fbc30150c1%3A0xacc833a634753939!2sMinum%2024!5e0!3m2!1sen!2sid!4v1755795844647!5m2!1sen!2sid"
+                        width="500" height="500"
+                        style="border-width:2px !important; border-color:#016725 !important;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
 
                 <div class="col-lg-7 col-md-12">

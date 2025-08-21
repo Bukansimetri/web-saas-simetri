@@ -23,6 +23,13 @@
         ->orderBy('created_at', 'desc')
         ->take(10)
         ->get();
+
+    $bodyBanner = \App\Models\Banner\Content::whereHas('category', function($query) {
+            $query->where('slug', 'main-banner');
+        })
+        ->with(['media'])
+        ->first();
+
 @endphp
 <x-superduper.main>
 
@@ -40,7 +47,7 @@
                             <div class="item">
                                 <div class="rounded woo_category_box border_style">
                                     <div class="woo_cat_thumb">
-                                        <a href="{{ url('/category/'.$productCategory->id) }}">
+                                        <a href="{{ url('/category/'.$productCategory->slug) }}">
                                             <img src="{{ $productCategory->getImageUrl('thumbnail') ?? 'https://placehold.co/140x140'}}" class="img-fluid" alt="{{ $productCategory->name }}" />
                                         </a>
                                     </div>
@@ -200,14 +207,14 @@
 
                 <div class="col-lg-7 col-md-7 col-sm-12">
                     <div class="offer_block_caption">
-                        <h2 class="mb-4">Products Of The Week<br>Upto 40% Off on Fresh Fruits</h2>
-                        <a href="#" class="btn btn-warning">Explore All Products<i class="ml-2 ti-arrow-right"></i></a>
+                        <h2 class="mb-4">{{ $bodyBanner->title ?? 'Products Of The Week'}}<br>{{ $bodyBanner->description ?? 'Upto 40% Off'}}</h2>
+                        <a href="{{ $bodyBanner->click_url ?? '#' }}" class="btn btn-warning">Explore<i class="ml-2 ti-arrow-right"></i></a>
                     </div>
                 </div>
 
                 <div class="col-lg-5 col-md-5 col-sm-12">
                     <div class="ordering">
-                        <img src="https://placehold.co/500x600" class="img-fluid" alt="" />
+                        <img src="{{ $bodyBanner ? $bodyBanner->getImageUrl('medium') : 'https://placehold.co/500x600' }}" class="img-fluid" alt="" />
                     </div>
                 </div>
 
@@ -333,6 +340,95 @@
         </div>
     </div>
     <!-- End Modal -->
+
+    <!-- Age Verification Modal -->
+    <div id="age-verification-modal" class="age-verification-modal">
+        <div class="text-center age-verification-content">
+            <!-- Icon / Logo -->
+            <img src="https://img.icons8.com/color/96/beer.png" alt="cheers" class="mb-4" />
+
+            <h2 class="mb-3" style="color:#fff;">Selamat Datang di <span style="color:#016725;">Minum24</span></h2>
+            <p class="mb-4" style="color:#ddd;">
+                Website ini hanya untuk pengunjung berusia <b>21 tahun ke atas</b>.<br>
+                Apakah Anda sudah berusia 21+?
+            </p>
+
+            <!-- Buttons -->
+            <div class="gap-3 d-flex justify-content-center">
+                <button id="btn-yes" class="btn btn-yes">Ya, Saya 21+</button>
+                <button id="btn-no" class="btn btn-no">Belum</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+    /* Fullscreen modal */
+    .age-verification-modal {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 5000;
+        background: rgba(0, 0, 0, 0.562); /* Gelap transparan */
+    }
+
+    /* Konten modal */
+    .age-verification-content {
+        background: rgba(30, 30, 30, 0.921);
+        padding: 40px;
+        border-radius: 15px;
+        max-width: 500px;
+        color: #fff;
+        border: 2px solid #016725;
+    }
+
+    /* Tombol */
+    .btn {
+        padding: 12px 24px;
+        margin: 0 10px;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+        border: none;
+    }
+
+    .btn-yes {
+        background: #016725;
+        color: #fff;
+    }
+    .btn-yes:hover {
+        background: #014f1b;
+    }
+
+    .btn-no {
+        background: #dc311c;
+        color: #fff;
+    }
+    .btn-no:hover {
+        background: #b92715;
+    }
+    </style>
+
+    <script>
+    // Cek jika sudah pernah validasi
+    if(localStorage.getItem("age_verified") === "true"){
+        document.getElementById("age-verification-modal").style.display = "none";
+    }
+
+    // Event tombol
+    document.getElementById("btn-yes").addEventListener("click", function(){
+        localStorage.setItem("age_verified", "true");
+        document.getElementById("age-verification-modal").style.display = "none";
+    });
+
+    document.getElementById("btn-no").addEventListener("click", function(){
+        window.location.href = "/errorpage"; // redirect ke 404
+    });
+    </script>
+
 
     <script>
         function showProductModal(productId) {

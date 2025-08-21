@@ -13,8 +13,8 @@ class Login extends BasePage
         parent::mount();
 
         $this->form->fill([
-            'email' => 'superadmin@starter-kit.com',
-            'password' => 'superadmin',
+            'email' => '',
+            'password' => '',
         ]);
     }
 
@@ -28,7 +28,7 @@ class Login extends BasePage
             ]);
     }
 
-    public function getHeading(): string | Htmlable
+    public function getHeading(): string|Htmlable
     {
         return '';
     }

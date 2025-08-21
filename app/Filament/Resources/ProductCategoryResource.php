@@ -80,6 +80,28 @@ class ProductCategoryResource extends Resource
                                     ->default(true),
                             ]),
 
+                        Tabs\Tab::make('Product Category Image')
+                            ->icon('heroicon-o-photo')
+                            ->schema([
+                                Forms\Components\Section::make('Image')
+                                    ->description('Upload product category image here')
+                                    ->schema([
+                                        SpatieMediaLibraryFileUpload::make('productcategories')
+                                            ->collection('productcategories')
+                                            ->multiple(false)
+                                            ->maxFiles(1)
+                                            ->imagePreviewHeight('250')
+                                            ->panelLayout('compact')
+                                            ->imageResizeMode('cover')
+                                            ->imageResizeTargetWidth('1200')
+                                            ->imageResizeTargetHeight('800')
+                                            ->acceptedFileTypes(['image/*'])
+                                            ->helperText('Upload a products category image.')
+                                            ->columnSpanFull(),
+                                    ])
+                                    ->compact(),
+                            ]),
+
                         Tabs\Tab::make('SEO & Meta')
                             ->schema([
                                 Forms\Components\TextInput::make('meta_title')

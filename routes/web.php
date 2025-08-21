@@ -53,6 +53,9 @@ Route::get('/terms-conditions', function () {
 Route::get('/coming-soon', function () {
     return view('components.superduper.pages.coming-soon', ['page_type' => 'generic']);
 })->name('coming-soon');
+Route::get('/errorpage', function () {
+    return view('404');
+})->name('errorpage');
 
 /** Get in touch Function */
 Route::post('/contact', [App\Http\Controllers\ContactController::class, 'submit'])
