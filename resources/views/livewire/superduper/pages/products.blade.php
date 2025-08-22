@@ -326,7 +326,7 @@
 
                                 <div class="woo_btn_action">
                                     <div class="col-12 col-lg-auto">
-                                        <a type="button" class="mb-2 btn btn-block btn-dark" href="{{ $product->url_grab_mart }}">
+                                        <a type="button" class="mb-2 btn btn-block btn-dark" href="{{ $product ? $product->url_grab_mart : '#' }}">
                                             Add to Cart <i class="ml-2 ti-shopping-cart-full"></i>
                                         </a>
                                     </div>
