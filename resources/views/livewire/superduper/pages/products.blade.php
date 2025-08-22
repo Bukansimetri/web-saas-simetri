@@ -303,9 +303,8 @@
                             <div class="woo_pr_detail">
                                 <div class="woo_cats_wrps">
                                     <a href="#" class="woo_pr_cats" id="modal-product-category"></a>
-                                    @if($product->discount_percentage ?? false)
-                                        <span class="woo_pr_trending">Save {{ $product->discount_percentage }}%</span>
-                                    @endif
+                                    <!-- Pindahkan diskon ke JavaScript -->
+                                    <span class="woo_pr_trending" id="modal-product-discount" style="display: none;"></span>
                                 </div>
                                 <h2 class="woo_pr_title" id="modal-product-name"></h2>
 
@@ -326,7 +325,8 @@
 
                                 <div class="woo_btn_action">
                                     <div class="col-12 col-lg-auto">
-                                        <a type="button" class="mb-2 btn btn-block btn-dark" href="{{ $product ? $product->url_grab_mart : '#' }}">
+                                        <!-- Gunakan ID untuk link Add to Cart -->
+                                        <a type="button" class="mb-2 btn btn-block btn-dark" id="modal-product-cart-link" href="#">
                                             Add to Cart <i class="ml-2 ti-shopping-cart-full"></i>
                                         </a>
                                     </div>
@@ -368,6 +368,15 @@
                         categoryElement.style.display = 'none';
                     }
 
+                    // Tampilkan diskon jika ada
+                    const discountElement = document.getElementById('modal-product-discount');
+                    if (product.discount_percentage) {
+                        discountElement.textContent = `Save ${product.discount_percentage}%`;
+                        discountElement.style.display = 'inline';
+                    } else {
+                        discountElement.style.display = 'none';
+                    }
+
                     // Format prices in Indonesian Rupiah
                     const formatPrice = (price) => {
                         return new Intl.NumberFormat('id-ID', {
@@ -390,6 +399,18 @@
                     document.getElementById('modal-product-description').textContent =
                         product.description || 'No description available';
 
+                    // Update link Add to Cart
+                    const cartLink = document.getElementById('modal-product-cart-link');
+                    if (product.url_grab_mart) {
+                        cartLink.href = product.url_grab_mart;
+                    } else {
+                        cartLink.href = '#';
+                        cartLink.onclick = function(e) {
+                            e.preventDefault();
+                            addToCart(productId);
+                        };
+                    }
+
                     // Show the modal
                     $('#viewproduct-over').modal('show');
                 })
@@ -399,9 +420,9 @@
                 });
         }
 
-        function addToCart() {
+        function addToCart(productId) {
             // Implement your add to cart functionality here
-            alert('Add to cart functionality would go here');
+            alert('Add to cart functionality would go here for product ID: ' + productId);
         }
     </script>
 
