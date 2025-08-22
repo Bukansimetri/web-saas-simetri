@@ -53,7 +53,7 @@
                                     </div>
                                     <div class="woo_cat_caption">
                                         <h4>
-                                            <a href="{{ url('/category/'.$productCategory->id) }}">{{ $productCategory->name }}</a>
+                                            <a href="{{ url('/category/'.$productCategory->slug) }}">{{ $productCategory->name }}</a>
                                         </h4>
                                     </div>
                                 </div>
