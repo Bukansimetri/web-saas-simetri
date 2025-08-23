@@ -25,8 +25,8 @@
                             <i class="ti-shopping-cart"></i>
                         </div>
                         <div class="facts_caption">
-                            <h4>Your Order, Delivered Anywhere in Indonesia</h4>
-                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut</p>
+                            <h4>Delivered Anywhere in Indonesia</h4>
+                            <p>Nationwide shipping with guaranteed delivery to every region.</p>
                         </div>
                     </div>
                 </div>
@@ -37,8 +37,8 @@
                             <i class="ti-money"></i>
                         </div>
                         <div class="facts_caption">
-                            <h4>Best Price In Jakarta</h4>
-                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut</p>
+                            <h4>Money Back Guaratee</h4>
+                            <p>100% refund if you're not satisfied. No hassle, no questions asked.</p>
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="facts_caption">
                             <h4>24x7 Online Support</h4>
-                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut</p>
+                            <p>Round-the-clock support via live chat, email, or phone. We're always here to help.</p>
                         </div>
                     </div>
                 </div>

@@ -36,41 +36,97 @@
     <x-superduper.components.banner />
 
     <!-- ======================== Choose Category Start ==================== -->
-    <section class="pt-0 overlio">
+    <section class="pt-0 pb-5">
         <div class="container">
-
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="owl-carousel category-slider owl-theme">
-                        @foreach ($productCategories as $productCategory)
+                        @forelse($productCategories as $productCategory)
                             <!-- Single Item -->
                             <div class="item">
                                 <div class="rounded woo_category_box border_style">
                                     <div class="woo_cat_thumb">
                                         <a href="{{ url('/category/'.$productCategory->slug) }}">
-                                            <img src="{{ $productCategory->getImageUrl('thumbnail') ?? 'https://placehold.co/140x140'}}" class="img-fluid" alt="{{ $productCategory->name }}" />
+                                            <img src="{{ $productCategory->getImageUrl('thumbnail') ?? 'https://placehold.co/180x180' }}" class="img-fluid" alt="{{ $productCategory->name }}" />
                                         </a>
                                     </div>
                                     <div class="woo_cat_caption">
-                                        <h4>
-                                            <a href="{{ url('/category/'.$productCategory->slug) }}">{{ $productCategory->name }}</a>
-                                        </h4>
+                                        <h4><a href="{{ url('/category/'.$productCategory->slug) }}">{{ $productCategory->name }}</a></h4>
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+                        @empty
+                            <!-- Fallback categories jika tidak ada data -->
+                            <!-- Single Item -->
+                            <div class="item">
+                                <div class="rounded woo_category_box border_style">
+                                    <div class="woo_cat_thumb">
+                                        <a href="#"><img src="https://via.placeholder.com/180x180" class="img-fluid" alt="Headphones" /></a>
+                                    </div>
+                                    <div class="woo_cat_caption">
+                                        <h4><a href="#">Headphones</a></h4>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <!-- Single Item -->
+                            <div class="item">
+                                <div class="rounded woo_category_box border_style">
+                                    <div class="woo_cat_thumb">
+                                        <a href="#"><img src="https://via.placeholder.com/180x180" class="img-fluid" alt="CCTV Camera" /></a>
+                                    </div>
+                                    <div class="woo_cat_caption">
+                                        <h4><a href="#">CCTV Camera</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Item -->
+                            <div class="item">
+                                <div class="rounded woo_category_box border_style">
+                                    <div class="woo_cat_thumb">
+                                        <a href="#"><img src="https://via.placeholder.com/180x180" class="img-fluid" alt="Computers" /></a>
+                                    </div>
+                                    <div class="woo_cat_caption">
+                                        <h4><a href="#">Computers</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Item -->
+                            <div class="item">
+                                <div class="rounded woo_category_box border_style">
+                                    <div class="woo_cat_thumb">
+                                        <a href="#"><img src="https://via.placeholder.com/180x180" class="img-fluid" alt="Mobile Phones" /></a>
+                                    </div>
+                                    <div class="woo_cat_caption">
+                                        <h4><a href="#">Mobile Phones</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Single Item -->
+                            <div class="item">
+                                <div class="rounded woo_category_box border_style">
+                                    <div class="woo_cat_thumb">
+                                        <a href="#"><img src="https://via.placeholder.com/180x180" class="img-fluid" alt="Printer" /></a>
+                                    </div>
+                                    <div class="woo_cat_caption">
+                                        <h4><a href="#">Printer</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforelse
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
     <div class="clearfix"></div>
     <!-- ======================== Choose Category End ==================== -->
 
     <!-- ======================== Fresh Vegetables Start ==================== -->
-    <section class="pt-0">
+    <section class="pb-5 gray">
         <div class="container">
 
             <div class="row">
@@ -137,7 +193,7 @@
     <!-- ======================== Fresh Vegetables End ==================== -->
 
     <!-- ======================== Fresh & Fast Fruits Start ==================== -->
-    <section class="pt-0">
+    <section class="pt-5">
         <div class="container">
 
             <div class="row">
@@ -200,31 +256,8 @@
     <div class="clearfix"></div>
     <!-- ======================== Fresh & Fast Fruits End ==================== -->
 
-    <!-- ======================== Fruits Offers Start ==================== -->
-    <section class="pt-0 pb-0">
-        <div class="container">
-            <div class="rounded row align-items-center offer_flix light-yellow">
-
-                <div class="col-lg-7 col-md-7 col-sm-12">
-                    <div class="offer_block_caption">
-                        <h2 class="mb-4">{{ $bodyBanner->title ?? 'Products Of The Week'}}<br>{{ $bodyBanner->description ?? 'Upto 40% Off'}}</h2>
-                        <a href="{{ $bodyBanner->click_url ?? '#' }}" class="btn btn-warning">Explore<i class="ml-2 ti-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-5 col-md-5 col-sm-12">
-                    <div class="ordering">
-                        <img src="{{ $bodyBanner ? $bodyBanner->getImageUrl('medium') : 'https://placehold.co/500x600' }}" class="img-fluid" alt="" />
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- ======================== Fruits Offers End ==================== -->
-
     <!-- ======================== Fresh Vegetables & Fruits Start ==================== -->
-    <section class="">
+    <section class="pt-0">
         <div class="container">
 
             <div class="row">

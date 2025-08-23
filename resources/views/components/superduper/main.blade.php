@@ -212,7 +212,7 @@
             }
         </script>
     </head>
-<body class="grocery-theme">
+<body class="electronic-theme">
 
     <!-- Body start scripts -->
     @if(isset($scriptSettings->body_start_scripts))

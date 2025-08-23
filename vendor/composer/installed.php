@@ -3,7 +3,7 @@
         'name' => 'riodwanto/superduper-filament-starter-kit',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'f80a5a4ecb6b2ae7d863470f323f36a425032f62',
+        'reference' => '764d88bd5140c2c1c765e0441917f8944cb6eedc',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -1304,7 +1304,7 @@
         'riodwanto/superduper-filament-starter-kit' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'f80a5a4ecb6b2ae7d863470f323f36a425032f62',
+            'reference' => '764d88bd5140c2c1c765e0441917f8944cb6eedc',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

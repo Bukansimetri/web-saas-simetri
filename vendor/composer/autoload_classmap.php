@@ -31,6 +31,7 @@ return array(
     'App\\Filament\\Clusters\\SitesSettings\\Resources\\RoleResource\\Pages\\EditRole' => $baseDir . '/app/Filament/Clusters/SitesSettings/Resources/RoleResource/Pages/EditRole.php',
     'App\\Filament\\Clusters\\SitesSettings\\Resources\\RoleResource\\Pages\\ListRoles' => $baseDir . '/app/Filament/Clusters/SitesSettings/Resources/RoleResource/Pages/ListRoles.php',
     'App\\Filament\\Clusters\\SitesSettings\\Resources\\RoleResource\\Pages\\ViewRole' => $baseDir . '/app/Filament/Clusters/SitesSettings/Resources/RoleResource/Pages/ViewRole.php',
+    'App\\Filament\\Imports\\ProductImporter' => $baseDir . '/app/Filament/Imports/ProductImporter.php',
     'App\\Filament\\Pages\\Actions\\ImpersonatePageAction' => $baseDir . '/app/Filament/Pages/Actions/ImpersonatePageAction.php',
     'App\\Filament\\Pages\\Auth\\EmailVerification' => $baseDir . '/app/Filament/Pages/Auth/EmailVerification.php',
     'App\\Filament\\Pages\\Auth\\Login' => $baseDir . '/app/Filament/Pages/Auth/Login.php',

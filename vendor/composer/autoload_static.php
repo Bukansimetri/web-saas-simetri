@@ -986,6 +986,7 @@ class ComposerStaticInitc10b66e79ba0eba1df43989dc7dec0e4
         'App\\Filament\\Clusters\\SitesSettings\\Resources\\RoleResource\\Pages\\EditRole' => __DIR__ . '/../..' . '/app/Filament/Clusters/SitesSettings/Resources/RoleResource/Pages/EditRole.php',
         'App\\Filament\\Clusters\\SitesSettings\\Resources\\RoleResource\\Pages\\ListRoles' => __DIR__ . '/../..' . '/app/Filament/Clusters/SitesSettings/Resources/RoleResource/Pages/ListRoles.php',
         'App\\Filament\\Clusters\\SitesSettings\\Resources\\RoleResource\\Pages\\ViewRole' => __DIR__ . '/../..' . '/app/Filament/Clusters/SitesSettings/Resources/RoleResource/Pages/ViewRole.php',
+        'App\\Filament\\Imports\\ProductImporter' => __DIR__ . '/../..' . '/app/Filament/Imports/ProductImporter.php',
         'App\\Filament\\Pages\\Actions\\ImpersonatePageAction' => __DIR__ . '/../..' . '/app/Filament/Pages/Actions/ImpersonatePageAction.php',
         'App\\Filament\\Pages\\Auth\\EmailVerification' => __DIR__ . '/../..' . '/app/Filament/Pages/Auth/EmailVerification.php',
         'App\\Filament\\Pages\\Auth\\Login' => __DIR__ . '/../..' . '/app/Filament/Pages/Auth/Login.php',
