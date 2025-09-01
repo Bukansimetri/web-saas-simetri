@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ProductCategoryResource\Pages;
 use App\Models\ProductCategory;
 use Filament\Forms;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Tabs;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
