@@ -28,9 +28,11 @@ use Illuminate\Support\Str;
 class UserResource extends Resource
 {
     protected static ?string $model = User::class;
+
     protected static int $globalSearchResultsLimit = 20;
 
-    protected static ?int $navigationSort = -1;
+    protected static ?int $navigationSort = 4;
+
     protected static ?string $navigationIcon = 'heroicon-s-users';
 
     protected static ?string $recordTitleAttribute = 'name';
@@ -61,8 +63,8 @@ class UserResource extends Resource
                             Action::make('resend_verification')
                                 ->label(__('resource.user.actions.resend_verification'))
                                 ->color('info')
-                                ->action(fn(MailSettings $settings, Model $record) => static::doResendEmailVerification($settings, $record))
-                                ->hidden(fn($record) => $record?->email_verified_at !== null),
+                                ->action(fn (MailSettings $settings, Model $record) => static::doResendEmailVerification($settings, $record))
+                                ->hidden(fn ($record) => $record?->email_verified_at !== null),
                         ])
                             ->hiddenOn('create')
                             ->fullWidth(),
@@ -71,28 +73,28 @@ class UserResource extends Resource
                             ->schema([
                                 Forms\Components\TextInput::make('password')
                                     ->password()
-                                    ->dehydrateStateUsing(fn(string $state): string => Hash::make($state))
-                                    ->dehydrated(fn(?string $state): bool => filled($state))
+                                    ->dehydrateStateUsing(fn (string $state): string => Hash::make($state))
+                                    ->dehydrated(fn (?string $state): bool => filled($state))
                                     ->revealable()
                                     ->required(),
                                 Forms\Components\TextInput::make('passwordConfirmation')
                                     ->password()
-                                    ->dehydrateStateUsing(fn(string $state): string => Hash::make($state))
-                                    ->dehydrated(fn(?string $state): bool => filled($state))
+                                    ->dehydrateStateUsing(fn (string $state): string => Hash::make($state))
+                                    ->dehydrated(fn (?string $state): bool => filled($state))
                                     ->revealable()
                                     ->same('password')
                                     ->required(),
                             ])
                             ->compact()
-                            ->hidden(fn(string $operation): bool => $operation === 'edit'),
+                            ->hidden(fn (string $operation): bool => $operation === 'edit'),
 
                         Forms\Components\Placeholder::make('user_info')
                             ->hiddenLabel()
                             ->content(function (?User $record): HtmlString {
-                                if (!$record) {
+                                if (! $record) {
                                     return new HtmlString('<span class="text-sm text-gray-500">Save to see user details! 😊</span>');
                                 }
-                                $name = trim(($record->firstname ?? '') . ' ' . ($record->lastname ?? ''));
+                                $name = trim(($record->firstname ?? '').' '.($record->lastname ?? ''));
                                 $joined = $record->created_at?->format('M j, Y \a\t g:i A') ?? 'just now';
                                 $updated = $record->updated_at?->diffForHumans() ?? 'never';
                                 $updatedExact = $record->updated_at?->format('M j, Y \a\t g:i A') ?? '';
@@ -102,9 +104,10 @@ class UserResource extends Resource
                                 } else {
                                     $sentence = "<span class='font-semibold'>$name</span> joined $joined and hasn't verified their email yet. Last updated <span class='font-semibold' title='Updated on $updatedExact'>$updated</span>.";
                                 }
+
                                 return new HtmlString($sentence);
                             })
-                            ->hidden(fn(string $operation): bool => $operation === 'create'),
+                            ->hidden(fn (string $operation): bool => $operation === 'create'),
                     ])
                     ->columnSpan(1),
 
@@ -119,8 +122,9 @@ class UserResource extends Resource
                                     ->live()
                                     ->rules(function ($record) {
                                         $userId = $record?->id;
+
                                         return $userId
-                                            ? ['unique:users,username,' . $userId]
+                                            ? ['unique:users,username,'.$userId]
                                             : ['unique:users,username'];
                                     }),
 
@@ -130,11 +134,12 @@ class UserResource extends Resource
                                     ->maxLength(255)
                                     ->rules(function ($record) {
                                         $userId = $record?->id;
+
                                         return $userId
-                                            ? ['unique:users,email,' . $userId]
+                                            ? ['unique:users,email,'.$userId]
                                             : ['unique:users,email'];
                                     })
-                                    ->disabled(fn(string $operation) => $operation === 'edit')
+                                    ->disabled(fn (string $operation) => $operation === 'edit')
                                     ->helperText(fn () => new HtmlString('<div class="text-gray-300">'.__('resource.user.email_edit_warning').'</div>')),
 
                                 Forms\Components\TextInput::make('firstname')
@@ -153,18 +158,18 @@ class UserResource extends Resource
                                 Select::make('roles')
                                     ->hiddenLabel()
                                     ->relationship('roles', 'name')
-                                    ->getOptionLabelFromRecordUsing(fn(Model $record) => Str::headline($record->name))
+                                    ->getOptionLabelFromRecordUsing(fn (Model $record) => Str::headline($record->name))
                                     ->multiple()
                                     ->preload()
                                     ->searchable()
                                     ->optionsLimit(5)
                                     ->columnSpanFull()
                                     ->helperText(__('resource.user.roles_tooltip')),
-                            ])
+                            ]),
                     ])
                     ->columnSpan([
                         'sm' => 1,
-                        'lg' => 2
+                        'lg' => 2,
                     ]),
             ])
             ->columns(3);
@@ -181,7 +186,7 @@ class UserResource extends Resource
                     ->extraAttributes(['alt' => __('resource.user.avatar_alt')]),
                 Tables\Columns\TextColumn::make('name')
                     ->label('Full Name')
-                    ->getStateUsing(fn(Model $record) => $record->firstname . ' ' . $record->lastname)
+                    ->getStateUsing(fn (Model $record) => $record->firstname.' '.$record->lastname)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('username')->label('Username')
                     ->searchable(),
@@ -191,7 +196,7 @@ class UserResource extends Resource
                     ->copyMessageDuration(1500)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('roles.name')->label(__('resource.user.roles'))
-                    ->formatStateUsing(fn($state): string => $state ? Str::headline($state) : __('resource.user.no_roles'))
+                    ->formatStateUsing(fn ($state): string => $state ? Str::headline($state) : __('resource.user.no_roles'))
                     ->colors(['info'])
                     ->badge()
                     ->tooltip(__('resource.user.roles_tooltip')),
@@ -202,7 +207,7 @@ class UserResource extends Resource
                     ->falseIcon('fluentui-error-circle-24')
                     ->trueColor('success')
                     ->falseColor('danger')
-                    ->tooltip(fn(Model $record) => $record->email_verified_at ? __('resource.user.status.verified_tooltip') : __('resource.user.status.unverified_tooltip')),
+                    ->tooltip(fn (Model $record) => $record->email_verified_at ? __('resource.user.status.verified_tooltip') : __('resource.user.status.unverified_tooltip')),
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Joined')
                     ->dateTime('M j, Y')
@@ -260,31 +265,30 @@ class UserResource extends Resource
     public static function getGlobalSearchResultDetails(Model $record): array
     {
         return [
-            'name' => $record->firstname . ' ' . $record->lastname,
+            'name' => $record->firstname.' '.$record->lastname,
         ];
     }
 
     public static function getNavigationGroup(): ?string
     {
-        return __("menu.nav_group.access");
+        return __('menu.nav_group.systems');
     }
 
-    public static function doResendEmailVerification($settings = null, $user): void
+    public static function doResendEmailVerification($settings, $user): void
     {
-        if (!method_exists($user, 'notify')) {
+        if (! method_exists($user, 'notify')) {
             $userClass = $user::class;
 
             throw new Exception("Model [{$userClass}] does not have a [notify()] method.");
         }
 
         if ($settings->isMailSettingsConfigured()) {
-            $notification = new VerifyEmail();
+            $notification = new VerifyEmail;
             $notification->url = Filament::getVerifyEmailUrl($user);
 
             $settings->loadMailSettingsToConfig();
 
             $user->notify($notification);
-
 
             Notification::make()
                 ->title(__('resource.user.notifications.verify_sent.title'))
