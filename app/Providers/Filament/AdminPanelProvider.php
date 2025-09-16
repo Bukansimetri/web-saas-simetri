@@ -99,6 +99,9 @@ class AdminPanelProvider extends PanelProvider
             ->plugins([
                 \TomatoPHP\FilamentMediaManager\FilamentMediaManagerPlugin::make()
                     ->allowSubFolders(),
+                \TomatoPHP\FilamentInvoices\FilamentInvoicesPlugin::make(),
+                \TomatoPHP\FilamentAccounts\FilamentAccountsPlugin::make(),
+                \BezhanSalleh\FilamentGoogleAnalytics\FilamentGoogleAnalyticsPlugin::make(),
                 \BezhanSalleh\FilamentExceptions\FilamentExceptionsPlugin::make(),
                 \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make()
                     ->gridColumns([

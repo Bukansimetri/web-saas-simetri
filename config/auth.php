@@ -112,4 +112,34 @@ return [
 
     'password_timeout' => 10800,
 
+    /*
+    | Features of Tomato CRM
+    | |--------------------------------------------------------------------------
+    | accounts: Enable/Disable Accounts Feature
+    */
+    'features' => [
+        'notifications' => false,
+        'loginBy' => false,
+        'avatar' => false,
+        'types' => false,
+        'teams' => false,
+        'impersonate' => [
+            'active' => false,
+            'redirect' => '/app',
+        ],
+    ],
+
+    /*
+    | Accounts Configurations
+    | |--------------------------------------------------------------------------
+    | login_by: Login By Phone or Email
+    */
+    'login_by' => 'email',
+
+    /*
+    | Accounts Configurations
+    | |--------------------------------------------------------------------------
+    | model: User Model Class
+    */
+    'model' => \TomatoPHP\FilamentAccounts\Models\Account::class,
 ];

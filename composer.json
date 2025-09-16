@@ -32,6 +32,7 @@
     "require": {
         "php": "^8.2",
         "bezhansalleh/filament-exceptions": "^2.1",
+        "bezhansalleh/filament-google-analytics": "^2.0",
         "bezhansalleh/filament-shield": "^3.2",
         "codeat3/blade-fluentui-system-icons": "^1.32",
         "datlechin/filament-menu-builder": "0.6.6",
@@ -41,6 +42,7 @@
         "filament/spatie-laravel-tags-plugin": "^3.2",
         "flowframe/laravel-trend": "^0.4.0",
         "guzzlehttp/guzzle": "^7.2",
+        "jeffersongoncalves/filament-pixel": "^1.0",
         "jeffgreco13/filament-breezy": "^2.2",
         "lab404/laravel-impersonate": "^1.7",
         "laravel/framework": "^11.9",
@@ -50,6 +52,8 @@
         "opcodesio/log-viewer": "^3.11",
         "riodwanto/filament-ace-editor": "^1.0",
         "stichoza/google-translate-php": "^5.2",
+        "tomatophp/filament-accounts": "^2.3",
+        "tomatophp/filament-invoices": "^1.0",
         "tomatophp/filament-media-manager": "^1.1",
         "z3d0x/filament-logger": "^0.7.2"
     },
