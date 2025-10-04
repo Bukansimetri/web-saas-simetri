@@ -1,248 +1,261 @@
-<header class="fixed z-50 w-full py-4 transition-all duration-300 bg-transparent md:py-6">
-    <div class="px-4 mx-auto container-default">
-        <div class="flex items-center justify-between gap-x-4 md:gap-x-8">
-            <!-- Header Logo -->
-            <a href="{{ route('home') }}" class="relative z-10 flex-shrink-0">
-                @php
-                    $brandLogo = $siteSettings->logo ?? null;
-                    $brandName = $generalSettings->brand_name ?? $siteSettings->name ?? config('app.name', 'SuperDuper');
-                @endphp
-
-                @if($brandLogo)
-                    <img src="{{ Storage::url($brandLogo) }}"
-                         alt="{{ $brandName }}"
-                         class="w-auto h-10 md:h-12"
-                    />
-                @else
-                    <div class="flex items-center">
-                        <span class="text-xl font-bold md:text-2xl text-primary-800 dark:text-white header-brand-text">{{ $brandName }}</span>
-                    </div>
-                @endif
-            </a>
-
-            <!-- Header Navigation -->
-            <div class="menu-block-wrapper lg:static">
-                <div class="fixed inset-0 z-40 menu-overlay bg-primary-900/70 backdrop-blur-sm lg:hidden" style="display: none;"></div>
-                <nav class="menu-block fixed top-0 right-0 bottom-0 w-[280px] text-secondary-600 md:w-[320px] bg-primary-600 dark:bg-primary-800 z-50 shadow-2xl overflow-y-auto transform translate-x-full transition-transform duration-300 lg:static lg:translate-x-0 lg:w-auto lg:bg-transparent lg:shadow-none lg:overflow-visible lg:dark:bg-transparent" id="append-menu-header">
-                    <!-- Mobile Menu Header -->
-                    <div class="flex items-center justify-between p-4 lg:hidden">
-                        <div class="flex items-center go-back text-primary-800 dark:text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                            </svg>
-                            <span>Back</span>
+<header class="site-header header-style-1">
+    <div class="pbmit-header-overlay">
+        <div class="pbmit-main-header-area">
+            <div class="container-fluid">
+                <div class="pbmit-header-content d-flex justify-content-between align-items-center">
+                    <div class="pbmit-logo-button-area d-flex justify-content-between align-items-center">
+                        <div class="site-branding">
+                            <h1 class="site-title">
+                                <a href="index.html">
+                                    <img class="logo-img" src="images/logo.svg" alt="Xinterio">
+                                </a>
+                            </h1>
+                            <div class="pbmit-sticky-corner pbmit-top-right-corner">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20 20V0C20 16 16 20 0 20H20Z" fill="red"></path>
+                                </svg>
+                            </div>
+                            <div class="pbmit-sticky-corner pbmit-bottom-left-corner">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20 20V0C20 12 12 20 0 20H20Z" fill="red"></path>
+                                </svg>
+                            </div>
                         </div>
-                        <div class="font-medium current-menu-title text-primary-800 dark:text-white"></div>
-                        <div class="text-2xl cursor-pointer mobile-menu-close text-primary-800 dark:text-white">&times;</div>
+                        <div class="pbmit-button-box">
+                            <div class="pbmit-header-button">
+                                <a href="tel:+1(212)%20255-511">
+                                    <span class="pbmit-header-button-text-1">+1(212) 255-511</span>
+                                    <span class="pbmit-header-button-text-2">tel:+1(212) 255-511</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-
-                    @php
-                        use Datlechin\FilamentMenuBuilder\Models\Menu;
-                        $menu = Menu::location('header');
-                    @endphp
-
-                    <ul class="p-4 text-lg site-menu-main lg:p-0 lg:flex lg:items-center lg:space-x-1">
-                        @if($menu)
-                            @foreach($menu->menuItems as $index => $item)
-                                @php
-                                    $hasChildren = count($item->children) > 0;
-                                    $menuId = 'submenu-' . ($index + 1);
-                                @endphp
-
-                                <li class="nav-item mb-3 lg:mb-0 lg:relative {{ $hasChildren ? 'nav-item-has-children' : '' }}">
-                                    <a href="{{ $item->url }}"
-                                       class="nav-link-item flex items-center justify-between hover:text-primary-600 dark:text-white dark:hover:text-primary-200 header-nav-link font-medium py-2 lg:px-3 !text-secondary-600 lg:hover:bg-primary-600 lg:dark:hover:bg-primary-700 transition-colors {{ $hasChildren ? 'drop-trigger' : '' }}"
-                                       @if($item->target) target="{{ $item->target }}" @endif>
-                                        <span>{{ $item->title }}</span>
-                                        @if($hasChildren)
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 lg:h-5 lg:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                            </svg>
-                                        @endif
-                                    </a>
-
-                                    @if($hasChildren)
-                                        <ul class="sub-menu pl-4 mt-2 lg:absolute lg:left-0 lg:top-full lg:mt-1 lg:pl-0 lg:min-w-[200px] lg:bg-white lg:dark:bg-primary-800 lg:shadow-lg lg:opacity-0 lg:invisible lg:transform lg:translate-y-2 lg:transition-all lg:group-hover:opacity-100 lg:group-hover:visible lg:group-hover:translate-y-0 lg:z-20" id="{{ $menuId }}">
-                                            @foreach($item->children as $childIndex => $childItem)
-                                                @php
-                                                    $hasGrandchildren = count($childItem->children) > 0;
-                                                    $submenuId = $menuId . '-' . ($childIndex + 1);
-                                                @endphp
-
-                                                <li class="sub-menu--item mb-2 lg:mb-0 {{ $hasGrandchildren ? 'nav-item-has-children' : '' }}">
-                                                    <a href="{{ $childItem->url }}"
-                                                       class="block px-3 py-2 transition-colors text-primary-800 hover:text-primary-600 dark:text-white dark:hover:text-primary-200 lg:text-primary-800 lg:hover:bg-primary-50 lg:dark:hover:bg-primary-700 lg:rounded"
-                                                       @if($hasGrandchildren) data-menu-get="h3" class="flex items-center justify-between drop-trigger" @endif
-                                                       @if($childItem->target) target="{{ $childItem->target }}" @endif>
-                                                        <span>{{ $childItem->title }}</span>
-                                                        @if($hasGrandchildren)
-                                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                                                            </svg>
-                                                        @endif
-                                                    </a>
-
-                                                    @if($hasGrandchildren)
-                                                        <ul class="sub-menu pl-4 mt-2 lg:absolute lg:left-full lg:top-0 lg:pl-0 lg:mt-0 lg:min-w-[200px] lg:bg-white lg:dark:bg-primary-800 lg:shadow-lg lg:opacity-0 lg:invisible lg:transform lg:translate-x-2 lg:transition-all lg:group-hover:opacity-100 lg:group-hover:visible lg:group-hover:translate-x-0" id="{{ $submenuId }}">
-                                                            @foreach($childItem->children as $grandchildItem)
-                                                                <li class="mb-2 sub-menu--item lg:mb-0">
-                                                                    <a href="{{ $grandchildItem->url }}"
-                                                                       class="block px-3 py-2 transition-colors text-primary-800 hover:text-primary-600 dark:text-white dark:hover:text-primary-200 lg:text-primary-800 lg:hover:bg-primary-50 lg:dark:hover:bg-primary-700 lg:rounded"
-                                                                       @if($grandchildItem->target) target="{{ $grandchildItem->target }}" @endif>
-                                                                        {{ $grandchildItem->title }}
-                                                                    </a>
-                                                                </li>
-                                                            @endforeach
-                                                        </ul>
-                                                    @endif
+                    <div class="site-navigation">
+                        <nav class="main-menu navbar-expand-xl navbar-light">
+                            <div class="navbar-header">
+                                <!-- Toggle Button -->
+                                <button class="navbar-toggler" type="button">
+                                    <i class="pbmit-base-icon-menu-1"></i>
+                                </button>
+                            </div>
+                            <div class="pbmit-mobile-menu-bg"></div>
+                            <div class="clearfix collapse navbar-collapse show" id="pbmit-menu">
+                                <div class="pbmit-menu-wrap">
+                                    <span class="closepanel">
+                                        <svg class="qodef-svg--close qodef-m" xmlns="http://www.w3.org/2000/svg" width="20.163" height="20.163" viewBox="0 0 26.163 26.163">
+                                            <rect width="36" height="1" transform="translate(0.707) rotate(45)"></rect>
+                                            <rect width="36" height="1" transform="translate(0 25.456) rotate(-45)"></rect>
+                                        </svg>
+                                    </span>
+                                    <ul class="clearfix navigation">
+                                        <li class="dropdown active">
+                                            <a href="index.html">Home</a>
+                                            <ul>
+                                                <li class="active"><a href="index.html">Homepage 01</a></li>
+                                                <li><a href="homepage-2.html">Homepage 02</a></li>
+                                                <li><a href="homepage-3.html">Homepage 03</a></li>
+                                                <li><a href="homepage-4.html">Homepage 04</a></li>
+                                                <li><a href="homepage-5.html">Homepage 05</a></li>
+                                                <li><a href="homepage-6.html">Homepage 06</a></li>
+                                                <li><a href="homepage-7.html">Homepage 07</a></li>
+                                                <li><a href="homepage-8.html">Homepage 08</a></li>
+                                                <li><a href="homepage-9.html">Homepage 09</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#">Pages</a>
+                                            <ul>
+                                                <li><a href="about-us.html">About Us</a></li>
+                                                <li><a href="our-history.html">Our History</a></li>
+                                                <li><a href="our-team.html">Our Team</a></li>
+                                                <li><a href="team-single-details.html">Team Single Details</a></li>
+                                                <li><a href="faq.html">Faq</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#">Services</a>
+                                            <ul>
+                                                <li><a href="service-details.html">Service Detail</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#">Portfolio</a>
+                                            <ul>
+                                                <li class="dropdown">
+                                                    <a href="#">Masonry View</a>
+                                                    <ul>
+                                                        <li><a href="portfolio-m-grid-col-2.html">Grid Col 2</a></li>
+                                                        <li><a href="portfolio-m-grid-col-3.html">Grid Col 3</a></li>
+                                                        <li><a href="portfolio-m-grid-col-4.html">Grid Col 4</a></li>
+                                                        <li><a href="portfolio-m-grid-col-wide.html">Grid Wide</a></li>
+                                                    </ul>
                                                 </li>
-                                            @endforeach
-                                        </ul>
-                                    @endif
-                                </li>
-                            @endforeach
-                        @endif
-
-                        <!-- Admin Panel Button for Mobile -->
-                        <li class="pt-4 mt-6 mb-4 nav-item lg:hidden">
-                            <a href="admin/login" class="block w-full">
-                                <div class="relative px-4 py-3 text-sm font-medium text-center text-black transition-all duration-300 rounded-md bg-secondary-600 hover:bg-secondary-700">
-                                    Admin Panel
+                                                <li class="dropdown">
+                                                    <a href="#">Grid View</a>
+                                                    <ul>
+                                                        <li><a href="portfolio-grid-col-2.html">Grid Col 2</a></li>
+                                                        <li><a href="portfolio-grid-col-3.html">Grid Col 3</a></li>
+                                                        <li><a href="portfolio-grid-col-4.html">Grid Col 4</a></li>
+                                                        <li><a href="portfolio-grid-no-gap.html">Grid No Gap</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown">
+                                                    <a href="#">Sortable View</a>
+                                                    <ul>
+                                                        <li><a href="portfolio-sortable-grid-col-2.html">Grid Col 2</a></li>
+                                                        <li><a href="portfolio-sortable-grid-col-3.html">Grid Col 3</a></li>
+                                                        <li><a href="portfolio-sortable-grid-col-4.html">Grid Col 4</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown">
+                                                    <a href="#">Single Detail Style</a>
+                                                    <ul>
+                                                        <li><a href="portfolio-detail-style-1.html">Portfolio Detail Style 1</a></li>
+                                                        <li><a href="portfolio-detail-style-2.html">Portfolio Detail Style 2</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#">Blogs</a>
+                                            <ul>
+                                                <li class="dropdown">
+                                                    <a href="#">Blog Masonry View</a>
+                                                    <ul>
+                                                        <li><a href="blog-m-grid-col-2.html">Grid Col 2</a></li>
+                                                        <li><a href="blog-m-grid-col-3.html">Grid Col 3</a></li>
+                                                        <li><a href="blog-m-grid-col-4.html">Grid Col 4</a></li>
+                                                        <li><a href="blog-masonry-wide.html">Masonry Wide</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown">
+                                                    <a href="#">Blog Grid View</a>
+                                                    <ul>
+                                                        <li><a href="blog-grid-col-2.html">Grid Col 2</a></li>
+                                                        <li><a href="blog-grid-col-3.html">Grid Col 3</a></li>
+                                                        <li><a href="blog-grid-col-4.html">Grid Col 4</a></li>
+                                                        <li><a href="blog-sortable-grid-view.html">Sortable Grid View</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="blog-classic.html">Blog Classic</a></li>
+                                                <li><a href="blog-single-details.html">Blog Single Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact-us.html">Contact Us</a></li>
+                                    </ul>
                                 </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="pbmit-right-box d-flex align-items-center">
+                        <div class="pbmit-header-search-btn">
+                            <a href="#" title="Search">
+                                <i class="pbmit-base-icon-search-1"></i>
                             </a>
-                        </li>
-                    </ul>
-                </nav>
+                        </div>
+                        <div class="pbmit-button-box-second">
+                            <a class="pbmit-btn" href="contact-us.html">
+                                <span class="pbmit-button-content-wrapper">
+                                    <span class="pbmit-button-text">Book Consult</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <!-- Header Event - Admin Panel Button for Desktop -->
-            <div class="flex items-center gap-4 md:gap-6">
-                <a href="admin/login" class="relative z-10 hidden sm:inline-block group">
-                    <div class="px-4 py-2 text-sm font-medium transition-all duration-300 btn md:text-base bg-secondary-600 hover:bg-secondary-700">Admin Panel</div>
-                    <div class="absolute inset-0 -z-10 translate-x-[3px] translate-y-[3px] bg-primary-700 transition-all duration-300 ease-linear group-hover:translate-x-0 group-hover:translate-y-0"></div>
-                </a>
-
-                <div class="block lg:hidden">
-                    <button id="openBtn" class="flex flex-col items-center justify-center w-10 h-10 rounded-md hamburger-menu mobile-menu-trigger focus:outline-none focus:ring-2 focus:ring-primary-600">
-                        <span class="block w-6 h-0.5 bg-white dark:bg-white mb-1.5 transition-transform hamburger-line"></span>
-                        <span class="block w-6 h-0.5 bg-white dark:bg-white mb-1.5 transition-opacity hamburger-line"></span>
-                        <span class="block w-6 h-0.5 bg-white dark:bg-white transition-transform hamburger-line"></span>
-                    </button>
+        </div>
+    </div>
+    <div class="pbmit-slider-area pbmit-slider-one">
+        <div class="swiper-slider" data-autoplay="true" data-loop="true" data-dots="true" data-arrows="false" data-columns="1" data-margin="0" data-effect="fade">
+            <div class="swiper-wrapper">
+                <!-- Slide1 -->
+                <div class="swiper-slide">
+                    <div class="pbmit-slider-item">
+                        <div class="pbmit-slider-bg" style="background-image: url(images/banner-slider-img/demo1-slide-01.jpg);"></div>
+                        <div class="container">
+                            <div class="text-center row">
+                                <div class="col-md-12">
+                                    <div class="pbmit-slider-content">
+                                        <h5 class="pbmit-sub-title transform-top transform-delay-1">barcelona,spain</h5>
+                                        <h2 class="pbmit-title transform-bottom-1 transform-delay-2">
+                                            Clamp Guard 52 <br> Luxurious Apartments
+                                        </h2>
+                                        <div class="pbmit-button-wrap transform-bottom-1 transform-delay-3">
+                                            <a class="pbmit-btn pbmit-btn-outline" href="contact-us.html">
+                                                <span class="pbmit-button-content-wrapper">
+                                                    <span class="pbmit-button-text">Appeal To</span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide2 -->
+                <div class="swiper-slide">
+                    <div class="pbmit-slider-item">
+                        <div class="pbmit-slider-bg" style="background-image: url(images/banner-slider-img/demo1-slide-02.jpg);"></div>
+                        <div class="container">
+                            <div class="text-center row">
+                                <div class="col-md-12">
+                                    <div class="pbmit-slider-content">
+                                        <h5 class="pbmit-sub-title transform-top transform-delay-1">Xinterio features</h5>
+                                        <h2 class="pbmit-title transform-bottom-1 transform-delay-2">
+                                            Design Spaces To <br> Make Wonderful Living
+                                        </h2>
+                                        <div class="pbmit-button-wrap transform-bottom-1 transform-delay-3">
+                                            <a class="pbmit-btn pbmit-btn-outline" href="contact-us.html">
+                                                <span class="pbmit-button-content-wrapper">
+                                                    <span class="pbmit-button-text">Take Counsel</span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide3 -->
+                <div class="swiper-slide">
+                    <div class="pbmit-slider-item">
+                        <div class="pbmit-slider-bg" style="background-image: url(images/banner-slider-img/demo1-slide-03.jpg);"></div>
+                        <div class="container">
+                            <div class="text-center row">
+                                <div class="col-md-12">
+                                    <div class="pbmit-slider-content">
+                                        <h5 class="pbmit-sub-title transform-top transform-delay-1">Design Business</h5>
+                                        <h2 class="pbmit-title transform-bottom-1 transform-delay-2">
+                                            What are the steps <br> to remodelling a house?
+                                        </h2>
+                                        <div class="pbmit-button-wrap transform-bottom-1 transform-delay-3">
+                                            <a class="pbmit-btn pbmit-btn-outline" href="contact-us.html">
+                                                <span class="pbmit-button-content-wrapper">
+                                                    <span class="pbmit-button-text">Take Counsel</span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pbmit-slider-dots-corner">
+                <div class="pbmit-sticky-corner pbmit-top-right-corner">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="" xmlns="http://www.w3.org/2000/svg" data-stylerecorder="true">
+                        <path d="M20 20V0C20 16 16 20 0 20H20Z" fill="red" data-stylerecorder="true"></path>
+                    </svg>
+                </div>
+                <div class="pbmit-sticky-corner pbmit-bottom-left-corner">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="" xmlns="http://www.w3.org/2000/svg" data-stylerecorder="true">
+                        <path d="M20 20V0C20 16 16 20 0 20H20Z" fill="red" data-stylerecorder="true"></path>
+                    </svg>
                 </div>
             </div>
         </div>
     </div>
 </header>
-
-@push('js')
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const menuTrigger = document.querySelector('.mobile-menu-trigger');
-    const menuOverlay = document.querySelector('.menu-overlay');
-    const menuBlock = document.querySelector('.menu-block');
-    const menuClose = document.querySelector('.mobile-menu-close');
-    const dropTriggers = document.querySelectorAll('.drop-trigger');
-    const goBack = document.querySelector('.go-back');
-    const currentMenuTitle = document.querySelector('.current-menu-title');
-    const header = document.querySelector('header');
-
-    // Improved menu toggle function
-    function toggleMenu() {
-        menuBlock.classList.toggle('translate-x-full');
-        document.body.classList.toggle('overflow-hidden');
-        menuOverlay.style.display = menuBlock.classList.contains('translate-x-full') ? 'none' : 'block';
-
-        // Animate hamburger to X
-        const spans = menuTrigger.querySelectorAll('span');
-        if (!menuBlock.classList.contains('translate-x-full')) {
-            spans[0].classList.add('rotate-45', 'translate-y-2');
-            spans[1].classList.add('opacity-0');
-            spans[2].classList.add('-rotate-45', '-translate-y-2');
-        } else {
-            spans[0].classList.remove('rotate-45', 'translate-y-2');
-            spans[1].classList.remove('opacity-0');
-            spans[2].classList.remove('-rotate-45', '-translate-y-2');
-        }
-    }
-
-    menuTrigger.addEventListener('click', toggleMenu);
-    menuOverlay.addEventListener('click', toggleMenu);
-    menuClose.addEventListener('click', toggleMenu);
-
-    // Handle scroll for header background
-    function handleScroll() {
-        if (window.scrollY > 25) {
-            header.classList.add('header-scrolled');
-        } else {
-            header.classList.remove('header-scrolled');
-        }
-    }
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-
-    function setupMobileMenu() {
-        if (window.innerWidth < 1024) {
-            // Reset any previously opened submenus
-            document.querySelectorAll('.sub-menu').forEach(menu => {
-                menu.style.display = 'none';
-            });
-
-            document.querySelector('.site-menu-main').style.display = 'block';
-
-            if (goBack) goBack.style.display = 'none';
-
-            dropTriggers.forEach(trigger => {
-                trigger.addEventListener('click', function(e) {
-                    if (window.innerWidth < 1024) {
-                        e.preventDefault();
-                        const parent = this.parentElement;
-                        const submenu = parent.querySelector('.sub-menu');
-                        const title = this.querySelector('span').textContent;
-
-                        if (submenu) {
-                            const siblingMenus = parent.parentElement.querySelectorAll('.sub-menu');
-                            siblingMenus.forEach(menu => {
-                                if (menu !== submenu) menu.style.display = 'none';
-                            });
-
-                            submenu.style.display = 'block';
-                            currentMenuTitle.textContent = title;
-                            parent.parentElement.style.display = 'none';
-                            goBack.style.display = 'flex';
-                        }
-                    }
-                });
-            });
-
-            // Back button functionality
-            goBack.addEventListener('click', function() {
-                const activeSubmenu = document.querySelector('.sub-menu[style="display: block;"]');
-                if (activeSubmenu) {
-                    activeSubmenu.style.display = 'none';
-                    activeSubmenu.parentElement.parentElement.style.display = 'block';
-
-                    if (activeSubmenu.parentElement.parentElement.classList.contains('site-menu-main')) {
-                        currentMenuTitle.textContent = '';
-                        this.style.display = 'none';
-                    } else {
-                        const parentTrigger = activeSubmenu.parentElement.parentElement.previousElementSibling;
-                        if (parentTrigger && parentTrigger.classList.contains('drop-trigger')) {
-                            currentMenuTitle.textContent = parentTrigger.querySelector('span').textContent;
-                        }
-                    }
-                }
-            });
-        }
-    }
-
-    // Initial setup
-    setupMobileMenu();
-
-    // Re-setup on resize
-    window.addEventListener('resize', function() {
-        setupMobileMenu();
-    });
-});
-</script>
-@endpush
