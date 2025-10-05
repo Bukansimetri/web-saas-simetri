@@ -212,24 +212,24 @@
         <!--  structured data (JSON-LD) -->
         <script type="application/ld+json">
             {
-            "@context": "https://schema.org",
-            "@type": "{{ $seoSettings->schema_type ?? '' }}",
-            "name": "{{ $seoSettings->schema_name ?? $siteName }}",
-            "url": "{{ url('/') }}",
-            "logo": "{{ $seoSettings->schema_logo ?? ($brandLogo ? Storage::url($brandLogo) : asset('superduper/img/favicon.png')) }}",
-            "description": "{{ $seoSettings->schema_description ?? $siteSettings->description ?? 'SuperDuper Starter Kit provides everything you need to jumpstart your web project with pre-built components, layouts, and tools that enhance development efficiency and productivity.' }}",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "{{ explode(',', $siteSettings->company_address)[0] ?? '' }}",
-                "addressRegion": "{{ explode(',', $siteSettings->company_address)[1] ?? '' }}",
-                "addressCountry": "{{ explode(',', $siteSettings->company_address)[2] ?? 'ID' }}"
-            },
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "{{ $siteSettings->company_phone ?? '' }}",
-                "contactType": "customer service",
-                "email": "{{ $siteSettings->company_email ?? '' }}"
-            }
+                "@context": "https://schema.org",
+                "@type": "{{ $seoSettings->schema_type ?? '' }}",
+                "name": "{{ $seoSettings->schema_name ?? $siteName }}",
+                "url": "{{ url('/') }}",
+                "logo": "{{ $seoSettings->schema_logo ?? ($brandLogo ? Storage::url($brandLogo) : asset('superduper/img/favicon.png')) }}",
+                "description": "{{ $seoSettings->schema_description ?? $siteSettings->description ?? 'SuperDuper Starter Kit provides everything you need to jumpstart your web project with pre-built components, layouts, and tools that enhance development efficiency and productivity.' }}",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "{{ explode(',', $siteSettings->company_address)[0] ?? '' }}",
+                    "addressRegion": "{{ explode(',', $siteSettings->company_address)[1] ?? '' }}",
+                    "addressCountry": "{{ explode(',', $siteSettings->company_address)[2] ?? 'ID' }}"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "{{ $siteSettings->company_phone ?? '' }}",
+                    "contactType": "customer service",
+                    "email": "{{ $siteSettings->company_email ?? '' }}"
+                }
             }
         </script>
 
@@ -261,24 +261,23 @@
                 <!-- footer -->
                 <x-superduper.footer />
                 <!-- footer End -->
-
-                <!-- Cookie Consent -->
-                @if(isset($scriptSettings->cookie_consent_enabled) && $scriptSettings->cookie_consent_enabled)
-                    <div class="cookie-consent js-cookie-consent" style="display: none;">
-                        <div class="container">
-                            <span class="cookie-consent__message">
-                                {!! $scriptSettings->cookie_consent_text ?? 'We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.' !!}
-                                @if(isset($scriptSettings->cookie_consent_policy_url) && $scriptSettings->cookie_consent_policy_url)
-                                    <a href="{{ $scriptSettings->cookie_consent_policy_url }}">Learn more</a>
-                                @endif
-                            </span>
-                            <button class="cookie-consent__agree">
-                                {{ $scriptSettings->cookie_consent_button_text ?? 'Accept' }}
-                            </button>
-                        </div>
-                    </div>
-                @endif
             </div>
+            <!-- Cookie Consent -->
+            @if(isset($scriptSettings->cookie_consent_enabled) && $scriptSettings->cookie_consent_enabled)
+                <div class="cookie-consent js-cookie-consent" style="display: none;">
+                    <div class="container">
+                        <span class="cookie-consent__message">
+                            {!! $scriptSettings->cookie_consent_text ?? 'We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.' !!}
+                            @if(isset($scriptSettings->cookie_consent_policy_url) && $scriptSettings->cookie_consent_policy_url)
+                                <a href="{{ $scriptSettings->cookie_consent_policy_url }}">Learn more</a>
+                            @endif
+                        </span>
+                        <button class="cookie-consent__agree">
+                            {{ $scriptSettings->cookie_consent_button_text ?? 'Accept' }}
+                        </button>
+                    </div>
+                </div>
+            @endif
         @endif
 
         <x-superduper.searchbar />
@@ -290,27 +289,6 @@
             </svg>
         </div>
         <!-- Scroll To Top End -->
-
-        @livewireScripts
-
-        <!-- Custom JS -->
-        @if(isset($scriptSettings->custom_js))
-            <script>
-                {!! $scriptSettings->custom_js !!}
-            </script>
-        @endif
-
-        <!-- Footer scripts -->
-        @if(isset($scriptSettings->footer_scripts))
-            {!! $scriptSettings->footer_scripts !!}
-        @endif
-
-        <!-- Body end scripts -->
-        @if(isset($scriptSettings->body_end_scripts))
-            {!! $scriptSettings->body_end_scripts !!}
-        @endif
-
-        @stack('js')
 
         <!-- JS ============================================ -->
         <!-- jQuery JS -->
@@ -356,5 +334,25 @@
         <!-- Scripts JS -->
         <script src="{{ asset('assets/js/scripts.js') }}"></script>
 
+        @livewireScripts
+
+        <!-- Custom JS -->
+        @if(isset($scriptSettings->custom_js))
+            <script>
+                {!! $scriptSettings->custom_js !!}
+            </script>
+        @endif
+
+        <!-- Footer scripts -->
+        @if(isset($scriptSettings->footer_scripts))
+            {!! $scriptSettings->footer_scripts !!}
+        @endif
+
+        <!-- Body end scripts -->
+        @if(isset($scriptSettings->body_end_scripts))
+            {!! $scriptSettings->body_end_scripts !!}
+        @endif
+
+        @stack('js')
    </body>
 </html>
