@@ -1,7 +1,11 @@
 <?php
 
-use App\Livewire\SuperDuper\BlogList;
+use App\Livewire\Simetri\AboutUs;
+use App\Livewire\Simetri\PortfolioDetail;
+use App\Livewire\Simetri\PortfolioList;
+use App\Livewire\Simetri\Service;
 use App\Livewire\SuperDuper\BlogDetails;
+use App\Livewire\SuperDuper\BlogList;
 use App\Livewire\SuperDuper\Pages\ContactUs;
 use Illuminate\Support\Facades\Route;
 use Lab404\Impersonate\Services\ImpersonateManager;
@@ -27,6 +31,14 @@ Route::get('/blog/{slug}', BlogDetails::class)->name('blog.show');
 
 Route::get('/contact-us', ContactUs::class)->name('contact-us');
 
+Route::get('/about-us', AboutUs::class)->name('about-us');
+
+Route::get('/services', Service::class)->name('services');
+
+Route::get('/portfolio', PortfolioList::class)->name('portfolio');
+
+Route::get('/portfolio/{slug}', PortfolioDetail::class)->name('portfolio.show');
+
 Route::get('/privacy-policy', function () {
     return view('components.superduper.pages.coming-soon', ['page_type' => 'privacy']);
 })->name('privacy-policy');
@@ -43,12 +55,12 @@ Route::post('/contact', [App\Http\Controllers\ContactController::class, 'submit'
     ->name('contact.submit');
 
 // TODO: Create actual blog preview component
-Route::post('/blog-preview', function() {
+Route::post('/blog-preview', function () {
     // Implementation pending
 })->name('blog.preview');
 
-Route::get('impersonate/leave', function() {
-    if(!app(ImpersonateManager::class)->isImpersonating()) {
+Route::get('impersonate/leave', function () {
+    if (! app(ImpersonateManager::class)->isImpersonating()) {
         return redirect('/');
     }
 
@@ -58,4 +70,3 @@ Route::get('impersonate/leave', function() {
         session()->pull('impersonate.back_to')
     );
 })->name('impersonate.leave')->middleware('web');
-
