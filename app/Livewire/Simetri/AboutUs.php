@@ -2,8 +2,8 @@
 
 namespace App\Livewire\Simetri;
 
+use App\Models\Service;
 use App\Models\SiteFeature;
-use Illuminate\Support\Facades\App;
 use Livewire\Component;
 
 class AboutUs extends Component
@@ -22,8 +22,7 @@ class AboutUs extends Component
 
     public function render()
     {
-        $query = SiteFeature::query()
-            ->locale(App::getLocale());
+        $query = SiteFeature::query();
 
         $sectiontop = $query->where('type', 'about-section-top')
             ->orderBy($this->sortField, $this->sortDirection)

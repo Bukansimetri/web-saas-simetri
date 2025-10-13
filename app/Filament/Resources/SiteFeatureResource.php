@@ -46,6 +46,8 @@ class SiteFeatureResource extends Resource
                                         Forms\Components\Select::make('type')
                                             ->options([
                                                 'home-section-top' => 'Home Section Top',
+                                                'home-section-top-one' => 'Home Section Top One',
+                                                'home-section-top-two' => 'Home Section Top Two',
                                                 'home-section-middle' => 'Home Section Middle',
                                                 'home-section-bottom' => 'Home Section Bottom',
                                                 'about-section-top' => 'About Us Section Top',
