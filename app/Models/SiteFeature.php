@@ -109,7 +109,7 @@ class SiteFeature extends Model implements HasMedia
      */
     public function getImageUrl(string $conversion = ''): ?string
     {
-        $media = $this->getFirstMedia('site_features');
+        $media = $this->getFirstMedia('sitefeatures');
 
         if (! $media) {
             return null;
@@ -123,7 +123,7 @@ class SiteFeature extends Model implements HasMedia
      */
     public function hasImage(): bool
     {
-        return $this->hasMedia('site_features');
+        return $this->hasMedia('sitefeatures');
     }
 
     /**
@@ -131,6 +131,6 @@ class SiteFeature extends Model implements HasMedia
      */
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('site_features')->singleFile();
+        $this->addMediaCollection('sitefeatures')->singleFile();
     }
 }

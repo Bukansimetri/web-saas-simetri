@@ -3,7 +3,7 @@
 use App\Livewire\Simetri\AboutUs;
 use App\Livewire\Simetri\PortfolioDetail;
 use App\Livewire\Simetri\PortfolioList;
-use App\Livewire\Simetri\Service;
+use App\Livewire\Simetri\ServiceList;
 use App\Livewire\SuperDuper\BlogDetails;
 use App\Livewire\SuperDuper\BlogList;
 use App\Livewire\SuperDuper\Pages\ContactUs;
@@ -33,11 +33,11 @@ Route::get('/contact-us', ContactUs::class)->name('contact-us');
 
 Route::get('/about-us', AboutUs::class)->name('about-us');
 
-Route::get('/services', Service::class)->name('services');
+Route::get('/services', ServiceList::class)->name('services');
 
 Route::get('/portfolio', PortfolioList::class)->name('portfolio');
 
-Route::get('/portfolio/{slug}', PortfolioDetail::class)->name('portfolio.show');
+Route::get('/portfolio/{title}', PortfolioDetail::class)->name('portfolio.show');
 
 Route::get('/privacy-policy', function () {
     return view('components.superduper.pages.coming-soon', ['page_type' => 'privacy']);

@@ -128,4 +128,14 @@ class Project extends Model implements HasMedia
         $this->addMediaCollection('projects')
             ->singleFile();
     }
+
+    /**
+     * Get post URL using slug
+     *
+     * @return string
+     */
+    public function getUrl()
+    {
+        return route('portfolio.show', ['title' => $this->title]);
+    }
 }

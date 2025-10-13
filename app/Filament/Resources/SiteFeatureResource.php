@@ -5,9 +5,11 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\SiteFeatureResource\Pages;
 use App\Models\SiteFeature;
 use Filament\Forms;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Tables\Table;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Database\Eloquent\Builder;
@@ -43,8 +45,19 @@ class SiteFeatureResource extends Resource
                                             ->columnSpan(2),
                                         Forms\Components\Select::make('type')
                                             ->options([
-                                                'Why Choose Us' => 'Why Choose Us',
-                                                'How Organization Work' => 'How Organization Work',
+                                                'home-section-top' => 'Home Section Top',
+                                                'home-section-middle' => 'Home Section Middle',
+                                                'home-section-bottom' => 'Home Section Bottom',
+                                                'about-section-top' => 'About Us Section Top',
+                                                'about-section-middle' => 'About Us Section Middle',
+                                                'about-section-bottom' => 'About Us Section Bottom',
+                                                'portfolio-section-top' => 'Portfolio Section Top',
+                                                'portfolio-section-middle' => 'Portfolio Section Middle',
+                                                'portfolio-section-bottom' => 'Portfolio Section Bottom',
+                                                'service-section-top' => 'Service Section Top',
+                                                'service-section-middle' => 'Service Section Middle',
+                                                'service-section-bottom' => 'Service Section Bottom',
+
                                             ])
                                             ->columnSpan(2)
                                             ->required(),
@@ -74,6 +87,27 @@ class SiteFeatureResource extends Resource
                                     ->compact()
                                     ->columns(2),
                             ]),
+                        Forms\Components\Tabs\Tab::make('Section Image')
+                            ->icon('heroicon-o-photo')
+                            ->schema([
+                                Forms\Components\Section::make('Image')
+                                    ->description('Upload section image here')
+                                    ->schema([
+                                        SpatieMediaLibraryFileUpload::make('sitefeatures')
+                                            ->collection('sitefeatures')
+                                            ->multiple(false)
+                                            ->maxFiles(1)
+                                            ->imagePreviewHeight('250')
+                                            ->panelLayout('compact')
+                                            ->imageResizeMode('cover')
+                                            ->imageResizeTargetWidth('1200')
+                                            ->imageResizeTargetHeight('800')
+                                            ->acceptedFileTypes(['image/*'])
+                                            ->helperText('Upload a service image. Recommended size: 1200px ++')
+                                            ->columnSpanFull(),
+                                    ])
+                                    ->compact(),
+                            ]),
                     ])
                     ->columnSpanFull(),
             ]);
@@ -83,6 +117,13 @@ class SiteFeatureResource extends Resource
     {
         return $table
             ->columns([
+                SpatieMediaLibraryImageColumn::make('sitefeatures')
+                    ->label('Image')
+                    ->collection('siteqfeatures')
+                    ->conversion('thumbnail')
+                    ->size(60)
+                    ->circular(false)
+                    ->alignCenter(),
                 Tables\Columns\TextColumn::make('title')
                     ->badge()
                     ->searchable()
@@ -113,6 +154,11 @@ class SiteFeatureResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make()->hiddenLabel()->tooltip('View'),
                 Tables\Actions\EditAction::make()->hiddenLabel()->tooltip('Edit'),
+                Tables\Actions\Action::make('preview')
+                    ->label('Preview Image')
+                    ->icon('heroicon-m-eye')
+                    ->url(fn (Service $record) => $record->getImageUrl('large'))
+                    ->openUrlInNewTab(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

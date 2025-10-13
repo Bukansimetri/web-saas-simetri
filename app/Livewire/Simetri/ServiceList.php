@@ -2,11 +2,10 @@
 
 namespace App\Livewire\Simetri;
 
-use App\Models\Project;
 use Illuminate\Support\Facades\App;
 use Livewire\Component;
 
-class PortfolioList extends Component
+class ServiceList extends Component
 {
     public $search = '';
 
@@ -25,12 +24,12 @@ class PortfolioList extends Component
         $query = Project::query()
             ->locale(App::getLocale());
 
-        $projects = $query->where('is_active', true)
+        $services = $query->where('is_active', true)
             ->orderBy($this->sortField, $this->sortDirection)
             ->get();
 
-        return view('livewire.simetri.portfolio-list', [
-            'projects' => $projects,
+        return view('livewire.simetri.service-list', [
+            'services' => $services,
         ])->layout('components.superduper.main');
     }
 }

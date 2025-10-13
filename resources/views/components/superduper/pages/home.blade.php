@@ -8,85 +8,89 @@
             ->with(['media'])
             ->take(5)
             ->get();
+
+        $services =  \App\Models\Service::where('is_active', true)
+            ->orderBy('sort')
+            ->with(['media'])
+            ->take(6)
+            ->get();
+
+        $portfolios = \App\Models\Project::where('is_active', true)
+            ->orderBy('sort')
+            ->with(['media'])
+            ->take(6)
+            ->get();
+
+        $blogs = \App\Models\Blog\Post::where('is_featured', false)
+            ->orderBy('published_at', 'desc')
+            ->with(['media', 'author'])
+            ->take(3)
+            ->get();
+
+        $featureBlog = \App\Models\Blog\Post::where('is_featured', true)
+            ->orderBy('published_at', 'desc')
+            ->with(['media', 'author'])
+            ->first();
+
+        $testimonials = \App\Models\Testimonial::where('is_active', true)
+            ->orderBy('created_at', 'desc')
+            ->with(['media'])
+            ->take(5)
+            ->get();
+
+        $baseQuery = \App\Models\Testimonial::where('is_active', true);
+        $averageRating = number_format((clone $baseQuery)->avg('rating'), 1);
+        $totalRatings = (clone $baseQuery)->count();
+
+        $packages = \App\Models\Package::where('is_active', true)
+            ->orderBy('created_at', 'desc')
+            ->take(3)
+            ->get();
+
+        $clients = \App\Models\Client::where('is_active', true)
+            ->orderBy('created_at', 'desc')
+            ->with(['media'])
+            ->take(6)
+            ->get();
     @endphp
     <div class="pbmit-slider-area pbmit-slider-one">
         <div class="swiper-slider" data-autoplay="true" data-loop="true" data-dots="true" data-arrows="false" data-columns="1" data-margin="0" data-effect="fade">
             <div class="swiper-wrapper">
-                <!-- Slide1 -->
-                <div class="swiper-slide">
-                    <div class="pbmit-slider-item">
-                        <div class="pbmit-slider-bg" style="background-image: url(images/banner-slider-img/demo1-slide-01.jpg);"></div>
-                        <div class="container">
-                            <div class="text-center row">
-                                <div class="col-md-12">
-                                    <div class="pbmit-slider-content">
-                                        <h5 class="pbmit-sub-title transform-top transform-delay-1">barcelona,spain</h5>
-                                        <h2 class="pbmit-title transform-bottom-1 transform-delay-2">
-                                            Clamp Guard 52 <br> Luxurious Apartments
-                                        </h2>
-                                        <div class="pbmit-button-wrap transform-bottom-1 transform-delay-3">
-                                            <a class="pbmit-btn pbmit-btn-outline" href="contact-us.html">
-                                                <span class="pbmit-button-content-wrapper">
-                                                    <span class="pbmit-button-text">Appeal To</span>
-                                                </span>
-                                            </a>
+                <!-- Slider -->
+                @if ($heroBanners->isNotEmpty())
+                    @foreach ($heroBanners as $banner)
+                        <div class="swiper-slide">
+                            <div class="pbmit-slider-item">
+                                @if ($banner->hasImage())
+                                    <div class="pbmit-slider-bg" style="background-image: url('{{ $banner->getImageUrl('large') }}');"></div>
+                                @else
+                                    <div class="pbmit-slider-bg" style="background-image: url('https://placehold.co/1920x1080');"></div>
+                                @endif
+                                <div class="container">
+                                    <div class="text-center row">
+                                        <div class="col-md-12">
+                                            <div class="pbmit-slider-content">
+                                                <h5 class="pbmit-sub-title transform-top transform-delay-1">{!! nl2br(e($banner->description)) !!}</h5>
+                                                <h2 class="pbmit-title transform-bottom-1 transform-delay-2">
+                                                   {{ $banner->title }}
+                                                </h2>
+                                                <div class="pbmit-button-wrap transform-bottom-1 transform-delay-3">
+                                                    @if($banner->click_url)
+                                                        <a class="pbmit-btn pbmit-btn-outline" href="{{ $banner->click_url }}" target="{{ $banner->click_url_target ?? '_self' }}" onclick="trackBannerClick('{{ $banner->id }}')">
+                                                            <span class="pbmit-button-content-wrapper">
+                                                                <span class="pbmit-button-text">{{ $banner->options['button_text'] ?? 'Learn More' }}</span>
+                                                            </span>
+                                                        </a>
+                                                    @endif
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!-- Slide2 -->
-                <div class="swiper-slide">
-                    <div class="pbmit-slider-item">
-                        <div class="pbmit-slider-bg" style="background-image: url(images/banner-slider-img/demo1-slide-02.jpg);"></div>
-                        <div class="container">
-                            <div class="text-center row">
-                                <div class="col-md-12">
-                                    <div class="pbmit-slider-content">
-                                        <h5 class="pbmit-sub-title transform-top transform-delay-1">Xinterio features</h5>
-                                        <h2 class="pbmit-title transform-bottom-1 transform-delay-2">
-                                            Design Spaces To <br> Make Wonderful Living
-                                        </h2>
-                                        <div class="pbmit-button-wrap transform-bottom-1 transform-delay-3">
-                                            <a class="pbmit-btn pbmit-btn-outline" href="contact-us.html">
-                                                <span class="pbmit-button-content-wrapper">
-                                                    <span class="pbmit-button-text">Take Counsel</span>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Slide3 -->
-                <div class="swiper-slide">
-                    <div class="pbmit-slider-item">
-                        <div class="pbmit-slider-bg" style="background-image: url(images/banner-slider-img/demo1-slide-03.jpg);"></div>
-                        <div class="container">
-                            <div class="text-center row">
-                                <div class="col-md-12">
-                                    <div class="pbmit-slider-content">
-                                        <h5 class="pbmit-sub-title transform-top transform-delay-1">Design Business</h5>
-                                        <h2 class="pbmit-title transform-bottom-1 transform-delay-2">
-                                            What are the steps <br> to remodelling a house?
-                                        </h2>
-                                        <div class="pbmit-button-wrap transform-bottom-1 transform-delay-3">
-                                            <a class="pbmit-btn pbmit-btn-outline" href="contact-us.html">
-                                                <span class="pbmit-button-content-wrapper">
-                                                    <span class="pbmit-button-text">Take Counsel</span>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @endif
             </div>
             <div class="pbmit-slider-dots-corner">
                 <div class="pbmit-sticky-corner pbmit-top-right-corner">
@@ -350,171 +354,143 @@
                 </div>
                 <div class="swiper-slider" data-autoplay="false" data-loop="true" data-dots="false" data-arrows="false" data-columns="3" data-margin="30" data-effect="slide">
                     <div class="swiper-wrapper">
-                        <!-- Slide1 -->
-                        <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
-                            <div class="pbminfotech-post-item">
-                                <div class="pbminfotech-box-content">
-                                    <div class="pbmit-service-image-wrapper">
-                                        <div class="pbmit-featured-img-wrapper">
-                                            <div class="pbmit-featured-wrapper">
-                                                <img src="{{ asset('assets/images/homepage-1/service/service-01.jpg') }}" class="img-fluid" alt="service-01">
+                        @if ($services->isNotEmpty())
+                            @foreach ($services as $service)
+                                <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
+                                    <div class="pbminfotech-post-item">
+                                        <div class="pbminfotech-box-content">
+                                            <div class="pbmit-service-image-wrapper">
+                                                <div class="pbmit-featured-img-wrapper">
+                                                    <div class="pbmit-featured-wrapper">
+                                                        @if ($service->hasImage())
+                                                            <img src="{{ $service->getImageUrl('medium') }}" class="img-fluid" alt="{{ $service->title }}">
+                                                        @else
+                                                            <img src="{{ asset('assets/images/homepage-1/service/service-01.jpg') }}" class="img-fluid" alt="service-01">
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pbmit-service-icon elementor-icon">
+                                                <i class=""></i>
+                                            </div>
+                                            <div class="pbmit-content-box">
+                                                <h3 class="pbmit-service-title">
+                                                    <a href="service-details.html">{{ $service->title }}</a>
+                                                </h3>
+                                                <div class="pbmit-service-description">
+                                                    <p>{{ $service->short_description }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="pbmit-service-btn" href="{{ $service->click_url }}" target="{{ $service->click_target }}" title="{{ $service->title }}">
+                                            <span class="pbmit-button-icon">
+                                                <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </article>
+                            @endforeach
+                        @else
+                            <!-- Slide1 -->
+                            <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
+                                <div class="pbminfotech-post-item">
+                                    <div class="pbminfotech-box-content">
+                                        <div class="pbmit-service-image-wrapper">
+                                            <div class="pbmit-featured-img-wrapper">
+                                                <div class="pbmit-featured-wrapper">
+                                                    <img src="{{ asset('assets/images/homepage-1/service/service-01.jpg') }}" class="img-fluid" alt="service-01">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pbmit-service-icon elementor-icon">
+                                            <i class=""></i>
+                                        </div>
+                                        <div class="pbmit-content-box">
+                                            <div class="pbmit-serv-cat">
+                                                <a href="#" rel="tag">Kitchen</a>
+                                            </div>
+                                            <h3 class="pbmit-service-title">
+                                                <a href="service-details.html">Transforming Rooms</a>
+                                            </h3>
+                                            <div class="pbmit-service-description">
+                                                <p>The interior professional worker’s available in the xinterio</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="pbmit-service-icon elementor-icon">
-                                        <i class=""></i>
-                                    </div>
-                                    <div class="pbmit-content-box">
-                                        <div class="pbmit-serv-cat">
-                                            <a href="#" rel="tag">Kitchen</a>
-                                        </div>
-                                        <h3 class="pbmit-service-title">
-                                            <a href="service-details.html">Transforming Rooms</a>
-                                        </h3>
-                                        <div class="pbmit-service-description">
-                                            <p>The interior professional worker’s available in the xinterio</p>
-                                        </div>
-                                    </div>
+                                    <a class="pbmit-service-btn" href="service-details.html" title="Transforming Rooms">
+                                        <span class="pbmit-button-icon">
+                                            <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                                        </span>
+                                    </a>
                                 </div>
-                                <a class="pbmit-service-btn" href="service-details.html" title="Transforming Rooms">
-                                    <span class="pbmit-button-icon">
-                                        <i class="pbmit-base-icon-pbmit-up-arrow"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        </article>
-                        <!-- Slide2 -->
-                        <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
-                            <div class="pbminfotech-post-item">
-                                <div class="pbminfotech-box-content">
-                                    <div class="pbmit-service-image-wrapper">
-                                        <div class="pbmit-featured-img-wrapper">
-                                            <div class="pbmit-featured-wrapper">
-                                                <img src="{{ asset('assets/images/homepage-1/service/service-02.jpg') }}" class="img-fluid" alt="service-01">
+                            </article>
+                            <!-- Slide2 -->
+                            <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
+                                <div class="pbminfotech-post-item">
+                                    <div class="pbminfotech-box-content">
+                                        <div class="pbmit-service-image-wrapper">
+                                            <div class="pbmit-featured-img-wrapper">
+                                                <div class="pbmit-featured-wrapper">
+                                                    <img src="{{ asset('assets/images/homepage-1/service/service-02.jpg') }}" class="img-fluid" alt="service-01">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pbmit-service-icon elementor-icon">
+                                            <i class=""></i>
+                                        </div>
+                                        <div class="pbmit-content-box">
+                                            <div class="pbmit-serv-cat">
+                                                <a href="#" rel="tag">Kitchen</a>
+                                            </div>
+                                            <h3 class="pbmit-service-title">
+                                                <a href="service-details.html">Weaving Dreams</a>
+                                            </h3>
+                                            <div class="pbmit-service-description">
+                                                <p>The interior professional worker’s available in the xinterio</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="pbmit-service-icon elementor-icon">
-                                        <i class=""></i>
-                                    </div>
-                                    <div class="pbmit-content-box">
-                                        <div class="pbmit-serv-cat">
-                                            <a href="#" rel="tag">Kitchen</a>
-                                        </div>
-                                        <h3 class="pbmit-service-title">
-                                            <a href="service-details.html">Weaving Dreams</a>
-                                        </h3>
-                                        <div class="pbmit-service-description">
-                                            <p>The interior professional worker’s available in the xinterio</p>
-                                        </div>
-                                    </div>
+                                    <a class="pbmit-service-btn" href="service-details.html" title="Weaving Dreams">
+                                        <span class="pbmit-button-icon">
+                                            <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                                        </span>
+                                    </a>
                                 </div>
-                                <a class="pbmit-service-btn" href="service-details.html" title="Weaving Dreams">
-                                    <span class="pbmit-button-icon">
-                                        <i class="pbmit-base-icon-pbmit-up-arrow"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        </article>
-                        <!-- Slide3 -->
-                        <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
-                            <div class="pbminfotech-post-item">
-                                <div class="pbminfotech-box-content">
-                                    <div class="pbmit-service-image-wrapper">
-                                        <div class="pbmit-featured-img-wrapper">
-                                            <div class="pbmit-featured-wrapper">
-                                                <img src="{{ asset('assets/images/homepage-1/service/service-03.jpg') }}" class="img-fluid" alt="service-01">
+                            </article>
+                            <!-- Slide3 -->
+                            <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
+                                <div class="pbminfotech-post-item">
+                                    <div class="pbminfotech-box-content">
+                                        <div class="pbmit-service-image-wrapper">
+                                            <div class="pbmit-featured-img-wrapper">
+                                                <div class="pbmit-featured-wrapper">
+                                                    <img src="{{ asset('assets/images/homepage-1/service/service-03.jpg') }}" class="img-fluid" alt="service-01">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pbmit-service-icon elementor-icon">
+                                            <i class=""></i>
+                                        </div>
+                                        <div class="pbmit-content-box">
+                                            <div class="pbmit-serv-cat">
+                                                <a href="#" rel="tag">Kitchen</a>
+                                            </div>
+                                            <h3 class="pbmit-service-title">
+                                                <a href="service-details.html">Interior Decorator</a>
+                                            </h3>
+                                            <div class="pbmit-service-description">
+                                                <p>The interior professional worker’s available in the xinterio</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="pbmit-service-icon elementor-icon">
-                                        <i class=""></i>
-                                    </div>
-                                    <div class="pbmit-content-box">
-                                        <div class="pbmit-serv-cat">
-                                            <a href="#" rel="tag">Kitchen</a>
-                                        </div>
-                                        <h3 class="pbmit-service-title">
-                                            <a href="service-details.html">Interior Decorator</a>
-                                        </h3>
-                                        <div class="pbmit-service-description">
-                                            <p>The interior professional worker’s available in the xinterio</p>
-                                        </div>
-                                    </div>
+                                    <a class="pbmit-service-btn" href="service-details.html" title="Interior Decorator">
+                                        <span class="pbmit-button-icon">
+                                            <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                                        </span>
+                                    </a>
                                 </div>
-                                <a class="pbmit-service-btn" href="service-details.html" title="Interior Decorator">
-                                    <span class="pbmit-button-icon">
-                                        <i class="pbmit-base-icon-pbmit-up-arrow"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        </article>
-                        <!-- Slide4 -->
-                        <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
-                            <div class="pbminfotech-post-item">
-                                <div class="pbminfotech-box-content">
-                                    <div class="pbmit-service-image-wrapper">
-                                        <div class="pbmit-featured-img-wrapper">
-                                            <div class="pbmit-featured-wrapper">
-                                                <img src="{{ asset('assets/images/homepage-1/service/service-04.jpg') }}" class="img-fluid" alt="service-01">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="pbmit-service-icon elementor-icon">
-                                        <i class=""></i>
-                                    </div>
-                                    <div class="pbmit-content-box">
-                                        <div class="pbmit-serv-cat">
-                                            <a href="#" rel="tag">Kitchen</a>
-                                        </div>
-                                        <h3 class="pbmit-service-title">
-                                            <a href="service-details.html">Professional Interior</a>
-                                        </h3>
-                                        <div class="pbmit-service-description">
-                                            <p>The interior professional worker’s available in the xinterio</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a class="pbmit-service-btn" href="service-details.html" title="Professional Interior">
-                                    <span class="pbmit-button-icon">
-                                        <i class="pbmit-base-icon-pbmit-up-arrow"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        </article>
-                        <!-- Slide5 -->
-                        <article class="pbmit-ele-service pbmit-service-style-2 swiper-slide">
-                            <div class="pbminfotech-post-item">
-                                <div class="pbminfotech-box-content">
-                                    <div class="pbmit-service-image-wrapper">
-                                        <div class="pbmit-featured-img-wrapper">
-                                            <div class="pbmit-featured-wrapper">
-                                                <img src="{{ asset('assets/images/homepage-1/service/service-05.jpg') }}" class="img-fluid" alt="service-01">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="pbmit-service-icon elementor-icon">
-                                        <i class=""></i>
-                                    </div>
-                                    <div class="pbmit-content-box">
-                                        <div class="pbmit-serv-cat">
-                                            <a href="#" rel="tag">Kitchen</a>
-                                        </div>
-                                        <h3 class="pbmit-service-title">
-                                            <a href="service-details.html">Interior Work Plan</a>
-                                        </h3>
-                                        <div class="pbmit-service-description">
-                                            <p>The interior professional worker’s available in the xinterio</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a class="pbmit-service-btn" href="service-details.html" title="Interior Work Plan">
-                                    <span class="pbmit-button-icon">
-                                        <i class="pbmit-base-icon-pbmit-up-arrow"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        </article>
+                            </article>
+                        @endif
                     </div>
                 </div>
                 <div class="text-center">
@@ -611,11 +587,13 @@
                             </article>
                         </div>
                     </div>
+                    <!-- Start Change Image -->
                     <div class="col-md-6 ihbox-one-img-col">
                         <div class="ihbox-imgbox">
                             <img src="{{ asset('assets/images/homepage-1/ih-single-img-01.png') }}" class="img-fluid" alt="">
                         </div>
                     </div>
+                    <!-- End Change Image -->
                     <div class="col-md-3 ihbox-one-right-col">
                         <div class="row">
                             <article class="pbmit-miconheading-style-8 col-md-12">
@@ -799,166 +777,131 @@
                         <div class="pbmit-sortable-list">
                             <ul class="pbmit-sortable-list-ul">
                                 <li><a href="#" class="pbmit-sortable-link pbmit-selected" data-category="*" data-sortby="*">All</a></li>
-                                <li><a href="#" class="pbmit-sortable-link" data-sortby="architecture">Architecture</a></li>
-                                <li><a href="#" class="pbmit-sortable-link" data-sortby="bedroom">Bedroom</a></li>
-                                <li><a href="#" class="pbmit-sortable-link"  data-sortby="furniture">Furniture</a></li>
-                                <li><a href="#" class="pbmit-sortable-link" data-sortby="interior">Interior</a></li>
-                                <li><a href="#" class="pbmit-sortable-link" data-sortby="kitchen">Kitchen</a></li>
+                                @if ($portfolios->isNotEmpty())
+                                    @foreach ($portfolios->pluck('project_type')->unique() as $type)
+                                        <li><a href="#" class="pbmit-sortable-link" data-sortby="{{ strtolower($type) }}">{{ $type }}</a></li>
+                                    @endforeach
+                                @else
+                                    <li><a href="#" class="pbmit-sortable-link" data-sortby="architecture">Architecture</a></li>
+                                    <li><a href="#" class="pbmit-sortable-link" data-sortby="bedroom">Bedroom</a></li>
+                                    <li><a href="#" class="pbmit-sortable-link"  data-sortby="furniture">Furniture</a></li>
+                                    <li><a href="#" class="pbmit-sortable-link" data-sortby="interior">Interior</a></li>
+                                    <li><a href="#" class="pbmit-sortable-link" data-sortby="kitchen">Kitchen</a></li>
+                                @endif
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="row pbmit-element-posts-wrapper">
-                    <article class="pbmit-portfolio-style-3 col-md-4 bedroom">
-                        <div class="pbminfotech-post-content">
-                            <div class="pbmit-featured-img-wrapper">
-                                <div class="pbmit-featured-wrapper">
-                                    <img src="{{ asset('assets/images/homepage-1/portfolio/portfolio-01.jpg') }}" class="img-fluid" alt="portfolio-01">
-                                </div>
-                            </div>
-                            <div class="pbminfotech-box-content">
-                                <div class="pbminfotech-titlebox">
-                                    <div class="pbmit-port-cat">
-                                        <a href="portfolio-grid-col-3.html" rel="tag">Bedroom</a>
+                    @if ($portfolios->isNotEmpty())
+                        @foreach ($portfolios as $portfolio)
+                            <article class="pbmit-portfolio-style-3 col-md-4 bedroom">
+                                <div class="pbminfotech-post-content">
+                                    <div class="pbmit-featured-img-wrapper">
+                                        <div class="pbmit-featured-wrapper">
+                                            @if ($portfolio->hasImage())
+                                                <img src="{{ $portfolio->getImageUrl('medium') }}" class="img-fluid" alt="{{ $portfolio->title }}">
+                                            @else
+                                                <img src="{{ asset('assets/images/homepage-1/portfolio/portfolio-01.jpg') }}" class="img-fluid" alt="portfolio-01">
+                                            @endif
+                                        </div>
                                     </div>
-                                    <h3 class="pbmit-portfolio-title">
-                                        <a href="portfolio-detail-style-1.html">Innovation</a>
-                                    </h3>
-                                </div>
-                            </div>
-                            <div class="pbmit-portfolio-btn">
-                                <a href="portfolio-detail-style-1.html">
-                                    <i class="pbmit-base-icon-pbmit-up-arrow"></i>
-                                </a>
-                            </div>
-                            <a class="pbmit-link" href="portfolio-detail-style-1.html"></a>
-                        </div>
-                    </article>
-                    <article class="pbmit-portfolio-style-3 col-md-4 furniture">
-                        <div class="pbminfotech-post-content">
-                            <div class="pbmit-featured-img-wrapper">
-                                <div class="pbmit-featured-wrapper">
-                                    <img src="{{ asset('assets/images/homepage-1/portfolio/portfolio-02.jpg') }}" class="img-fluid" alt="portfolio-01">
-                                </div>
-                            </div>
-                            <div class="pbminfotech-box-content">
-                                <div class="pbminfotech-titlebox">
-                                    <div class="pbmit-port-cat">
-                                        <a href="portfolio-grid-col-3.html" rel="tag">Furniture</a>
+                                    <div class="pbminfotech-box-content">
+                                        <div class="pbminfotech-titlebox">
+                                            <div class="pbmit-port-cat">
+                                                <a href="{{ route('portfolio') }}" rel="tag">{{ $portfolio->project_type }}</a>
+                                            </div>
+                                            <h3 class="pbmit-portfolio-title">
+                                                <a href="{{ $portfolio->getUrl() }}">{{ $portfolio->title }}</a>
+                                            </h3>
+                                        </div>
                                     </div>
-                                    <h3 class="pbmit-portfolio-title">
-                                        <a href="portfolio-detail-style-1.html">Minimalism</a>
-                                    </h3>
-                                </div>
-                            </div>
-                            <div class="pbmit-portfolio-btn">
-                                <a href="portfolio-detail-style-1.html">
-                                    <i class="pbmit-base-icon-pbmit-up-arrow"></i>
-                                </a>
-                            </div>
-                            <a class="pbmit-link" href="portfolio-detail-style-1.html"></a>
-                        </div>
-                    </article>
-                    <article class="pbmit-portfolio-style-3 col-md-4 interior">
-                        <div class="pbminfotech-post-content">
-                            <div class="pbmit-featured-img-wrapper">
-                                <div class="pbmit-featured-wrapper">
-                                    <img src="{{ asset('assets/images/homepage-1/portfolio/portfolio-03.jpg') }}" class="img-fluid" alt="portfolio-01">
-                                </div>
-                            </div>
-                            <div class="pbminfotech-box-content">
-                                <div class="pbminfotech-titlebox">
-                                    <div class="pbmit-port-cat">
-                                        <a href="portfolio-grid-col-3.html" rel="tag">Interior</a>
+                                    <div class="pbmit-portfolio-btn">
+                                        <a href="{{ $portfolio->getUrl() }}">
+                                            <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                                        </a>
                                     </div>
-                                    <h3 class="pbmit-portfolio-title">
-                                        <a href="portfolio-detail-style-1.html">Lighting</a>
-                                    </h3>
+                                    <a class="pbmit-link" href="{{ $portfolio->getUrl() }}"></a>
                                 </div>
-                            </div>
-                            <div class="pbmit-portfolio-btn">
-                                <a href="portfolio-detail-style-1.html">
-                                    <i class="pbmit-base-icon-pbmit-up-arrow"></i>
-                                </a>
-                            </div>
-                            <a class="pbmit-link" href="portfolio-detail-style-1.html"></a>
-                        </div>
-                    </article>
-                    <article class="pbmit-portfolio-style-3 col-md-4 kitchen">
-                        <div class="pbminfotech-post-content">
-                            <div class="pbmit-featured-img-wrapper">
-                                <div class="pbmit-featured-wrapper">
-                                    <img src="{{ asset('assets/images/homepage-1/portfolio/portfolio-04.jpg') }}" class="img-fluid" alt="portfolio-01">
-                                </div>
-                            </div>
-                            <div class="pbminfotech-box-content">
-                                <div class="pbminfotech-titlebox">
-                                    <div class="pbmit-port-cat">
-                                        <a href="portfolio-grid-col-3.html" rel="tag">Kitchen</a>
+                            </article>
+                        @endforeach
+                    @else
+                        <article class="pbmit-portfolio-style-3 col-md-4 bedroom">
+                            <div class="pbminfotech-post-content">
+                                <div class="pbmit-featured-img-wrapper">
+                                    <div class="pbmit-featured-wrapper">
+                                        <img src="{{ asset('assets/images/homepage-1/portfolio/portfolio-01.jpg') }}" class="img-fluid" alt="portfolio-01">
                                     </div>
-                                    <h3 class="pbmit-portfolio-title">
-                                        <a href="portfolio-detail-style-1.html">Bold Tiles</a>
-                                    </h3>
                                 </div>
-                            </div>
-                            <div class="pbmit-portfolio-btn">
-                                <a href="portfolio-detail-style-1.html">
-                                    <i class="pbmit-base-icon-pbmit-up-arrow"></i>
-                                </a>
-                            </div>
-                            <a class="pbmit-link" href="portfolio-detail-style-1.html"></a>
-                        </div>
-                    </article>
-                    <article class="pbmit-portfolio-style-3 col-md-4 bedroom">
-                        <div class="pbminfotech-post-content">
-                            <div class="pbmit-featured-img-wrapper">
-                                <div class="pbmit-featured-wrapper">
-                                    <img src="{{ asset('assets/images/homepage-1/portfolio/portfolio-05.jpg') }}" class="img-fluid" alt="portfolio-01">
-                                </div>
-                            </div>
-                            <div class="pbminfotech-box-content">
-                                <div class="pbminfotech-titlebox">
-                                    <div class="pbmit-port-cat">
-                                        <a href="portfolio-grid-col-3.html" rel="tag">Bedroom</a>
+                                <div class="pbminfotech-box-content">
+                                    <div class="pbminfotech-titlebox">
+                                        <div class="pbmit-port-cat">
+                                            <a href="portfolio-grid-col-3.html" rel="tag">Bedroom</a>
+                                        </div>
+                                        <h3 class="pbmit-portfolio-title">
+                                            <a href="portfolio-detail-style-1.html">Innovation</a>
+                                        </h3>
                                     </div>
-                                    <h3 class="pbmit-portfolio-title">
-                                        <a href="portfolio-detail-style-1.html">Clean lines</a>
-                                    </h3>
                                 </div>
-                            </div>
-                            <div class="pbmit-portfolio-btn">
-                                <a href="portfolio-detail-style-1.html">
-                                    <i class="pbmit-base-icon-pbmit-up-arrow"></i>
-                                </a>
-                            </div>
-                            <a class="pbmit-link" href="portfolio-detail-style-1.html"></a>
-                        </div>
-                    </article>
-                    <article class="pbmit-portfolio-style-3 col-md-4 architecture">
-                        <div class="pbminfotech-post-content">
-                            <div class="pbmit-featured-img-wrapper">
-                                <div class="pbmit-featured-wrapper">
-                                    <img src="{{ asset('assets/images/homepage-1/portfolio/portfolio-06.jpg') }}" class="img-fluid" alt="portfolio-01">
+                                <div class="pbmit-portfolio-btn">
+                                    <a href="portfolio-detail-style-1.html">
+                                        <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                                    </a>
                                 </div>
+                                <a class="pbmit-link" href="portfolio-detail-style-1.html"></a>
                             </div>
-                            <div class="pbminfotech-box-content">
-                                <div class="pbminfotech-titlebox">
-                                    <div class="pbmit-port-cat">
-                                        <a href="portfolio-grid-col-3.html" rel="tag">Architecture</a>
+                        </article>
+                        <article class="pbmit-portfolio-style-3 col-md-4 furniture">
+                            <div class="pbminfotech-post-content">
+                                <div class="pbmit-featured-img-wrapper">
+                                    <div class="pbmit-featured-wrapper">
+                                        <img src="{{ asset('assets/images/homepage-1/portfolio/portfolio-02.jpg') }}" class="img-fluid" alt="portfolio-01">
                                     </div>
-                                    <h3 class="pbmit-portfolio-title">
-                                        <a href="portfolio-detail-style-1.html">Integral</a>
-                                    </h3>
                                 </div>
+                                <div class="pbminfotech-box-content">
+                                    <div class="pbminfotech-titlebox">
+                                        <div class="pbmit-port-cat">
+                                            <a href="portfolio-grid-col-3.html" rel="tag">Furniture</a>
+                                        </div>
+                                        <h3 class="pbmit-portfolio-title">
+                                            <a href="portfolio-detail-style-1.html">Minimalism</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="pbmit-portfolio-btn">
+                                    <a href="portfolio-detail-style-1.html">
+                                        <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                                    </a>
+                                </div>
+                                <a class="pbmit-link" href="portfolio-detail-style-1.html"></a>
                             </div>
-                            <div class="pbmit-portfolio-btn">
-                                <a href="portfolio-detail-style-1.html">
-                                    <i class="pbmit-base-icon-pbmit-up-arrow"></i>
-                                </a>
+                        </article>
+                        <article class="pbmit-portfolio-style-3 col-md-4 interior">
+                            <div class="pbminfotech-post-content">
+                                <div class="pbmit-featured-img-wrapper">
+                                    <div class="pbmit-featured-wrapper">
+                                        <img src="{{ asset('assets/images/homepage-1/portfolio/portfolio-03.jpg') }}" class="img-fluid" alt="portfolio-01">
+                                    </div>
+                                </div>
+                                <div class="pbminfotech-box-content">
+                                    <div class="pbminfotech-titlebox">
+                                        <div class="pbmit-port-cat">
+                                            <a href="portfolio-grid-col-3.html" rel="tag">Interior</a>
+                                        </div>
+                                        <h3 class="pbmit-portfolio-title">
+                                            <a href="portfolio-detail-style-1.html">Lighting</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="pbmit-portfolio-btn">
+                                    <a href="portfolio-detail-style-1.html">
+                                        <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                                    </a>
+                                </div>
+                                <a class="pbmit-link" href="portfolio-detail-style-1.html"></a>
                             </div>
-                            <a class="pbmit-link" href="portfolio-detail-style-1.html"></a>
-                        </div>
-                    </article>
+                        </article>
+                    @endif
                 </div>
             </div>
         </section>
@@ -1060,76 +1003,114 @@
                     <div class="col-md-12 col-xl-7">
                         <div class="pbminfotech-ele-ptable-style-1">
                             <div class="pbmit-ptable-cols row">
-                                <div class="pbmit-ptable-col col-md-6">
-                                    <div class="pbmit-pricing-table-box">
-                                        <div class="pbmit-head-wrap">
-                                            <h3 class="pbminfotech-ptable-heading">Basic Plan</h3>
-                                            <div class="pbminfotech-sep"></div>
-                                            <div class="pbmit-price-wrapper">
-                                                <div class="pbmit-ptable-price-w">
-                                                    <div class="pbminfotech-ptable-symbol">$</div>
-                                                    <div class="pbminfotech-ptable-price">27</div>
+                                @if ($packages->isNotEmpty())
+                                    @foreach ($packages as $package)
+                                        <div class="pbmit-ptable-col col-md-6">
+                                            <div class="pbmit-pricing-table-box">
+                                                <div class="pbmit-head-wrap">
+                                                    <h3 class="pbminfotech-ptable-heading">{{ $package->package_name}}</h3>
+                                                    <div class="pbminfotech-sep"></div>
+                                                    <div class="pbmit-price-wrapper">
+                                                        <div class="pbmit-ptable-price-w">
+                                                            <div class="pbminfotech-ptable-symbol">IDR</div>
+                                                            <div class="pbminfotech-ptable-price">{{ $package->price_per_meter }}</div>
+                                                        </div>
+                                                        <div class="pbminfotech-ptable-frequency">/meter</div>
+                                                    </div>
                                                 </div>
-                                                <div class="pbminfotech-ptable-frequency">/Mo</div>
+                                                <div class="pbmit-ptable-inner">
+                                                    <div class="pbmit-ptable-lines-w">
+                                                        <div class="pbmit-ptable-line">Warranty {{ $package->warranty_months }} Months</div>
+                                                        <div class="pbmit-ptable-line">
+                                                            {{ $package->features_summary}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="pbminfotech-ptable-btn">
+                                                        <div class="pbmit-button">
+                                                            <a class="pbmit-button-inner" href="about-mask-img">
+                                                                <span class="pbmit-button-wrapper">
+                                                                    <span class="pbmit-button-text">{{ $package->cta_text }}</span>
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pbmit-feature-wrap"></div>
                                             </div>
                                         </div>
-                                        <div class="pbmit-ptable-inner">
-                                            <div class="pbmit-ptable-lines-w">
-                                                <div class="pbmit-ptable-line">Individuals &amp; small projects</div>
-                                                <div class="pbmit-ptable-line">Access to design features</div>
-                                                <div class="pbmit-ptable-line">Limited library of decorative items</div>
-                                                <div class="pbmit-ptable-line">Email support</div>
-                                                <div class="pbmit-ptable-line">Monthly updates</div>
-                                            </div>
-                                            <div class="pbminfotech-ptable-btn">
-                                                <div class="pbmit-button">
-                                                    <a class="pbmit-button-inner" href="about-mask-img">
-                                                        <span class="pbmit-button-wrapper">
-                                                            <span class="pbmit-button-text">Purchase Now</span>
-                                                        </span>
-                                                    </a>
+                                    @endforeach
+                                @else
+                                    <div class="pbmit-ptable-col col-md-6">
+                                        <div class="pbmit-pricing-table-box">
+                                            <div class="pbmit-head-wrap">
+                                                <h3 class="pbminfotech-ptable-heading">Basic Plan</h3>
+                                                <div class="pbminfotech-sep"></div>
+                                                <div class="pbmit-price-wrapper">
+                                                    <div class="pbmit-ptable-price-w">
+                                                        <div class="pbminfotech-ptable-symbol">$</div>
+                                                        <div class="pbminfotech-ptable-price">27</div>
+                                                    </div>
+                                                    <div class="pbminfotech-ptable-frequency">/Mo</div>
                                                 </div>
                                             </div>
+                                            <div class="pbmit-ptable-inner">
+                                                <div class="pbmit-ptable-lines-w">
+                                                    <div class="pbmit-ptable-line">Individuals &amp; small projects</div>
+                                                    <div class="pbmit-ptable-line">Access to design features</div>
+                                                    <div class="pbmit-ptable-line">Limited library of decorative items</div>
+                                                    <div class="pbmit-ptable-line">Email support</div>
+                                                    <div class="pbmit-ptable-line">Monthly updates</div>
+                                                </div>
+                                                <div class="pbminfotech-ptable-btn">
+                                                    <div class="pbmit-button">
+                                                        <a class="pbmit-button-inner" href="about-mask-img">
+                                                            <span class="pbmit-button-wrapper">
+                                                                <span class="pbmit-button-text">Purchase Now</span>
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pbmit-feature-wrap"></div>
                                         </div>
-                                        <div class="pbmit-feature-wrap"></div>
                                     </div>
-                                </div>
-                                <div class="pbmit-pricing-table-featured-col pbmit-ptable-col col-md-6">
-                                    <div class="pbmit-pricing-table-box">
-                                        <div class="pbmit-head-wrap">
-                                            <h3 class="pbminfotech-ptable-heading">Advance</h3>
-                                            <div class="pbminfotech-sep"></div>
-                                            <div class="pbmit-price-wrapper">
-                                                <div class="pbmit-ptable-price-w">
-                                                    <div class="pbminfotech-ptable-symbol">$</div>
-                                                    <div class="pbminfotech-ptable-price">47</div>
-                                                </div>
-                                                <div class="pbminfotech-ptable-frequency">/mo</div>
-                                            </div>
-                                        </div>
-                                        <div class="pbmit-ptable-inner">
-                                            <div class="pbmit-ptable-lines-w">
-                                                <div class="pbmit-ptable-line">Individuals &amp; small projects</div>
-                                                <div class="pbmit-ptable-line">Access to design features</div>
-                                                <div class="pbmit-ptable-line">Limited library of decorative items</div>
-                                                <div class="pbmit-ptable-line">Email support</div>
-                                                <div class="pbmit-ptable-line">Monthly updates</div>
-                                            </div>
-                                            <div class="pbminfotech-ptable-btn">
-                                                <div class="pbmit-button">
-                                                    <a class="pbmit-button-inner" href="about-mask-img">
-                                                        <span class="pbmit-button-wrapper">
-                                                            <span class="pbmit-button-text">Purchase Now</span>
-                                                        </span>
-                                                    </a>
+                                    <div class="pbmit-pricing-table-featured-col pbmit-ptable-col col-md-6">
+                                        <div class="pbmit-pricing-table-box">
+                                            <div class="pbmit-head-wrap">
+                                                <h3 class="pbminfotech-ptable-heading">Advance</h3>
+                                                <div class="pbminfotech-sep"></div>
+                                                <div class="pbmit-price-wrapper">
+                                                    <div class="pbmit-ptable-price-w">
+                                                        <div class="pbminfotech-ptable-symbol">$</div>
+                                                        <div class="pbminfotech-ptable-price">47</div>
+                                                    </div>
+                                                    <div class="pbminfotech-ptable-frequency">/mo</div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="pbmit-feature-wrap">
-                                            <div class="pbmit-ptablebox-featured-w"></div>
+                                            <div class="pbmit-ptable-inner">
+                                                <div class="pbmit-ptable-lines-w">
+                                                    <div class="pbmit-ptable-line">Individuals &amp; small projects</div>
+                                                    <div class="pbmit-ptable-line">Access to design features</div>
+                                                    <div class="pbmit-ptable-line">Limited library of decorative items</div>
+                                                    <div class="pbmit-ptable-line">Email support</div>
+                                                    <div class="pbmit-ptable-line">Monthly updates</div>
+                                                </div>
+                                                <div class="pbminfotech-ptable-btn">
+                                                    <div class="pbmit-button">
+                                                        <a class="pbmit-button-inner" href="about-mask-img">
+                                                            <span class="pbmit-button-wrapper">
+                                                                <span class="pbmit-button-text">Purchase Now</span>
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pbmit-feature-wrap">
+                                                <div class="pbmit-ptablebox-featured-w"></div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -1188,133 +1169,173 @@
                             <div class="swiper-slider" data-autoplay="true" data-loop="true" data-dots="false" data-arrows="true" data-columns="2.6" data-margin="30" data-effect="slide">
                                 <div class="swiper-wrapper">
                                     <!-- Slide1 -->
-                                    <article class="pbmit-testimonial-style-1 swiper-slide">
-                                        <div class="pbminfotech-post-item">
-                                            <div class="pbmit-box-content-wrap">
-                                                <div class="pbminfotech-box-star-ratings">
-                                                    <i class="pbmit-base-icon-star-1 pbmit-active"></i>
-                                                    <i class="pbmit-base-icon-star-1 pbmit-active"></i>
-                                                    <i class="pbmit-base-icon-star-1 pbmit-active"></i>
-                                                    <i class="pbmit-base-icon-star-1 pbmit-active"></i>
-                                                    <i class="pbmit-base-icon-star-1 pbmit-active"></i>
-                                                </div>
-                                                <div class="pbminfotech-box-desc">
-                                                    <blockquote class="pbminfotech-testimonial-text">
-                                                        <p>Their team are easy to work with and helped me make amazing websites in a short amount of time. Thanks guys for all your hard work. Trust us we looked for a very long time.</p>
-                                                    </blockquote>
-                                                </div>
-                                                <div class="pbminfotech-box-author">
-                                                    <div class="pbmit-auther-content">
-                                                        <h3 class="pbminfotech-box-title">Olivia Cruz</h3>
-                                                        <div class="pbminfotech-testimonial-detail">Grorgia, USA</div>
+                                    @if ($testimonials->isNotEmpty())
+                                        @foreach ($testimonials as $testimonial)
+                                            <article class="pbmit-testimonial-style-1 swiper-slide">
+                                                <div class="pbminfotech-post-item">
+                                                    <div class="pbmit-box-content-wrap">
+                                                        <div class="pbminfotech-box-star-ratings">
+                                                            @for ($i = 0; $i < 5; $i++)
+                                                                @if ($i < $testimonial->rating)
+                                                                    <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                                @endif
+                                                            @endfor
+                                                        </div>
+                                                        <div class="pbminfotech-box-desc">
+                                                            <blockquote class="pbminfotech-testimonial-text">
+                                                                <p>{{ $testimonial->description }}</p>
+                                                            </blockquote>
+                                                        </div>
+                                                        <div class="pbminfotech-box-author">
+                                                            <div class="pbmit-auther-content">
+                                                                <h3 class="pbminfotech-box-title">{{ $testimonial->client }}</h3>
+                                                                <div class="pbminfotech-testimonial-detail">{{ $testimonial->client_location }}</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="pbminfotech-box-img">
+                                                            <div class="pbmit-featured-img-wrapper">
+                                                                <div class="pbmit-featured-wrapper">
+                                                                    @if ($testimonial->hasImage())
+                                                                        <img src="{{ $testimonial->getImageUrl('thumbnail') }}" class="img-fluid" alt="{{ $testimonial->client }}">
+                                                                    @else
+                                                                        <img src="{{ asset('assets/images/homepage-1/reviewer/reviewer-01.jpg') }}" class="img-fluid" alt="reviewer-04">
+                                                                    @endif
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="pbminfotech-box-img">
-                                                    <div class="pbmit-featured-img-wrapper">
-                                                        <div class="pbmit-featured-wrapper">
-                                                            <img src="{{ asset('assets/images/homepage-1/reviewer/reviewer-01.jpg') }}" class="img-fluid" alt="reviewer-04">
+                                            </article>
+                                        @endforeach
+                                    @else
+                                        <article class="pbmit-testimonial-style-1 swiper-slide">
+                                            <div class="pbminfotech-post-item">
+                                                <div class="pbmit-box-content-wrap">
+                                                    <div class="pbminfotech-box-star-ratings">
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                    </div>
+                                                    <div class="pbminfotech-box-desc">
+                                                        <blockquote class="pbminfotech-testimonial-text">
+                                                            <p>Their team are easy to work with and helped me make amazing websites in a short amount of time. Thanks guys for all your hard work. Trust us we looked for a very long time.</p>
+                                                        </blockquote>
+                                                    </div>
+                                                    <div class="pbminfotech-box-author">
+                                                        <div class="pbmit-auther-content">
+                                                            <h3 class="pbminfotech-box-title">Olivia Cruz</h3>
+                                                            <div class="pbminfotech-testimonial-detail">Grorgia, USA</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pbminfotech-box-img">
+                                                        <div class="pbmit-featured-img-wrapper">
+                                                            <div class="pbmit-featured-wrapper">
+                                                                <img src="{{ asset('assets/images/homepage-1/reviewer/reviewer-01.jpg') }}" class="img-fluid" alt="reviewer-04">
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </article>
-                                    <!-- Slide2 -->
-                                    <article class="pbmit-testimonial-style-1 swiper-slide">
-                                        <div class="pbminfotech-post-item">
-                                            <div class="pbmit-box-content-wrap">
-                                                <div class="pbminfotech-box-star-ratings">
-                                                    <i class="pbmit-base-icon-star-1 pbmit-active"></i>
-                                                    <i class="pbmit-base-icon-star-1 pbmit-active"></i>
-                                                    <i class="pbmit-base-icon-star-1 pbmit-active"></i>
-                                                    <i class="pbmit-base-icon-star-1 pbmit-active"></i>
-                                                    <i class="pbmit-base-icon-star-1 pbmit-active"></i>
-                                                </div>
-                                                <div class="pbminfotech-box-desc">
-                                                    <blockquote class="pbminfotech-testimonial-text">
-                                                        <p>Their team are easy to work with and helped me make amazing websites in a short amount of time. Thanks guys for all your hard work. Trust us we looked for a very long time.</p>
-                                                    </blockquote>
-                                                </div>
-                                                <div class="pbminfotech-box-author">
-                                                    <div class="pbmit-auther-content">
-                                                        <h3 class="pbminfotech-box-title">Martin Bailey</h3>
-                                                        <div class="pbminfotech-testimonial-detail">Grorgia, USA</div>
+                                        </article>
+                                        <!-- Slide2 -->
+                                        <article class="pbmit-testimonial-style-1 swiper-slide">
+                                            <div class="pbminfotech-post-item">
+                                                <div class="pbmit-box-content-wrap">
+                                                    <div class="pbminfotech-box-star-ratings">
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
                                                     </div>
-                                                </div>
-                                                <div class="pbminfotech-box-img">
-                                                    <div class="pbmit-featured-img-wrapper">
-                                                        <div class="pbmit-featured-wrapper">
-                                                            <img src="{{ asset('assets/images/homepage-1/reviewer/reviewer-02.jpg') }}" class="img-fluid" alt="reviewer-04">
+                                                    <div class="pbminfotech-box-desc">
+                                                        <blockquote class="pbminfotech-testimonial-text">
+                                                            <p>Their team are easy to work with and helped me make amazing websites in a short amount of time. Thanks guys for all your hard work. Trust us we looked for a very long time.</p>
+                                                        </blockquote>
+                                                    </div>
+                                                    <div class="pbminfotech-box-author">
+                                                        <div class="pbmit-auther-content">
+                                                            <h3 class="pbminfotech-box-title">Martin Bailey</h3>
+                                                            <div class="pbminfotech-testimonial-detail">Grorgia, USA</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pbminfotech-box-img">
+                                                        <div class="pbmit-featured-img-wrapper">
+                                                            <div class="pbmit-featured-wrapper">
+                                                                <img src="{{ asset('assets/images/homepage-1/reviewer/reviewer-02.jpg') }}" class="img-fluid" alt="reviewer-04">
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </article>
-                                    <!-- Slide3 -->
-                                    <article class="pbmit-testimonial-style-1 swiper-slide">
-                                        <div class="pbminfotech-post-item">
-                                            <div class="pbmit-box-content-wrap">
-                                                <div class="pbminfotech-box-star-ratings">
-                                                    <i class="pbmit-base-icon-star-1 pbmit-active"></i>
-                                                    <i class="pbmit-base-icon-star-1 pbmit-active"></i>
-                                                    <i class="pbmit-base-icon-star-1 pbmit-active"></i>
-                                                    <i class="pbmit-base-icon-star-1 pbmit-active"></i>
-                                                    <i class="pbmit-base-icon-star-1 pbmit-active"></i>
-                                                </div>
-                                                <div class="pbminfotech-box-desc">
-                                                    <blockquote class="pbminfotech-testimonial-text">
-                                                        <p>Their team are easy to work with and helped me make amazing websites in a short amount of time. Thanks guys for all your hard work. Trust us we looked for a very long time.</p>
-                                                    </blockquote>
-                                                </div>
-                                                <div class="pbminfotech-box-author">
-                                                    <div class="pbmit-auther-content">
-                                                        <h3 class="pbminfotech-box-title">Alex Zender</h3>
-                                                        <div class="pbminfotech-testimonial-detail">Grorgia, USA</div>
+                                        </article>
+                                        <!-- Slide3 -->
+                                        <article class="pbmit-testimonial-style-1 swiper-slide">
+                                            <div class="pbminfotech-post-item">
+                                                <div class="pbmit-box-content-wrap">
+                                                    <div class="pbminfotech-box-star-ratings">
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
                                                     </div>
-                                                </div>
-                                                <div class="pbminfotech-box-img">
-                                                    <div class="pbmit-featured-img-wrapper">
-                                                        <div class="pbmit-featured-wrapper">
-                                                            <img src="{{ asset('assets/images/homepage-1/reviewer/reviewer-03.jpg') }}" class="img-fluid" alt="reviewer-04">
+                                                    <div class="pbminfotech-box-desc">
+                                                        <blockquote class="pbminfotech-testimonial-text">
+                                                            <p>Their team are easy to work with and helped me make amazing websites in a short amount of time. Thanks guys for all your hard work. Trust us we looked for a very long time.</p>
+                                                        </blockquote>
+                                                    </div>
+                                                    <div class="pbminfotech-box-author">
+                                                        <div class="pbmit-auther-content">
+                                                            <h3 class="pbminfotech-box-title">Alex Zender</h3>
+                                                            <div class="pbminfotech-testimonial-detail">Grorgia, USA</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pbminfotech-box-img">
+                                                        <div class="pbmit-featured-img-wrapper">
+                                                            <div class="pbmit-featured-wrapper">
+                                                                <img src="{{ asset('assets/images/homepage-1/reviewer/reviewer-03.jpg') }}" class="img-fluid" alt="reviewer-04">
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </article>
-                                    <!-- Slide4 -->
-                                    <article class="pbmit-testimonial-style-1 swiper-slide">
-                                        <div class="pbminfotech-post-item">
-                                            <div class="pbmit-box-content-wrap">
-                                                <div class="pbminfotech-box-star-ratings">
-                                                    <i class="pbmit-base-icon-star-1 pbmit-active"></i>
-                                                    <i class="pbmit-base-icon-star-1 pbmit-active"></i>
-                                                    <i class="pbmit-base-icon-star-1 pbmit-active"></i>
-                                                    <i class="pbmit-base-icon-star-1 pbmit-active"></i>
-                                                    <i class="pbmit-base-icon-star-1 pbmit-active"></i>
-                                                </div>
-                                                <div class="pbminfotech-box-desc">
-                                                    <blockquote class="pbminfotech-testimonial-text">
-                                                        <p>Their team are easy to work with and helped me make amazing websites in a short amount of time. Thanks guys for all your hard work. Trust us we looked for a very long time.</p>
-                                                    </blockquote>
-                                                </div>
-                                                <div class="pbminfotech-box-author">
-                                                    <div class="pbmit-auther-content">
-                                                        <h3 class="pbminfotech-box-title">Robert Gold</h3>
-                                                        <div class="pbminfotech-testimonial-detail">Grorgia, USA</div>
+                                        </article>
+                                        <!-- Slide4 -->
+                                        <article class="pbmit-testimonial-style-1 swiper-slide">
+                                            <div class="pbminfotech-post-item">
+                                                <div class="pbmit-box-content-wrap">
+                                                    <div class="pbminfotech-box-star-ratings">
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
                                                     </div>
-                                                </div>
-                                                <div class="pbminfotech-box-img">
-                                                    <div class="pbmit-featured-img-wrapper">
-                                                        <div class="pbmit-featured-wrapper">
-                                                            <img src="{{ asset('assets/images/homepage-1/reviewer/reviewer-04.jpg') }}" class="img-fluid" alt="reviewer-04">
+                                                    <div class="pbminfotech-box-desc">
+                                                        <blockquote class="pbminfotech-testimonial-text">
+                                                            <p>Their team are easy to work with and helped me make amazing websites in a short amount of time. Thanks guys for all your hard work. Trust us we looked for a very long time.</p>
+                                                        </blockquote>
+                                                    </div>
+                                                    <div class="pbminfotech-box-author">
+                                                        <div class="pbmit-auther-content">
+                                                            <h3 class="pbminfotech-box-title">Robert Gold</h3>
+                                                            <div class="pbminfotech-testimonial-detail">Grorgia, USA</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pbminfotech-box-img">
+                                                        <div class="pbmit-featured-img-wrapper">
+                                                            <div class="pbmit-featured-wrapper">
+                                                                <img src="{{ asset('assets/images/homepage-1/reviewer/reviewer-04.jpg') }}" class="img-fluid" alt="reviewer-04">
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </article>
+                                        </article>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -1325,7 +1346,7 @@
                         <div class="pbmit-ihbox-headingicon">
                             <div class="pbmit-ihbox-contents d-flex align-items-center">
                                 <div class="pbmit-title-wrap">
-                                    <h2 class="pbmit-element-title">4.82</h2>
+                                    <h2 class="pbmit-element-title">{{ $averageRating  }}</h2>
                                 </div>
                                 <div class="pbmit-icon-wrap">
                                     <div class="pbmit-ihbox-svg">
@@ -1340,7 +1361,7 @@
                                         </div>
                                     </div>
                                     <h4 class="pbmit-element-heading">
-                                        2,488 Rating
+                                         {{ $totalRatings }}Rating
                                     </h4>
                                 </div>
                             </div>
@@ -1356,135 +1377,99 @@
             <div class="container">
                 <div class="swiper-slider" data-autoplay="true" data-loop="true" data-dots="false" data-arrows="false" data-columns="6" data-margin="0" data-effect="slide">
                     <div class="swiper-wrapper">
-                        <!-- Slide1 -->
-                        <article class="pbmit-client-style-1 swiper-slide">
-                            <div class="pbmit-border-wrapper">
-                                <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-                                    <h4 class="pbmit-hide">Client 12</h4>
-                                    <div class="pbmit-client-hover-img">
-                                        <img src="{{ asset('assets/images/homepage-1/client/client-global-01.png') }}" class="img-fluid" alt="">
+                        <!-- Slide -->
+                        @if ($clients->isNotEmpty())
+                            @foreach ($clients as $client)
+                                <article class="pbmit-client-style-1 swiper-slide">
+                                    <div class="pbmit-border-wrapper">
+                                        <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                                            <h4 class="pbmit-hide">Client {{ $client->name }}</h4>
+                                            <div class="pbmit-client-hover-img">
+                                                @if ($client->hasImage())
+                                                    <img src="{{ $client->getImageUrl('preview') }}" class="img-fluid" alt="{{ $client->name }}">
+                                                @else
+                                                    <img src="{{ asset('assets/images/homepage-1/client/client-global-01.png') }}" class="img-fluid" alt="Client Image">
+                                                @endif
+                                            </div>
+                                            <div class="pbmit-featured-img-wrapper">
+                                                <div class="pbmit-featured-wrapper">
+                                                    @if ($client->hasImage())
+                                                        <img src="{{ $client->getImageUrl('thumbnail') }}" class="img-fluid" alt="{{ $client->name }}">
+                                                    @else
+                                                        <img src="{{ asset('assets/images/homepage-1/client/client-grey-01.png') }}" class="img-fluid" alt="Client Image">
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            @endforeach
+                        @else
+                            <article class="pbmit-client-style-1 swiper-slide">
+                                <div class="pbmit-border-wrapper">
+                                    <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                                        <h4 class="pbmit-hide">Client 12</h4>
+                                        <div class="pbmit-client-hover-img">
+                                            <img src="{{ asset('assets/images/homepage-1/client/client-global-01.png') }}" class="img-fluid" alt="">
 
-                                    </div>
-                                    <div class="pbmit-featured-img-wrapper">
-                                        <div class="pbmit-featured-wrapper">
-                                            <img src="{{ asset('assets/images/homepage-1/client/client-grey-01.png') }}" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="pbmit-featured-img-wrapper">
+                                            <div class="pbmit-featured-wrapper">
+                                                <img src="{{ asset('assets/images/homepage-1/client/client-grey-01.png') }}" class="img-fluid" alt="">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </article>
-                        <!-- Slide2 -->
-                        <article class="pbmit-client-style-1 swiper-slide">
-                            <div class="pbmit-border-wrapper">
-                                <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-                                    <h4 class="pbmit-hide">Client 12</h4>
-                                    <div class="pbmit-client-hover-img">
-                                        <img src="{{ asset('assets/images/homepage-1/client/client-global-02.png') }}" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="pbmit-featured-img-wrapper">
-                                        <div class="pbmit-featured-wrapper">
-                                            <img src="{{ asset('assets/images/homepage-1/client/client-grey-02.png') }}" class="img-fluid" alt="">
+                            </article>
+                            <!-- Slide2 -->
+                            <article class="pbmit-client-style-1 swiper-slide">
+                                <div class="pbmit-border-wrapper">
+                                    <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                                        <h4 class="pbmit-hide">Client 12</h4>
+                                        <div class="pbmit-client-hover-img">
+                                            <img src="{{ asset('assets/images/homepage-1/client/client-global-02.png') }}" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="pbmit-featured-img-wrapper">
+                                            <div class="pbmit-featured-wrapper">
+                                                <img src="{{ asset('assets/images/homepage-1/client/client-grey-02.png') }}" class="img-fluid" alt="">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </article>
-                        <!-- Slide3 -->
-                        <article class="pbmit-client-style-1 swiper-slide">
-                            <div class="pbmit-border-wrapper">
-                                <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-                                    <h4 class="pbmit-hide">Client 12</h4>
-                                    <div class="pbmit-client-hover-img">
-                                        <img src="{{ asset('assets/images/homepage-1/client/client-global-03.png') }}" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="pbmit-featured-img-wrapper">
-                                        <div class="pbmit-featured-wrapper">
-                                            <img src="{{ asset('assets/images/homepage-1/client/client-grey-03.png') }}" class="img-fluid" alt="">
+                            </article>
+                            <!-- Slide3 -->
+                            <article class="pbmit-client-style-1 swiper-slide">
+                                <div class="pbmit-border-wrapper">
+                                    <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                                        <h4 class="pbmit-hide">Client 12</h4>
+                                        <div class="pbmit-client-hover-img">
+                                            <img src="{{ asset('assets/images/homepage-1/client/client-global-03.png') }}" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="pbmit-featured-img-wrapper">
+                                            <div class="pbmit-featured-wrapper">
+                                                <img src="{{ asset('assets/images/homepage-1/client/client-grey-03.png') }}" class="img-fluid" alt="">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </article>
-                        <!-- Slide4 -->
-                        <article class="pbmit-client-style-1 swiper-slide">
-                            <div class="pbmit-border-wrapper">
-                                <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-                                    <h4 class="pbmit-hide">Client 12</h4>
-                                    <div class="pbmit-client-hover-img">
-                                        <img src="{{ asset('assets/images/homepage-1/client/client-global-04.png') }}" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="pbmit-featured-img-wrapper">
-                                        <div class="pbmit-featured-wrapper">
-                                            <img src="{{ asset('assets/images/homepage-1/client/client-grey-04.png') }}" class="img-fluid" alt="">
+                            </article>
+                            <!-- Slide4 -->
+                            <article class="pbmit-client-style-1 swiper-slide">
+                                <div class="pbmit-border-wrapper">
+                                    <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                                        <h4 class="pbmit-hide">Client 12</h4>
+                                        <div class="pbmit-client-hover-img">
+                                            <img src="{{ asset('assets/images/homepage-1/client/client-global-04.png') }}" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="pbmit-featured-img-wrapper">
+                                            <div class="pbmit-featured-wrapper">
+                                                <img src="{{ asset('assets/images/homepage-1/client/client-grey-04.png') }}" class="img-fluid" alt="">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </article>
-                        <!-- Slide5 -->
-                        <article class="pbmit-client-style-1 swiper-slide">
-                            <div class="pbmit-border-wrapper">
-                                <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-                                    <h4 class="pbmit-hide">Client 12</h4>
-                                    <div class="pbmit-client-hover-img">
-                                        <img src="{{ asset('assets/images/homepage-1/client/client-global-05.png') }}" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="pbmit-featured-img-wrapper">
-                                        <div class="pbmit-featured-wrapper">
-                                            <img src="{{ asset('assets/images/homepage-1/client/client-grey-05.png') }}" class="img-fluid" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <!-- Slide6 -->
-                        <article class="pbmit-client-style-1 swiper-slide">
-                            <div class="pbmit-border-wrapper">
-                                <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-                                    <h4 class="pbmit-hide">Client 12</h4>
-                                    <div class="pbmit-client-hover-img">
-                                        <img src="{{ asset('assets/images/homepage-1/client/client-global-06.png') }}" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="pbmit-featured-img-wrapper">
-                                        <div class="pbmit-featured-wrapper">
-                                            <img src="{{ asset('assets/images/homepage-1/client/client-grey-06.png') }}" class="img-fluid" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <!-- Slide7 -->
-                        <article class="pbmit-client-style-1 swiper-slide">
-                            <div class="pbmit-border-wrapper">
-                                <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-                                    <h4 class="pbmit-hide">Client 12</h4>
-                                    <div class="pbmit-client-hover-img">
-                                        <img src="{{ asset('assets/images/homepage-1/client/client-global-07.png') }}" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="pbmit-featured-img-wrapper">
-                                        <div class="pbmit-featured-wrapper">
-                                            <img src="{{ asset('assets/images/homepage-1/client/client-grey-07.png') }}" class="img-fluid" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <!-- Slide8 -->
-                        <article class="pbmit-client-style-1 swiper-slide">
-                            <div class="pbmit-border-wrapper">
-                                <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
-                                    <h4 class="pbmit-hide">Client 12</h4>
-                                    <div class="pbmit-client-hover-img">
-                                        <img src="{{ asset('assets/images/homepage-1/client/client-global-08.png') }}" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="pbmit-featured-img-wrapper">
-                                        <div class="pbmit-featured-wrapper">
-                                            <img src="{{ asset('assets/images/homepage-1/client/client-grey-08.png') }}" class="img-fluid" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
+                            </article>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -1503,7 +1488,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="blog-btn">
-                            <a class="pbmit-btn pbmit-btn-outline" href="blog-grid-col-4.html">
+                            <a class="pbmit-btn pbmit-btn-outline" href="{{ route('blog') }}">
                                 <span class="pbmit-button-content-wrapper">
                                     <span class="pbmit-button-text">See all blogs</span>
                                 </span>
@@ -1515,102 +1500,47 @@
                     <div class="col-md-12 col-xl-4">
                         <div class="row">
                             <div class="blog-one-left-col">
-                                <article class="pbmit-ele-blog pbmit-blog-style-2 col-md-12">
-                                    <div class="post-item">
-                                        <div class="pbminfotech-box-content">
-                                            <div class="pbminfotech-content-inner">
-                                                <div class="pbmit-featured-img-wrapper">
-                                                    <div class="pbmit-featured-wrapper">
-                                                        <img src="{{ asset('assets/images/homepage-1/blog/blog-01.jpg') }}" class="img-fluid" alt=""></div>
-                                                </div>
-                                                <div class="pbmit-meta-wraper">
-                                                    <div class="pbmit-meta-date-wrapper pbmit-meta-line">
-                                                        <div class="pbmit-meta-date">
-                                                            <span class="pbmit-post-date">
-                                                                <i class="pbmit-base-icon-calendar-3"></i>May  09. 2024
-                                                            </span>
+                                @if ($blogs->isNotEmpty())
+                                    @foreach ($blogs as $blog)
+                                        <article class="pbmit-ele-blog pbmit-blog-style-2 col-md-12">
+                                            <div class="post-item">
+                                                <div class="pbminfotech-box-content">
+                                                    <div class="pbminfotech-content-inner">
+                                                        <div class="pbmit-featured-img-wrapper">
+                                                            <div class="pbmit-featured-wrapper">
+                                                                @if ($blog->hasFeaturedImage())
+                                                                    <img src="{{ $blog->getImageUrl('preview') }}" class="img-fluid" alt="{{ $blog->title }}">
+                                                                @else
+                                                                    <img src="{{ asset('assets/images/homepage-1/blog/blog-01.jpg') }}" class="img-fluid" alt="blog-01">
+                                                                @endif
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="pbmit-meta-author pbmit-meta-line">
-                                                        <span class="pbmit-post-author">
-                                                            <i class="pbmit-base-icon-user-3"></i>
-                                                            <span>By</span>admin
-                                                        </span>
-                                                    </div>
-                                                    <div class="pbmit-content-wrapper">
-                                                        <h3 class="pbmit-post-title">
-                                                            <a href="blog-single-details.html">Frequently Utilized Metal Welding System</a>
-                                                        </h3>
+                                                        <div class="pbmit-meta-wraper">
+                                                            <div class="pbmit-meta-date-wrapper pbmit-meta-line">
+                                                                <div class="pbmit-meta-date">
+                                                                    <span class="pbmit-post-date">
+                                                                        <i class="pbmit-base-icon-calendar-3"></i>{{ $blog->created_at->format('M d, Y') }}
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="pbmit-meta-author pbmit-meta-line">
+                                                                <span class="pbmit-post-author">
+                                                                    <i class="pbmit-base-icon-user-3"></i>
+                                                                    <span>By</span>{{ $blog->author->name ?? 'admin' }}
+                                                                </span>
+                                                            </div>
+                                                            <div class="pbmit-content-wrapper">
+                                                                <h3 class="pbmit-post-title">
+                                                                    <a href="{{ route('blog.show', $blog->slug) }}">{{ $blog->title }}</a>
+                                                                </h3>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="pbmit-ele-blog pbmit-blog-style-2 col-md-12">
-                                    <div class="post-item">
-                                        <div class="pbminfotech-box-content">
-                                            <div class="pbminfotech-content-inner">
-                                                <div class="pbmit-featured-img-wrapper">
-                                                    <div class="pbmit-featured-wrapper">
-                                                        <img src="{{ asset('assets/images/homepage-1/blog/blog-02.jpg') }}" class="img-fluid" alt=""></div>
-                                                </div>
-                                                <div class="pbmit-meta-wraper">
-                                                    <div class="pbmit-meta-date-wrapper pbmit-meta-line">
-                                                        <div class="pbmit-meta-date">
-                                                            <span class="pbmit-post-date">
-                                                                <i class="pbmit-base-icon-calendar-3"></i>May  09. 2024
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="pbmit-meta-author pbmit-meta-line">
-                                                        <span class="pbmit-post-author">
-                                                            <i class="pbmit-base-icon-user-3"></i>
-                                                            <span>By</span>admin
-                                                        </span>
-                                                    </div>
-                                                    <div class="pbmit-content-wrapper">
-                                                        <h3 class="pbmit-post-title">
-                                                            <a href="blog-single-details.html">How Does One Go About Buying Furniture?</a>
-                                                        </h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="pbmit-ele-blog pbmit-blog-style-2 col-md-12">
-                                    <div class="post-item">
-                                        <div class="pbminfotech-box-content">
-                                            <div class="pbminfotech-content-inner">
-                                                <div class="pbmit-featured-img-wrapper">
-                                                    <div class="pbmit-featured-wrapper">
-                                                        <img src="{{ asset('assets/images/homepage-1/blog/blog-03.jpg') }}" class="img-fluid" alt=""></div>
-                                                </div>
-                                                <div class="pbmit-meta-wraper">
-                                                    <div class="pbmit-meta-date-wrapper pbmit-meta-line">
-                                                        <div class="pbmit-meta-date">
-                                                            <span class="pbmit-post-date">
-                                                                <i class="pbmit-base-icon-calendar-3"></i>May  09. 2024
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="pbmit-meta-author pbmit-meta-line">
-                                                        <span class="pbmit-post-author">
-                                                            <i class="pbmit-base-icon-user-3"></i>
-                                                            <span>By</span>admin
-                                                        </span>
-                                                    </div>
-                                                    <div class="pbmit-content-wrapper">
-                                                        <h3 class="pbmit-post-title">
-                                                            <a href="blog-single-details.html">Four Ways for Creating Extra Space in Small Homes</a>
-                                                        </h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
+                                        </article>
+                                    @endforeach
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -1622,7 +1552,11 @@
                                         <div class="pbmit-bg-image" style="background-image:url('{{ asset('assets/images/homepage-1/blog/blog-04b.jpg') }}">
                                             <div class="pbmit-featured-img-wrapper">
                                                 <div class="pbmit-featured-wrapper">
-                                                    <img src="{{ asset('assets/images/homepage-1/blog/blog-04.jpg') }}" class="img-fluid" alt="blog-01">
+                                                    @if ($featureBlog->hasFeaturedImage())
+                                                        <img src="{{ $featureBlog->getImageUrl('large') }}" class="img-fluid" alt="{{ $featureBlog->title }}">
+                                                    @else
+                                                        <img src="{{ asset('assets/images/homepage-1/blog/blog-04b.jpg') }}" class="img-fluid" alt="blog-01">
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>
@@ -1632,21 +1566,21 @@
                                             <div class="pbmit-date-admin-wraper d-flex align-items-center">
                                                 <div class="pbmit-meta-date pbmit-meta-line">
                                                     <span class="pbmit-post-date">
-                                                        <i class="pbmit-base-icon-calendar-3"></i>May  09. 2024
+                                                        <i class="pbmit-base-icon-calendar-3"></i>{{ $featureBlog->created_at->format('M d, Y') }}
                                                     </span>
                                                 </div>
                                                 <div class="pbmit-meta-author pbmit-meta-line">
                                                 <span class="pbmit-post-author">
                                                     <i class="pbmit-base-icon-user-3"></i>
-                                                    <span>By</span>admin
+                                                    <span>By</span>{{ $featureBlog->author->name ?? 'admin' }}
                                                 </span>
                                                 </div>
                                             </div>
                                             <h3 class="pbmit-post-title">
-                                                <a href="blog-single-details.html">How To Choose The Right  Furniture Of Your Home</a>
+                                                <a href="blog-single-details.html">{{ $featureBlog->title }}</a>
                                             </h3>
                                             <div class="pbminfotech-box-desc">
-                                                Modest, recently established interior design company that seeks to address a variety of topics, including…
+                                                {{ $featureBlog->content_overview }}
                                             </div>
                                         </div>
                                         <a class="pbmit-blog-btn" href="blog-single-details.html">
@@ -1666,3 +1600,17 @@
 
     </div>
 </x-superduper.main>
+@push('js')
+<script>
+    function trackBannerClick(bannerId) {
+        fetch(`/api/banners/${bannerId}/click`, {
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                'Content-Type': 'application/json'
+            },
+            keepalive: true
+        }).catch(() => {});
+    }
+</script>
+@endpush
