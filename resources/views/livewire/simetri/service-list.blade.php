@@ -7,34 +7,7 @@
 			<div class="container">
 				<div class="pbmit-title-bar-content">
 					<div class="pbmit-title-bar-content-inner">
-						<div class="pbmit-tbar">
-							<div class="container pbmit-tbar-inner">
-								<h1 class="pbmit-tbar-title"> Design & Planning</h1>
-							</div>
-						</div>
-						<div class="pbmit-breadcrumb">
-							<div class="pbmit-breadcrumb-inner">
-								<span>
-									<a title="" href="#" class="home"><span>Xinterio</span></a>
-								</span>
-								<span class="sep">
-									<i class="pbmit-base-icon-angle-right"></i>
-								</span>
-								<span>
-									<a title="" href="#" class="home"><span>Services</span></a>
-								</span>
-								<span class="sep">
-									<i class="pbmit-base-icon-angle-right"></i>
-								</span>
-								<span>
-									<a title="" href="#" class="home"><span>Kitchen</span></a>
-								</span>
-								<span class="sep">
-									<i class="pbmit-base-icon-angle-right"></i>
-								</span>
-								<span><span class="post-root post post-post current-item"> Design & Planning</span></span>
-							</div>
-						</div>
+						<x-superduper-breadcrumb />
 					</div>
 				</div>
 			</div>

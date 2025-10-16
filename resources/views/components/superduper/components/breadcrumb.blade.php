@@ -1,35 +1,34 @@
-@props(['title' => 'Blog', 'items' => []])
+@props(['title' => 'Default Title', 'items' => []])
 
-<section class="relative overflow-hidden section-breadcrumb">
-    <div class="relative breadcrumb-wrapper">
-        <div class="container-default">
-            <div class="breadcrumb-block">
-                <h1 class="breadcrumb-title">{{ $title }}</h1>
-                <ul class="breadcrumb-nav">
-                    <li><a href="{{ route('home') }}">Home</a></li>
-                    @foreach($items as $item)
-                        @if(isset($item['url']))
-                            <li><a href="{{ $item['url'] }}">{{ $item['label'] }}</a></li>
-                        @else
-                            <li>{{ $item['label'] }}</li>
-                        @endif
-                    @endforeach
-                    @if(count($items) === 0)
-                        <li>{{ $title }}</li>
-                    @endif
-                </ul>
-            </div>
-        </div>
-
-        <div class="absolute top-0 left-0 -z-10 w-72 h-96 opacity-60">
-            <div class="absolute inset-0 transform -translate-x-1/2 rounded-full bg-gradient-to-br from-blue-500/30 to-purple-600/40 blur-3xl"></div>
-            <div class="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400/20 to-emerald-500/30 blur-3xl rotate-12"></div>
-        </div>
-
-        <div class="absolute bottom-0 right-0 -z-10 w-72 h-96 opacity-60">
-            <div class="absolute inset-0 transform translate-x-1/2 rounded-full bg-gradient-to-tl from-amber-400/30 to-rose-500/40 blur-3xl"></div>
-            <div class="absolute inset-0 rounded-full bg-gradient-to-l from-blue-400/20 to-indigo-500/30 blur-3xl -rotate-12"></div>
-        </div>
+{{-- Title Bar Section --}}
+<div class="pbmit-tbar">
+    <div class="container pbmit-tbar-inner">
+        <h1 class="pbmit-tbar-title">{{ $title }}</h1>
     </div>
-</section>
+</div>
 
+{{-- Breadcrumb Navigation Section --}}
+<div class="pbmit-breadcrumb">
+    <div class="pbmit-breadcrumb-inner">
+        {{-- The first link is always the home page --}}
+        <span>
+            <a title="Home Care Interior" href="{{ route('home') }}" class="home"><span>Home</span></a>
+        </span>
+
+        {{-- Loop through the breadcrumb items provided --}}
+        @foreach($items as $item)
+            <span class="sep">
+                <i class="pbmit-base-icon-angle-right"></i>
+            </span>
+            <span>
+                @if(isset($item['url']))
+                    {{-- This is a clickable link in the middle of the trail --}}
+                    <a title="" href="{{ $item['url'] }}" class="home"><span>{{ $item['label'] }}</span></a>
+                @else
+                    {{-- This is the final, non-clickable item (the current page) --}}
+                    <span class="post-root post post-post current-item">{{ $item['label'] }}</span>
+                @endif
+            </span>
+        @endforeach
+    </div>
+</div>

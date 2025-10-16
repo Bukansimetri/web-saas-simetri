@@ -79,13 +79,22 @@
             ->take(4)
             ->get();
 
-        $homeMiddle = \App\Models\SiteFeature::where([
+        $homeMiddleLeft = \App\Models\SiteFeature::where([
+                'is_active' => true,
+                'type' => 'home-section-middle',
+            ])
+            ->orderBy('created_at', 'asc')
+            ->with(['media'])
+            ->take(3)
+            ->get();
+
+        $homeMiddleRight = \App\Models\SiteFeature::where([
                 'is_active' => true,
                 'type' => 'home-section-middle',
             ])
             ->orderBy('created_at', 'desc')
             ->with(['media'])
-            ->take(4)
+            ->take(3)
             ->get();
 
         $homeBottom = \App\Models\SiteFeature::where([
@@ -621,63 +630,87 @@
                 <div class="row align-items-center">
                     <div class="col-md-3 ihbox-one-left-col">
                         <div class="row">
-                            <article class="pbmit-miconheading-style-8 col-md-12">
-                                <div class="pbmit-ihbox-style-8">
-                                    <div class="pbmit-ihbox-box d-flex">
-                                        <div class="pbmit-ihbox-icon">
-                                            <div class="pbmit-ihbox-icon-wrapper">
-                                                <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-                                                    <i class="pbmit-xinterio-icon pbmit-xinterio-icon-stairs"></i>
+                            @if ($homeMiddleLeft->isNotEmpty())
+                                @foreach ($homeMiddleLeft as $featureMiddle)
+                                    <article class="pbmit-miconheading-style-8 col-md-12">
+                                        <div class="pbmit-ihbox-style-8">
+                                            <div class="pbmit-ihbox-box d-flex">
+                                                <div class="pbmit-ihbox-icon">
+                                                    <div class="pbmit-ihbox-icon-wrapper">
+                                                        <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                            <i class="pbmit-xinterio-icon {{ $featureMiddle->icon_class ?? 'pbmit-xinterio-icon-stairs' }}"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pbmit-ihbox-contents">
+                                                    <h2 class="pbmit-element-title">
+                                                        {{ $featureMiddle->title }}
+                                                    </h2>
+                                                    <div class="pbmit-heading-desc">{{ $featureMiddle->description }}</div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="pbmit-ihbox-contents">
-                                            <h2 class="pbmit-element-title">
-                                                5 Years Warranty
-                                            </h2>
-                                            <div class="pbmit-heading-desc">We offer competitive and affordable rates for our interior design .</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="pbmit-miconheading-style-8 col-md-12">
-                                <div class="pbmit-ihbox-style-8">
-                                    <div class="pbmit-ihbox-box d-flex">
-                                        <div class="pbmit-ihbox-icon">
-                                            <div class="pbmit-ihbox-icon-wrapper">
-                                                <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-                                                    <i class="pbmit-xinterio-icon pbmit-xinterio-icon-3d"></i>
+                                    </article>
+                                @endforeach
+                            @else
+                                <article class="pbmit-miconheading-style-8 col-md-12">
+                                    <div class="pbmit-ihbox-style-8">
+                                        <div class="pbmit-ihbox-box d-flex">
+                                            <div class="pbmit-ihbox-icon">
+                                                <div class="pbmit-ihbox-icon-wrapper">
+                                                    <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                        <i class="pbmit-xinterio-icon pbmit-xinterio-icon-stairs"></i>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="pbmit-ihbox-contents">
-                                            <h2 class="pbmit-element-title">
-                                                Latest technologies
-                                            </h2>
-                                            <div class="pbmit-heading-desc">We offer competitive and affordable rates for our interior design .</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="pbmit-miconheading-style-8 col-md-12">
-                                <div class="pbmit-ihbox-style-8">
-                                    <div class="pbmit-ihbox-box d-flex">
-                                        <div class="pbmit-ihbox-icon">
-                                            <div class="pbmit-ihbox-icon-wrapper">
-                                                <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-                                                    <i class="pbmit-xinterio-icon pbmit-xinterio-icon-kitchen"></i>
-                                                </div>
+                                            <div class="pbmit-ihbox-contents">
+                                                <h2 class="pbmit-element-title">
+                                                    5 Years Warranty
+                                                </h2>
+                                                <div class="pbmit-heading-desc">We offer competitive and affordable rates for our interior design .</div>
                                             </div>
                                         </div>
-                                        <div class="pbmit-ihbox-contents">
-                                            <h2 class="pbmit-element-title">
-                                                High-Quality Designs
-                                            </h2>
-                                            <div class="pbmit-heading-desc">We offer competitive and affordable rates for our interior design .</div>
+                                    </div>
+                                </article>
+                                <article class="pbmit-miconheading-style-8 col-md-12">
+                                    <div class="pbmit-ihbox-style-8">
+                                        <div class="pbmit-ihbox-box d-flex">
+                                            <div class="pbmit-ihbox-icon">
+                                                <div class="pbmit-ihbox-icon-wrapper">
+                                                    <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                        <i class="pbmit-xinterio-icon pbmit-xinterio-icon-3d"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pbmit-ihbox-contents">
+                                                <h2 class="pbmit-element-title">
+                                                    Latest technologies
+                                                </h2>
+                                                <div class="pbmit-heading-desc">We offer competitive and affordable rates for our interior design .</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </article>
+                                </article>
+                                <article class="pbmit-miconheading-style-8 col-md-12">
+                                    <div class="pbmit-ihbox-style-8">
+                                        <div class="pbmit-ihbox-box d-flex">
+                                            <div class="pbmit-ihbox-icon">
+                                                <div class="pbmit-ihbox-icon-wrapper">
+                                                    <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                        <i class="pbmit-xinterio-icon pbmit-xinterio-icon-kitchen"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pbmit-ihbox-contents">
+                                                <h2 class="pbmit-element-title">
+                                                    High-Quality Designs
+                                                </h2>
+                                                <div class="pbmit-heading-desc">We offer competitive and affordable rates for our interior design .</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            @endif
                         </div>
                     </div>
                     <!-- Start Change Image -->
@@ -689,63 +722,87 @@
                     <!-- End Change Image -->
                     <div class="col-md-3 ihbox-one-right-col">
                         <div class="row">
-                            <article class="pbmit-miconheading-style-8 col-md-12">
-                                <div class="pbmit-ihbox-style-8">
-                                    <div class="pbmit-ihbox-box d-flex">
-                                        <div class="pbmit-ihbox-icon">
-                                            <div class="pbmit-ihbox-icon-wrapper">
-                                                <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-                                                    <i class="pbmit-xinterio-icon pbmit-xinterio-icon-axis"></i>
+                            @if ($homeMiddleRight->isNotEmpty())
+                                @foreach ($homeMiddleRight as $featureMiddleRight)
+                                    <article class="pbmit-miconheading-style-8 col-md-12">
+                                        <div class="pbmit-ihbox-style-8">
+                                            <div class="pbmit-ihbox-box d-flex">
+                                                <div class="pbmit-ihbox-icon">
+                                                    <div class="pbmit-ihbox-icon-wrapper">
+                                                        <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                            <i class="pbmit-xinterio-icon {{ $featureMiddleRight->icon_class ?? 'pbmit-xinterio-icon-axis' }}"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pbmit-ihbox-contents">
+                                                    <h2 class="pbmit-element-title">
+                                                        {{ $featureMiddleRight->title }}
+                                                    </h2>
+                                                    <div class="pbmit-heading-desc">{{ $featureMiddleRight->description }}</div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="pbmit-ihbox-contents">
-                                            <h2 class="pbmit-element-title">
-                                                Transparent Pricing
-                                            </h2>
-                                            <div class="pbmit-heading-desc">We offer competitive and affordable rates for our interior design .</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="pbmit-miconheading-style-8 col-md-12">
-                                <div class="pbmit-ihbox-style-8">
-                                    <div class="pbmit-ihbox-box d-flex">
-                                        <div class="pbmit-ihbox-icon">
-                                            <div class="pbmit-ihbox-icon-wrapper">
-                                                <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-                                                    <i class="pbmit-xinterio-icon pbmit-xinterio-icon-brickwall-1"></i>
+                                    </article>
+                                @endforeach
+                            @else
+                                <article class="pbmit-miconheading-style-8 col-md-12">
+                                    <div class="pbmit-ihbox-style-8">
+                                        <div class="pbmit-ihbox-box d-flex">
+                                            <div class="pbmit-ihbox-icon">
+                                                <div class="pbmit-ihbox-icon-wrapper">
+                                                    <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                        <i class="pbmit-xinterio-icon pbmit-xinterio-icon-axis"></i>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="pbmit-ihbox-contents">
-                                            <h2 class="pbmit-element-title">
-                                                Professional Team
-                                            </h2>
-                                            <div class="pbmit-heading-desc">We offer competitive and affordable rates for our interior design .</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="pbmit-miconheading-style-8 col-md-12">
-                                <div class="pbmit-ihbox-style-8">
-                                    <div class="pbmit-ihbox-box d-flex">
-                                        <div class="pbmit-ihbox-icon">
-                                            <div class="pbmit-ihbox-icon-wrapper">
-                                                <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-                                                    <i class="pbmit-xinterio-icon pbmit-xinterio-icon-pantone"></i>
-                                                </div>
+                                            <div class="pbmit-ihbox-contents">
+                                                <h2 class="pbmit-element-title">
+                                                    Transparent Pricing
+                                                </h2>
+                                                <div class="pbmit-heading-desc">We offer competitive and affordable rates for our interior design .</div>
                                             </div>
                                         </div>
-                                        <div class="pbmit-ihbox-contents">
-                                            <h2 class="pbmit-element-title">
-                                                Award winning
-                                            </h2>
-                                            <div class="pbmit-heading-desc">We offer competitive and affordable rates for our interior design .</div>
+                                    </div>
+                                </article>
+                                <article class="pbmit-miconheading-style-8 col-md-12">
+                                    <div class="pbmit-ihbox-style-8">
+                                        <div class="pbmit-ihbox-box d-flex">
+                                            <div class="pbmit-ihbox-icon">
+                                                <div class="pbmit-ihbox-icon-wrapper">
+                                                    <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                        <i class="pbmit-xinterio-icon pbmit-xinterio-icon-brickwall-1"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pbmit-ihbox-contents">
+                                                <h2 class="pbmit-element-title">
+                                                    Professional Team
+                                                </h2>
+                                                <div class="pbmit-heading-desc">We offer competitive and affordable rates for our interior design .</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </article>
+                                </article>
+                                <article class="pbmit-miconheading-style-8 col-md-12">
+                                    <div class="pbmit-ihbox-style-8">
+                                        <div class="pbmit-ihbox-box d-flex">
+                                            <div class="pbmit-ihbox-icon">
+                                                <div class="pbmit-ihbox-icon-wrapper">
+                                                    <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                        <i class="pbmit-xinterio-icon pbmit-xinterio-icon-pantone"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pbmit-ihbox-contents">
+                                                <h2 class="pbmit-element-title">
+                                                    Award winning
+                                                </h2>
+                                                <div class="pbmit-heading-desc">We offer competitive and affordable rates for our interior design .</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            @endif
                         </div>
                     </div>
                 </div>

@@ -3,7 +3,6 @@
 namespace App\Livewire\Simetri;
 
 use App\Models\Project;
-use Illuminate\Support\Facades\App;
 use Livewire\Component;
 
 class PortfolioList extends Component
@@ -22,10 +21,10 @@ class PortfolioList extends Component
 
     public function render()
     {
-        $query = Project::query()
-            ->locale(App::getLocale());
+        $query = Project::query();
 
         $projects = $query->where('is_active', true)
+            ->with(['media'])
             ->orderBy($this->sortField, $this->sortDirection)
             ->get();
 

@@ -110,6 +110,22 @@ class SiteFeatureResource extends Resource
                                     ])
                                     ->compact(),
                             ]),
+                        Forms\Components\Tabs\Tab::make('Advanced Settings')
+                            ->icon('heroicon-o-cog')
+                            ->schema([
+                                Forms\Components\Section::make('Settings')
+                                    ->description('Additional settings for the section feature')
+                                    ->schema([
+                                        Forms\Components\KeyValue::make('options')
+                                            ->keyLabel('Option Name')
+                                            ->valueLabel('Option Value')
+                                            ->helperText('Custom JSON options for this section feature')
+                                            ->addable()
+                                            ->reorderable()
+                                            ->columnSpanFull(),
+                                    ])
+                                    ->compact(),
+                            ]),
                     ])
                     ->columnSpanFull(),
             ]);
@@ -159,7 +175,7 @@ class SiteFeatureResource extends Resource
                 Tables\Actions\Action::make('preview')
                     ->label('Preview Image')
                     ->icon('heroicon-m-eye')
-                    ->url(fn (Service $record) => $record->getImageUrl('large'))
+                    ->url(fn (SiteFeature $record) => $record->getImageUrl('large'))
                     ->openUrlInNewTab(),
             ])
             ->bulkActions([

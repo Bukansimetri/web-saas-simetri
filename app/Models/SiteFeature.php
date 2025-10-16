@@ -34,6 +34,7 @@ class SiteFeature extends Model implements HasMedia
         'description',
         'icon_class',
         'locale',
+        'options',
         'is_active',
         'created_by',
         'updated_by',
@@ -44,6 +45,7 @@ class SiteFeature extends Model implements HasMedia
      */
     protected $casts = [
         'is_active' => 'boolean',
+        'options' => 'json',
     ];
 
     /**
