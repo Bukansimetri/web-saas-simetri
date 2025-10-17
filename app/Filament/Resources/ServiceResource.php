@@ -46,6 +46,11 @@ class ServiceResource extends Resource
                                             ->label('Title')
                                             ->maxLength(255)
                                             ->columnSpan(2),
+                                        Forms\Components\TextInput::make('slug')
+                                            ->required()
+                                            ->maxLength(255)
+                                            ->unique(Service::class, 'slug', ignoreRecord: true)
+                                            ->helperText('URL-friendly name. Will be auto-generated from the name if left empty.'),
                                         Forms\Components\Toggle::make('is_active')
                                             ->label('Active')
                                             ->helperText('Control service visibility')

@@ -37,7 +37,7 @@ Route::get('/services', ServiceList::class)->name('services');
 
 Route::get('/portfolio', PortfolioList::class)->name('portfolio');
 
-Route::get('/portfolio/{title}', PortfolioDetail::class)->name('portfolio.show');
+Route::get('/portfolio/{slug}', PortfolioDetail::class)->name('portfolio.show');
 
 Route::get('/privacy-policy', function () {
     return view('components.superduper.pages.coming-soon', ['page_type' => 'privacy']);

@@ -31,6 +31,7 @@ class Project extends Model implements HasMedia
     protected $fillable = [
         'sort',
         'title',
+        'slug',
         'short_description',
         'description',
         'client',
@@ -44,6 +45,7 @@ class Project extends Model implements HasMedia
         'click_url',
         'click_url_target',
         'is_active',
+        'options',
         'locale',
         'created_by',
         'updated_by',
@@ -54,6 +56,7 @@ class Project extends Model implements HasMedia
      */
     protected $casts = [
         'is_active' => 'boolean',
+        'options' => 'json',
     ];
 
     /**
@@ -66,6 +69,27 @@ class Project extends Model implements HasMedia
         'updated_by',
         'deleted_at',
     ];
+
+    /**
+     * Boot function from Laravel.
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        // Auto-generate slug from title
+        static::creating(function ($project) {
+            if (empty($project->slug)) {
+                $project->slug = Str::slug($project->title);
+            }
+        });
+
+        static::updating(function ($project) {
+            if ($project->isDirty('title') && ! $project->isDirty('slug')) {
+                $project->slug = Str::slug($project->title);
+            }
+        });
+    }
 
     /**
      * Register media conversions.
@@ -121,12 +145,14 @@ class Project extends Model implements HasMedia
     }
 
     /**
-     * Register the media collections for the model.
+     * Get a collection of all project images except the first one.
+     *
+     * @return \Illuminate\Support\Collection
      */
-    public function registerMediaCollections(): void
+    public function getRemainingImages(): Collection
     {
-        $this->addMediaCollection('projects')
-            ->singleFile();
+        // NEW: Added this helper method for the gallery.
+        return $this->getMedia('projects')->slice(1);
     }
 
     /**
@@ -136,6 +162,38 @@ class Project extends Model implements HasMedia
      */
     public function getUrl()
     {
-        return route('portfolio.show', ['title' => $this->title]);
+        return route('portfolio.show', ['slug' => $this->slug]);
+    }
+
+    /**
+     * Get previous project
+     */
+    public function getPreviousProject()
+    {
+        return self::published()
+            ->where('created_at', '<', $this->created_at)
+            ->orderBy('created_at', 'desc')
+            ->first();
+    }
+
+    /**
+     * Get next project
+     */
+    public function getNextProject()
+    {
+        return self::published()
+            ->where('created_at', '>', $this->created_at)
+            ->orderBy('created_at', 'asc')
+            ->first();
+    }
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }

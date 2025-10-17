@@ -31,6 +31,7 @@ class Service extends Model implements HasMedia
     protected $fillable = [
         'sort',
         'title',
+        'slug',
         'short_description',
         'description',
         'click_url',
@@ -58,6 +59,27 @@ class Service extends Model implements HasMedia
         'updated_by',
         'deleted_at',
     ];
+
+    /**
+     * Boot function from Laravel.
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        // Auto-generate slug from title
+        static::creating(function ($service) {
+            if (empty($service->slug)) {
+                $service->slug = Str::slug($service->title);
+            }
+        });
+
+        static::updating(function ($service) {
+            if ($service->isDirty('title') && ! $service->isDirty('slug')) {
+                $service->slug = Str::slug($service->title);
+            }
+        });
+    }
 
     /**
      * Get the user who created this banner.
@@ -135,5 +157,25 @@ class Service extends Model implements HasMedia
     {
         $this->addMediaCollection('services')
             ->singleFile();
+    }
+
+    /**
+     * Get post URL using slug
+     *
+     * @return string
+     */
+    public function getUrl()
+    {
+        return route('service.show', ['slug' => $this->slug]);
+    }
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }

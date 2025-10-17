@@ -32,7 +32,7 @@ class ProjectResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Tabs::make('Banner Details')
+                Forms\Components\Tabs::make('Project Details')
                     ->tabs([
                         Forms\Components\Tabs\Tab::make('General')
                             ->icon('heroicon-o-information-circle')
@@ -45,9 +45,14 @@ class ProjectResource extends Resource
                                             ->label('Title')
                                             ->maxLength(255)
                                             ->columnSpan(2),
+                                        Forms\Components\TextInput::make('slug')
+                                            ->required()
+                                            ->maxLength(255)
+                                            ->unique(Project::class, 'slug', ignoreRecord: true)
+                                            ->helperText('URL-friendly name. Will be auto-generated from the name if left empty.'),
                                         Forms\Components\Toggle::make('is_active')
                                             ->label('Active')
-                                            ->helperText('Control banner visibility')
+                                            ->helperText('Control project visibility')
                                             ->default(true),
                                         Forms\Components\Textarea::make('short_description')
                                             ->label('Short Description')
@@ -173,6 +178,13 @@ class ProjectResource extends Resource
                                             ->required()
                                             ->numeric()
                                             ->default(static::getLastSortValue() + 1),
+                                        Forms\Components\KeyValue::make('options')
+                                            ->keyLabel('Option Name')
+                                            ->valueLabel('Option Value')
+                                            ->helperText('Custom JSON options for this project')
+                                            ->addable()
+                                            ->reorderable()
+                                            ->columnSpanFull(),
                                     ])
                                     ->compact(),
                             ]),

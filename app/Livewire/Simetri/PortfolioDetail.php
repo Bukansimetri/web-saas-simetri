@@ -11,6 +11,10 @@ class PortfolioDetail extends Component
 
     public $title;
 
+    public $previousProject;
+
+    public $nextProject;
+
     public function mount($title)
     {
         $this->title = $title;
@@ -28,6 +32,10 @@ class PortfolioDetail extends Component
         $this->project = Project::with(['media'])
             ->where('title', $this->title)
             ->firstOrFail();
+
+        // Load related/navigation projects
+        $this->previousProject = $this->project->getPreviousProject();
+        $this->nextProject = $this->project->getNextProject();
     }
 
     public function render()
