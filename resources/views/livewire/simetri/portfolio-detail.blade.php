@@ -226,7 +226,7 @@
                     <div class="nav-links">
                         @if ($previousProject)
                             <div class="nav-previous">
-                                <a href="{{ route('portfolio.detail', ['title' => $previousProject->title]) }}" rel="prev">
+                                <a href="{{ route('portfolio.detail', ['slug' => $previousProject->slug]) }}" rel="prev">
                                     <span class="pbmit-post-nav-icon">
                                         <i class="pbmit-base-icon-left-arrow-1"></i>
                                         <span class="pbmit-post-nav-head">Previous Project</span>
@@ -239,7 +239,7 @@
                         @endif
                         @if ($nextProject)
                             <div class="nav-next">
-                                <a href="{{ route('portfolio.detail', ['title' => $nextProject->title]) }}" rel="next">
+                                <a href="{{ route('portfolio.detail', ['slug' => $nextProject->slug]) }}" rel="next">
                                     <span class="pbmit-post-nav-icon">
                                         <span class="pbmit-post-nav-head">Next Project</span>
                                         <i class="pbmit-base-icon-next"></i>

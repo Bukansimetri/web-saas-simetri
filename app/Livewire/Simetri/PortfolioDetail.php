@@ -9,18 +9,18 @@ class PortfolioDetail extends Component
 {
     public $project;
 
-    public $title;
+    public $slug;
 
     public $previousProject;
 
     public $nextProject;
 
-    public function mount($title)
+    public function mount($slug)
     {
-        $this->title = $title;
+        $this->slug = $slug;
 
-        // Redirect if title has trailing slash
-        if (substr($this->title, -1) === '/') {
+        // Redirect if slug has trailing slash
+        if (substr($this->slug, -1) === '/') {
             return redirect()->to(rtrim(request()->path(), '/'), 301);
         }
 
@@ -30,7 +30,7 @@ class PortfolioDetail extends Component
     protected function loadProject()
     {
         $this->project = Project::with(['media'])
-            ->where('title', $this->title)
+            ->where('slug', $this->slug)
             ->firstOrFail();
 
         // Load related/navigation projects
