@@ -43,9 +43,10 @@ class ServiceResource extends Resource
                                     ->icon('heroicon-o-clipboard')
                                     ->schema([
                                         Forms\Components\TextInput::make('title')
-                                            ->label('Title')
+                                            ->required()
                                             ->maxLength(255)
-                                            ->columnSpan(2),
+                                            ->live(onBlur: true)
+                                            ->afterStateUpdated(fn (string $operation, $state, Forms\Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
                                         Forms\Components\TextInput::make('slug')
                                             ->required()
                                             ->maxLength(255)

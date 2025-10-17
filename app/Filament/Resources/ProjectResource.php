@@ -14,6 +14,7 @@ use Filament\Tables\Table;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class ProjectResource extends Resource
 {
@@ -42,14 +43,15 @@ class ProjectResource extends Resource
                                     ->icon('heroicon-o-clipboard')
                                     ->schema([
                                         Forms\Components\TextInput::make('title')
-                                            ->label('Title')
+                                            ->required()
                                             ->maxLength(255)
-                                            ->columnSpan(2),
+                                            ->live(onBlur: true)
+                                            ->afterStateUpdated(fn (string $operation, $state, Forms\Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
                                         Forms\Components\TextInput::make('slug')
                                             ->required()
                                             ->maxLength(255)
                                             ->unique(Project::class, 'slug', ignoreRecord: true)
-                                            ->helperText('URL-friendly name. Will be auto-generated from the name if left empty.'),
+                                            ->helperText('URL-friendly name. Will be auto-generated from the title if left empty.'),
                                         Forms\Components\Toggle::make('is_active')
                                             ->label('Active')
                                             ->helperText('Control project visibility')
