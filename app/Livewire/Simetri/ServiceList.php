@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Simetri;
 
-use Illuminate\Support\Facades\App;
+use App\Models\Service;
 use Livewire\Component;
 
 class ServiceList extends Component
@@ -21,15 +21,20 @@ class ServiceList extends Component
 
     public function render()
     {
-        $query = Project::query()
-            ->locale(App::getLocale());
+        $query = Service::query();
 
         $services = $query->where('is_active', true)
+            ->with(['media'])
+            ->first();
+
+        $otherServices = $query->where('is_active', true)
+            ->with(['media'])
             ->orderBy($this->sortField, $this->sortDirection)
             ->get();
 
         return view('livewire.simetri.service-list', [
             'services' => $services,
+            'otherServices' => $otherServices,
         ])->layout('components.superduper.main');
     }
 }

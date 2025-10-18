@@ -250,7 +250,11 @@
                                 ])>
                                     <div class="pbmit-same-height steps-media pbmit-feature-image">
                                         {{-- Assuming the image path is stored in an 'image' attribute --}}
-                                        <img src="{{ $item->image }}" class="img-fluid" alt="{{ $item->title }}">
+                                        @if ($item->hasImage())
+                                            <img src="{{ $item->getImageUrl('medium') }}" class="img-fluid" alt="{{ $item->title }}">
+                                        @else
+                                            <img src="{{ asset('assets/images/history/time-line-01.jpg') }}" class="img-fluid" alt="">
+                                        @endif
                                     </div>
                                     <div class="steps-dot">
                                         <i class="steps-dot-line"></i>
@@ -267,7 +271,7 @@
                             <!-- Slide1 -->
                             <div class="pbmit-timeline-wrapper swiper-slide pbmit-slide-even">
                                 <div class="pbmit-same-height steps-media pbmit-feature-image">
-                                    <img src="images/history/time-line-01.jpg" class="img-fluid" alt="">
+                                    <img src="{{ asset('assets/images/history/time-line-01.jpg') }}" class="img-fluid" alt="">
                                 </div>
                                 <div class="steps-dot">
                                     <i class="steps-dot-line"></i>
@@ -282,7 +286,7 @@
                             <!-- Slide2 -->
                             <div class="pbmit-timeline-wrapper swiper-slide">
                                 <div class="pbmit-same-height steps-media pbmit-feature-image">
-                                    <img src="images/history/time-line-02.jpg" class="img-fluid" alt="">
+                                    <img src="{{ asset('assets/images/history/time-line-02.jpg') }}" class="img-fluid" alt="">
                                 </div>
                                 <div class="steps-dot">
                                     <i class="steps-dot-line"></i>
@@ -297,7 +301,7 @@
                             <!-- Slide3 -->
                             <div class="pbmit-timeline-wrapper swiper-slide pbmit-slide-even">
                                 <div class="pbmit-same-height steps-media pbmit-feature-image">
-                                    <img src="images/history/time-line-03.jpg" class="img-fluid" alt="">
+                                    <img src="{{ asset('assets/images/history/time-line-03.jpg') }}" class="img-fluid" alt="">
                                 </div>
                                 <div class="steps-dot">
                                     <i class="steps-dot-line"></i>
@@ -312,7 +316,7 @@
                             <!-- Slide4 -->
                             <div class="pbmit-timeline-wrapper swiper-slide">
                                 <div class="pbmit-same-height steps-media pbmit-feature-image">
-                                    <img src="images/history/time-line-04.jpg" class="img-fluid" alt="">
+                                    <img src="{{ asset('assets/images/history/time-line-04.jpg') }}" class="img-fluid" alt="">
                                 </div>
                                 <div class="steps-dot">
                                     <i class="steps-dot-line"></i>
@@ -327,7 +331,7 @@
                             <!-- Slide5 -->
                             <div class="pbmit-timeline-wrapper swiper-slide pbmit-slide-even">
                                 <div class="pbmit-same-height steps-media pbmit-feature-image">
-                                    <img src="images/history/time-line-05.jpg" class="img-fluid" alt="">
+                                    <img src="{{ asset('assets/images/history/time-line-05.jpg') }}" class="img-fluid" alt="">
                                 </div>
                                 <div class="steps-dot">
                                     <i class="steps-dot-line"></i>
@@ -342,7 +346,7 @@
                             <!-- Slide6 -->
                             <div class="pbmit-timeline-wrapper swiper-slide">
                                 <div class="pbmit-same-height steps-media pbmit-feature-image">
-                                    <img src="images/history/time-line-06.jpg" class="img-fluid" alt="">
+                                    <img src="{{ asset('assets/images/history/time-line-06.jpg') }}" class="img-fluid" alt="">
                                 </div>
                                 <div class="steps-dot">
                                     <i class="steps-dot-line"></i>

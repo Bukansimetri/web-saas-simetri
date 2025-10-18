@@ -7,7 +7,7 @@
 			<div class="container">
 				<div class="pbmit-title-bar-content">
 					<div class="pbmit-title-bar-content-inner">
-						<x-superduper-breadcrumb />
+						<x-superduper.components.breadcrumb />
 					</div>
 				</div>
 			</div>
@@ -21,74 +21,68 @@
             <div class="row">
                 <div class="col-lg-9 service-right-col">
                     <div class="pbmit-service-feature-image">
-                        <img src="images/service/service-det-01.jpg" class="img-fluid w-100" alt="">
+                        @if (!empty($services))
+                            <img src="{{ $services->getImageUrl('large') }}" class="img-fluid w-100" alt="{{ $services->title }}">
+                        @else
+                            <img src="{{ asset('assets/images/service/service-det-01.jpg') }}" class="img-fluid w-100" alt="homecareinterior">
+                        @endif
                     </div>
                     <div class="pbmit-entry-content">
                         <div class="pbmit-service-content">
                             <div class="mb-3 pbmit-heading animation-style2">
-                                <h3 class="pbmit-title">Our Goal is to Create Incredible Custom Interior Design</h3>
+                                @if (!empty($services))
+                                    <h3 class="pbmit-title">{{ $services->title }}</h3>
+                                @else
+                                    <h3 class="pbmit-title">Our Goal is to Create Incredible Custom Interior Design</h3>
+                                @endif
                             </div>
-                            <p class="pbmit-firstletter">
-                                Monsidering the physical, mental, and emotional needs of people, interior designers use human-centered approaches to address how we live today. Creating novel approaches to promoting health, safety, and welfare, contemporary interiors are increasingly inspired by biophilia as a holistic approach to promoting health, safety, and welfare, contemporary interiors are increasingly inspired by biophilia as a holistic approach to design. By definition, interior design encompasses diverse aspects of our environment. The discipline extends to building materials and finishes; casework, furniture.
-                            </p>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <ul class="list-group list-group-borderless">
-                                        <li class="list-group-item">
-                                            <span class="pbmit-icon-list-icon">
-                                                <i aria-hidden="true" class="pbmit-xinterio-icon pbmit-xinterio-icon-tick-mark"></i>
-                                            </span>
-                                            <span class="pbmit-icon-list-text">Experienced, time-served engineers</span>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <span class="pbmit-icon-list-icon">
-                                                <i aria-hidden="true" class="pbmit-xinterio-icon pbmit-xinterio-icon-tick-mark"></i>
-                                            </span>
-                                            <span class="pbmit-icon-list-text">Commitment to customer service</span>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <span class="pbmit-icon-list-icon">
-                                                <i aria-hidden="true" class="pbmit-xinterio-icon pbmit-xinterio-icon-tick-mark"></i>
-                                            </span>
-                                            <span class="pbmit-icon-list-text">Commitment to taking the stress out of your project.</span>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <span class="pbmit-icon-list-icon">
-                                                <i aria-hidden="true" class="pbmit-xinterio-icon pbmit-xinterio-icon-tick-mark"></i>
-                                            </span>
-                                            <span class="pbmit-icon-list-text">Flexible with any structure of the building</span>
-                                        </li>
-                                    </ul>
+                            {{-- Use the description from your database. The raw HTML output is needed if it contains formatting. --}}
+                            @if (!empty($services))
+                                {!! $services->description !!}
+                            @else
+                                <p class="pbmit-firstletter">
+                                    Monsidering the physical, mental, and emotional needs of people, interior designers use human-centered approaches to address how we live today. Creating novel approaches to promoting health, safety, and welfare, contemporary interiors are increasingly inspired by biophilia as a holistic approach to promoting health, safety, and welfare, contemporary interiors are increasingly inspired by biophilia as a holistic approach to design. By definition, interior design encompasses diverse aspects of our environment. The discipline extends to building materials and finishes; casework, furniture.
+                                </p>
+                            @endif
+                            {{--
+                                This section dynamically lists features.
+                                It assumes you have a JSON column 'options' with a key 'features' that is an array.
+                                Example: ['features' => ['Feature A', 'Feature B', 'Feature C', 'Feature D']]
+                            --}}
+                            @if (!empty($services->options['features']))
+                                @php
+                                    // Split the features array into two chunks for the two-column layout
+                                    $featureChunks = array_chunk($services->options['features'], ceil(count($services->options['features']) / 2));
+                                @endphp
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul class="list-group list-group-borderless">
+                                            @foreach ($featureChunks[0] as $feature)
+                                                <li class="list-group-item">
+                                                    <span class="pbmit-icon-list-icon">
+                                                        <i aria-hidden="true" class="pbmit-xinterio-icon pbmit-xinterio-icon-tick-mark"></i>
+                                                    </span>
+                                                    <span class="pbmit-icon-list-text">{{ $feature }}</span>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                    @if (isset($featureChunks[1]))
+                                        <div class="col-md-6">
+                                            <ul class="list-group list-group-borderless">
+                                                @foreach ($featureChunks[1] as $feature)
+                                                    <li class="list-group-item">
+                                                        <span class="pbmit-icon-list-icon">
+                                                            <i aria-hidden="true" class="pbmit-xinterio-icon pbmit-xinterio-icon-tick-mark"></i>
+                                                        </span>
+                                                        <span class="pbmit-icon-list-text">{{ $feature }}</span>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
                                 </div>
-                                <div class="col-md-6">
-                                    <ul class="list-group list-group-borderless">
-                                        <li class="list-group-item">
-                                            <span class="pbmit-icon-list-icon">
-                                                <i aria-hidden="true" class="pbmit-xinterio-icon pbmit-xinterio-icon-tick-mark"></i>
-                                            </span>
-                                            <span class="pbmit-icon-list-text">Experienced, time-served engineers</span>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <span class="pbmit-icon-list-icon">
-                                                <i aria-hidden="true" class="pbmit-xinterio-icon pbmit-xinterio-icon-tick-mark"></i>
-                                            </span>
-                                            <span class="pbmit-icon-list-text">Commitment to customer service</span>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <span class="pbmit-icon-list-icon">
-                                                <i aria-hidden="true" class="pbmit-xinterio-icon pbmit-xinterio-icon-tick-mark"></i>
-                                            </span>
-                                            <span class="pbmit-icon-list-text">Commitment to taking the stress out of your project.</span>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <span class="pbmit-icon-list-icon">
-                                                <i aria-hidden="true" class="pbmit-xinterio-icon pbmit-xinterio-icon-tick-mark"></i>
-                                            </span>
-                                            <span class="pbmit-icon-list-text">Flexible with any structure of the building</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -97,17 +91,21 @@
                         <aside class="widget post-list">
                             <h2 class="widget-title">Our Service</h2>
                             <div class="all-post-list">
-                                <ul>
-                                    <li><a href="service-details.html"> Transforming Rooms </a></li>
-                                    <li><a href="service-details.html"> Weaving Dreams </a></li>
-                                    <li><a href="service-details.html"> Interior Decorator </a></li>
-                                    <li><a href="service-details.html"> Professional Interior </a></li>
-                                    <li><a href="service-details.html"> Interior Work Plan </a></li>
-                                    <li><a href="service-details.html"> 2D/3D Layouts </a></li>
-
-                                </ul>
+                                {{--
+                                    This list should be populated with OTHER services.
+                                    Pass a variable like $otherServices from your Livewire component.
+                                --}}
+                                @if(isset($otherServices) && $otherServices->isNotEmpty())
+                                    <ul>
+                                        @foreach ($otherServices as $otherService)
+                                            {{-- Use the getUrl() helper from your model for clean routing --}}
+                                            <li><a href="{{ $otherService->getUrl() }}">{{ $otherService->title }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                @endif
                             </div>
                         </aside>
+                        {{-- As requested, the ad and download widgets have been skipped --}}
                         <aside class="widget pbmit-service-ad">
                             <div class="textwidget">
                                 <div class="pbmit-service-ads">
@@ -157,7 +155,6 @@
             </div>
         </div>
     </section>
-    <!-- Service Details End -->
 
 </div>
 <!-- Page Content End -->
