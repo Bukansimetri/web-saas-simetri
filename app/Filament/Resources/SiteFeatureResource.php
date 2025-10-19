@@ -143,18 +143,14 @@ class SiteFeatureResource extends Resource
                     ->circular(false)
                     ->alignCenter(),
                 Tables\Columns\TextColumn::make('title')
-                    ->badge()
-                    ->searchable()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('icon_class')
-                    ->badge()
-                    ->searchable()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('description')
                     ->description(fn (Model $record): string => Str::limit(strip_tags($record->description), 100))
                     ->searchable()
                     ->sortable()
                     ->wrap(),
+                Tables\Columns\TextColumn::make('icon_class')
+                    ->badge()
+                    ->searchable()
+                    ->sortable(),
                 Tables\Columns\IconColumn::make('is_active')
                     ->label('Active')
                     ->boolean()

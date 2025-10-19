@@ -174,11 +174,8 @@
                                     <div class="pbmit-ihbox-headingicon">
                                         <div class="pbmit-ihbox-icon">
                                             <div class="pbmit-ihbox-icon-wrapper pbmit-icon-type-icon">
-                                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-award"></i>
+                                                <img src="https://homecareinterior.co.id/storage/11/home-care-icon.png" width="123" height="133" alt="Home Care Interior Icon">
                                             </div>
-                                        </div>
-                                        <div class="pbmit-ihbox-contents">
-                                            <h2 class="pbmit-element-title">Best Awarded <br>Company </h2>
                                         </div>
                                         <div class="pbmit-sticky-corner pbmit-bottom-left-corner">
                                             <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
@@ -314,15 +311,8 @@
                             <div class="pt-5 pbmit-ihbox pbmit-ihbox-style-5">
                                 <div class="pbmit-ihbox-box d-flex align-items-center">
                                     <div class="pbmit-content-wrapper">
-                                        <h2 class="pbmit-element-title">Jemilin E william</h2>
-                                        <div class="pbmit-heading-desc">Founder</div>
-                                    </div>
-                                    <div class="pbmit-icon-wrapper">
-                                        <div class="pbmit-ihbox-icon">
-                                            <div class="pbmit-ihbox-icon-wrapper pbmit-ihbox-icon-type-image">
-                                                <img src="{{ asset('assets/images/homepage-1/sign.png') }}" alt="Jemilin E william">
-                                            </div>
-                                        </div>
+                                        <h2 class="pbmit-element-title">Home Care Interior</h2>
+                                        <div class="pbmit-heading-desc">PT. Sejahtera Langgeng Anugerah</div>
                                     </div>
                                 </div>
                             </div>
@@ -332,115 +322,6 @@
             </div>
         </section>
         <!-- About End -->
-
-        <!-- Fid Start -->
-        <section class="section-lgb">
-            <div class="container">
-                <div class="row">
-                    @if ($homeTopTwo->isNotEmpty())
-                        @foreach ($homeTopTwo as $homeTopTwoFeature)
-                            <div class="col-md-6 col-xl-3">
-                                <div class="pbminfotech-ele-fid-style-2">
-                                    <div class="pbmit-fld-contents">
-                                        <div class="pbmit-fld-wrap">
-                                            <div class="pbmit-fid-icon-title">
-                                                <div class="pbmit-sbox-icon-wrapper pbmit-icon-type-icon">
-                                                    <i class="pbmit-xinterio-icon {{ $homeTopTwoFeature->icon_class ?? 'pbmit-xinterio-icon-offer' }}"></i>
-                                                </div>
-                                                <span class="pbmit-fid-title">{{ $homeTopTwoFeature->title }}</span>
-                                            </div>
-                                            <h4 class="pbmit-fid-inner">
-                                                <span class="pbmit-fid-before"></span>
-                                                <span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="{{ $homeTopTwoFeature->description ?? '100' }}" data-interval="1" data-before="" data-before-style="" data-after="" data-after-style="">{{ $homeTopTwoFeature->description ?? '100' }}</span>
-                                                <span class="pbmit-fid"><sup>+</sup></span>
-                                            </h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    @else
-                        <div class="col-md-6 col-xl-3">
-                            <div class="pbminfotech-ele-fid-style-2">
-                                <div class="pbmit-fld-contents">
-                                    <div class="pbmit-fld-wrap">
-                                        <div class="pbmit-fid-icon-title">
-                                            <div class="pbmit-sbox-icon-wrapper pbmit-icon-type-icon">
-                                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-offer"></i>
-                                            </div>
-                                            <span class="pbmit-fid-title">Happy Client Review</span>
-                                        </div>
-                                        <h4 class="pbmit-fid-inner">
-                                            <span class="pbmit-fid-before"></span>
-                                            <span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="235" data-interval="1" data-before="" data-before-style="" data-after="" data-after-style="">235</span>
-                                            <span class="pbmit-fid"><sup>+</sup></span>
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xl-3">
-                            <div class="pbminfotech-ele-fid-style-2">
-                                <div class="pbmit-fld-contents">
-                                    <div class="pbmit-fld-wrap">
-                                        <div class="pbmit-fid-icon-title">
-                                            <div class="pbmit-sbox-icon-wrapper pbmit-icon-type-icon">
-                                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-engineer"></i>
-                                            </div>
-                                            <span class="pbmit-fid-title">Work Departments</span>
-                                        </div>
-                                        <h4 class="pbmit-fid-inner">
-                                            <span class="pbmit-fid-before"></span>
-                                            <span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="420" data-interval="1" data-before="" data-before-style="" data-after="" data-after-style="">420</span>
-                                            <span class="pbmit-fid"><sup>+</sup></span>
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xl-3">
-                            <div class="pbminfotech-ele-fid-style-2">
-                                <div class="pbmit-fld-contents">
-                                    <div class="pbmit-fld-wrap">
-                                        <div class="pbmit-fid-icon-title">
-                                            <div class="pbmit-sbox-icon-wrapper pbmit-icon-type-icon">
-                                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-client"></i>
-                                            </div>
-                                            <span class="pbmit-fid-title">Our Happy Client</span>
-                                        </div>
-                                        <h4 class="pbmit-fid-inner">
-                                            <span class="pbmit-fid-before"></span>
-                                            <span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="30" data-interval="1" data-before="" data-before-style="" data-after="" data-after-style="">30</span>
-                                            <span class="pbmit-fid"><span>K</span></span>
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xl-3">
-                            <div class="pbminfotech-ele-fid-style-2">
-                                <div class="pbmit-fld-contents">
-                                    <div class="pbmit-fld-wrap">
-                                        <div class="pbmit-fid-icon-title">
-                                            <div class="pbmit-sbox-icon-wrapper pbmit-icon-type-icon">
-                                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-conversation"></i>
-                                            </div>
-                                            <span class="pbmit-fid-title">Staff  members</span>
-                                        </div>
-                                        <h4 class="pbmit-fid-inner">
-                                            <span class="pbmit-fid-before"></span>
-                                            <span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="305" data-interval="1" data-before="" data-before-style="" data-after="" data-after-style="">305</span>
-                                            <span class="pbmit-fid"><sup>+</sup></span>
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
-                </div>
-            </div>
-        </section>
-        <!-- Fid End -->
 
         <!-- Service Start -->
         <section class="pbmit-extend-animation service-one pbmit-bg-color-secondary">
@@ -610,13 +491,13 @@
                 <div class="row">
                     <div class="col-md-12 col-xl-4">
                         <div class="pbmit-heading-subheading animation-style2">
-                            <h4 class="pbmit-subtitle">since 1986</h4>
+                            <h4 class="pbmit-subtitle">since 2022</h4>
                             <h2 class="pbmit-title">Why choose us</h2>
                         </div>
                     </div>
                     <div class="col-md-12 col-xl-6">
                         <div class="pbmit-heading-desc">
-                            There are many variations of passages of form, by injected humour, or <br> randomised words which don’t look even.
+                            <!-- Take Out -->
                         </div>
                     </div>
                     <div class="col-md-12 col-xl-2">
@@ -716,7 +597,7 @@
                     <!-- Start Change Image -->
                     <div class="col-md-6 ihbox-one-img-col">
                         <div class="ihbox-imgbox">
-                            <img src="{{ asset('assets/images/homepage-1/ih-single-img-01.png') }}" class="img-fluid" alt="">
+                            <img src="https://homecareinterior.co.id/storage/9/why-choose-us-520x520.jpg" class="img-fluid" alt="">
                         </div>
                     </div>
                     <!-- End Change Image -->
@@ -859,7 +740,7 @@
                                 <h4 class="pbmit-subtitle">since 1986</h4>
                                 <h2 class="pbmit-title">We design thoughtful, livable spaces.</h2>
                                 <div class="pbmit-heading-desc">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                                    Kami percaya bahwa setiap ruang memiliki karakter unik yang perlu diterjemahkan melalui desain yang tepat, detail yang presisi, dan eksekusi yang sempurna.
                                 </div>
                             </div>
                             <div class="row pbmit-fid-style-one">
@@ -904,8 +785,8 @@
                     </div>
                     <div class="col-md-12 col-xl-6">
                         <div class="twentytwenty-container">
-                            <img src="{{ asset('assets/images/homepage-3/after.png') }}" alt="Before">
-                            <img src="{{ asset('assets/images/homepage-3/before.png') }}" alt="After">
+                            <img src="https://homecareinterior.co.id/storage/12/Before-955x595.jpg" alt="Before">
+                            <img src="https://homecareinterior.co.id/storage/13/after-955x595.jpg" alt="After">
                         </div>
                     </div>
                 </div>
