@@ -114,7 +114,7 @@
             <div class="pbmit-footer-text-inner">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="pbmit-footer-copyright-text-area"> Copyright © {{ date('Y') }} <a href="{{ route('home') }}">{{ $siteSettings->company_name }} - {{ $generalSettings->brand_name }}}}</a>, {{ $siteSettings->copyright_text ?? 'All Rights Reserved.' }}</div>
+                        <div class="pbmit-footer-copyright-text-area"> Copyright © {{ date('Y') }} <a href="{{ route('home') }}">{{ $siteSettings->company_name }} - {{ $generalSettings->brand_name }}</a>, {{ $siteSettings->copyright_text ?? 'All Rights Reserved.' }}</div>
                     </div>
                     <div class="col-md-6">
                         <div class="pbmit-footer-social-area">
