@@ -1,4 +1,59 @@
 @props(['title' => 'Default Title', 'items' => []])
+@php
+    $baseQuery = \App\Models\Banner\Content::query();
+    $banners = $baseQuery->whereHas('category', function($query) {
+            $query->where('slug', 'general');
+        })
+        ->active()
+            ->with(['media'])
+            ->first();
+
+    if ($title == 'Home') {
+        $banners = $baseQuery->whereHas('category', function($query) {
+                $query->where('slug', 'home-banner');
+            })
+            ->active()
+            ->with(['media'])
+            ->first();
+    }
+
+    if ($title == 'About Us') {
+        $banners = $baseQuery->whereHas('category', function($query) {
+                $query->where('slug', 'about-us-banner');
+            })
+            ->active()
+            ->with(['media'])
+            ->first();
+    }
+
+    if ($title == 'Portfolio') {
+        $banners = $baseQuery->whereHas('category', function($query) {
+                $query->where('slug', 'projects-banner');
+            })
+            ->active()
+            ->with(['media'])
+            ->first();
+    }
+
+    if ($title == 'Service') {
+        $banners = $baseQuery->whereHas('category', function($query) {
+                $query->where('slug', 'services-banner');
+            })
+            ->active()
+            ->with(['media'])
+            ->first();
+    }
+
+    if ($title == 'Contact Us') {
+        $banners = $baseQuery->whereHas('category', function($query) {
+                $query->where('slug', 'contact-us-banner');
+            })
+            ->active()
+            ->with(['media'])
+            ->first();
+    }
+
+@endphp
 
 {{-- Title Bar Section --}}
 <div class="pbmit-tbar">
@@ -23,7 +78,7 @@
             <span>
                 @if(isset($item['url']))
                     {{-- This is a clickable link in the middle of the trail --}}
-                    <a title="" href="{{ $item['url'] }}" class="home"><span>{{ $item['label'] }}</span></a>
+                    <a title="" href="{{ $banners->getImageUrl('large') }}" class="home"><span>{{ $item['label'] }}</span></a>
                 @else
                     {{-- This is the final, non-clickable item (the current page) --}}
                     <span class="post-root post post-post current-item">{{ $item['label'] }}</span>

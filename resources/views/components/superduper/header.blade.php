@@ -2,7 +2,7 @@
     /** Get Site Settings */
     $brandLogo = $siteSettings->logo ?? null;
     $brandName = $generalSettings->brand_name ?? $siteSettings->name ?? config('app.name', 'Simetri');
-    $brandPhone = $generalSettings->company_phone ?? '+62 851-5628-9284';
+    $brandPhone = $generalSettings->company_phone ?? '+62 81-1199-9435';
 
     /** Get Menu */
     use Datlechin\FilamentMenuBuilder\Models\Menu;

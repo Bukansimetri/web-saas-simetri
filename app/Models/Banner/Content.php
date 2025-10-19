@@ -9,16 +9,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
-use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Content extends Model implements HasMedia
 {
-    use InteractsWithMedia;
     use HasFactory, HasUlids, SoftDeletes;
     use HasUserStamp;
+    use InteractsWithMedia;
 
     /**
      * The table associated with the model.
@@ -96,44 +96,42 @@ class Content extends Model implements HasMedia
     /**
      * Register media conversions.
      */
-    public function registerMediaConversions(Media|null $media = null): void
+    public function registerMediaConversions(?Media $media = null): void
     {
         $this->addMediaConversion('preview')
             ->format('webp')
             ->quality(90)
-            ->fit(Fit::Contain, 300, 300)
+            ->fit(Fit::Contain, 633, 303)
             ->nonQueued();
 
         // Add responsive image sizes - always convert to WebP
         $this->addMediaConversion('thumbnail')
             ->format('webp')
-            ->quality(85)
+            ->quality(100)
             ->fit(Fit::Contain, 150, 150)
             ->nonQueued();
 
         $this->addMediaConversion('medium')
             ->format('webp')
-            ->quality(85)
-            ->fit(Fit::Contain, 600, 600)
+            ->quality(100)
+            ->fit(Fit::Contain, 950, 455)
             ->nonQueued();
 
         $this->addMediaConversion('large')
             ->format('webp')
-            ->quality(85)
-            ->fit(Fit::Contain, 1200, 800)
+            ->quality(100)
+            ->fit(Fit::Contain, 1900, 910)
             ->nonQueued();
     }
 
     /**
      * Get the banner image URL
-     * @param string $conversion
-     * @return string|null
      */
     public function getImageUrl(string $conversion = ''): ?string
     {
         $media = $this->getFirstMedia('banners');
 
-        if (!$media) {
+        if (! $media) {
             return null;
         }
 
@@ -142,7 +140,6 @@ class Content extends Model implements HasMedia
 
     /**
      * Check if the banner has an image
-     * @return bool
      */
     public function hasImage(): bool
     {

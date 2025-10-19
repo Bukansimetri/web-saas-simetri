@@ -91,13 +91,13 @@ class Client extends Model implements HasMedia
         $this->addMediaConversion('medium')
             ->format('webp')
             ->quality(85)
-            ->fit(Fit::Contain, 800, 492)
+            ->fit(Fit::Contain, 600, 600)
             ->nonQueued();
 
         $this->addMediaConversion('large')
             ->format('webp')
             ->quality(85)
-            ->fit(Fit::Contain, 1000, 615)
+            ->fit(Fit::Contain, 1200, 800)
             ->nonQueued();
     }
 

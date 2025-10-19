@@ -6,7 +6,7 @@
 			<div class="container">
 				<div class="pbmit-title-bar-content">
 					<div class="pbmit-title-bar-content-inner">
-						<x-superduper.components.breadcrumb />
+						<x-superduper.components.breadcrumb title="Portfolio"/>
 					</div>
 				</div>
 			</div>
