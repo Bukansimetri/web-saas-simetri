@@ -1,20 +1,27 @@
+@section('hero')
+@php
+    $banners = \App\Models\Banner\Content::whereHas('category', function($query) {
+                $query->where('slug', 'services-banner');
+            })
+            ->active()
+            ->orderBy('sort')
+            ->with(['media'])
+            ->first();
+@endphp
+<!-- Title Bar -->
+<div class="pbmit-title-bar-wrapper" style="background-image: url({{ $banners->getImageUrl('large') }}) !important;">
+    <div class="container">
+        <div class="pbmit-title-bar-content">
+            <div class="pbmit-title-bar-content-inner">
+                <x-superduper.components.breadcrumb title="Services"/>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Title Bar End-->
+@endsection
 <!-- Page Content -->
 <div class="page-content">
-
-    @section('hero')
-        <!-- Title Bar -->
-		<div class="pbmit-title-bar-wrapper">
-			<div class="container">
-				<div class="pbmit-title-bar-content">
-					<div class="pbmit-title-bar-content-inner">
-						<x-superduper.components.breadcrumb title="Service"/>
-					</div>
-				</div>
-			</div>
-		</div>
-        <!-- Title Bar End-->
-    @endsection
-
     <!-- Service Details -->
     <section class="site-content service-details">
         <div class="container">

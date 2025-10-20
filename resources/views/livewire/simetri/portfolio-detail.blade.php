@@ -1,19 +1,27 @@
+@section('hero')
+@php
+    $banners = \App\Models\Banner\Content::whereHas('category', function($query) {
+                $query->where('slug', 'general-banner');
+            })
+            ->active()
+            ->orderBy('sort')
+            ->with(['media'])
+            ->first();
+@endphp
+<!-- Title Bar -->
+<div class="pbmit-title-bar-wrapper" style="background-image: url({{ $banners->getImageUrl('large') }}) !important;">
+    <div class="container">
+        <div class="pbmit-title-bar-content">
+            <div class="pbmit-title-bar-content-inner">
+                <x-superduper.components.breadcrumb />
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Title Bar End-->
+@endsection
 <!-- Page Content -->
 <div class="page-content">
-
-    @section('hero')
-        <!-- Title Bar -->
-		<div class="pbmit-title-bar-wrapper">
-			<div class="container">
-				<div class="pbmit-title-bar-content">
-					<div class="pbmit-title-bar-content-inner">
-						<x-superduper.components.breadcrumb />
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Title Bar End-->
-    @endsection
     <!-- Portfolio Detail Style 1 -->
     <section class="site-content">
         <div class="container">

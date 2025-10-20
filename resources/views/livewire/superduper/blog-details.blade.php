@@ -1,3 +1,30 @@
+{{-- Title Bar using the new structure but with dynamic data --}}
+@section('hero')
+@php
+    $banners = \App\Models\Banner\Content::whereHas('category', function($query) {
+                $query->where('slug', 'general-banner');
+            })
+            ->active()
+            ->orderBy('sort')
+            ->with(['media'])
+            ->first();
+@endphp
+<!-- Title Bar -->
+<div class="pbmit-title-bar-wrapper" style="background-image: url({{ $banners->getImageUrl('large') }}) !important;">
+    <div class="container">
+        <div class="pbmit-title-bar-content">
+            <div class="pbmit-title-bar-content-inner">
+                <x-superduper.components.breadcrumb :items="[
+                    ['label' => 'Blog', 'url' => route('blog')],
+                    ['label' => $post->category->name, 'url' => route('blog', ['category' => $post->category->id])],
+                    ['label' => Str::limit($post->title, 40)]
+                ]" />
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Title Bar End-->
+@endsection
 <div>
     {{-- Schema.org JSON-LD data for SEO --}}
     @if(isset($schemaData))
@@ -7,25 +34,6 @@
             </script>
         @endpush
     @endif
-
-    {{-- Title Bar using the new structure but with dynamic data --}}
-    @section('hero')
-        <!-- Title Bar -->
-        <div class="pbmit-title-bar-wrapper">
-            <div class="container">
-                <div class="pbmit-title-bar-content">
-                    <div class="pbmit-title-bar-content-inner">
-                        <x-superduper.components.breadcrumb :items="[
-                            ['label' => 'Blog', 'url' => route('blog')],
-                            ['label' => $post->category->name, 'url' => route('blog', ['category' => $post->category->id])],
-                            ['label' => Str::limit($post->title, 40)]
-                        ]" />
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Title Bar End-->
-    @endsection
     <div class="page-content">
         <section class="site-content blog-details">
             <div class="container">

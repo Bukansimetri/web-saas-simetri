@@ -1,15 +1,24 @@
 @section('hero')
-    <!-- Title Bar -->
-    <div class="pbmit-title-bar-wrapper">
-        <div class="container">
-            <div class="pbmit-title-bar-content">
-                <div class="pbmit-title-bar-content-inner">
-                    <x-superduper.components.breadcrumb title="About Us"/>
-                </div>
+@php
+    $banners = \App\Models\Banner\Content::whereHas('category', function($query) {
+                $query->where('slug', 'about-us-banner');
+            })
+            ->active()
+            ->orderBy('sort')
+            ->with(['media'])
+            ->first();
+@endphp
+<!-- Title Bar -->
+<div class="pbmit-title-bar-wrapper" style="background-image: url({{ $banners->getImageUrl('large') }}) !important;">
+    <div class="container">
+        <div class="pbmit-title-bar-content">
+            <div class="pbmit-title-bar-content-inner">
+                <x-superduper.components.breadcrumb title="About Us"/>
             </div>
         </div>
     </div>
-    <!-- Title Bar End-->
+</div>
+<!-- Title Bar End-->
 @endsection
 <!-- Page Content -->
 <div class="page-content">

@@ -1,19 +1,26 @@
+@section('hero')
+@php
+    $banners = \App\Models\Banner\Content::whereHas('category', function($query) {
+                $query->where('slug', 'projects-banner');
+            })
+            ->active()
+            ->orderBy('sort')
+            ->with(['media'])
+            ->first();
+@endphp
+<!-- Title Bar -->
+<div class="pbmit-title-bar-wrapper" style="background-image: url({{ $banners->getImageUrl('large') }}) !important;">
+    <div class="container">
+        <div class="pbmit-title-bar-content">
+            <div class="pbmit-title-bar-content-inner">
+                <x-superduper.components.breadcrumb title="Projects"/>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Title Bar End-->
+@endsection
 <div class="page-content">
-
-    @section('hero')
-        <!-- Title Bar -->
-		<div class="pbmit-title-bar-wrapper">
-			<div class="container">
-				<div class="pbmit-title-bar-content">
-					<div class="pbmit-title-bar-content-inner">
-						<x-superduper.components.breadcrumb title="Portfolio"/>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Title Bar End-->
-    @endsection
-
     <!-- Portfolio Grid col 4 -->
     <section class="section-md">
         <div class="px-4 container-fluid">
@@ -34,10 +41,10 @@
                                 <div class="pbminfotech-box-content">
                                     <div class="pbminfotech-titlebox">
                                         <div class="pbmit-port-cat">
-                                            <a href="{{ $project->click_url }}" rel="tag">{{ $project->project_type }}</a>
+                                            <a href="{{ $project->getUrl() }}" rel="tag">{{ $project->project_type }}</a>
                                         </div>
                                         <h3 class="pbmit-portfolio-title">
-                                            <a href="{{ $project->click_url }}">{{ $project->title }}</a>
+                                            <a href="{{ $project->getUrl() }}">{{ $project->title }}</a>
                                         </h3>
                                     </div>
                                 </div>

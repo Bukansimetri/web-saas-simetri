@@ -1,3 +1,25 @@
+@section('hero')
+@php
+    $banners = \App\Models\Banner\Content::whereHas('category', function($query) {
+                $query->where('slug', 'contact-us-banner');
+            })
+            ->active()
+            ->orderBy('sort')
+            ->with(['media'])
+            ->first();
+@endphp
+<!-- Title Bar -->
+<div class="pbmit-title-bar-wrapper" style="background-image: url({{ $banners->getImageUrl('large') }}) !important;">
+    <div class="container">
+        <div class="pbmit-title-bar-content">
+            <div class="pbmit-title-bar-content-inner">
+                <x-superduper.components.breadcrumb title="Contact Us"/>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Title Bar End-->
+@endsection
 <div x-data x-init="
         $nextTick(() => {
             window.addEventListener('successMessageShown', () => {
@@ -10,20 +32,6 @@
 
     <!-- Page Content -->
     <div class="page-content">
-        @section('hero')
-            <!-- Title Bar -->
-            <div class="pbmit-title-bar-wrapper">
-                <div class="container">
-                    <div class="pbmit-title-bar-content">
-                        <div class="pbmit-title-bar-content-inner">
-                            <x-superduper.components.breadcrumb title="Contact Us"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Title Bar End-->
-        @endsection
-
         <section class="pbmit-sticky-section">
             <div class="container">
                 <div class="contact-us-bg">

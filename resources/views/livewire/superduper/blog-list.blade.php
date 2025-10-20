@@ -1,4 +1,28 @@
 {{-- The main container now gets the Alpine.js functionality --}}
+@section('hero')
+@php
+    $banners = \App\Models\Banner\Content::whereHas('category', function($query) {
+                $query->where('slug', 'general-banner');
+            })
+            ->active()
+            ->orderBy('sort')
+            ->with(['media'])
+            ->first();
+@endphp
+<!-- Title Bar -->
+<div class="pbmit-title-bar-wrapper" style="background-image: url({{ $banners->getImageUrl('large') }}) !important;">
+    <div class="container">
+        <div class="pbmit-title-bar-content">
+            <div class="pbmit-title-bar-content-inner">
+                <x-superduper.components.breadcrumb
+                    :items="$activeCategory ? [['label' => 'Blog', 'url' => route('blog')], ['label' => $categories->firstWhere('id', $activeCategory)?->name]] : [['label' => 'Blog']]"
+                />
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Title Bar End-->
+@endsection
 <div x-data="{
         isObserverVisible: false
     }"
@@ -15,30 +39,13 @@
     ">
 
     <div class="page-content">
-        @section('hero')
-            <!-- Title Bar -->
-            <div class="pbmit-title-bar-wrapper">
-                <div class="container">
-                    <div class="pbmit-title-bar-content">
-                        <div class="pbmit-title-bar-content-inner">
-                            <x-superduper.components.breadcrumb
-                                :items="$activeCategory ? [['label' => 'Blog', 'url' => route('blog')], ['label' => $categories->firstWhere('id', $activeCategory)?->name]] : [['label' => 'Blog']]"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Title Bar End-->
-        @endsection
-
         <section class="section-md pbmit-element-viewtype-masonry">
-            <div class="px-4 container-fluid">
-                <div class="relative">
+            <div class="container">
                     <div wire:loading.delay.class="opacity-50" wire:target="filterByCategory, search, toggleFeatured, sortBy, nextPage, previousPage, gotoPage" class="absolute inset-0 z-10 transition-opacity duration-300 bg-white opacity-0 pointer-events-none"></div>
 
                     <div class="row pbmit-element-posts-wrapper">
                         @forelse($posts as $post)
-                            <article class="pbmit-ele-blog pbmit-blog-style-1 col-md-4" wire:key="post-{{ $post->id }}">
+                            <article class="pbmit-ele-blog pbmit-blog-style-1 col-md-6" wire:key="post-{{ $post->id }}">
                                 <div class="post-item">
                                     <div class="pbminfotech-box-content">
                                         <div class="pbmit-featured-container">
@@ -96,7 +103,6 @@
                             </div>
                         @endforelse
                     </div>
-                </div>
                 @if ($posts->hasMorePages())
                     {{--
                         This empty div is our "trigger". When it becomes visible on the screen,
