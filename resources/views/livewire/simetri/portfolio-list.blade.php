@@ -22,7 +22,7 @@
 @endsection
 <div class="page-content">
     <!-- Portfolio Grid col 4 -->
-    <section class="section-md">
+    <section class="section-md pbmit-element-viewtype-masonry">
         <div class="px-4 container-fluid">
             <div class="row pbmit-element-posts-wrapper">
                 @if (isset($projects) && $projects->isNotEmpty())

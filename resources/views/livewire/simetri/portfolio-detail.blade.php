@@ -180,7 +180,7 @@
                         </div>
                     @endif
                     <div class="py-5">
-                        @if ($project->options->isNotEmpty())
+                        @if (!empty($project->options))
                             <div class="pbmit-heading animation-style2">
                                 <h2 class="pbmit-title">What say our Client’s about design</h2>
                             </div>
