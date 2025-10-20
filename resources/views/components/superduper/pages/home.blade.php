@@ -944,7 +944,7 @@
                 <div class="text-center position-relative">
                     <div class="pbmit-heading-subheading animation-style3">
                         <h4 class="pbmit-subtitle">Steps</h4>
-                        <h2 class="pbmit-title">How organization works</h2>
+                        <h2 class="pbmit-title">Work Process Home Care Interior</h2>
                     </div>
                     <div class="pbmit-ih-highlight">
                         <h2>Process</h2>
