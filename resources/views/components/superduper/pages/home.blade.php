@@ -101,9 +101,9 @@
                 'is_active' => true,
                 'type' => 'home-section-bottom',
             ])
-            ->orderBy('created_at', 'desc')
+            ->orderBy('created_at', 'asc')
             ->with(['media'])
-            ->take(4)
+            ->take(5)
             ->get();
     @endphp
     <div class="pbmit-slider-area pbmit-slider-one">
