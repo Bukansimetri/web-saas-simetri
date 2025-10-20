@@ -14,9 +14,6 @@
 		</div>
 		<!-- Title Bar End-->
     @endsection
-
-    if
-
     <!-- Portfolio Detail Style 1 -->
     <section class="site-content">
         <div class="container">
