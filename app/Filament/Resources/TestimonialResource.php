@@ -14,7 +14,6 @@ use Filament\Tables\Table;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
 
 class TestimonialResource extends Resource
 {
@@ -164,11 +163,6 @@ class TestimonialResource extends Resource
                 Tables\Columns\TextColumn::make('client_location')
                     ->searchable()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('description')
-                    ->description(fn (Model $record): string => Str::limit(strip_tags($record->description), 100))
-                    ->searchable()
-                    ->sortable()
-                    ->wrap(),
                 Tables\Columns\IconColumn::make('is_active')
                     ->label('Active')
                     ->boolean()
