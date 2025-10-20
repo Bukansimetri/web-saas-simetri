@@ -35,6 +35,8 @@ Route::get('/about-us', AboutUs::class)->name('about-us');
 
 Route::get('/services', ServiceList::class)->name('services');
 
+Route::get('/services/{slug}', PortfolioDetail::class)->name('service.show');
+
 Route::get('/portfolio', PortfolioList::class)->name('portfolio');
 
 Route::get('/portfolio/{slug}', PortfolioDetail::class)->name('portfolio.show');

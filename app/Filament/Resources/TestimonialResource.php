@@ -118,7 +118,7 @@ class TestimonialResource extends Resource
                                     ->compact()
                                     ->columns(2),
                                 Forms\Components\Section::make('Tracking')
-                                    ->description('Service tracking statistics')
+                                    ->description('Testimonial tracking statistics')
                                     ->schema([
                                         Forms\Components\Placeholder::make('impression_count')
                                             ->label('Impressions')
@@ -140,7 +140,7 @@ class TestimonialResource extends Resource
                                     ])
                                     ->compact()
                                     ->columns(3)
-                                    ->visible(fn (?Service $record) => $record !== null),
+                                    ->visible(fn (?Testimonial $record) => $record !== null),
                             ]),
                     ])
                     ->columnSpanFull(),
