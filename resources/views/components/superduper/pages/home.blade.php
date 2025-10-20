@@ -834,7 +834,7 @@
                                                 <img src="{{ $portfolio->getImageUrl('medium') }}"
                                                     class="img-fluid"
                                                     alt="{{ $portfolio->title }}"
-                                                    style="width: 960px !important; height: 760px !important;">
+                                                    style="width: 440px !important; height: 348px !important;">
                                             @else
                                                 <img src="{{ asset('assets/images/homepage-1/portfolio/portfolio-01.jpg') }}" class="img-fluid" alt="portfolio-01">
                                             @endif
