@@ -1,20 +1,18 @@
-<!-- Page Content -->
-<div class="page-content">
-
-    @section('hero')
-        <!-- Title Bar -->
-        <div class="pbmit-title-bar-wrapper">
-            <div class="container">
-                <div class="pbmit-title-bar-content">
-                    <div class="pbmit-title-bar-content-inner">
-                        <x-superduper.components.breadcrumb title="About Us"/>
-                    </div>
+@section('hero')
+    <!-- Title Bar -->
+    <div class="pbmit-title-bar-wrapper">
+        <div class="container">
+            <div class="pbmit-title-bar-content">
+                <div class="pbmit-title-bar-content-inner">
+                    <x-superduper.components.breadcrumb title="About Us"/>
                 </div>
             </div>
         </div>
-        <!-- Title Bar End-->
-    @endsection
-
+    </div>
+    <!-- Title Bar End-->
+@endsection
+<!-- Page Content -->
+<div class="page-content">
     <!-- Ihbox -->
     <section class="ihbox-section-two">
         <div class="p-0 container-fluid">
