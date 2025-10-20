@@ -1052,8 +1052,14 @@
         <!-- Pricing Start -->
         <section class="section-xl pricing-one-bg">
             <div class="container">
+                <div class="text-center position-relative">
+                    <div class="pbmit-heading-subheading animation-style3">
+                        <h4 class="pbmit-subtitle">Pricing Plan</h4>
+                        <h2 class="pbmit-title">Invest in Design That Lasts</h2>
+                    </div>
+                </div>
                 <div class="row g-0">
-                    <div class="col-md-12 col-xl-7">
+                    <div class="col-md-12 col-xl-12">
                         <div class="pbminfotech-ele-ptable-style-1">
                             <div class="pbmit-ptable-cols row">
                                 @if ($packages->isNotEmpty())
@@ -1090,36 +1096,36 @@
                                         </div>
                                     @endforeach
                                 @else
-                                    <div class="pbmit-ptable-col col-md-6">
+                                    <div class="pbmit-ptable-col col-md-4">
                                         <div class="pbmit-pricing-table-box">
                                             <div class="pbmit-head-wrap">
-                                                <h3 class="pbminfotech-ptable-heading">Basic Plan</h3>
+                                                <h3 class="pbminfotech-ptable-heading">Standard Plan</h3>
                                                 <div class="pbminfotech-sep"></div>
                                                 <div class="pbmit-price-wrapper">
                                                     <div class="pbmit-ptable-price-w">
                                                         <div class="pbminfotech-ptable-symbol" style="font-size: 20px !important">Rp</div>
-                                                        <div class="pbminfotech-ptable-price" style="font-size: 50px !important">27 Juta</div>
+                                                        <div class="pbminfotech-ptable-price" style="font-size: 50px !important">2,4 Juta</div>
                                                     </div>
                                                     <div class="pbminfotech-ptable-frequency" style="font-size: 20px !important">/Meter</div>
                                                 </div>
                                             </div>
                                             <div class="pbmit-ptable-inner">
                                                 <div class="pbmit-ptable-lines-w">
-                                                    <div class="pbmit-ptable-line">Konsultasi intensif & analisis kebutuhan</div>
-                                                    <div class="pbmit-ptable-line">Desain konsep menyeluruh (layout, moodboard, dan 3D visual)</div>
-                                                    <div class="pbmit-ptable-line">Desain detail tiap area (meja, kitchen set, lighting, dinding, flooring)</div>
-                                                    <div class="pbmit-ptable-line">Estimasi RAB dan pemilihan material</div>
-                                                    <div class="pbmit-ptable-line">Supervisi desain saat pengerjaan</div>
+                                                    <div class="pbmit-ptable-line">Multiplex 18mm</div>
+                                                    <div class="pbmit-ptable-line">Engsell slowmotion ex taco</div>
+                                                    <div class="pbmit-ptable-line">Rell double track ex huben</div>
+                                                    <div class="pbmit-ptable-line">Rak Piring Kabinet Atas/Bawah Standard</div>
+                                                    <div class="pbmit-ptable-line">Rak Sendok Standard</div>
+                                                    <div class="pbmit-ptable-line">Edging pvc ex taco</div>
+                                                    <div class="pbmit-ptable-line">Finishing hpl ex taco</div>
+                                                    <div class="pbmit-ptable-line">Finishing kabinet dalam melaminto</div>
+                                                    <div class="pbmit-ptable-line">LED Strip 4K Lumens</div>
                                                 </div>
-                                                <p style="margin-top: 8%">
-                                                    <b>Cocok Untuk:</b><br>
-                                                    Proyek residential skala menengah seperti apartemen, rumah, atau unit sewa yang butuh desain cepat dan fungsional
-                                                </p>
                                                 <div class="pbminfotech-ptable-btn">
                                                     <div class="pbmit-button">
                                                         <a class="pbmit-button-inner" href="{{ route('contact-us') }}">
                                                             <span class="pbmit-button-wrapper">
-                                                                <span class="pbmit-button-text">Consult Now</span>
+                                                                <span class="pbmit-button-text">Purchase Now</span>
                                                             </span>
                                                         </a>
                                                     </div>
@@ -1130,36 +1136,37 @@
                                             <div class="pbmit-feature-wrap"></div>
                                         </div>
                                     </div>
-                                    <div class="pbmit-pricing-table-featured-col pbmit-ptable-col col-md-6">
+                                    <div class="pbmit-pricing-table-featured-col pbmit-ptable-col col-md-4">
                                         <div class="pbmit-pricing-table-box">
                                             <div class="pbmit-head-wrap">
-                                                <h3 class="pbminfotech-ptable-heading">Advance</h3>
+                                                <h3 class="pbminfotech-ptable-heading">Premium Plan</h3>
                                                 <div class="pbminfotech-sep"></div>
                                                 <div class="pbmit-price-wrapper">
                                                     <div class="pbmit-ptable-price-w">
                                                         <div class="pbminfotech-ptable-symbol" style="font-size: 20px !important">Rp</div>
-                                                        <div class="pbminfotech-ptable-price" style="font-size: 50px !important">47 Juta</div>
+                                                        <div class="pbminfotech-ptable-price" style="font-size: 50px !important">2,8 Juta</div>
                                                     </div>
                                                     <div class="pbminfotech-ptable-frequency" style="font-size: 20px !important">/Meter</div>
                                                 </div>
                                             </div>
                                             <div class="pbmit-ptable-inner">
                                                 <div class="pbmit-ptable-lines-w">
-                                                    <div class="pbmit-ptable-line">Konsultasi intensif & analisis kebutuhan</div>
-                                                    <div class="pbmit-ptable-line">Desain konsep menyeluruh (layout, moodboard, dan 3D visual)</div>
-                                                    <div class="pbmit-ptable-line">Desain detail tiap area (meja, kitchen set, lighting, dinding, flooring)</div>
-                                                    <div class="pbmit-ptable-line">Estimasi RAB dan pemilihan material</div>
-                                                    <div class="pbmit-ptable-line">Supervisi desain saat pengerjaan</div>
+                                                    <div class="pbmit-ptable-line">Multiplex 18mm</div>
+                                                    <div class="pbmit-ptable-line">Engsell slowmotion ex taco</div>
+                                                    <div class="pbmit-ptable-line">Rell double track ex huben</div>
+                                                    <div class="pbmit-ptable-line">Rak Piring Kabinet Atas & Bawah Stainless</div>
+                                                    <div class="pbmit-ptable-line">Rak Sendok Stainless</div>
+                                                    <div class="pbmit-ptable-line">Edging pvc ex taco</div>
+                                                    <div class="pbmit-ptable-line">Finishing hpl ex taco</div>
+                                                    <div class="pbmit-ptable-line">Finishing kabinet dalam tacosheet</div>
+                                                    <div class="pbmit-ptable-line">Kaca polos 5 mm</div>
+                                                    <div class="pbmit-ptable-line">Lighting led strip 4k lumens</div>
                                                 </div>
-                                                <p style="margin-top: 8%; color:white;">
-                                                    <b>Cocok Untuk:</b><br>
-                                                    Proyek corporate atau commercial yang menuntut tampilan berkelas dan pengerjaan terkoordinasi dengan tim konstruksi
-                                                </p>
                                                 <div class="pbminfotech-ptable-btn">
                                                     <div class="pbmit-button">
                                                         <a class="pbmit-button-inner" href="about-mask-img">
                                                             <span class="pbmit-button-wrapper">
-                                                                <span class="pbmit-button-text">Consult Now</span>
+                                                                <span class="pbmit-button-text">Purchase Now</span>
                                                             </span>
                                                         </a>
                                                     </div>
@@ -1170,30 +1177,49 @@
                                             </div>
                                         </div>
                                     </div>
+                                     <div class="pbmit-ptable-col col-md-4">
+                                        <div class="pbmit-pricing-table-box">
+                                            <div class="pbmit-head-wrap">
+                                                <h3 class="pbminfotech-ptable-heading">Luxury Plan</h3>
+                                                <div class="pbminfotech-sep"></div>
+                                                <div class="pbmit-price-wrapper">
+                                                    <div class="pbmit-ptable-price-w">
+                                                        <div class="pbminfotech-ptable-symbol" style="font-size: 20px !important">Rp</div>
+                                                        <div class="pbminfotech-ptable-price" style="font-size: 50px !important">3,2 Juta</div>
+                                                    </div>
+                                                    <div class="pbminfotech-ptable-frequency" style="font-size: 20px !important">/Meter</div>
+                                                </div>
+                                            </div>
+                                            <div class="pbmit-ptable-inner">
+                                                <div class="pbmit-ptable-lines-w">
+                                                    <div class="pbmit-ptable-line">PVC,HDF/HMR 18 mm</div>
+                                                    <div class="pbmit-ptable-line">Engsell slowmotion ex taco</div>
+                                                    <div class="pbmit-ptable-line">Rell double track ex huben</div>
+                                                    <div class="pbmit-ptable-line">Rak Piring Kabinet Atas & Bawah Stainless</div>
+                                                    <div class="pbmit-ptable-line">Rak Sendok Standard</div>
+                                                    <div class="pbmit-ptable-line">Edging pvc ex taco</div>
+                                                    <div class="pbmit-ptable-line">Finishing hpl ex taco</div>
+                                                    <div class="pbmit-ptable-line">Finishing kabinet dalam tacosheet</div>
+                                                    <div class="pbmit-ptable-line">Kaca polos 5 mm</div>
+                                                    <div class="pbmit-ptable-line">LED Strip 4K Lumens</div>
+                                                </div>
+                                                <div class="pbminfotech-ptable-btn">
+                                                    <div class="pbmit-button">
+                                                        <a class="pbmit-button-inner" href="{{ route('contact-us') }}">
+                                                            <span class="pbmit-button-wrapper">
+                                                                <span class="pbmit-button-text">Purchase Now</span>
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pbmit-ptable-inner">
+                                            </div>
+                                            <div class="pbmit-feature-wrap"></div>
+                                        </div>
+                                    </div>
                                 @endif
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-xl-5">
-                        <div class="pricing-one-rightbox">
-                            <div class="pbmit-heading-subheading animation-style2">
-                                <h4 class="pbmit-subtitle">Pricing Plan</h4>
-                                <h2 class="pbmit-title">Invest in Design That Lasts</h2>
-                                <p>Kami memahami bahwa setiap proyek memiliki kebutuhan dan skala berbeda. Karena itu, Home Care Interior menyediakan pilihan paket layanan yang fleksibel</p>
-                            </div>
-                            <ul class="list-group list-group-borderless">
-                                <li class="list-group-item">
-                                    <span class="pbmit-icon-list-icon">
-                                        <i aria-hidden="true" class="pbmit-xinterio-icon pbmit-xinterio-icon-wallet"></i>
-                                    </span>
-                                    <span class="pbmit-icon-list-text">No any hidden fees pay</span>
-                                </li>
-                            </ul>
-                            <a class="pbmit-btn pbmit-btn-outline" href="{{ route('contact-us') }}">
-                                <span class="pbmit-button-content-wrapper">
-                                    <span class="pbmit-button-text">More Price</span>
-                                </span>
-                            </a>
                         </div>
                     </div>
                 </div>
