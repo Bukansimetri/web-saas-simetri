@@ -1245,7 +1245,7 @@
                                                             <div class="pbmit-featured-img-wrapper">
                                                                 <div class="pbmit-featured-wrapper">
                                                                     @if ($testimonial->hasImage())
-                                                                        <img src="{{ $testimonial->getImageUrl('thumbnail') }}" class="img-fluid" alt="{{ $testimonial->client }}">
+                                                                        <img src="{{ $testimonial->getImageUrl('preview') }}" class="img-fluid" alt="{{ $testimonial->client }}">
                                                                     @else
                                                                         <img src="{{ asset('assets/images/homepage-1/reviewer/reviewer-01.jpg') }}" class="img-fluid" alt="reviewer-04">
                                                                     @endif

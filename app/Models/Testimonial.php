@@ -125,7 +125,7 @@ class Testimonial extends Model implements HasMedia
      */
     public function hasImage(): bool
     {
-        return $this->hasMedia('terstimonials');
+        return $this->hasMedia('testimonials');
     }
 
     /**
@@ -133,7 +133,7 @@ class Testimonial extends Model implements HasMedia
      */
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('terstimonials')
+        $this->addMediaCollection('testimonials')
             ->singleFile();
     }
 }
