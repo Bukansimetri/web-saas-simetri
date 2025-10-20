@@ -501,7 +501,7 @@
                         </div>
                     </div>
                     <div class="col-md-12 col-xl-2">
-                        <a class="pbmit-btn pbmit-btn-outline" href="contact-us.html">
+                        <a class="pbmit-btn pbmit-btn-outline" href="https://api.whatsapp.com/send?phone=628111999435&text=Halo%20Tim%20Home%20Care%20Interior%2C%20saya%20ingin%20berkonsultasi%20dengan%20tim%20designnya%20mengenai%20desain%20interior%2C%20bisa%20dibantu%20%3F">
                             <span class="pbmit-button-content-wrapper">
                                 <span class="pbmit-button-text">Book Consult</span>
                             </span>
@@ -809,15 +809,13 @@
                             <ul class="pbmit-sortable-list-ul">
                                 <li><a href="#" class="pbmit-sortable-link pbmit-selected" data-category="*" data-sortby="*">All</a></li>
                                 @if ($portfolios->isNotEmpty())
-                                    @foreach ($portfolios->pluck('project_type')->unique() as $type)
-                                        <li><a href="#" class="pbmit-sortable-link" data-sortby="{{ strtolower($type) }}">{{ $type }}</a></li>
+                                    @foreach ($portfolios as $type)
+                                        <li>
+                                            <a href="#" class="pbmit-sortable-link" data-sortby="{{ strtolower($type->portfolio_type) }}">
+                                                {{ $type->portfolio_type }}
+                                            </a>
+                                        </li>
                                     @endforeach
-                                @else
-                                    <li><a href="#" class="pbmit-sortable-link" data-sortby="architecture">Architecture</a></li>
-                                    <li><a href="#" class="pbmit-sortable-link" data-sortby="bedroom">Bedroom</a></li>
-                                    <li><a href="#" class="pbmit-sortable-link"  data-sortby="furniture">Furniture</a></li>
-                                    <li><a href="#" class="pbmit-sortable-link" data-sortby="interior">Interior</a></li>
-                                    <li><a href="#" class="pbmit-sortable-link" data-sortby="kitchen">Kitchen</a></li>
                                 @endif
                             </ul>
                         </div>
@@ -831,7 +829,7 @@
                                     <div class="pbmit-featured-img-wrapper">
                                         <div class="pbmit-featured-wrapper">
                                             @if ($portfolio->hasImage())
-                                                <img src="{{ $portfolio->getImageUrl('medium') }}" class="img-fluid" alt="{{ $portfolio->title }}">
+                                                <img src="{{ $portfolio->getImageUrl('medium') }}" class="img-fluid" alt="{{ $portfolio->title }}" width="960" height="760">
                                             @else
                                                 <img src="{{ asset('assets/images/homepage-1/portfolio/portfolio-01.jpg') }}" class="img-fluid" alt="portfolio-01">
                                             @endif
@@ -1566,6 +1564,10 @@
         <!-- Blog End -->
 
     </div>
+
+    <a href="https://api.whatsapp.com/send?phone=628111999435&text=Halo%2C%20terima%20kasih%20telah%20menghubungi%20Home%20Care%20Interior.%20Saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20desain%20interior%2C%20boleh%20dibantu%20untuk%20konsultasinya.%20" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 </x-superduper.main>
 @push('js')
 <script>

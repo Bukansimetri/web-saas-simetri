@@ -209,4 +209,8 @@
         </div>
     </section>
     <!-- Portfolio Grid col 4 End -->
+
+    <a href="https://api.whatsapp.com/send?phone=628111999435&text=Halo%2C%20saya%20melihat%20beberapa%20proyek%20Home%20Care%20Interior%20dan%20tertarik%20untuk%20berkonsultasi%20lebih%20lanjut.%20Boleh%20dibantu%20oleh%20tim%20desainnya%3F" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 </div>

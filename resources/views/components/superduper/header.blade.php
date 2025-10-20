@@ -96,7 +96,7 @@
                             </a>
                         </div>
                         <div class="pbmit-button-box-second">
-                            <a class="pbmit-btn" href="{{ route('contact-us') }}">
+                            <a class="pbmit-btn" href="https://api.whatsapp.com/send?phone=628111999435&text=Halo%20Tim%20Home%20Care%20Interior%2C%20saya%20ingin%20berkonsultasi%20dengan%20tim%20designnya%20mengenai%20desain%20interior%2C%20bisa%20dibantu%20%3F">
                                 <span class="pbmit-button-content-wrapper">
                                     <span class="pbmit-button-text">Book Consult</span>
                                 </span>

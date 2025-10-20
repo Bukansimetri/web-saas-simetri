@@ -28,7 +28,7 @@
             <article class="portfolio-single">
                 <div class="pbmit-short-description">
                     <h3>{{ $project->title }}</h3>
-                    <p>I{{ $project->short_description }}}</p>
+                    <p>{{ $project->short_description }}</p>
                 </div>
                 <div class="pbmit-single-project-details-list">
                     <h3>Project info</h3>
@@ -244,5 +244,8 @@
     </section>
     <!-- Portfolio Detail Style 1 End -->
 
+    <a href="https://api.whatsapp.com/send?phone=628111999435&text=Halo%20Tim%20Home%20Care%20Interior%2C%20saya%20ingin%20berkonsultasi%20dengan%20tim%20designnya%20mengenai%20desain%20interior%2C%20bisa%20dibantu%20%3F" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 </div>
 <!-- Page Content End -->
