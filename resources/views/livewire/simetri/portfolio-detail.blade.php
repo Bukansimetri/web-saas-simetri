@@ -13,7 +13,7 @@
     <div class="container">
         <div class="pbmit-title-bar-content">
             <div class="pbmit-title-bar-content-inner">
-                <x-superduper.components.breadcrumb />
+                <x-superduper.components.breadcrumb title="{{ $project->title }}"/>
             </div>
         </div>
     </div>
@@ -32,30 +32,32 @@
                 </div>
                 <div class="pbmit-single-project-details-list">
                     <h3>Project info</h3>
-                    <div class="pbmit-portfolio-lines-wrapper">
-                        <ul class="pbmit-portfolio-lines-ul">
-                            <li class="pbmit-portfolio-line-li">
-                                <span class="pbmit-portfolio-line-title">Build By : </span>
-                                <span class="pbmit-portfolio-line-value">Homecare Interior</span>
-                            </li>
-                            <li class="pbmit-portfolio-line-li">
-                                <span class="pbmit-portfolio-line-title">Client : </span>
-                                <span class="pbmit-portfolio-line-value">{{ $project->client }}</span>
-                            </li>
-                            <li class="pbmit-portfolio-line-li">
-                                <span class="pbmit-portfolio-line-title">Terms : </span>
-                                <span class="pbmit-portfolio-line-value">{{ $project->terms }}</span>
-                            </li>
-                            <li class="pbmit-portfolio-line-li">
-                                <span class="pbmit-portfolio-line-title">Project Type : </span>
-                                <span class="pbmit-portfolio-line-value">{{ $project->project_type }}</span>
-                            </li>
-                            <li class="pbmit-portfolio-line-li">
-                                <span class="pbmit-portfolio-line-title">Production Year : </span>
-                                <span class="pbmit-portfolio-line-value">{{ $project->production_year }}</span>
-                            </li>
-                        </ul>
-                    </div>
+                    @if (!empty($project->client))
+                        <div class="pbmit-portfolio-lines-wrapper">
+                            <ul class="pbmit-portfolio-lines-ul">
+                                <li class="pbmit-portfolio-line-li">
+                                    <span class="pbmit-portfolio-line-title">Build By : </span>
+                                    <span class="pbmit-portfolio-line-value">Homecare Interior</span>
+                                </li>
+                                <li class="pbmit-portfolio-line-li">
+                                    <span class="pbmit-portfolio-line-title">Client : </span>
+                                    <span class="pbmit-portfolio-line-value">{{ $project->client }}</span>
+                                </li>
+                                <li class="pbmit-portfolio-line-li">
+                                    <span class="pbmit-portfolio-line-title">Terms : </span>
+                                    <span class="pbmit-portfolio-line-value">{{ $project->terms }}</span>
+                                </li>
+                                <li class="pbmit-portfolio-line-li">
+                                    <span class="pbmit-portfolio-line-title">Project Type : </span>
+                                    <span class="pbmit-portfolio-line-value">{{ $project->project_type }}</span>
+                                </li>
+                                <li class="pbmit-portfolio-line-li">
+                                    <span class="pbmit-portfolio-line-title">Production Year : </span>
+                                    <span class="pbmit-portfolio-line-value">{{ $project->production_year }}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    @endif
                 </div>
                 <div class="pbmit-featured-img-wrapper">
                     @if ($project->hasImage())
@@ -69,50 +71,52 @@
                         <h2 class="pbmit-title">Design in Details</h2>
                     </div>
                     {{ $project->description }}
-                    <div class="ihbox-style-area">
-                        <div class="row g-0">
-                            <div class="col-md-6 col-xl-3">
-                                <div class="pbmit-ihbox-style-14">
-                                    <div class="pbmit-ihbox-box">
-                                        <div class="pbmit-icon-wrapper">
-                                            <h2 class="pbmit-element-title">[{{ $project->length }}]</h2>
-                                            <div class="pbmit-heading-desc">Lenght</div>
+                    @if (!empty($project->lenght))
+                        <div class="ihbox-style-area">
+                            <div class="row g-0">
+                                <div class="col-md-6 col-xl-3">
+                                    <div class="pbmit-ihbox-style-14">
+                                        <div class="pbmit-ihbox-box">
+                                            <div class="pbmit-icon-wrapper">
+                                                <h2 class="pbmit-element-title">[{{ $project->length }}]</h2>
+                                                <div class="pbmit-heading-desc">Lenght</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 col-xl-3">
-                                <div class="pbmit-ihbox-style-14">
-                                    <div class="pbmit-ihbox-box">
-                                        <div class="pbmit-icon-wrapper">
-                                            <h2 class="pbmit-element-title">[{{ $project->width }}]</h2>
-                                            <div class="pbmit-heading-desc">Width</div>
+                                <div class="col-md-6 col-xl-3">
+                                    <div class="pbmit-ihbox-style-14">
+                                        <div class="pbmit-ihbox-box">
+                                            <div class="pbmit-icon-wrapper">
+                                                <h2 class="pbmit-element-title">[{{ $project->width }}]</h2>
+                                                <div class="pbmit-heading-desc">Width</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 col-xl-3">
-                                <div class="pbmit-ihbox-style-14">
-                                    <div class="pbmit-ihbox-box">
-                                        <div class="pbmit-icon-wrapper">
-                                            <h2 class="pbmit-element-title">[{{ $project->height }}]</h2>
-                                            <div class="pbmit-heading-desc">Height</div>
+                                <div class="col-md-6 col-xl-3">
+                                    <div class="pbmit-ihbox-style-14">
+                                        <div class="pbmit-ihbox-box">
+                                            <div class="pbmit-icon-wrapper">
+                                                <h2 class="pbmit-element-title">[{{ $project->height }}]</h2>
+                                                <div class="pbmit-heading-desc">Height</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 col-xl-3">
-                                <div class="pbmit-ihbox-style-14">
-                                    <div class="pbmit-ihbox-box">
-                                        <div class="pbmit-icon-wrapper">
-                                            <h2 class="pbmit-element-title">[{{ $project->area }}]</h2>
-                                            <div class="pbmit-heading-desc">Site Area</div>
+                                <div class="col-md-6 col-xl-3">
+                                    <div class="pbmit-ihbox-style-14">
+                                        <div class="pbmit-ihbox-box">
+                                            <div class="pbmit-icon-wrapper">
+                                                <h2 class="pbmit-element-title">[{{ $project->area }}]</h2>
+                                                <div class="pbmit-heading-desc">Site Area</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
                     @php
                         // Get the collection of remaining images once to be efficient.
                         $remainingImages = $project->getRemainingImages();
@@ -198,28 +202,6 @@
                                         <div class="pbmit-ihbox-contents">
                                             <div class="pbmit-heading-desc">"{{ $project->options['feedback'] }}”</div>
                                             <h2 class="pbmit-element-title">- {{ $project->client }}</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @else
-                            <div class="pbmit-heading animation-style2">
-                                <h2 class="pbmit-title">What say our Client’s about design</h2>
-                            </div>
-                            <div>
-                                The interior designer may also work with engineers and contractors to ensure that the design is feasible and can be implemented within the construction budget. We believe that a well-designed space can have a profound impact on your well-being and quality of life. With a team of skilled designers and professionals, we are strive to provide exceptional interior design services that exceed your expectations.
-                            </div>
-                            <div class="ihbox-style-15-area">
-                                <div class="pbmit-ihbox-style-15">
-                                    <div class="pbmit-ihbox-box d-flex">
-                                        <div class="pbmit-ihbox-icon">
-                                            <div class="pbmit-ihbox-icon-wrapper pbmit-icon-type-icon">
-                                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-quote-left"></i>
-                                            </div>
-                                        </div>
-                                        <div class="pbmit-ihbox-contents">
-                                            <div class="pbmit-heading-desc">"Their team are easy to work with and helped me make amazing websites. Thanks guys for all your hard work.  Trust us we looked for a very long time.”</div>
-                                            <h2 class="pbmit-element-title">- Satisfied client</h2>
                                         </div>
                                     </div>
                                 </div>
