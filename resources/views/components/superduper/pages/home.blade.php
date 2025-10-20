@@ -1454,7 +1454,7 @@
                                                         <div class="pbmit-featured-img-wrapper">
                                                             <div class="pbmit-featured-wrapper">
                                                                 @if ($blog->hasFeaturedImage())
-                                                                    <img src="{{ $blog->getImageUrl('preview') }}" class="img-fluid" alt="{{ $blog->title }}">
+                                                                    <img src="{{ $blog->getFeaturedImageUrl('large') }}" class="img-fluid" alt="{{ $blog->title }}">
                                                                 @else
                                                                     <img src="{{ asset('assets/images/homepage-1/blog/blog-01.jpg') }}" class="img-fluid" alt="blog-01">
                                                                 @endif
