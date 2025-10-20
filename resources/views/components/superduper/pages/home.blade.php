@@ -972,76 +972,75 @@
                             </article>
                         @endforeach
                     @else
-
+                        <article class="pbmit-miconheading-style-4 col-md-6 col-lg-3">
+                            <div class="pbmit-ihbox-style-4">
+                                <div class="pbmit-ihbox-headingicon">
+                                    <div class="pbmit-ihbox-icon">
+                                        <div class="pbmit-ihbox-icon-wrapper">
+                                            <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-engineer"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h2 class="pbmit-element-title">
+                                        Meet Designer
+                                    </h2>
+                                    <div class="pbmit-heading-desc">Lorem ipsum is simply text of the printing typesetting.</div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="pbmit-miconheading-style-4 col-md-6 col-lg-3">
+                            <div class="pbmit-ihbox-style-4">
+                                <div class="pbmit-ihbox-headingicon">
+                                    <div class="pbmit-ihbox-icon">
+                                        <div class="pbmit-ihbox-icon-wrapper">
+                                            <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-compass"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h2 class="pbmit-element-title">
+                                        Finalized layout
+                                    </h2>
+                                    <div class="pbmit-heading-desc">Lorem ipsum is simply text of the printing typesetting.</div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="pbmit-miconheading-style-4 col-md-6 col-lg-3">
+                            <div class="pbmit-ihbox-style-4">
+                                <div class="pbmit-ihbox-headingicon">
+                                    <div class="pbmit-ihbox-icon">
+                                        <div class="pbmit-ihbox-icon-wrapper">
+                                            <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-tools"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h2 class="pbmit-element-title">
+                                        Work in progress
+                                    </h2>
+                                    <div class="pbmit-heading-desc">Lorem ipsum is simply text of the printing typesetting.</div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="pbmit-miconheading-style-4 col-md-6 col-lg-3">
+                            <div class="pbmit-ihbox-style-4">
+                                <div class="pbmit-ihbox-headingicon">
+                                    <div class="pbmit-ihbox-icon">
+                                        <div class="pbmit-ihbox-icon-wrapper">
+                                            <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-axis"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h2 class="pbmit-element-title">
+                                        Smooth delivery
+                                    </h2>
+                                    <div class="pbmit-heading-desc">Lorem ipsum is simply text of the printing typesetting.</div>
+                                </div>
+                            </div>
+                        </article>
                     @endif
-                    <article class="pbmit-miconheading-style-4 col-md-6 col-lg-3">
-                        <div class="pbmit-ihbox-style-4">
-                            <div class="pbmit-ihbox-headingicon">
-                                <div class="pbmit-ihbox-icon">
-                                    <div class="pbmit-ihbox-icon-wrapper">
-                                        <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-                                            <i class="pbmit-xinterio-icon pbmit-xinterio-icon-engineer"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h2 class="pbmit-element-title">
-                                    Meet Designer
-                                </h2>
-                                <div class="pbmit-heading-desc">Lorem ipsum is simply text of the printing typesetting.</div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="pbmit-miconheading-style-4 col-md-6 col-lg-3">
-                        <div class="pbmit-ihbox-style-4">
-                            <div class="pbmit-ihbox-headingicon">
-                                <div class="pbmit-ihbox-icon">
-                                    <div class="pbmit-ihbox-icon-wrapper">
-                                        <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-                                            <i class="pbmit-xinterio-icon pbmit-xinterio-icon-compass"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h2 class="pbmit-element-title">
-                                    Finalized layout
-                                </h2>
-                                <div class="pbmit-heading-desc">Lorem ipsum is simply text of the printing typesetting.</div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="pbmit-miconheading-style-4 col-md-6 col-lg-3">
-                        <div class="pbmit-ihbox-style-4">
-                            <div class="pbmit-ihbox-headingicon">
-                                <div class="pbmit-ihbox-icon">
-                                    <div class="pbmit-ihbox-icon-wrapper">
-                                        <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-                                            <i class="pbmit-xinterio-icon pbmit-xinterio-icon-tools"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h2 class="pbmit-element-title">
-                                    Work in progress
-                                </h2>
-                                <div class="pbmit-heading-desc">Lorem ipsum is simply text of the printing typesetting.</div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="pbmit-miconheading-style-4 col-md-6 col-lg-3">
-                        <div class="pbmit-ihbox-style-4">
-                            <div class="pbmit-ihbox-headingicon">
-                                <div class="pbmit-ihbox-icon">
-                                    <div class="pbmit-ihbox-icon-wrapper">
-                                        <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-                                            <i class="pbmit-xinterio-icon pbmit-xinterio-icon-axis"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h2 class="pbmit-element-title">
-                                    Smooth delivery
-                                </h2>
-                                <div class="pbmit-heading-desc">Lorem ipsum is simply text of the printing typesetting.</div>
-                            </div>
-                        </div>
-                    </article>
                 </div>
                 <div class="pbmit-text-editor">
                     <span class="pbmit-text-design">Hurry</span>  Let’s make something great work together. Got a project in mind? <span class="pbmit-globalcolor"><u>Got a project in mind?</u></span>
