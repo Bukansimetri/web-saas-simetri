@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
@@ -147,8 +148,6 @@ class Project extends Model implements HasMedia
 
     /**
      * Get a collection of all project images except the first one.
-     *
-     * @return \Illuminate\Support\Collection
      */
     public function getRemainingImages(): Collection
     {
