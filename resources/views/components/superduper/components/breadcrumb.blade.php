@@ -1,33 +1,25 @@
 @props(['title' => 'Default Title', 'items' => []])
 @php
-    $baseQuery = \App\Models\Banner\Content::query();
-    $banners = $baseQuery->whereHas('category', function($query) {
-            $query->where('slug', 'general');
-        })
-        ->active()
-            ->with(['media'])
-            ->first();
-
-    if ($title == 'Home') {
-        $banners = $baseQuery->whereHas('category', function($query) {
-                $query->where('slug', 'home-banner');
+    $banners = \App\Models\Banner\Content::whereHas('category', function($query) {
+                $query->where('slug', 'general');
             })
             ->active()
+            ->orderBy('sort')
             ->with(['media'])
             ->first();
-    }
 
     if ($title == 'About Us') {
-        $banners = $baseQuery->whereHas('category', function($query) {
+        $banners = \App\Models\Banner\Content::whereHas('category', function($query) {
                 $query->where('slug', 'about-us-banner');
             })
             ->active()
+            ->orderBy('sort')
             ->with(['media'])
             ->first();
     }
 
     if ($title == 'Portfolio') {
-        $banners = $baseQuery->whereHas('category', function($query) {
+        $banners = \App\Models\Banner\Content::whereHas('category', function($query) {
                 $query->where('slug', 'projects-banner');
             })
             ->active()
@@ -36,7 +28,7 @@
     }
 
     if ($title == 'Service') {
-        $banners = $baseQuery->whereHas('category', function($query) {
+        $banners = \App\Models\Banner\Content::whereHas('category', function($query) {
                 $query->where('slug', 'services-banner');
             })
             ->active()
@@ -45,7 +37,7 @@
     }
 
     if ($title == 'Contact Us') {
-        $banners = $baseQuery->whereHas('category', function($query) {
+        $banners = \App\Models\Banner\Content::whereHas('category', function($query) {
                 $query->where('slug', 'contact-us-banner');
             })
             ->active()
