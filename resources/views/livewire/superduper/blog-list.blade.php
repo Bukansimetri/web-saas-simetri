@@ -14,8 +14,8 @@
     <div class="container">
         <div class="pbmit-title-bar-content">
             <div class="pbmit-title-bar-content-inner">
-                <x-superduper.components.breadcrumb
-                    :items="$activeCategory ? [['title' => 'Blog', 'label' => 'Blog', 'url' => route('blog')], ['label' => $categories->firstWhere('id', $activeCategory)?->name]] : [['label' => 'Blog']]"
+                <x-superduper.components.breadcrumb title="Blog"
+                    :items="$activeCategory ? [['label' => 'Blog', 'url' => route('blog')], ['label' => $categories->firstWhere('id', $activeCategory)?->name]] : [['label' => 'Blog']]"
                 />
             </div>
         </div>
