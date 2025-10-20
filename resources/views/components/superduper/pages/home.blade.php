@@ -1073,14 +1073,11 @@
                                                 </div>
                                                 <div class="pbmit-ptable-inner">
                                                     <div class="pbmit-ptable-lines-w">
-                                                        <div class="pbmit-ptable-line">Warranty {{ $package->warranty_months }} Months</div>
-                                                        <div class="pbmit-ptable-line">
-                                                            {{ $package->features_summary}}
-                                                        </div>
+                                                        {{ $package->features_summary}}
                                                     </div>
                                                     <div class="pbminfotech-ptable-btn">
                                                         <div class="pbmit-button">
-                                                            <a class="pbmit-button-inner" href="about-mask-img">
+                                                            <a class="pbmit-button-inner" href="{{ route('contact-us') }}">
                                                                 <span class="pbmit-button-wrapper">
                                                                     <span class="pbmit-button-text">{{ $package->cta_text }}</span>
                                                                 </span>
@@ -1100,29 +1097,35 @@
                                                 <div class="pbminfotech-sep"></div>
                                                 <div class="pbmit-price-wrapper">
                                                     <div class="pbmit-ptable-price-w">
-                                                        <div class="pbminfotech-ptable-symbol">$</div>
-                                                        <div class="pbminfotech-ptable-price">27</div>
+                                                        <div class="pbminfotech-ptable-symbol" style="font-size: 20px !important">Rp</div>
+                                                        <div class="pbminfotech-ptable-price" style="font-size: 50px !important">27 Juta</div>
                                                     </div>
-                                                    <div class="pbminfotech-ptable-frequency">/Mo</div>
+                                                    <div class="pbminfotech-ptable-frequency" style="font-size: 20px !important">/Meter</div>
                                                 </div>
                                             </div>
                                             <div class="pbmit-ptable-inner">
                                                 <div class="pbmit-ptable-lines-w">
-                                                    <div class="pbmit-ptable-line">Individuals &amp; small projects</div>
-                                                    <div class="pbmit-ptable-line">Access to design features</div>
-                                                    <div class="pbmit-ptable-line">Limited library of decorative items</div>
-                                                    <div class="pbmit-ptable-line">Email support</div>
-                                                    <div class="pbmit-ptable-line">Monthly updates</div>
+                                                    <div class="pbmit-ptable-line">Konsultasi intensif & analisis kebutuhan</div>
+                                                    <div class="pbmit-ptable-line">Desain konsep menyeluruh (layout, moodboard, dan 3D visual)</div>
+                                                    <div class="pbmit-ptable-line">Desain detail tiap area (meja, kitchen set, lighting, dinding, flooring)</div>
+                                                    <div class="pbmit-ptable-line">Estimasi RAB dan pemilihan material</div>
+                                                    <div class="pbmit-ptable-line">Supervisi desain saat pengerjaan</div>
                                                 </div>
+                                                <p style="margin-top: 8%">
+                                                    <b>Cocok Untuk:</b><br>
+                                                    Proyek residential skala menengah seperti apartemen, rumah, atau unit sewa yang butuh desain cepat dan fungsional
+                                                </p>
                                                 <div class="pbminfotech-ptable-btn">
                                                     <div class="pbmit-button">
-                                                        <a class="pbmit-button-inner" href="about-mask-img">
+                                                        <a class="pbmit-button-inner" href="{{ route('contact-us') }}">
                                                             <span class="pbmit-button-wrapper">
-                                                                <span class="pbmit-button-text">Purchase Now</span>
+                                                                <span class="pbmit-button-text">Consult Now</span>
                                                             </span>
                                                         </a>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="pbmit-ptable-inner">
                                             </div>
                                             <div class="pbmit-feature-wrap"></div>
                                         </div>
@@ -1134,25 +1137,29 @@
                                                 <div class="pbminfotech-sep"></div>
                                                 <div class="pbmit-price-wrapper">
                                                     <div class="pbmit-ptable-price-w">
-                                                        <div class="pbminfotech-ptable-symbol">$</div>
-                                                        <div class="pbminfotech-ptable-price">47</div>
+                                                        <div class="pbminfotech-ptable-symbol" style="font-size: 20px !important">Rp</div>
+                                                        <div class="pbminfotech-ptable-price" style="font-size: 50px !important">47 Juta</div>
                                                     </div>
-                                                    <div class="pbminfotech-ptable-frequency">/mo</div>
+                                                    <div class="pbminfotech-ptable-frequency" style="font-size: 20px !important">/Meter</div>
                                                 </div>
                                             </div>
                                             <div class="pbmit-ptable-inner">
                                                 <div class="pbmit-ptable-lines-w">
-                                                    <div class="pbmit-ptable-line">Individuals &amp; small projects</div>
-                                                    <div class="pbmit-ptable-line">Access to design features</div>
-                                                    <div class="pbmit-ptable-line">Limited library of decorative items</div>
-                                                    <div class="pbmit-ptable-line">Email support</div>
-                                                    <div class="pbmit-ptable-line">Monthly updates</div>
+                                                    <div class="pbmit-ptable-line">Konsultasi intensif & analisis kebutuhan</div>
+                                                    <div class="pbmit-ptable-line">Desain konsep menyeluruh (layout, moodboard, dan 3D visual)</div>
+                                                    <div class="pbmit-ptable-line">Desain detail tiap area (meja, kitchen set, lighting, dinding, flooring)</div>
+                                                    <div class="pbmit-ptable-line">Estimasi RAB dan pemilihan material</div>
+                                                    <div class="pbmit-ptable-line">Supervisi desain saat pengerjaan</div>
                                                 </div>
+                                                <p style="margin-top: 8%; color:white;">
+                                                    <b>Cocok Untuk:</b><br>
+                                                    Proyek corporate atau commercial yang menuntut tampilan berkelas dan pengerjaan terkoordinasi dengan tim konstruksi
+                                                </p>
                                                 <div class="pbminfotech-ptable-btn">
                                                     <div class="pbmit-button">
                                                         <a class="pbmit-button-inner" href="about-mask-img">
                                                             <span class="pbmit-button-wrapper">
-                                                                <span class="pbmit-button-text">Purchase Now</span>
+                                                                <span class="pbmit-button-text">Consult Now</span>
                                                             </span>
                                                         </a>
                                                     </div>
@@ -1171,29 +1178,18 @@
                         <div class="pricing-one-rightbox">
                             <div class="pbmit-heading-subheading animation-style2">
                                 <h4 class="pbmit-subtitle">Pricing Plan</h4>
-                                <h2 class="pbmit-title">Choose plan for house interior</h2>
+                                <h2 class="pbmit-title">Invest in Design That Lasts</h2>
+                                <p>Kami memahami bahwa setiap proyek memiliki kebutuhan dan skala berbeda. Karena itu, Home Care Interior menyediakan pilihan paket layanan yang fleksibel</p>
                             </div>
                             <ul class="list-group list-group-borderless">
-                                <li class="list-group-item">
-                                    <span class="pbmit-icon-list-icon">
-                                        <i aria-hidden="true" class="pbmit-xinterio-icon pbmit-xinterio-icon-check-mark"></i>
-                                    </span>
-                                    <span class="pbmit-icon-list-text">Get 30 day free trial</span>
-                                </li>
                                 <li class="list-group-item">
                                     <span class="pbmit-icon-list-icon">
                                         <i aria-hidden="true" class="pbmit-xinterio-icon pbmit-xinterio-icon-wallet"></i>
                                     </span>
                                     <span class="pbmit-icon-list-text">No any hidden fees pay</span>
                                 </li>
-                                <li class="list-group-item">
-                                    <span class="pbmit-icon-list-icon">
-                                        <i aria-hidden="true" class="pbmit-xinterio-icon pbmit-xinterio-icon-clock"></i>
-                                    </span>
-                                    <span class="pbmit-icon-list-text">You can cancel anytime</span>
-                                </li>
                             </ul>
-                            <a class="pbmit-btn pbmit-btn-outline" href="our-history.html">
+                            <a class="pbmit-btn pbmit-btn-outline" href="{{ route('contact-us') }}">
                                 <span class="pbmit-button-content-wrapper">
                                     <span class="pbmit-button-text">More Price</span>
                                 </span>
