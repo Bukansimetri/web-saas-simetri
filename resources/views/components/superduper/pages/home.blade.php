@@ -1490,10 +1490,14 @@
                             <article class="pbmit-ele-blog pbmit-blog-style-3">
                                 <div class="post-item d-flex">
                                     <div class="pbmit-featured-container">
-                                        <div class="pbmit-bg-image" style="background-image:url('{{ asset('assets/images/homepage-1/blog/blog-04b.jpg') }}">
+                                        <div class="pbmit-bg-image" style="background-image:url('{{ $featureBlog->getFeaturedImageUrl('large') }}">
                                             <div class="pbmit-featured-img-wrapper">
                                                 <div class="pbmit-featured-wrapper">
-                                                    <img src="{{ $featureBlog->getFeaturedImageUrl('large') }}" class="img-fluid" alt="{{ $featureBlog->title }}">
+                                                    @if ($featureBlog->hasFeaturedImage())
+                                                        <img src="{{ $featureBlog->getFeaturedImageUrl('large') }}" class="img-fluid" alt="{{ $featureBlog->title }}">
+                                                    @else
+                                                        <img src="{{ asset('assets/images/homepage-1/blog/blog-04b.jpg') }}" class="img-fluid" alt="blog-01">
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>
