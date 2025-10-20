@@ -1,4 +1,4 @@
-@section('hero')
+{{-- @section('hero')
     <!-- Title Bar -->
     <div class="pbmit-title-bar-wrapper">
         <div class="container">
@@ -10,7 +10,7 @@
         </div>
     </div>
     <!-- Title Bar End-->
-@endsection
+@endsection --}}
 <!-- Page Content -->
 <div class="page-content">
     <!-- Ihbox -->
