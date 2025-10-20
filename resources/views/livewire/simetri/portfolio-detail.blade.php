@@ -28,7 +28,7 @@
             <article class="portfolio-single">
                 <div class="pbmit-short-description">
                     <h3>{{ $project->title }}</h3>
-                    <p>I{{ $porject->short_description }}}</p>
+                    <p>I{{ $project->short_description }}}</p>
                 </div>
                 <div class="pbmit-single-project-details-list">
                     <h3>Project info</h3>
