@@ -1453,11 +1453,7 @@
                                                     <div class="pbminfotech-content-inner">
                                                         <div class="pbmit-featured-img-wrapper">
                                                             <div class="pbmit-featured-wrapper">
-                                                                @if ($blog->hasFeaturedImage())
-                                                                    <img src="{{ $blog->getFeaturedImageUrl('large') }}" class="img-fluid" alt="{{ $blog->title }}">
-                                                                @else
-                                                                    <img src="{{ asset('assets/images/homepage-1/blog/blog-01.jpg') }}" class="img-fluid" alt="blog-01">
-                                                                @endif
+                                                                <img src="{{ $blog->getFeaturedImageUrl('large') }}" class="img-fluid" alt="{{ $blog->title }}">
                                                             </div>
                                                         </div>
                                                         <div class="pbmit-meta-wraper">
@@ -1497,11 +1493,7 @@
                                         <div class="pbmit-bg-image" style="background-image:url('{{ asset('assets/images/homepage-1/blog/blog-04b.jpg') }}">
                                             <div class="pbmit-featured-img-wrapper">
                                                 <div class="pbmit-featured-wrapper">
-                                                    @if ($featureBlog->hasFeaturedImage())
-                                                        <img src="{{ $featureBlog->getFeaturedImageUrl('large') }}" class="img-fluid" alt="{{ $featureBlog->title }}">
-                                                    @else
-                                                        <img src="{{ asset('assets/images/homepage-1/blog/blog-04b.jpg') }}" class="img-fluid" alt="blog-01">
-                                                    @endif
+                                                    <img src="{{ $featureBlog->getFeaturedImageUrl('large') }}" class="img-fluid" alt="{{ $featureBlog->title }}">
                                                 </div>
                                             </div>
                                         </div>
