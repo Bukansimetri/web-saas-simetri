@@ -171,8 +171,7 @@ class Project extends Model implements HasMedia
      */
     public function getPreviousProject()
     {
-        return self::published()
-            ->where('created_at', '<', $this->created_at)
+        return self::where('created_at', '<', $this->created_at)
             ->orderBy('created_at', 'desc')
             ->first();
     }
@@ -182,8 +181,7 @@ class Project extends Model implements HasMedia
      */
     public function getNextProject()
     {
-        return self::published()
-            ->where('created_at', '>', $this->created_at)
+        return self::where('created_at', '>', $this->created_at)
             ->orderBy('created_at', 'asc')
             ->first();
     }
