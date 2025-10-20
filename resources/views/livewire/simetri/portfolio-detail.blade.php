@@ -169,7 +169,7 @@
                                     @endforeach
                                 </div>
                             @endif
-                            </div>
+                        </div>
                     @endif
                     <div class="py-5">
                         @if ($project->options->isNotEmpty())
