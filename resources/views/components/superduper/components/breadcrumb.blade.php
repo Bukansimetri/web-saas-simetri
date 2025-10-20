@@ -44,8 +44,6 @@
             ->with(['media'])
             ->first();
     }
-
-    dd($banners);
 @endphp
 
 {{-- Title Bar Section --}}
@@ -71,7 +69,7 @@
             <span>
                 @if(isset($item['url']))
                     {{-- This is a clickable link in the middle of the trail --}}
-                    <a title="" href="{{ $banners->getImageUrl('large') }}" class="home"><span>{{ $item['label'] }}</span></a>
+                    <a title="{{ $item['label'] }}" href="{{ $banners->getImageUrl('large') }}" class="home"><span>{{ $item['label'] }}</span></a>
                 @else
                     {{-- This is the final, non-clickable item (the current page) --}}
                     <span class="post-root post post-post current-item">{{ $item['label'] }}</span>
