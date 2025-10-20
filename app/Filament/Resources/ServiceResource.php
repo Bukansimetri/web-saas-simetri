@@ -127,13 +127,13 @@ class ServiceResource extends Resource
                                     ->schema([
                                         Forms\Components\Placeholder::make('impression_count')
                                             ->label('Impressions')
-                                            ->content(fn (Project $record): string => number_format($record->impression_count ?? 0)),
+                                            ->content(fn (Service $record): string => number_format($record->impression_count ?? 0)),
                                         Forms\Components\Placeholder::make('click_count')
                                             ->label('Clicks')
-                                            ->content(fn (Project $record): string => number_format($record->click_count ?? 0)),
+                                            ->content(fn (Service $record): string => number_format($record->click_count ?? 0)),
                                         Forms\Components\Placeholder::make('ctr')
                                             ->label('CTR (Click Through Rate)')
-                                            ->content(function (Project $record): string {
+                                            ->content(function (Service $record): string {
                                                 if (($record->impression_count ?? 0) > 0) {
                                                     $ctr = ($record->click_count / $record->impression_count) * 100;
 

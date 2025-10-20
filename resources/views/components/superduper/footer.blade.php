@@ -103,7 +103,7 @@
                 </div>
                 <div class="col-md-12 col-xl-6 pbmit-footer-right">
                     <div class="pbmit-footer-bg-image">
-                        <img src="images/footer-mailchip-img.png" alt="">
+                        <img src="{{ asset('assets/images/footer-mailchip-img.png') }}" alt="">
                     </div>
                 </div>
             </div>

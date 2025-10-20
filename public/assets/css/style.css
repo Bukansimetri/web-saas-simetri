@@ -13,7 +13,7 @@
         06 - Team Single Detail
         07 - Contact Us
         08 - Comment Form
-    
+
 ******************************/
 
 /*----------------------------------------*/
@@ -25,7 +25,7 @@
 /** Homepage 01 **/
 .about-one-leftbox{
 	position: relative;
-	background-image: url(../images/homepage-1/about-mask-img.jpg);
+	background-image: url('https://homecareinterior.co.id/storage/14/Image-home-500x570.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -343,7 +343,7 @@
 .blog-one-right-col{
 	padding-left: 60px;
 }
-/** Homepage 02 **/ 
+/** Homepage 02 **/
 .ihbox-section-two{
 	padding: 50px 30px 0 30px;
 }
@@ -486,7 +486,7 @@
 .testimonial-two .swiper-slider{
 	padding: 0 30px;
 }
-.testimonial-two .swiper-button-next, 
+.testimonial-two .swiper-button-next,
 .testimonial-two .swiper-button-prev{
 	width: 60px;
 	height: 60px;
@@ -518,7 +518,7 @@
 .client-two-area{
 	margin-top: 100px;
 }
-/** Homepage 03 **/ 
+/** Homepage 03 **/
 .client-three{
 	padding: 40px 0;
 	border-bottom: 1px solid #DDDDDD;
@@ -558,7 +558,7 @@
 .service-three .pbmit-servicebox-right {
     padding-left: 55px;
 }
-.service-three .swiper-button-next, 
+.service-three .swiper-button-next,
 .service-three .swiper-button-prev{
 	position: static;
 	border: none;
@@ -677,7 +677,7 @@
 	padding-left: 60px;
 }
 
-/** Homepage 04 **/ 
+/** Homepage 04 **/
 .frame-clock-img{
 	margin-bottom: 85px;
 }
@@ -703,7 +703,7 @@
 	top: 50px;
 	right: 80px;
 }
-.service-four-swiper-arrow .swiper-button-next, 
+.service-four-swiper-arrow .swiper-button-next,
 .service-four-swiper-arrow .swiper-button-prev{
 	position: static;
 	width: 60px;
@@ -803,7 +803,7 @@
 	position: relative;
 	z-index: 1;
 }
-.testimonial-four-box .swiper-button-next, 
+.testimonial-four-box .swiper-button-next,
 .testimonial-four-box .swiper-button-prev{
 	top: inherit;
     bottom: -1px;
@@ -816,7 +816,7 @@
 	color: var(--pbmit-blackish-color);
 	background-color: var(--pbmit-white-color);
 }
-.testimonial-four-box .swiper-button-next:after, 
+.testimonial-four-box .swiper-button-next:after,
 .testimonial-four-box .swiper-button-prev:after{
 	font-size: 30px;
 }
@@ -854,7 +854,7 @@
     box-shadow: 0 20px 0 0 var(--pbmit-white-color);
 	z-index: 2;
 }
-.testimonial-four-box .swiper-button-next:hover, 
+.testimonial-four-box .swiper-button-next:hover,
 .testimonial-four-box .swiper-button-prev:hover{
 	color: var(--pbmit-global-color);
 }
@@ -867,7 +867,7 @@
     height: calc(100% - 30px);
     background-color: rgba(var(--pbmit-blackish-color-rgb), .2);
 }
-/** Homepage 05 **/ 
+/** Homepage 05 **/
 .service-section-five{
 	padding: 100px 0 30px 0;
 	overflow: hidden;
@@ -1069,7 +1069,7 @@
     background-color: var(--pbmit-white-color);
     border-radius: 20px 0 0 20px;
 }
-.testimonial-five-right-box .swiper-horizontal>.swiper-pagination-bullets:before, 
+.testimonial-five-right-box .swiper-horizontal>.swiper-pagination-bullets:before,
 .testimonial-five-right-box .swiper-horizontal>.swiper-pagination-bullets:after {
     content: "";
     position: absolute;
@@ -1105,7 +1105,7 @@
 	background-color: var(--pbmit-global-color);
 }
 
-/** Homepage 06 **/ 
+/** Homepage 06 **/
 .about-six-col-1{
 	width: 29%;
 }
@@ -1161,7 +1161,7 @@
 .team-six-swiper-arrow{
 	position: relative;
 }
-.team-six-swiper-arrow .swiper-button-next, 
+.team-six-swiper-arrow .swiper-button-next,
 .team-six-swiper-arrow .swiper-button-prev{
 	position: static;
 	border: 1px solid rgba(var(--pbmit-blackish-color-rgb),.2);
@@ -1204,7 +1204,7 @@
 	border: none;
 }
 
-/** Homepage 07 **/ 
+/** Homepage 07 **/
 .about-seven-left-box{
 	position: relative;
 	padding-right: 45px;
@@ -1275,7 +1275,7 @@
 }
 .portfolio-section-seven .pbmit-heading-subheading .pbmit-subtitle{
 	color: var(--pbmit-white-color);
-} 
+}
 .portfolio-section-seven .pbmit-heading-subheading .pbmit-subtitle:before{
 	border-color: var(--pbmit-white-color);
 }
@@ -1457,7 +1457,7 @@
 	background-color: var(--pbmit-white-color);
 	position: relative;
 	padding: 10px 55px 10px 0;
-	border-radius: 30px 30px 0 0; 
+	border-radius: 30px 30px 0 0;
 }
 .about-us-section-seven .pbmit-btn-wrap:before{
 	right: 100%;
@@ -1542,7 +1542,7 @@
 .ihbox-eight-slider-box .swiper-slider{
 	padding-bottom: 75px;
 }
-.ihbox-eight-slider-box .swiper-button-prev, 
+.ihbox-eight-slider-box .swiper-button-prev,
 .ihbox-eight-slider-box .swiper-button-next{
 	width: 60px;
 	height: 60px;
@@ -1553,7 +1553,7 @@
 .ihbox-eight-slider-box .swiper-button-next{
 	left: 60px;
 }
-.ihbox-eight-slider-box .swiper-button-prev:hover, 
+.ihbox-eight-slider-box .swiper-button-prev:hover,
 .ihbox-eight-slider-box .swiper-button-next:hover{
 	background-color: var(--pbmit-global-color);
 }
@@ -1787,7 +1787,7 @@
 .testimonial-nine-arrow .swiper-button-next:hover{
 	background-color: var(--pbmit-global-color);
 }
-.testimonial-nine-arrow .swiper-button-next:after, 
+.testimonial-nine-arrow .swiper-button-next:after,
 .testimonial-nine-arrow .swiper-button-prev:after{
 	content: '\e847';
     font-size: 18px;
@@ -1800,7 +1800,7 @@
 	right: -100px;
 }
 /*------------------- ---------------------*/
-/*01 - Inner Page 
+/*01 - Inner Page
 /*----------------------------------------*/
 /** 01 - About Us **/
 .about-us  .ihbox-section-three{
@@ -1897,7 +1897,7 @@
 	right: 0;
 	top: 0;
 	bottom: 0;
-} 
+}
 .pbmit-element-timeline-style-1 .steps-dot .steps-dot-line::before,
 .pbmit-element-timeline-style-1 .steps-dot .steps-dot-line::after{
 	content: "";
@@ -1933,7 +1933,7 @@
 }
 .pbmit-element-timeline-style-1 .pbmit-timeline-wrapper:not(.pbmit-slide-even) .pbmit-feature-image{
 	transition: all 0.4s, opacity 0.4s 0.9s, transform 0.4s 0.9s;
-} 
+}
 .pbmit-element-timeline-style-1 .pbmit-feature-image img{
 	border-radius: 30px;
 }
@@ -2066,7 +2066,7 @@
 .widget .download .item-download a:hover .pbmit-download-item {
     background-color: var(--pbmit-white-color);
     color: var(--pbmit-blackish-color);
-}	
+}
 .widget .download .item-download:last-child a {
     color: var(--pbmit-white-color);
     background-color: var(--pbmit-global-color);
@@ -2165,7 +2165,7 @@
 }
 .portfolio-single .pbmit-featured-img-wrapper{
 	padding-bottom: 80px;
-}	
+}
 .portfolio-single .pbmit-featured-img-wrapper img{
 	border-radius: 30px;
 }
@@ -2203,7 +2203,7 @@
 		opacity: 0;
 		transform: translate3d(100%, 0, 0);
 	}
-	
+
 	100% {
 		opacity: 1;
 		transform: none;
@@ -2223,7 +2223,7 @@
     margin-bottom: 30px;
 }
 /** Sidebar Right**/
-.sidebar .widget{ 
+.sidebar .widget{
     border: 1px solid rgba(var(--pbmit-blackish-color-rgb),0.2);
     padding: 30px;
     margin-bottom: 45px;
@@ -2238,7 +2238,7 @@
 .sidebar .widget.widget-search .widget-title{
 	color: var(--pbmit-white-color);
 }
-.sidebar .widget .widget-title{ 
+.sidebar .widget .widget-title{
 	display: block;
 	margin-bottom: 20px;
     position: relative;
@@ -2250,7 +2250,7 @@
     padding-bottom: 0px;
 	text-transform: capitalize;
 	color: var(--pbmit-blackish-color);
-} 
+}
 .sidebar .widget .widget-title:before{
 	content: "";
     position: absolute;
@@ -2481,7 +2481,7 @@ aside.widget.widget-tag-cloud a:hover,
 	margin-bottom: 0;
     color: var(--pbmit-white-color);
 }
-.pbmit-service-ads .pbmit-ads-desc a, 
+.pbmit-service-ads .pbmit-ads-desc a,
 .pbmit-service-ads .pbmit-ads-desc {
     font-size: 15px;
     line-height: 21px;
@@ -3021,7 +3021,7 @@ aside.widget.widget-tag-cloud a:hover,
     font-weight: 700;
     margin: 0;
 }
-.pbmit-single-team-info li, 
+.pbmit-single-team-info li,
 .pbmit-single-team-info li a {
     margin: 0 0 20px 0;
     font-size: 16px;
