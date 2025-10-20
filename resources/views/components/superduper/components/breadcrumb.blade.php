@@ -8,7 +8,7 @@
             ->with(['media'])
             ->first();
 
-    if ($title == 'About Us') {
+    if ($title == "About Us") {
         $banners = \App\Models\Banner\Content::whereHas('category', function($query) {
                 $query->where('slug', 'about-us-banner');
             })
@@ -18,7 +18,7 @@
             ->first();
     }
 
-    if ($title == 'Portfolio') {
+    if ($title == "Portfolio") {
         $banners = \App\Models\Banner\Content::whereHas('category', function($query) {
                 $query->where('slug', 'projects-banner');
             })
@@ -27,7 +27,7 @@
             ->first();
     }
 
-    if ($title == 'Service') {
+    if ($title == "Service") {
         $banners = \App\Models\Banner\Content::whereHas('category', function($query) {
                 $query->where('slug', 'services-banner');
             })
@@ -36,7 +36,7 @@
             ->first();
     }
 
-    if ($title == 'Contact Us') {
+    if ($title == "Contact Us") {
         $banners = \App\Models\Banner\Content::whereHas('category', function($query) {
                 $query->where('slug', 'contact-us-banner');
             })
