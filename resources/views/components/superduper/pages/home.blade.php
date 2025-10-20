@@ -1,5 +1,9 @@
 @section('hero')
     @php
+        $baseQuery = \App\Models\Testimonial::where('is_active', true);
+        $averageRating = number_format((clone $baseQuery)->avg('rating'), 1);
+        $totalRatings = (clone $baseQuery)->count();
+
         $heroBanners = \App\Models\Banner\Content::whereHas('category', function($query) {
                 $query->where('slug', 'home-banner');
             })
@@ -37,10 +41,6 @@
             ->with(['media'])
             ->take(5)
             ->get();
-
-        $baseQuery = \App\Models\Testimonial::where('is_active', true);
-        $averageRating = number_format((clone $baseQuery)->avg('rating'), 1);
-        $totalRatings = (clone $baseQuery)->count();
 
         $packages = \App\Models\Package::where('is_active', true)
             ->orderBy('created_at', 'desc')
@@ -810,11 +810,13 @@
                                 <li><a href="#" class="pbmit-sortable-link pbmit-selected" data-category="*" data-sortby="*">All</a></li>
                                 @if ($portfolios->isNotEmpty())
                                     @foreach ($portfolios as $type)
-                                        <li>
-                                            <a href="#" class="pbmit-sortable-link" data-sortby="{{ strtolower($type->portfolio_type) }}">
-                                                {{ $type->portfolio_type }}
-                                            </a>
-                                        </li>
+                                        @if (!empty($type->project_type))
+                                            <li>
+                                                <a href="#" class="pbmit-sortable-link" data-sortby="{{ strtolower($type->portfolio_type) }}">
+                                                    {{ $type->portfolio_type }}
+                                                </a>
+                                            </li>
+                                        @endif
                                     @endforeach
                                 @endif
                             </ul>
@@ -829,7 +831,10 @@
                                     <div class="pbmit-featured-img-wrapper">
                                         <div class="pbmit-featured-wrapper">
                                             @if ($portfolio->hasImage())
-                                                <img src="{{ $portfolio->getImageUrl('medium') }}" class="img-fluid" alt="{{ $portfolio->title }}" width="960" height="760">
+                                                <img src="{{ $portfolio->getImageUrl('medium') }}"
+                                                    class="img-fluid"
+                                                    alt="{{ $portfolio->title }}"
+                                                    style="max-width: 960px; max-height: 760px;">
                                             @else
                                                 <img src="{{ asset('assets/images/homepage-1/portfolio/portfolio-01.jpg') }}" class="img-fluid" alt="portfolio-01">
                                             @endif
