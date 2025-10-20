@@ -45,6 +45,7 @@
             ->first();
     }
 
+    dd($banners);
 @endphp
 
 {{-- Title Bar Section --}}
