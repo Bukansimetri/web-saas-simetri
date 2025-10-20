@@ -26,22 +26,18 @@ class AboutUs extends Component
 
         $sectiontop = $query->where('type', 'about-section-top')
             ->with('media')
-            ->orderBy($this->sortField, $this->sortDirection)
-            ->get();
+            ->first();
 
         $sectionmiddle = $query->where('type', 'about-section-middle')
             ->with('media')
-            ->orderBy($this->sortField, $this->sortDirection)
-            ->get();
+            ->first();
 
         $sectionbottom = $query->where('type', 'about-section-bottom')
             ->with('media')
-            ->orderBy($this->sortField, $this->sortDirection)
-            ->get();
+            ->first();
 
         $services = Service::where('is_active', true)
             ->with('media')
-            ->orderBy($this->sortField, $this->sortDirection)
             ->get();
 
         return view('livewire.simetri.about-us', [

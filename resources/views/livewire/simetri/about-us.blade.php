@@ -26,7 +26,6 @@
             </div>
             <div class="swiper-slider" data-autoplay="false" data-loop="true" data-dots="false" data-arrows="false" data-columns="4" data-margin="30" data-effect="slide">
                 <div class="swiper-wrapper">
-                    @if ($services->isNotEmpty())
                         @foreach ($services as $midsection)
                             <article class="pbmit-miconheading-style-7 swiper-slide">
                                 <div class="pbmit-ihbox-style-7">
@@ -40,7 +39,6 @@
                                 </div>
                             </article>
                         @endforeach
-                    @endif
                 </div>
             </div>
         </div>
@@ -53,7 +51,7 @@
             <div class="pbmit-timeline">
                 <div class="swiper-slider" data-autoplay="false" data-loop="false" data-dots="false" data-arrows="false" data-columns="4" data-margin="30" data-effect="slide">
                     <div class="swiper-wrapper">
-                        @if ($sectionbottom->isNotEmpty())
+                        @if (!empty($sectionbottom))
                             @foreach ($sectionbottom as $item)
                                 {{--
                                     The @class directive cleanly adds 'pbmit-slide-even'
