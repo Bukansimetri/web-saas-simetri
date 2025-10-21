@@ -30,7 +30,7 @@ class AboutUs extends Component
 
         $sectionmiddle = $query->where('type', 'about-section-middle')
             ->with('media')
-            ->first();
+            ->get();
 
         $sectionbottom = $query->where('type', 'about-section-bottom')
             ->with('media')

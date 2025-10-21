@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use League\CommonMark\GithubFlavoredMarkdownConverter;
 use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -32,6 +33,7 @@ class SiteFeature extends Model implements HasMedia
         'type',
         'title',
         'description',
+        'description_html',
         'icon_class',
         'locale',
         'options',
@@ -73,6 +75,22 @@ class SiteFeature extends Model implements HasMedia
     public function updater(): BelongsTo
     {
         return $this->belongsTo(User::class, 'updated_by');
+    }
+
+    public function setDescriptionAttribute($value)
+    {
+        // 1. Convert the incoming Markdown ($value) to HTML.
+        $converter = new GithubFlavoredMarkdownConverter([
+            'html_input' => 'strip',
+            'allow_unsafe_links' => false,
+        ]);
+        $htmlContent = $converter->convert($value)->getContent();
+
+        // 2. Set the 'description_html' attribute with the new HTML.
+        $this->attributes['description_html'] = $htmlContent;
+
+        $plainText = strip_tags($this->attributes['description_html']);
+        $this->attributes['description'] = substr($plainText, 0, 500).'...';
     }
 
     /**

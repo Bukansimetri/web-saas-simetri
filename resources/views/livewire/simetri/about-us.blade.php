@@ -30,14 +30,33 @@
                 <h4 class="pbmit-subtitle">About</h4>
                 <h2 class="pbmit-title">{{ $sectiontop->title }}</h2>
                 <div class="pbmit-heading-desc">
-                    {{ $sectiontop->description }}
+                    {!! $sectiontop->description_html !!}
                 </div>
             </div>
             <div class="swiper-slider" data-autoplay="false" data-loop="true" data-dots="false" data-arrows="false" data-columns="4" data-margin="30" data-effect="slide">
                 <div class="swiper-wrapper">
-                        @foreach ($services as $midsection)
+                        @foreach ($sectionmiddle as $midsection)
                             <article class="pbmit-miconheading-style-7 swiper-slide">
                                 <div class="pbmit-ihbox-style-7">
+                                    <div class="pbmit-ihbox-box">
+										<div class="pbmit-icon-wrapper d-flex align-items-center">
+											<div class="pbmit-ihbox-icon">
+												<div class="pbmit-ihbox-icon-wrapper">
+													<div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+														<i class="{{ $midsection->icon_class }}"></i>
+													</div>
+												</div>
+											</div>
+											<div class="pbmit-title-wrap">
+												<h2 class="pbmit-element-title">
+													{{ $midsection->title }}
+												</h2>
+											</div>
+										</div>
+										<div class="pbmit-content-wrapper">
+											<div class="pbmit-heading-desc">{{ $midsection->description }}</div>
+										</div>
+									</div>
                                     <div class="pbmit-ihbox-btn">
                                         <a class="pbmit-button-inner" href="{{ route('services')}}">
                                             <span class="pbmit-button-wrapper">

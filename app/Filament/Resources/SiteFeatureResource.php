@@ -67,11 +67,36 @@ class SiteFeatureResource extends Resource
                                             ->label('Active')
                                             ->helperText('Control client visibility')
                                             ->default(true),
-                                        Forms\Components\MarkdownEditor::make('description')
-                                            ->label('Description')
-                                            ->helperText('Provide a description for the site feature')
-                                            ->maxLength(500)
-                                            ->columnSpanFull(),
+                                        Forms\Components\Textarea::make('description')
+                                            ->columnSpanFull()
+                                            ->placeholder('Provide a brief summary or excerpt of this content')
+                                            ->rows(5),
+                                        Forms\Components\RichEditor::make('description_html')
+                                            ->toolbarButtons([
+                                                'attachFiles',
+                                                'blockquote',
+                                                'bold',
+                                                'bulletList',
+                                                'codeBlock',
+                                                'h1',
+                                                'h2',
+                                                'h3',
+                                                'italic',
+                                                'link',
+                                                'orderedList',
+                                                'redo',
+                                                'strike',
+                                                'underline',
+                                                'undo',
+                                            ])
+                                            ->label('Description Raw')
+                                            ->placeholder('Write your content here...')
+                                            ->fileAttachmentsDisk('public')
+                                            ->fileAttachmentsDirectory('site-feature/content-uploads')
+                                            ->columnSpanFull()
+                                            ->maxLength(65535)
+                                            ->helperText('Format your content using the toolbar above')
+                                            ->extraInputAttributes(['style' => 'min-height: 300px;']),
                                         Forms\Components\TextInput::make('icon_class')
                                             ->label('Icon Class')
                                             ->maxLength(255),
