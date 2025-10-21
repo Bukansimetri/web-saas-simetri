@@ -24,15 +24,15 @@ class AboutUs extends Component
     {
         $query = SiteFeature::query();
 
-        $sectiontop = $query->where('type', 'about-section-top')
+        $sectiontop = SiteFeature::where('type', 'about-section-top')
             ->with('media')
             ->first();
 
-        $sectionmiddle = $query->where('type', 'about-section-middle')
+        $sectionmiddle = SiteFeature::where('type', 'about-section-middle')
             ->with('media')
             ->get();
 
-        $sectionbottom = $query->where('type', 'about-section-bottom')
+        $sectionbottom = SiteFeature::where('type', 'about-section-bottom')
             ->with('media')
             ->first();
 

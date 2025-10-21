@@ -22,7 +22,6 @@
 @endsection
 <!-- Page Content -->
 <div class="page-content">
-
     <!-- Ihbox -->
     <section class="ihbox-section-two">
         <div class="p-0 container-fluid">
