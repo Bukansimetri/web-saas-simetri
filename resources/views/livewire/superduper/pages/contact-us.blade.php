@@ -10,8 +10,8 @@
 @endphp
 
 <!-- Title Bar -->
-{{-- <div class="pbmit-title-bar-wrapper" style="background-image: url({{ $banners->getImageUrl('large') }}) !important;"> --}}
-<div class="pbmit-title-bar-wrapper">
+<div class="pbmit-title-bar-wrapper" style="background-image: url({{ $banners->getImageUrl('large') }}) !important;">
+{{-- <div class="pbmit-title-bar-wrapper"> --}}
     <div class="container">
         <div class="pbmit-title-bar-content">
             <div class="pbmit-title-bar-content-inner">
