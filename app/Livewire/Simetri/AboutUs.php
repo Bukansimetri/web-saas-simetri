@@ -34,7 +34,7 @@ class AboutUs extends Component
 
         $sectionbottom = SiteFeature::where('type', 'about-section-bottom')
             ->with(['media'])
-            ->first();
+            ->get();
 
         $services = Service::where('is_active', true)
             ->with(['media'])
