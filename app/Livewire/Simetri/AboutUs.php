@@ -25,19 +25,19 @@ class AboutUs extends Component
         $query = SiteFeature::query();
 
         $sectiontop = SiteFeature::where('type', 'about-section-top')
-            ->with('media')
+            ->with(['media'])
             ->first();
 
         $sectionmiddle = SiteFeature::where('type', 'about-section-middle')
-            ->with('media')
+            ->with(['media'])
             ->get();
 
         $sectionbottom = SiteFeature::where('type', 'about-section-bottom')
-            ->with('media')
+            ->with(['media'])
             ->first();
 
         $services = Service::where('is_active', true)
-            ->with('media')
+            ->with(['media'])
             ->get();
 
         return view('livewire.simetri.about-us', [
