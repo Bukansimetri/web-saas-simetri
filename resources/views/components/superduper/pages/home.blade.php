@@ -1510,7 +1510,7 @@
                                             <div class="pbmit-featured-img-wrapper">
                                                 <div class="pbmit-featured-wrapper">
                                                     @if ($client->hasImage())
-                                                        <img src="images/homepage-1/client/client-global-01.png" class="img-fluid" alt="{{ $client->name }} is Home Carea Interior Client">
+                                                        <img src="{{ $client->getImageUrl('thumbnail') }}" class="img-fluid" alt="{{ $client->name }} is Home Carea Interior Client">
                                                     @else
                                                         <img src="{{ asset('assets/images/homepage-1/client/client-grey-01.png') }}" class="img-fluid" alt="">
                                                     @endif
