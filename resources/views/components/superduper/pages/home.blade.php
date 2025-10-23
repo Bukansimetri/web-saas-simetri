@@ -50,7 +50,6 @@
         $clients = \App\Models\Client::where('is_active', true)
             ->orderBy('created_at', 'desc')
             ->with(['media'])
-            ->take(6)
             ->get();
 
         $homeTop = \App\Models\SiteFeature::where([
@@ -1489,6 +1488,44 @@
             </div>
         </section>
         <!-- Testimonial End -->
+
+        <!-- Client Start -->
+        <section class="section-lgb pbmit-bg-color-light">
+            <div class="container">
+                <div class="swiper-slider" data-autoplay="true" data-loop="true" data-dots="false" data-arrows="false" data-columns="6" data-margin="0" data-effect="slide">
+                    <div class="swiper-wrapper">
+                        @if (!empty($clients))
+                            @foreach ($clients as $client)
+                                <article class="pbmit-client-style-1 swiper-slide">
+                                    <div class="pbmit-border-wrapper">
+                                        <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                                            <h4 class="pbmit-hide">{{ $client->name}}</h4>
+                                            <div class="pbmit-client-hover-img">
+                                                @if ($client->hasImage())
+                                                    <img src="{{ $client->getImageUrl('thumbnail') }}" class="img-fluid" alt="{{ $client->name }} is Home Carea Interior Client">
+                                                @else
+                                                    <img src="{{ asset('assets/images/homepage-1/client/client-global-01.png') }}" class="img-fluid" alt="">
+                                                @endif
+                                            </div>
+                                            <div class="pbmit-featured-img-wrapper">
+                                                <div class="pbmit-featured-wrapper">
+                                                    @if ($client->hasImage())
+                                                        <img src="images/homepage-1/client/client-global-01.png" class="img-fluid" alt="{{ $client->name }} is Home Carea Interior Client">
+                                                    @else
+                                                        <img src="{{ asset('assets/images/homepage-1/client/client-grey-01.png') }}" class="img-fluid" alt="">
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            @endforeach
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Client End -->
 
         <!-- Blog Start -->
         <section class="section-md">
