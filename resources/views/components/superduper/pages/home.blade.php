@@ -1099,17 +1099,17 @@
                                         </div>
                                     @endforeach
                                 @else
-                                    <div class="pbmit-ptable-col col-md-4">
+                                    <div class="pbmit-ptable-col col-md-3">
                                         <div class="pbmit-pricing-table-box">
                                             <div class="pbmit-head-wrap">
                                                 <h3 class="pbminfotech-ptable-heading">Standard Plan</h3>
                                                 <div class="pbminfotech-sep"></div>
                                                 <div class="pbmit-price-wrapper">
                                                     <div class="pbmit-ptable-price-w">
-                                                        <div class="pbminfotech-ptable-symbol" style="font-size: 20px !important">Rp</div>
-                                                        <div class="pbminfotech-ptable-price" style="font-size: 50px !important">2 Juta</div>
+                                                        <div class="pbminfotech-ptable-symbol" style="font-size: 14px !important">Rp</div>
+                                                        <div class="pbminfotech-ptable-price" style="font-size: 40px !important">2 Juta</div>
                                                     </div>
-                                                    <div class="pbminfotech-ptable-frequency" style="font-size: 20px !important">/Meter</div>
+                                                    <div class="pbminfotech-ptable-frequency" style="font-size: 14px !important">/Meter</div>
                                                 </div>
                                             </div>
                                             <div class="pbmit-ptable-inner">
@@ -1139,17 +1139,17 @@
                                             <div class="pbmit-feature-wrap"></div>
                                         </div>
                                     </div>
-                                    <div class="pbmit-pricing-table-featured-col pbmit-ptable-col col-md-4">
+                                    <div class="pbmit-pricing-table-featured-col pbmit-ptable-col col-md-3">
                                         <div class="pbmit-pricing-table-box">
                                             <div class="pbmit-head-wrap">
                                                 <h3 class="pbminfotech-ptable-heading">Premium Plan</h3>
                                                 <div class="pbminfotech-sep"></div>
                                                 <div class="pbmit-price-wrapper">
                                                     <div class="pbmit-ptable-price-w">
-                                                        <div class="pbminfotech-ptable-symbol" style="font-size: 20px !important">Rp</div>
-                                                        <div class="pbminfotech-ptable-price" style="font-size: 50px !important">2,4 Juta</div>
+                                                        <div class="pbminfotech-ptable-symbol" style="font-size: 14px !important">Rp</div>
+                                                        <div class="pbminfotech-ptable-price" style="font-size: 40px !important">2,4 Juta</div>
                                                     </div>
-                                                    <div class="pbminfotech-ptable-frequency" style="font-size: 20px !important">/Meter</div>
+                                                    <div class="pbminfotech-ptable-frequency" style="font-size: 14px !important">/Meter</div>
                                                 </div>
                                             </div>
                                             <div class="pbmit-ptable-inner">
@@ -1179,17 +1179,17 @@
                                             <div class="pbmit-feature-wrap"></div>
                                         </div>
                                     </div>
-                                    <div class="pbmit-ptable-col col-md-4">
+                                    <div class="pbmit-ptable-col col-md-3">
                                         <div class="pbmit-pricing-table-box">
                                             <div class="pbmit-head-wrap">
                                                 <h3 class="pbminfotech-ptable-heading">Platinum Plan</h3>
                                                 <div class="pbminfotech-sep"></div>
                                                 <div class="pbmit-price-wrapper">
                                                     <div class="pbmit-ptable-price-w">
-                                                        <div class="pbminfotech-ptable-symbol" style="font-size: 20px !important">Rp</div>
-                                                        <div class="pbminfotech-ptable-price" style="font-size: 50px !important">2,8 Juta</div>
+                                                        <div class="pbminfotech-ptable-symbol" style="font-size: 14px !important">Rp</div>
+                                                        <div class="pbminfotech-ptable-price" style="font-size: 40px !important">2,8 Juta</div>
                                                     </div>
-                                                    <div class="pbminfotech-ptable-frequency" style="font-size: 20px !important">/Meter</div>
+                                                    <div class="pbminfotech-ptable-frequency" style="font-size: 14px !important">/Meter</div>
                                                 </div>
                                             </div>
                                             <div class="pbmit-ptable-inner">
@@ -1220,17 +1220,17 @@
                                             </div>
                                         </div>
                                     </div>
-                                     <div class="pbmit-pricing-table-featured-col pbmit-ptable-col col-md-4">
+                                     <div class="pbmit-pricing-table-featured-col pbmit-ptable-col col-md-3">
                                         <div class="pbmit-pricing-table-box">
                                             <div class="pbmit-head-wrap">
                                                 <h3 class="pbminfotech-ptable-heading">Luxury Plan</h3>
                                                 <div class="pbminfotech-sep"></div>
                                                 <div class="pbmit-price-wrapper">
                                                     <div class="pbmit-ptable-price-w">
-                                                        <div class="pbminfotech-ptable-symbol" style="font-size: 20px !important">Rp</div>
-                                                        <div class="pbminfotech-ptable-price" style="font-size: 50px !important">3,2 Juta</div>
+                                                        <div class="pbminfotech-ptable-symbol" style="font-size: 14px !important">Rp</div>
+                                                        <div class="pbminfotech-ptable-price" style="font-size: 40px !important">3,2 Juta</div>
                                                     </div>
-                                                    <div class="pbminfotech-ptable-frequency" style="font-size: 20px !important">/Meter</div>
+                                                    <div class="pbminfotech-ptable-frequency" style="font-size: 14px !important">/Meter</div>
                                                 </div>
                                             </div>
                                             <div class="pbmit-ptable-inner">
