@@ -14,7 +14,7 @@
     <div class="container">
         <div class="pbmit-title-bar-content">
             <div class="pbmit-title-bar-content-inner">
-                <x-superduper.components.breadcrumb title="{{ $post->titlev }}" :items="[
+                <x-superduper.components.breadcrumb title="{{ $post->title }}" :items="[
                     ['label' => 'Blog', 'url' => route('blog')],
                     ['label' => $post->category->name, 'url' => route('blog', ['category' => $post->category->id])],
                     ['label' => Str::limit($post->title, 40)]
