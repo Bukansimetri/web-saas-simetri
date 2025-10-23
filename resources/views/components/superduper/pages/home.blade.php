@@ -1107,22 +1107,22 @@
                                                 <div class="pbmit-price-wrapper">
                                                     <div class="pbmit-ptable-price-w">
                                                         <div class="pbminfotech-ptable-symbol" style="font-size: 20px !important">Rp</div>
-                                                        <div class="pbminfotech-ptable-price" style="font-size: 50px !important">2,4 Juta</div>
+                                                        <div class="pbminfotech-ptable-price" style="font-size: 50px !important">2 Juta</div>
                                                     </div>
                                                     <div class="pbminfotech-ptable-frequency" style="font-size: 20px !important">/Meter</div>
                                                 </div>
                                             </div>
                                             <div class="pbmit-ptable-inner">
                                                 <div class="pbmit-ptable-lines-w">
-                                                    <div class="pbmit-ptable-line">Multiplex 18mm</div>
-                                                    <div class="pbmit-ptable-line">Engsell slowmotion ex taco</div>
-                                                    <div class="pbmit-ptable-line">Rell double track ex huben</div>
-                                                    <div class="pbmit-ptable-line">Rak Piring Kabinet Atas/Bawah Standard</div>
-                                                    <div class="pbmit-ptable-line">Rak Sendok Standard</div>
-                                                    <div class="pbmit-ptable-line">Edging pvc ex taco</div>
-                                                    <div class="pbmit-ptable-line">Finishing hpl ex taco</div>
-                                                    <div class="pbmit-ptable-line">Finishing kabinet dalam melaminto</div>
-                                                    <div class="pbmit-ptable-line">LED Strip 4K Lumens</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Blokboard 18mm</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Engsell slowmotion ex taco</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rell double track ex huben</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rak Piring Kabinet Atas/Bawah Standard</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rak Sendok Standard</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Edging pvc ex taco</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing hpl ex taco</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing kabinet dalam melaminto</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">LED Strip 3K Lumens</div>
                                                 </div>
                                                 <div class="pbminfotech-ptable-btn">
                                                     <div class="pbmit-button">
@@ -1147,6 +1147,46 @@
                                                 <div class="pbmit-price-wrapper">
                                                     <div class="pbmit-ptable-price-w">
                                                         <div class="pbminfotech-ptable-symbol" style="font-size: 20px !important">Rp</div>
+                                                        <div class="pbminfotech-ptable-price" style="font-size: 50px !important">2,4 Juta</div>
+                                                    </div>
+                                                    <div class="pbminfotech-ptable-frequency" style="font-size: 20px !important">/Meter</div>
+                                                </div>
+                                            </div>
+                                            <div class="pbmit-ptable-inner">
+                                                <div class="pbmit-ptable-lines-w">
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Multiplex 18mm</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Engsell slowmotion ex taco</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rell double track ex huben</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rak Piring Kabinet Atas/Bawah Standard</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rak Sendok Standard</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Edging pvc ex taco</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing hpl ex taco</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing kabinet dalam melaminto</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">LED Strip 4K Lumens</div>
+                                                </div>
+                                                <div class="pbminfotech-ptable-btn">
+                                                    <div class="pbmit-button">
+                                                        <a class="pbmit-button-inner" href="{{ route('contact-us') }}">
+                                                            <span class="pbmit-button-wrapper">
+                                                                <span class="pbmit-button-text">Purchase Now</span>
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pbmit-ptable-inner">
+                                            </div>
+                                            <div class="pbmit-feature-wrap"></div>
+                                        </div>
+                                    </div>
+                                    <div class="pbmit-ptable-col col-md-4">
+                                        <div class="pbmit-pricing-table-box">
+                                            <div class="pbmit-head-wrap">
+                                                <h3 class="pbminfotech-ptable-heading">Platinum Plan</h3>
+                                                <div class="pbminfotech-sep"></div>
+                                                <div class="pbmit-price-wrapper">
+                                                    <div class="pbmit-ptable-price-w">
+                                                        <div class="pbminfotech-ptable-symbol" style="font-size: 20px !important">Rp</div>
                                                         <div class="pbminfotech-ptable-price" style="font-size: 50px !important">2,8 Juta</div>
                                                     </div>
                                                     <div class="pbminfotech-ptable-frequency" style="font-size: 20px !important">/Meter</div>
@@ -1154,16 +1194,16 @@
                                             </div>
                                             <div class="pbmit-ptable-inner">
                                                 <div class="pbmit-ptable-lines-w">
-                                                    <div class="pbmit-ptable-line">Multiplex 18mm</div>
-                                                    <div class="pbmit-ptable-line">Engsell slowmotion ex taco</div>
-                                                    <div class="pbmit-ptable-line">Rell double track ex huben</div>
-                                                    <div class="pbmit-ptable-line">Rak Piring Kabinet Atas & Bawah Stainless</div>
-                                                    <div class="pbmit-ptable-line">Rak Sendok Stainless</div>
-                                                    <div class="pbmit-ptable-line">Edging pvc ex taco</div>
-                                                    <div class="pbmit-ptable-line">Finishing hpl ex taco</div>
-                                                    <div class="pbmit-ptable-line">Finishing kabinet dalam tacosheet</div>
-                                                    <div class="pbmit-ptable-line">Kaca polos 5 mm</div>
-                                                    <div class="pbmit-ptable-line">Lighting led strip 4k lumens</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Multiplex 18mm</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Engsell slowmotion ex taco</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rell double track ex huben</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rak Piring Kabinet Atas & Bawah Stainless</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rak Sendok Stainless</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Edging pvc ex taco</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing hpl ex taco</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing kabinet dalam tacosheet</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Kaca polos 5 mm</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Lighting led strip 4k lumens</div>
                                                 </div>
                                                 <div class="pbminfotech-ptable-btn">
                                                     <div class="pbmit-button">
@@ -1180,7 +1220,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                     <div class="pbmit-ptable-col col-md-4">
+                                     <div class="pbmit-pricing-table-featured-col pbmit-ptable-col col-md-4">
                                         <div class="pbmit-pricing-table-box">
                                             <div class="pbmit-head-wrap">
                                                 <h3 class="pbminfotech-ptable-heading">Luxury Plan</h3>
@@ -1195,16 +1235,16 @@
                                             </div>
                                             <div class="pbmit-ptable-inner">
                                                 <div class="pbmit-ptable-lines-w">
-                                                    <div class="pbmit-ptable-line">PVC,HDF/HMR 18 mm</div>
-                                                    <div class="pbmit-ptable-line">Engsell slowmotion ex taco</div>
-                                                    <div class="pbmit-ptable-line">Rell double track ex huben</div>
-                                                    <div class="pbmit-ptable-line">Rak Piring Kabinet Atas & Bawah Stainless</div>
-                                                    <div class="pbmit-ptable-line">Rak Sendok Standard</div>
-                                                    <div class="pbmit-ptable-line">Edging pvc ex taco</div>
-                                                    <div class="pbmit-ptable-line">Finishing hpl ex taco</div>
-                                                    <div class="pbmit-ptable-line">Finishing kabinet dalam tacosheet</div>
-                                                    <div class="pbmit-ptable-line">Kaca polos 5 mm</div>
-                                                    <div class="pbmit-ptable-line">LED Strip 4K Lumens</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">PVC,HDF/HMR 18 mm</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Engsell slowmotion ex taco</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rell double track ex huben</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rak Piring Kabinet Atas & Bawah Stainless</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rak Sendok Standard</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Edging pvc ex taco</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing hpl ex taco</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing kabinet dalam tacosheet</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Kaca polos 5 mm</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">LED Strip 4K Lumens</div>
                                                 </div>
                                                 <div class="pbminfotech-ptable-btn">
                                                     <div class="pbmit-button">
