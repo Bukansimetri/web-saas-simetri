@@ -1,51 +1,4 @@
 @props(['title' => 'Default Title', 'items' => []])
-@php
-    $banners = \App\Models\Banner\Content::whereHas('category', function($query) {
-                $query->where('slug', 'general');
-            })
-            ->active()
-            ->orderBy('sort')
-            ->with(['media'])
-            ->first();
-
-    if ($title == "About Us") {
-        $banners = \App\Models\Banner\Content::whereHas('category', function($query) {
-                $query->where('slug', 'about-us-banner');
-            })
-            ->active()
-            ->orderBy('sort')
-            ->with(['media'])
-            ->first();
-    }
-
-    if ($title == "Portfolio") {
-        $banners = \App\Models\Banner\Content::whereHas('category', function($query) {
-                $query->where('slug', 'projects-banner');
-            })
-            ->active()
-            ->with(['media'])
-            ->first();
-    }
-
-    if ($title == "Service") {
-        $banners = \App\Models\Banner\Content::whereHas('category', function($query) {
-                $query->where('slug', 'services-banner');
-            })
-            ->active()
-            ->with(['media'])
-            ->first();
-    }
-
-    if ($title == "Contact Us") {
-        $banners = \App\Models\Banner\Content::whereHas('category', function($query) {
-                $query->where('slug', 'contact-us-banner');
-            })
-            ->active()
-            ->with(['media'])
-            ->first();
-    }
-@endphp
-
 {{-- Title Bar Section --}}
 <div class="pbmit-tbar">
     <div class="container pbmit-tbar-inner">
@@ -69,7 +22,7 @@
             <span>
                 @if(isset($item['url']))
                     {{-- This is a clickable link in the middle of the trail --}}
-                    <a title="{{ $item['label'] }}" href="{{ $banners->getImageUrl('large') }}" class="home"><span>{{ $item['label'] }}</span></a>
+                    <a title="{{ $item['label'] }}" href="{{ route('home') }}" class="home"><span>{{ $item['label'] }}</span></a>
                 @else
                     {{-- This is the final, non-clickable item (the current page) --}}
                     <span class="post-root post post-post current-item">{{ $item['label'] }}</span>
