@@ -1121,7 +1121,7 @@
                                                     <div class="pbmit-ptable-line" style="font-size: 12px !important;">Edging pvc ex taco</div>
                                                     <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing hpl ex taco</div>
                                                     <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing kabinet dalam melaminto</div>
-                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">LED Strip 3K Lumens</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">LED Strip</div>
                                                 </div>
                                                 <div class="pbminfotech-ptable-btn">
                                                     <div class="pbmit-button">
@@ -1161,7 +1161,7 @@
                                                     <div class="pbmit-ptable-line" style="font-size: 12px !important;">Edging pvc ex taco</div>
                                                     <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing hpl ex taco</div>
                                                     <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing kabinet dalam melaminto</div>
-                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">LED Strip 4K Lumens</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">LED Strip</div>
                                                 </div>
                                                 <div class="pbminfotech-ptable-btn">
                                                     <div class="pbmit-button">
@@ -1202,7 +1202,7 @@
                                                     <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing hpl ex taco</div>
                                                     <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing kabinet dalam tacosheet</div>
                                                     <div class="pbmit-ptable-line" style="font-size: 12px !important;">Kaca polos 5 mm</div>
-                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">Lighting led strip 4k lumens</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">LED Strip</div>
                                                 </div>
                                                 <div class="pbminfotech-ptable-btn">
                                                     <div class="pbmit-button">
@@ -1243,7 +1243,7 @@
                                                     <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing hpl ex taco</div>
                                                     <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing kabinet dalam tacosheet</div>
                                                     <div class="pbmit-ptable-line" style="font-size: 12px !important;">Kaca polos 5 mm</div>
-                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">LED Strip 4K Lumens</div>
+                                                    <div class="pbmit-ptable-line" style="font-size: 12px !important;">LED Strip</div>
                                                 </div>
                                                 <div class="pbminfotech-ptable-btn">
                                                     <div class="pbmit-button">
@@ -1624,13 +1624,13 @@
                                                 </div>
                                             </div>
                                             <h3 class="pbmit-post-title">
-                                                <a href="blog-single-details.html">{{ $featureBlog->title }}</a>
+                                                <a href="{{ route('blog.show', $featureBlog->slug) }}">{{ $featureBlog->title }}</a>
                                             </h3>
                                             <div class="pbminfotech-box-desc">
                                                 {{ $featureBlog->content_overview }}
                                             </div>
                                         </div>
-                                        <a class="pbmit-blog-btn" href="blog-single-details.html">
+                                        <a class="pbmit-blog-btn" href="{{ route('blog.show', $featureBlog->slug) }}">
                                             <span class="pbmit-button-icon">
                                                 <i class="pbmit-base-icon-pbmit-up-arrow"></i>
                                             </span>
