@@ -238,7 +238,7 @@
                                                     </div>
                                                     <div class="pbmit-ihbox-contents">
                                                         <h2 class="pbmit-element-title">
-                                                            Commercial
+                                                            Cafe
                                                         </h2>
                                                     </div>
                                                 </div>
@@ -258,7 +258,7 @@
                                                     </div>
                                                     <div class="pbmit-ihbox-contents">
                                                         <h2 class="pbmit-element-title">
-                                                            industrial
+                                                            Hotel
                                                         </h2>
                                                     </div>
                                                 </div>
@@ -278,7 +278,7 @@
                                                     </div>
                                                     <div class="pbmit-ihbox-contents">
                                                         <h2 class="pbmit-element-title">
-                                                            Residential
+                                                            Rumah tinggal
                                                         </h2>
                                                     </div>
                                                 </div>
@@ -298,7 +298,7 @@
                                                     </div>
                                                     <div class="pbmit-ihbox-contents">
                                                         <h2 class="pbmit-element-title">
-                                                            Corporate
+                                                            Kantor
                                                         </h2>
                                                     </div>
                                                 </div>
@@ -637,7 +637,7 @@
                 <div class="text-center position-relative">
                     <div class="pbmit-heading-subheading animation-style3">
                         <h4 class="pbmit-subtitle">Pricing Plan</h4>
-                        <h2 class="pbmit-title">Invest in Design That Lasts</h2>
+                        <h2 class="pbmit-title">Investasi dalam Desain yang Tahan Lama</h2>
                     </div>
                 </div>
                 <div class="row g-0">
