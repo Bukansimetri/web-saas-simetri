@@ -282,7 +282,7 @@
         <x-superduper.searchbar />
 
         <!-- Scroll To Top -->
-        <div class="pbmit-progress-wrap">
+        <div class="pbmit-progress-wrap" style="right: 20px !important">
             <svg class="pbmit-progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
                 <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
             </svg>

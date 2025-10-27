@@ -484,6 +484,315 @@
         </section>
         <!-- Service End -->
 
+        <!-- Ihbox Start -->
+        <section class="section-md">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-xl-4">
+                        <div class="pbmit-heading-subheading animation-style2">
+                            <h4 class="pbmit-subtitle">since 2020</h4>
+                            <h2 class="pbmit-title">Why choose us</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-xl-6">
+                        <div class="pbmit-heading-desc">
+                            <!-- Take Out -->
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-xl-2">
+                        <a class="pbmit-btn pbmit-btn-outline" href="https://api.whatsapp.com/send?phone=628111999435&text=Halo%20Tim%20Home%20Care%20Interior%2C%20saya%20ingin%20berkonsultasi%20dengan%20tim%20designnya%20mengenai%20desain%20interior%2C%20bisa%20dibantu%20%3F">
+                            <span class="pbmit-button-content-wrapper">
+                                <span class="pbmit-button-text">Book Consult</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-3 ihbox-one-left-col">
+                        <div class="row">
+                            @if ($homeMiddleLeft->isNotEmpty())
+                                @foreach ($homeMiddleLeft as $featureMiddle)
+                                    <article class="pbmit-miconheading-style-8 col-md-12">
+                                        <div class="pbmit-ihbox-style-8">
+                                            <div class="pbmit-ihbox-box d-flex">
+                                                <div class="pbmit-ihbox-icon">
+                                                    <div class="pbmit-ihbox-icon-wrapper">
+                                                        <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                            <i class="pbmit-xinterio-icon {{ $featureMiddle->icon_class ?? 'pbmit-xinterio-icon-stairs' }}"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pbmit-ihbox-contents">
+                                                    <h2 class="pbmit-element-title">
+                                                        {{ $featureMiddle->title }}
+                                                    </h2>
+                                                    <div class="pbmit-heading-desc">{{ $featureMiddle->description }}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                @endforeach
+                            @else
+                                <article class="pbmit-miconheading-style-8 col-md-12">
+                                    <div class="pbmit-ihbox-style-8">
+                                        <div class="pbmit-ihbox-box d-flex">
+                                            <div class="pbmit-ihbox-icon">
+                                                <div class="pbmit-ihbox-icon-wrapper">
+                                                    <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                        <i class="pbmit-xinterio-icon pbmit-xinterio-icon-stairs"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pbmit-ihbox-contents">
+                                                <h2 class="pbmit-element-title">
+                                                    5 Years Warranty
+                                                </h2>
+                                                <div class="pbmit-heading-desc">We offer competitive and affordable rates for our interior design .</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="pbmit-miconheading-style-8 col-md-12">
+                                    <div class="pbmit-ihbox-style-8">
+                                        <div class="pbmit-ihbox-box d-flex">
+                                            <div class="pbmit-ihbox-icon">
+                                                <div class="pbmit-ihbox-icon-wrapper">
+                                                    <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                        <i class="pbmit-xinterio-icon pbmit-xinterio-icon-3d"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pbmit-ihbox-contents">
+                                                <h2 class="pbmit-element-title">
+                                                    Latest technologies
+                                                </h2>
+                                                <div class="pbmit-heading-desc">We offer competitive and affordable rates for our interior design .</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="pbmit-miconheading-style-8 col-md-12">
+                                    <div class="pbmit-ihbox-style-8">
+                                        <div class="pbmit-ihbox-box d-flex">
+                                            <div class="pbmit-ihbox-icon">
+                                                <div class="pbmit-ihbox-icon-wrapper">
+                                                    <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                        <i class="pbmit-xinterio-icon pbmit-xinterio-icon-kitchen"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pbmit-ihbox-contents">
+                                                <h2 class="pbmit-element-title">
+                                                    High-Quality Designs
+                                                </h2>
+                                                <div class="pbmit-heading-desc">We offer competitive and affordable rates for our interior design .</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            @endif
+                        </div>
+                    </div>
+                    <!-- Start Change Image -->
+                    <div class="col-md-6 ihbox-one-img-col">
+                        <div class="ihbox-imgbox">
+                            <img src="https://homecareinterior.co.id/storage/9/why-choose-us-520x520.jpg" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <!-- End Change Image -->
+                    <div class="col-md-3 ihbox-one-right-col">
+                        <div class="row">
+                            @if ($homeMiddleRight->isNotEmpty())
+                                @foreach ($homeMiddleRight as $featureMiddleRight)
+                                    <article class="pbmit-miconheading-style-8 col-md-12">
+                                        <div class="pbmit-ihbox-style-8">
+                                            <div class="pbmit-ihbox-box d-flex">
+                                                <div class="pbmit-ihbox-icon">
+                                                    <div class="pbmit-ihbox-icon-wrapper">
+                                                        <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                            <i class="pbmit-xinterio-icon {{ $featureMiddleRight->icon_class ?? 'pbmit-xinterio-icon-axis' }}"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pbmit-ihbox-contents">
+                                                    <h2 class="pbmit-element-title">
+                                                        {{ $featureMiddleRight->title }}
+                                                    </h2>
+                                                    <div class="pbmit-heading-desc">{{ $featureMiddleRight->description }}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                @endforeach
+                            @else
+                                <article class="pbmit-miconheading-style-8 col-md-12">
+                                    <div class="pbmit-ihbox-style-8">
+                                        <div class="pbmit-ihbox-box d-flex">
+                                            <div class="pbmit-ihbox-icon">
+                                                <div class="pbmit-ihbox-icon-wrapper">
+                                                    <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                        <i class="pbmit-xinterio-icon pbmit-xinterio-icon-axis"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pbmit-ihbox-contents">
+                                                <h2 class="pbmit-element-title">
+                                                    Transparent Pricing
+                                                </h2>
+                                                <div class="pbmit-heading-desc">We offer competitive and affordable rates for our interior design .</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="pbmit-miconheading-style-8 col-md-12">
+                                    <div class="pbmit-ihbox-style-8">
+                                        <div class="pbmit-ihbox-box d-flex">
+                                            <div class="pbmit-ihbox-icon">
+                                                <div class="pbmit-ihbox-icon-wrapper">
+                                                    <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                        <i class="pbmit-xinterio-icon pbmit-xinterio-icon-brickwall-1"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pbmit-ihbox-contents">
+                                                <h2 class="pbmit-element-title">
+                                                    Professional Team
+                                                </h2>
+                                                <div class="pbmit-heading-desc">We offer competitive and affordable rates for our interior design .</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="pbmit-miconheading-style-8 col-md-12">
+                                    <div class="pbmit-ihbox-style-8">
+                                        <div class="pbmit-ihbox-box d-flex">
+                                            <div class="pbmit-ihbox-icon">
+                                                <div class="pbmit-ihbox-icon-wrapper">
+                                                    <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                        <i class="pbmit-xinterio-icon pbmit-xinterio-icon-pantone"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pbmit-ihbox-contents">
+                                                <h2 class="pbmit-element-title">
+                                                    Award winning
+                                                </h2>
+                                                <div class="pbmit-heading-desc">We offer competitive and affordable rates for our interior design .</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Ihbox End -->
+
+        <!-- Marquee Start -->
+        <section class="marquee-one">
+            <div class="p-0 container-fluid">
+                <div class="swiper-slider marquee">
+                    <div class="swiper-wrapper">
+                        <article class="pbmit-marquee-effect-style-1 swiper-slide">
+                            <div class="pbmit-tag-wrapper">
+                                <h2 class="pbmit-element-title" data-text="Master Bedroom ">
+                                    Master Bedroom
+                                </h2>
+                            </div>
+                        </article>
+                        <article class="pbmit-marquee-effect-style-1 swiper-slide">
+                            <div class="pbmit-tag-wrapper">
+                                <h2 class="pbmit-element-title" data-text="Living Room">
+                                    Living Room
+                                </h2>
+                            </div>
+                        </article>
+                        <article class="pbmit-marquee-effect-style-1 swiper-slide">
+                            <div class="pbmit-tag-wrapper">
+                                <h2 class="pbmit-element-title" data-text="Kitchen">
+                                    Kitchen
+                                </h2>
+                            </div>
+                        </article>
+                        <article class="pbmit-marquee-effect-style-1 swiper-slide">
+                            <div class="pbmit-tag-wrapper">
+                                <h2 class="pbmit-element-title" data-text="Best Gallery">
+                                    Best Gallery
+                                </h2>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Marquee End -->
+
+        <!-- Before After Start -->
+        <section>
+            <div class="p-0 container-fluid">
+                <div class="row g-2">
+                    <div class="col-md-12 col-xl-6">
+                        <div class="before-after-left-area pbmit-bg-color-blackish">
+                            <div class="pbmit-heading-subheading animation-style4">
+                                <h4 class="pbmit-subtitle">since 2020</h4>
+                                <h2 class="pbmit-title">We design thoughtful, livable spaces.</h2>
+                                <div class="pbmit-heading-desc">
+                                    Kami percaya bahwa setiap ruang memiliki karakter unik yang perlu diterjemahkan melalui desain yang tepat, detail yang presisi, dan eksekusi yang sempurna.
+                                </div>
+                            </div>
+                            <div class="row pbmit-fid-style-one">
+                                <div class="col-md-6">
+                                    <div class="pbminfotech-ele-fid-style-1">
+                                        <div class="pbmit-fld-contents d-flex align-items-center">
+                                            <div class="pbmit-circle-outer" data-digit="87" data-fill="#bb9a65" data-emptyfill="" data-before="" data-after="<span>%</span>" data-thickness="1" data-size="127">
+                                                <div class="pbmit-circle">
+                                                    <div class="pbmit-fid-inner">
+                                                        <span class="pbmit-fid-before"></span>
+                                                        <span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="87" data-interval="5" data-before="" data-before-style="" data-after="" data-after-style="">87</span>
+                                                        <span class="pbmit-fid"><span>%</span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pbmit-fid-sub">
+                                                <h3 class="pbmit-fid-title">Clients <br> Satisfactions</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="pbminfotech-ele-fid-style-1">
+                                        <div class="pbmit-fld-contents d-flex align-items-center">
+                                            <div class="pbmit-circle-outer" data-digit="89" data-fill="#bb9a65" data-emptyfill="" data-before="" data-after="<span>%</span>" data-thickness="1" data-size="127">
+                                                <div class="pbmit-circle">
+                                                    <div class="pbmit-fid-inner">
+                                                        <span class="pbmit-fid-before"></span>
+                                                        <span class="pbmit-number-rotate numinate" data-appear-animation="animateDigits" data-from="0" data-to="89" data-interval="5" data-before="" data-before-style="" data-after="" data-after-style="">89</span>
+                                                        <span class="pbmit-fid"><span>%</span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pbmit-fid-sub">
+                                                <h3 class="pbmit-fid-title">Work <br> Experiences</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-xl-6">
+                        <div class="twentytwenty-container">
+                            <img src="https://homecareinterior.co.id/storage/12/Before-955x595.jpg" alt="Before">
+                            <img src="https://homecareinterior.co.id/storage/13/after-955x595.jpg" alt="After">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Before After End -->
+
         <!-- Portfolio Start -->
         <section class="pbmit-bg-color-light portfolio-one pbmit-sortable-yes">
             <div class="container">
@@ -630,6 +939,117 @@
             </div>
         </section>
         <!-- Portfolio End -->
+
+        <!-- Process Start -->
+        <section class="process-section-two">
+            <div class="container">
+                <div class="text-center position-relative">
+                    <div class="pbmit-heading-subheading animation-style3">
+                        <h4 class="pbmit-subtitle">Steps</h4>
+                        <h2 class="pbmit-title">Work Process Home Care Interior</h2>
+                    </div>
+                    <div class="pbmit-ih-highlight">
+                        <h2>Process</h2>
+                    </div>
+                </div>
+                <div class="row pbmit-element-column-four">
+                    @if ($homeBottom->isNotEmpty())
+                        @foreach ($homeBottom as $homeBottomFeature)
+                            <article class="pbmit-miconheading-style-4 col-md-6 col-lg-3">
+                                <div class="pbmit-ihbox-style-4">
+                                    <div class="pbmit-ihbox-headingicon">
+                                        <div class="pbmit-ihbox-icon">
+                                            <div class="pbmit-ihbox-icon-wrapper">
+                                                <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                    <i class="{{ $homeBottomFeature->icon_class }}"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h2 class="pbmit-element-title">
+                                            {{ $homeBottomFeature->title }}
+                                        </h2>
+                                        <div class="pbmit-heading-desc">{{ $homeBottomFeature->description }}</div>
+                                    </div>
+                                </div>
+                            </article>
+                        @endforeach
+                    @else
+                        <article class="pbmit-miconheading-style-4 col-md-6 col-lg-3">
+                            <div class="pbmit-ihbox-style-4">
+                                <div class="pbmit-ihbox-headingicon">
+                                    <div class="pbmit-ihbox-icon">
+                                        <div class="pbmit-ihbox-icon-wrapper">
+                                            <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-engineer"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h2 class="pbmit-element-title">
+                                        Meet Designer
+                                    </h2>
+                                    <div class="pbmit-heading-desc">Lorem ipsum is simply text of the printing typesetting.</div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="pbmit-miconheading-style-4 col-md-6 col-lg-3">
+                            <div class="pbmit-ihbox-style-4">
+                                <div class="pbmit-ihbox-headingicon">
+                                    <div class="pbmit-ihbox-icon">
+                                        <div class="pbmit-ihbox-icon-wrapper">
+                                            <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-compass"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h2 class="pbmit-element-title">
+                                        Finalized layout
+                                    </h2>
+                                    <div class="pbmit-heading-desc">Lorem ipsum is simply text of the printing typesetting.</div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="pbmit-miconheading-style-4 col-md-6 col-lg-3">
+                            <div class="pbmit-ihbox-style-4">
+                                <div class="pbmit-ihbox-headingicon">
+                                    <div class="pbmit-ihbox-icon">
+                                        <div class="pbmit-ihbox-icon-wrapper">
+                                            <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-tools"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h2 class="pbmit-element-title">
+                                        Work in progress
+                                    </h2>
+                                    <div class="pbmit-heading-desc">Lorem ipsum is simply text of the printing typesetting.</div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="pbmit-miconheading-style-4 col-md-6 col-lg-3">
+                            <div class="pbmit-ihbox-style-4">
+                                <div class="pbmit-ihbox-headingicon">
+                                    <div class="pbmit-ihbox-icon">
+                                        <div class="pbmit-ihbox-icon-wrapper">
+                                            <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
+                                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-axis"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h2 class="pbmit-element-title">
+                                        Smooth delivery
+                                    </h2>
+                                    <div class="pbmit-heading-desc">Lorem ipsum is simply text of the printing typesetting.</div>
+                                </div>
+                            </div>
+                        </article>
+                    @endif
+                </div>
+                <div class="pbmit-text-editor">
+                    <span class="pbmit-text-design">Hurry</span>  Let’s make something great work together. Got a project in mind? <span class="pbmit-globalcolor"><u>Got a project in mind?</u></span>
+                </div>
+            </div>
+        </section>
+        <!-- Process End -->
 
         <!-- Pricing Start -->
         <section class="section-xl pricing-one-bg">
@@ -849,119 +1269,266 @@
         </section>
         <!-- Pricing End -->
 
-        <!-- Process Start -->
-        <section class="process-section-two">
-            <div class="container">
-                <div class="text-center position-relative">
-                    <div class="pbmit-heading-subheading animation-style3">
-                        <h4 class="pbmit-subtitle">Steps</h4>
-                        <h2 class="pbmit-title">Work Process Home Care Interior</h2>
-                    </div>
-                    <div class="pbmit-ih-highlight">
-                        <h2>Process</h2>
-                    </div>
-                </div>
-                <div class="row pbmit-element-column-four">
-                    @if ($homeBottom->isNotEmpty())
-                        @foreach ($homeBottom as $homeBottomFeature)
-                            <article class="pbmit-miconheading-style-4 col-md-6 col-lg-3">
-                                <div class="pbmit-ihbox-style-4">
-                                    <div class="pbmit-ihbox-headingicon">
-                                        <div class="pbmit-ihbox-icon">
-                                            <div class="pbmit-ihbox-icon-wrapper">
-                                                <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-                                                    <i class="{{ $homeBottomFeature->icon_class }}"></i>
+        <!-- Testimonial Start -->
+        <section class="pbmit-bg-color-light testimonial-one">
+            <div class="container pbmit-col-stretched-yes pbmit-col-right">
+                <div class="pbmit-col-stretched-right">
+                    <div class="row g-0">
+                        <div class="col-md-12 col-lg-3">
+                            <div class="pbmit-testimonialbox-left">
+                                <div class="pbmit-heading-subheading animation-style2">
+                                    <h4 class="pbmit-subtitle">Client feedback</h4>
+                                    <h2 class="pbmit-title">Hear from clients.</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-9 pbmit-testimonialbox-right">
+                            <div class="swiper-slider" data-autoplay="true" data-loop="true" data-dots="false" data-arrows="true" data-columns="2.6" data-margin="30" data-effect="slide">
+                                <div class="swiper-wrapper">
+                                    <!-- Slide1 -->
+                                    @if ($testimonials->isNotEmpty())
+                                        @foreach ($testimonials as $testimonial)
+                                            <article class="pbmit-testimonial-style-1 swiper-slide">
+                                                <div class="pbminfotech-post-item">
+                                                    <div class="pbmit-box-content-wrap">
+                                                        <div class="pbminfotech-box-star-ratings">
+                                                            @for ($i = 0; $i < 5; $i++)
+                                                                @if ($i < $testimonial->rating)
+                                                                    <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                                @endif
+                                                            @endfor
+                                                        </div>
+                                                        <div class="pbminfotech-box-desc">
+                                                            <blockquote class="pbminfotech-testimonial-text">
+                                                                <p>{{ $testimonial->description }}</p>
+                                                            </blockquote>
+                                                        </div>
+                                                        <div class="pbminfotech-box-author">
+                                                            <div class="pbmit-auther-content">
+                                                                <h3 class="pbminfotech-box-title">{{ $testimonial->client }}</h3>
+                                                                <div class="pbminfotech-testimonial-detail">{{ $testimonial->client_location }}</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="pbminfotech-box-img">
+                                                            <div class="pbmit-featured-img-wrapper">
+                                                                <div class="pbmit-featured-wrapper">
+                                                                    @if ($testimonial->hasImage())
+                                                                        <img src="{{ $testimonial->getImageUrl('preview') }}" class="img-fluid" alt="{{ $testimonial->client }}">
+                                                                    @else
+                                                                        <img src="{{ asset('assets/images/homepage-1/reviewer/reviewer-01.jpg') }}" class="img-fluid" alt="reviewer-04">
+                                                                    @endif
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        @endforeach
+                                    @else
+                                        <article class="pbmit-testimonial-style-1 swiper-slide">
+                                            <div class="pbminfotech-post-item">
+                                                <div class="pbmit-box-content-wrap">
+                                                    <div class="pbminfotech-box-star-ratings">
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                    </div>
+                                                    <div class="pbminfotech-box-desc">
+                                                        <blockquote class="pbminfotech-testimonial-text">
+                                                            <p>Their team are easy to work with and helped me make amazing websites in a short amount of time. Thanks guys for all your hard work. Trust us we looked for a very long time.</p>
+                                                        </blockquote>
+                                                    </div>
+                                                    <div class="pbminfotech-box-author">
+                                                        <div class="pbmit-auther-content">
+                                                            <h3 class="pbminfotech-box-title">Olivia Cruz</h3>
+                                                            <div class="pbminfotech-testimonial-detail">Grorgia, USA</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pbminfotech-box-img">
+                                                        <div class="pbmit-featured-img-wrapper">
+                                                            <div class="pbmit-featured-wrapper">
+                                                                <img src="{{ asset('assets/images/homepage-1/reviewer/reviewer-01.jpg') }}" class="img-fluid" alt="reviewer-04">
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <h2 class="pbmit-element-title">
-                                            {{ $homeBottomFeature->title }}
-                                        </h2>
-                                        <div class="pbmit-heading-desc">{{ $homeBottomFeature->description }}</div>
-                                    </div>
-                                </div>
-                            </article>
-                        @endforeach
-                    @else
-                        <article class="pbmit-miconheading-style-4 col-md-6 col-lg-3">
-                            <div class="pbmit-ihbox-style-4">
-                                <div class="pbmit-ihbox-headingicon">
-                                    <div class="pbmit-ihbox-icon">
-                                        <div class="pbmit-ihbox-icon-wrapper">
-                                            <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-                                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-engineer"></i>
+                                        </article>
+                                        <!-- Slide2 -->
+                                        <article class="pbmit-testimonial-style-1 swiper-slide">
+                                            <div class="pbminfotech-post-item">
+                                                <div class="pbmit-box-content-wrap">
+                                                    <div class="pbminfotech-box-star-ratings">
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                    </div>
+                                                    <div class="pbminfotech-box-desc">
+                                                        <blockquote class="pbminfotech-testimonial-text">
+                                                            <p>Their team are easy to work with and helped me make amazing websites in a short amount of time. Thanks guys for all your hard work. Trust us we looked for a very long time.</p>
+                                                        </blockquote>
+                                                    </div>
+                                                    <div class="pbminfotech-box-author">
+                                                        <div class="pbmit-auther-content">
+                                                            <h3 class="pbminfotech-box-title">Martin Bailey</h3>
+                                                            <div class="pbminfotech-testimonial-detail">Grorgia, USA</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pbminfotech-box-img">
+                                                        <div class="pbmit-featured-img-wrapper">
+                                                            <div class="pbmit-featured-wrapper">
+                                                                <img src="{{ asset('assets/images/homepage-1/reviewer/reviewer-02.jpg') }}" class="img-fluid" alt="reviewer-04">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <h2 class="pbmit-element-title">
-                                        Meet Designer
-                                    </h2>
-                                    <div class="pbmit-heading-desc">Lorem ipsum is simply text of the printing typesetting.</div>
+                                        </article>
+                                        <!-- Slide3 -->
+                                        <article class="pbmit-testimonial-style-1 swiper-slide">
+                                            <div class="pbminfotech-post-item">
+                                                <div class="pbmit-box-content-wrap">
+                                                    <div class="pbminfotech-box-star-ratings">
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                    </div>
+                                                    <div class="pbminfotech-box-desc">
+                                                        <blockquote class="pbminfotech-testimonial-text">
+                                                            <p>Their team are easy to work with and helped me make amazing websites in a short amount of time. Thanks guys for all your hard work. Trust us we looked for a very long time.</p>
+                                                        </blockquote>
+                                                    </div>
+                                                    <div class="pbminfotech-box-author">
+                                                        <div class="pbmit-auther-content">
+                                                            <h3 class="pbminfotech-box-title">Alex Zender</h3>
+                                                            <div class="pbminfotech-testimonial-detail">Grorgia, USA</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pbminfotech-box-img">
+                                                        <div class="pbmit-featured-img-wrapper">
+                                                            <div class="pbmit-featured-wrapper">
+                                                                <img src="{{ asset('assets/images/homepage-1/reviewer/reviewer-03.jpg') }}" class="img-fluid" alt="reviewer-04">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <!-- Slide4 -->
+                                        <article class="pbmit-testimonial-style-1 swiper-slide">
+                                            <div class="pbminfotech-post-item">
+                                                <div class="pbmit-box-content-wrap">
+                                                    <div class="pbminfotech-box-star-ratings">
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                        <i class="pbmit-base-icon-star-1 pbmit-active"></i>
+                                                    </div>
+                                                    <div class="pbminfotech-box-desc">
+                                                        <blockquote class="pbminfotech-testimonial-text">
+                                                            <p>Their team are easy to work with and helped me make amazing websites in a short amount of time. Thanks guys for all your hard work. Trust us we looked for a very long time.</p>
+                                                        </blockquote>
+                                                    </div>
+                                                    <div class="pbminfotech-box-author">
+                                                        <div class="pbmit-auther-content">
+                                                            <h3 class="pbminfotech-box-title">Robert Gold</h3>
+                                                            <div class="pbminfotech-testimonial-detail">Grorgia, USA</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pbminfotech-box-img">
+                                                        <div class="pbmit-featured-img-wrapper">
+                                                            <div class="pbmit-featured-wrapper">
+                                                                <img src="{{ asset('assets/images/homepage-1/reviewer/reviewer-04.jpg') }}" class="img-fluid" alt="reviewer-04">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    @endif
                                 </div>
                             </div>
-                        </article>
-                        <article class="pbmit-miconheading-style-4 col-md-6 col-lg-3">
-                            <div class="pbmit-ihbox-style-4">
-                                <div class="pbmit-ihbox-headingicon">
-                                    <div class="pbmit-ihbox-icon">
-                                        <div class="pbmit-ihbox-icon-wrapper">
-                                            <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-                                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-compass"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <h2 class="pbmit-element-title">
-                                        Finalized layout
-                                    </h2>
-                                    <div class="pbmit-heading-desc">Lorem ipsum is simply text of the printing typesetting.</div>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="pbmit-miconheading-style-4 col-md-6 col-lg-3">
-                            <div class="pbmit-ihbox-style-4">
-                                <div class="pbmit-ihbox-headingicon">
-                                    <div class="pbmit-ihbox-icon">
-                                        <div class="pbmit-ihbox-icon-wrapper">
-                                            <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-                                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-tools"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <h2 class="pbmit-element-title">
-                                        Work in progress
-                                    </h2>
-                                    <div class="pbmit-heading-desc">Lorem ipsum is simply text of the printing typesetting.</div>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="pbmit-miconheading-style-4 col-md-6 col-lg-3">
-                            <div class="pbmit-ihbox-style-4">
-                                <div class="pbmit-ihbox-headingicon">
-                                    <div class="pbmit-ihbox-icon">
-                                        <div class="pbmit-ihbox-icon-wrapper">
-                                            <div class="pbmit-icon-wrapper pbmit-icon-type-icon">
-                                                <i class="pbmit-xinterio-icon pbmit-xinterio-icon-axis"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <h2 class="pbmit-element-title">
-                                        Smooth delivery
-                                    </h2>
-                                    <div class="pbmit-heading-desc">Lorem ipsum is simply text of the printing typesetting.</div>
-                                </div>
-                            </div>
-                        </article>
-                    @endif
+                        </div>
+                    </div>
                 </div>
-                <div class="pbmit-text-editor">
-                    <span class="pbmit-text-design">Hurry</span>  Let’s make something great work together. Got a project in mind? <span class="pbmit-globalcolor"><u>Got a project in mind?</u></span>
+                <div class="ihbox-style-area">
+                    <div class="pbmit-ihbox-style-2">
+                        <div class="pbmit-ihbox-headingicon">
+                            <div class="pbmit-ihbox-contents d-flex align-items-center">
+                                <div class="pbmit-title-wrap">
+                                    <h2 class="pbmit-element-title">{{ $averageRating  }}</h2>
+                                </div>
+                                <div class="pbmit-icon-wrap">
+                                    <div class="pbmit-ihbox-svg">
+                                        <div class="pbmit-ihbox-svg-wrapper">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="512" height="90.51" viewBox="0 0 512 90.51">
+                                                <path d="M89.26,29.43l-24.9-3.62L53.23,3.33c-2.2-4.44-9.48-4.44-11.68,0L30.42,25.81,5.58,29.43A6.52,6.52,0,0,0,2,40.55L20,58.11,15.74,82.88a6.51,6.51,0,0,0,9.46,6.87l22.19-11.7,22.25,11.7a6.5,6.5,0,0,0,3,.75,6.51,6.51,0,0,0,6.43-7.62L74.86,58.11l18-17.56a6.52,6.52,0,0,0-3.62-11.12Z"></path>
+                                                <path d="M193.55,29.43l-24.9-3.62L157.52,3.33c-2.2-4.44-9.48-4.44-11.68,0L134.71,25.81l-24.84,3.62a6.52,6.52,0,0,0-3.61,11.12l18,17.56L120,82.88a6.52,6.52,0,0,0,9.47,6.87l22.19-11.7,22.25,11.7a6.5,6.5,0,0,0,3,.75,6.51,6.51,0,0,0,6.43-7.62l-4.24-24.77,18-17.56a6.52,6.52,0,0,0-3.62-11.12Z"></path>
+                                                <path d="M297.84,29.43l-24.9-3.62L261.81,3.33c-2.2-4.44-9.48-4.44-11.68,0L239,25.81l-24.84,3.62a6.52,6.52,0,0,0-3.61,11.12l18,17.56-4.25,24.77a6.52,6.52,0,0,0,9.47,6.87L256,78.05l22.25,11.7a6.5,6.5,0,0,0,3,.75,6.51,6.51,0,0,0,6.43-7.62l-4.24-24.77,18-17.56a6.52,6.52,0,0,0-3.62-11.12Z"></path>
+                                                <path d="M402.13,29.43l-24.9-3.62L366.1,3.33c-2.2-4.44-9.48-4.44-11.69,0L343.29,25.81l-24.84,3.62a6.52,6.52,0,0,0-3.61,11.12l18,17.56L328.6,82.88a6.52,6.52,0,0,0,9.47,6.87l22.18-11.7,22.26,11.7a6.5,6.5,0,0,0,3,.75A6.51,6.51,0,0,0,392,82.88l-4.24-24.77,18-17.56a6.52,6.52,0,0,0-3.61-11.12Z"></path>
+                                                <path d="M511.68,33.86a6.54,6.54,0,0,0-5.26-4.43l-24.9-3.62L470.39,3.33c-2.2-4.44-9.48-4.44-11.69,0L447.58,25.81l-24.84,3.62a6.52,6.52,0,0,0-3.61,11.12l18,17.56-4.25,24.77a6.52,6.52,0,0,0,6.42,7.62,6.61,6.61,0,0,0,3.05-.75l22.19-11.7,22.26,11.7a6.46,6.46,0,0,0,6.86-.5,6.53,6.53,0,0,0,2.59-6.37L492,58.11l18-17.56A6.54,6.54,0,0,0,511.68,33.86Z"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <h4 class="pbmit-element-heading">
+                                         {{ $totalRatings }}Rating
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <!-- Process End -->
+        <!-- Testimonial End -->
+
+        <!-- Client Start -->
+        <section class="section-lgb pbmit-bg-color-light">
+            <div class="container">
+                <div class="swiper-slider" data-autoplay="true" data-loop="true" data-dots="false" data-arrows="false" data-columns="6" data-margin="0" data-effect="slide">
+                    <div class="swiper-wrapper">
+                        @if (!empty($clients))
+                            @foreach ($clients as $client)
+                                <article class="pbmit-client-style-1 swiper-slide">
+                                    <div class="pbmit-border-wrapper">
+                                        <div class="pbmit-client-wrapper pbmit-client-with-hover-img">
+                                            <h4 class="pbmit-hide">{{ $client->name}}</h4>
+                                            <div class="pbmit-client-hover-img">
+                                                @if ($client->hasImage())
+                                                    <img src="{{ $client->getImageUrl('thumbnail') }}" class="img-fluid" alt="{{ $client->name }} is Home Carea Interior Client">
+                                                @else
+                                                    <img src="{{ asset('assets/images/homepage-1/client/client-global-01.png') }}" class="img-fluid" alt="">
+                                                @endif
+                                            </div>
+                                            <div class="pbmit-featured-img-wrapper">
+                                                <div class="pbmit-featured-wrapper">
+                                                    @if ($client->hasImage())
+                                                        <img src="{{ $client->getImageUrl('thumbnail') }}" class="img-fluid" alt="{{ $client->name }} is Home Carea Interior Client">
+                                                    @else
+                                                        <img src="{{ asset('assets/images/homepage-1/client/client-grey-01.png') }}" class="img-fluid" alt="">
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            @endforeach
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Client End -->
 
         <!-- Blog Start -->
-        <section class="section-md" style="padding-top: 50px !important">
+        <section class="section-md">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6">
@@ -1080,8 +1647,7 @@
 
     </div>
 
-    <a id="home-floating-whatsapp" href="https://api.whatsapp.com/send?phone=628111999435&text=Halo%2C%20terima%20kasih%20telah%20menghubungi%20Home%20Care%20Interior.%20Saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20desain%20interior%2C%20boleh%20dibantu%20untuk%20konsultasinya.%20" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-        <span class="visually-hidden-text">Home - Contact on Whatsapp</span>
+    <a href="https://api.whatsapp.com/send?phone=628111999435&text=Halo%2C%20terima%20kasih%20telah%20menghubungi%20Home%20Care%20Interior.%20Saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20desain%20interior%2C%20boleh%20dibantu%20untuk%20konsultasinya.%20" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fa fa-whatsapp"></i>
     </a>
 </x-superduper.main>

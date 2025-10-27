@@ -208,7 +208,8 @@
     </section>
     <!-- Our History Start -->
 
-    <a href="https://api.whatsapp.com/send?phone=628111999435&text=Halo%2C%20saya%20sudah%20melihat%20profil%20PT.%20Sejahtera%20Langgeng%20Anugerah%20%E2%80%93%20Home%20Care%20Interior.%20Saya%20tertarik%20untuk%20berdiskusi%20lebih%20lanjut%20mengenai%20layanan%20desain%20interiornya" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <a id="aboutus-floating-whatsapp" href="https://api.whatsapp.com/send?phone=628111999435&text=Halo%2C%20saya%20sudah%20melihat%20profil%20PT.%20Sejahtera%20Langgeng%20Anugerah%20%E2%80%93%20Home%20Care%20Interior.%20Saya%20tertarik%20untuk%20berdiskusi%20lebih%20lanjut%20mengenai%20layanan%20desain%20interiornya" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <span class="visually-hidden-text">About Us - Contact on Whatsapp</span>
         <i class="fa fa-whatsapp"></i>
     </a>
 </div>
