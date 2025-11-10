@@ -258,7 +258,13 @@
                 <!-- Page Content End -->
 
                 <!-- footer -->
-                <x-superduper.footer />
+                @if (request()->routeIs('interior-jakarta'))
+                    {{-- Show the special homepage footer --}}
+                    <x-superduper.footer-landing-page />
+                @else
+                    {{-- Show the default footer for all other pages --}}
+                    <x-superduper.footer />
+                @endif
                 <!-- footer End -->
             </div>
             <!-- Cookie Consent -->

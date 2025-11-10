@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Simetri\AboutUs;
+use App\Livewire\Simetri\LandingPage;
 use App\Livewire\Simetri\PortfolioDetail;
 use App\Livewire\Simetri\PortfolioList;
 use App\Livewire\Simetri\ServiceList;
@@ -24,6 +25,8 @@ use Lab404\Impersonate\Services\ImpersonateManager;
 Route::get('/', function () {
     return view('components.superduper.pages.home');
 })->name('home');
+
+Route::get('/interior-jakarta', LandingPage::class)->name('interior-jakarta');
 
 Route::get('/blog', BlogList::class)->name('blog');
 

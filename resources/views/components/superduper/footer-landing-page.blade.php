@@ -1,3 +1,4 @@
+<!-- footer -->
 @php
     use Datlechin\FilamentMenuBuilder\Models\Menu;
     $footerMenu = Menu::location('footer');
@@ -36,88 +37,41 @@
 
 @endphp
 
-<footer class="site-footer footer-style-2 pbmit-bg-color-light">
-    <div class="footer-wrap pbmit-footer-widget-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-xl-4">
-                    <aside class="widget widget_text">
-                        <div class="textwidget">
-                            <div class="pbmit-footer-logo">
-                                @if ($footerLogo)
-                                    <img src="{{ Storage::url($footerLogo) }}" alt="{{ $brandName }}">
-                                @endif
-                            </div>
-                        </div>
-                    </aside>
-                    <aside class="widget">
-                        <div class="pbmit-contact-widget-lines">
-                            <div class="pbmit-contact-widget-line pbmit-contact-widget-address">{{ $siteSettings->company_address ?? 'yourdemoaddress' }}</div>
-                            <div class="pbmit-contact-widget-line pbmit-contact-widget-phone">{{ $siteSettings->company_phone ?? 'yourdemophone' }}</div>
-                            <div class="pbmit-contact-widget-line pbmit-contact-widget-email">{{ $siteSettings->company_email ?? 'yourdemo@email.com' }}</div>
-                        </div>
-                    </aside>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <aside class="pbmit-two-column-menu widget">
-                        <ul>
-                            @if($footerMenu)
-                                    @foreach($footerMenu->menuItems as $item)
-                                        <li><a href="{{ $item->url }}">{{ $item->title }}</a></li>
-                                    @endforeach
-                            @endif
-                        </ul>
-                    </aside>
-                </div>
-                <div class="col-md-6 col-xl-4">
-                    <aside class="pbmit-two-column-menu widget">
-                        <ul>
-                            @if($footerOthers)
-                                @foreach($footerOthers->menuItems as $item)
-                                    <li><a href="{{ $item->url }}">{{ $item->title }}</a></li>
-                                @endforeach
-                            @endif
-                        </ul>
-                    </aside>
-                </div>
-            </div>
-        </div>
-    </div>
+<footer class="site-footer footer-style-3 pbmit-bg-color-secondary">
     <div class="pbmit-footer-big-area">
         <div class="container">
-            <div class="row g-0">
-                <div class="col-md-12 col-xl-6 pbmit-footer-left">
+            <div class="row">
+                <div class="col-md-12 col-xl-4">
+                    <div class="pbmit-footer-logo">
+                        @if ($footerLogo)
+                            <img src="{{ Storage::url($footerLogo) }}" alt="{{ $brandName }}">
+                        @endif
+                    </div>
+                </div>
+                <div class="col-md-12 col-xl-8">
                     <form>
                         <div class="pbmit-newsletter">
                             <h3>Subscribe to Our Newsletter</h3>
                             <div class="pbmit-footer-email-button">
-                                <input type="email" name="EMAIL" placeholder="Your email address">
+                                <input type="email" class="form-control" name="EMAIL" placeholder="Enter Your Email Address">
                                 <button class="pbmit-btn">
                                     <span class="pbmit-button-content-wrapper">
-                                        <span class="pbmit-button-text">Subscribe</span>
+                                        <span class="pbmit-button-text">Subscribe Now</span>
                                     </span>
                                 </button>
                             </div>
                         </div>
                     </form>
                 </div>
-                <div class="col-md-12 col-xl-6 pbmit-footer-right">
-                    <div class="pbmit-footer-bg-image">
-                        <img src="{{ asset('assets/images/footer-mailchip-img.png') }}" alt="">
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-    <div class="pbmit-footer-text-area">
+    <div class="pbmit-footer-widget-area">
         <div class="container">
-            <div class="pbmit-footer-text-inner">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="pbmit-footer-copyright-text-area"> Copyright © {{ date('Y') }} <a href="{{ route('home') }}">{{ $siteSettings->company_name }} - {{ $generalSettings->brand_name }}</a>, {{ $siteSettings->copyright_text ?? 'All Rights Reserved.' }}</div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="pbmit-footer-social-area">
+            <div class="row">
+                <div class="col-md-4">
+                    <aside class="widget widget_text">
+                        <div class="textwidget">
                             <ul class="pbmit-social-links">
                                 @foreach($socialLinks as $platform => $url)
                                     @if($url)
@@ -153,9 +107,62 @@
                                 @endif
                             </ul>
                         </div>
+                    </aside>
+                </div>
+                <div class="col-md-4">
+                    <aside class="widget pbmit-two-column-menu">
+                        <h2 class="widget-title">Useful Link</h2>
+                        <ul>
+                            <li><a href="{{ route('home') }}">Home</a></li>
+                            <li><a href="{{ route('home') }}">Pricing</a></li>
+                            <li><a href="{{ route('about-us') }}">About</a></li>
+                            <li><a href="{{ route('blog') }}">Blog</a></li>
+                            <li><a href="{{ route('services') }}">Services</a></li>
+                            <li><a href="{{ route('contact-us') }}">Contact</a></li>
+                        </ul>
+                    </aside>
+                </div>
+                <div class="col-md-4">
+                    <div class="widget widget_text">
+                        <h2 class="widget-title">Working Time</h2>
+                        <div class="pbmit-timelist-wrapper">
+                            <ul class="pbmit-timelist-list">
+                                <li>
+                                    <span class="pbmit-timelist-time">Mon - Fri: 9.00am - 5.00pm</span>
+                                </li>
+                                <li>
+                                    <span class="pbmit-timelist-time">Saturday: 10.00am - 6.00pm</span>
+                                </li>
+                                <li>
+                                    <span class="pbmit-timelist-time">Sunday Closed</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pbmit-footer-text-area">
+        <div class="container">
+            <div class="pbmit-footer-text-inner">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="pbmit-footer-copyright-text-area"> Copyright © {{ date('Y') }} <a href="{{ route('home') }}">{{ $siteSettings->company_name }} - {{ $generalSettings->brand_name }}</a>, {{ $siteSettings->copyright_text ?? 'All Rights Reserved.' }}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="pbmit-footer-menu-area">
+                            <div class="menu-footer-menu-container">
+                                <ul class="pbmit-footer-menu">
+                                    <li><a href="{{ route('coming-soon') }}">Terms and conditions</a></li>
+                                    <li><a href="{{ route('coming-soon') }}">Privacy policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </footer>
+<!-- footer End -->
