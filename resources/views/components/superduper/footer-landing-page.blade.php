@@ -44,7 +44,7 @@
                 <div class="col-md-12 col-xl-4">
                     <div class="pbmit-footer-logo">
                         @if ($footerLogo)
-                            <img src="{{ Storage::url($footerLogo) }}" alt="{{ $brandName }}">
+                            <img src="{{ Storage::url($footerLogo) }}" alt="{{ $brandName }}" style="max-height: 60px;">
                         @endif
                     </div>
                 </div>

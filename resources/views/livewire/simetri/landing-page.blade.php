@@ -126,7 +126,7 @@
                 <div class="col-md-6 pbmit-col2">
                     <div class="d-flex justify-content-center">
                         <div class="about-nine-img">
-                            <img src="images/landing-page/about-us.jpg" class="img-fluid" alt="">
+                            <img src="https://homecareinterior.co.id/storage/162/home-banner-3.jpg" class="img-fluid" alt="">
                         </div>
                     </div>
                 </div>
@@ -220,7 +220,7 @@
                                 <div class="pbminfotech-post-content">
                                     <div class="pbmit-featured-img-wrapper">
                                         <div class="pbmit-featured-wrapper">
-                                            <img src="images/landing-page/indri-cikarang.jpg" class="img-fluid" alt="indri-cikarang">
+                                            <img src="https://homecareinterior.co.id/storage/163/indri-cikarang.jpg" class="img-fluid" alt="indri-cikarang">
                                         </div>
                                     </div>
                                     <div class="pbminfotech-box-content">
@@ -239,7 +239,7 @@
                                 <div class="pbminfotech-post-content">
                                     <div class="pbmit-featured-img-wrapper">
                                         <div class="pbmit-featured-wrapper">
-                                            <img src="images/landing-page/riki-bsd.jpeg" class="img-fluid" alt="riki-bsd">
+                                            <img src="https://homecareinterior.co.id/storage/167/riki-bsd.jpeg" class="img-fluid" alt="riki-bsd">
                                         </div>
                                     </div>
                                     <div class="pbminfotech-box-content">
@@ -258,7 +258,7 @@
                                 <div class="pbminfotech-post-content">
                                     <div class="pbmit-featured-img-wrapper">
                                         <div class="pbmit-featured-wrapper">
-                                            <img src="images/landing-page/jessica-cakung.jpeg" class="img-fluid" alt="jessica-cakung">
+                                            <img src="https://homecareinterior.co.id/storage/165/jessica-cakung.jpeg" class="img-fluid" alt="jessica-cakung">
                                         </div>
                                     </div>
                                     <div class="pbminfotech-box-content">
@@ -277,7 +277,7 @@
                                 <div class="pbminfotech-post-content">
                                     <div class="pbmit-featured-img-wrapper">
                                         <div class="pbmit-featured-wrapper">
-                                            <img src="images/landing-page/stela-depok.jpg" class="img-fluid" alt="stela-depok">
+                                            <img src="https://homecareinterior.co.id/storage/164/stela-depok.jpg" class="img-fluid" alt="stela-depok">
                                         </div>
                                     </div>
                                     <div class="pbminfotech-box-content">
@@ -296,7 +296,7 @@
                                 <div class="pbminfotech-post-content">
                                     <div class="pbmit-featured-img-wrapper">
                                         <div class="pbmit-featured-wrapper">
-                                            <img src="images/landing-page/reyhan-cinere.jpeg" class="img-fluid" alt="reyhan-cinere">
+                                            <img src="https://homecareinterior.co.id/storage/166/reyhan-cinere.jpeg" class="img-fluid" alt="reyhan-cinere">
                                         </div>
                                     </div>
                                     <div class="pbminfotech-box-content">
@@ -434,22 +434,22 @@
                         <div class="swiper-slider pbmit-static-image">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="images/landing-page/konsultasi.jpg" alt="Konsultasi awal">
+                                    <img src="https://homecareinterior.co.id/storage/170/konsultasi.jpg" alt="Konsultasi awal">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/landing-page/survei.jpg" alt="Survei lokasi">
+                                    <img src="https://homecareinterior.co.id/storage/173/survei.jpg" alt="Survei lokasi">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/landing-page/rab.jpg" alt="RAB di tempat">
+                                    <img src="https://homecareinterior.co.id/storage/172/rab.jpg" alt="RAB di tempat">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/landing-page/dp.jpg" alt="Pembayaran DP">
+                                    <img src="https://homecareinterior.co.id/storage/168/dp.jpg" alt="Pembayaran DP">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/landing-page/instalasi.jpg" alt="Instalasi & Produksi">
+                                    <img src="https://homecareinterior.co.id/storage/169/instalasi.jpg" alt="Instalasi & Produksi">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="images/landing-page/pelunasan.jpg" alt="Pelunasan">
+                                    <img src="https://homecareinterior.co.id/storage/171/pelunasan.jpg" alt="Pelunasan">
                                 </div>
                             </div>
                         </div>
@@ -460,5 +460,310 @@
     </section>
     <!-- Static Box End -->
 
+    <!-- Pricing Start -->
+    <section class="section-xl pricing-one-bg">
+        <div class="container">
+            <div class="text-center position-relative">
+                <div class="pbmit-heading-subheading animation-style3">
+                    <h4 class="pbmit-subtitle">Pricing Plan</h4>
+                    <h2 class="pbmit-title">Investasi dalam Desain yang Tahan Lama</h2>
+                </div>
+            </div>
+            <div class="row g-0">
+                <div class="col-md-12 col-xl-12">
+                    <div class="pbminfotech-ele-ptable-style-1">
+                        <div class="pbmit-ptable-cols row">
+                            <div class="pbmit-ptable-col col-md-3">
+                                <div class="pbmit-pricing-table-box">
+                                    <div class="pbmit-head-wrap">
+                                        <h3 class="pbminfotech-ptable-heading">Standard Plan</h3>
+                                        <div class="pbminfotech-sep"></div>
+                                        <div class="pbmit-price-wrapper">
+                                            <div class="pbmit-ptable-price-w">
+                                                <div class="pbminfotech-ptable-symbol" style="font-size: 14px !important">Rp</div>
+                                                <div class="pbminfotech-ptable-price" style="font-size: 40px !important">2 Juta</div>
+                                            </div>
+                                            <div class="pbminfotech-ptable-frequency" style="font-size: 14px !important">/Meter</div>
+                                        </div>
+                                    </div>
+                                    <div class="pbmit-ptable-inner">
+                                        <div class="pbmit-ptable-lines-w">
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Blokboard 18mm</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Engsell slowmotion ex taco</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rell double track ex huben</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rak Piring Kabinet Atas/Bawah Standard</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rak Sendok Standard</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Edging pvc ex taco</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing hpl ex taco</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing kabinet dalam melaminto</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">LED Strip</div>
+                                        </div>
+                                        <div class="pbminfotech-ptable-btn">
+                                            <div class="pbmit-button">
+                                                <a class="pbmit-button-inner" href="{{ route('contact-us') }}">
+                                                    <span class="pbmit-button-wrapper">
+                                                        <span class="pbmit-button-text">Purchase Now</span>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pbmit-ptable-inner">
+                                    </div>
+                                    <div class="pbmit-feature-wrap"></div>
+                                </div>
+                            </div>
+                            <div class="pbmit-pricing-table-featured-col pbmit-ptable-col col-md-3">
+                                <div class="pbmit-pricing-table-box">
+                                    <div class="pbmit-head-wrap">
+                                        <h3 class="pbminfotech-ptable-heading">Premium Plan</h3>
+                                        <div class="pbminfotech-sep"></div>
+                                        <div class="pbmit-price-wrapper">
+                                            <div class="pbmit-ptable-price-w">
+                                                <div class="pbminfotech-ptable-symbol" style="font-size: 14px !important">Rp</div>
+                                                <div class="pbminfotech-ptable-price" style="font-size: 40px !important">2,4 Juta</div>
+                                            </div>
+                                            <div class="pbminfotech-ptable-frequency" style="font-size: 14px !important">/Meter</div>
+                                        </div>
+                                    </div>
+                                    <div class="pbmit-ptable-inner">
+                                        <div class="pbmit-ptable-lines-w">
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Multiplex 18mm</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Engsell slowmotion ex taco</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rell double track ex huben</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rak Piring Kabinet Atas/Bawah Standard</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rak Sendok Standard</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Edging pvc ex taco</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing hpl ex taco</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing kabinet dalam melaminto</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">LED Strip</div>
+                                        </div>
+                                        <div class="pbminfotech-ptable-btn">
+                                            <div class="pbmit-button">
+                                                <a class="pbmit-button-inner" href="{{ route('contact-us') }}">
+                                                    <span class="pbmit-button-wrapper">
+                                                        <span class="pbmit-button-text">Purchase Now</span>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pbmit-ptable-inner">
+                                    </div>
+                                    <div class="pbmit-feature-wrap"></div>
+                                </div>
+                            </div>
+                            <div class="pbmit-ptable-col col-md-3">
+                                <div class="pbmit-pricing-table-box">
+                                    <div class="pbmit-head-wrap">
+                                        <h3 class="pbminfotech-ptable-heading">Platinum Plan</h3>
+                                        <div class="pbminfotech-sep"></div>
+                                        <div class="pbmit-price-wrapper">
+                                            <div class="pbmit-ptable-price-w">
+                                                <div class="pbminfotech-ptable-symbol" style="font-size: 14px !important">Rp</div>
+                                                <div class="pbminfotech-ptable-price" style="font-size: 40px !important">2,8 Juta</div>
+                                            </div>
+                                            <div class="pbminfotech-ptable-frequency" style="font-size: 14px !important">/Meter</div>
+                                        </div>
+                                    </div>
+                                    <div class="pbmit-ptable-inner">
+                                        <div class="pbmit-ptable-lines-w">
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Multiplex 18mm</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Engsell slowmotion ex taco</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rell double track ex huben</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rak Piring Kabinet Atas & Bawah Stainless</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rak Sendok Stainless</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Edging pvc ex taco</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing hpl ex taco</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing kabinet dalam tacosheet</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Kaca polos 5 mm</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">LED Strip</div>
+                                        </div>
+                                        <div class="pbminfotech-ptable-btn">
+                                            <div class="pbmit-button">
+                                                <a class="pbmit-button-inner" href="about-mask-img">
+                                                    <span class="pbmit-button-wrapper">
+                                                        <span class="pbmit-button-text">Purchase Now</span>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pbmit-feature-wrap">
+                                        <div class="pbmit-ptablebox-featured-w"></div>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="pbmit-pricing-table-featured-col pbmit-ptable-col col-md-3">
+                                <div class="pbmit-pricing-table-box">
+                                    <div class="pbmit-head-wrap">
+                                        <h3 class="pbminfotech-ptable-heading">Luxury Plan</h3>
+                                        <div class="pbminfotech-sep"></div>
+                                        <div class="pbmit-price-wrapper">
+                                            <div class="pbmit-ptable-price-w">
+                                                <div class="pbminfotech-ptable-symbol" style="font-size: 14px !important">Rp</div>
+                                                <div class="pbminfotech-ptable-price" style="font-size: 40px !important">3,2 Juta</div>
+                                            </div>
+                                            <div class="pbminfotech-ptable-frequency" style="font-size: 14px !important">/Meter</div>
+                                        </div>
+                                    </div>
+                                    <div class="pbmit-ptable-inner">
+                                        <div class="pbmit-ptable-lines-w">
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">PVC,HDF/HMR 18 mm</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Engsell slowmotion ex taco</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rell double track ex huben</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rak Piring Kabinet Atas & Bawah Stainless</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Rak Sendok Standard</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Edging pvc ex taco</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing hpl ex taco</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Finishing kabinet dalam tacosheet</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">Kaca polos 5 mm</div>
+                                            <div class="pbmit-ptable-line" style="font-size: 12px !important;">LED Strip</div>
+                                        </div>
+                                        <div class="pbminfotech-ptable-btn">
+                                            <div class="pbmit-button">
+                                                <a class="pbmit-button-inner" href="{{ route('contact-us') }}">
+                                                    <span class="pbmit-button-wrapper">
+                                                        <span class="pbmit-button-text">Purchase Now</span>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pbmit-ptable-inner">
+                                    </div>
+                                    <div class="pbmit-feature-wrap"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Pricing End -->
+
+    <!-- Blog Start -->
+    <section class="section-md" style="padding-top: 50px !important">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="pbmit-heading-subheading animation-style4">
+                        <h4 class="pbmit-subtitle">What we do</h4>
+                        <h2 class="pbmit-title">Latest posts & articles</h2>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="blog-btn">
+                        <a class="pbmit-btn pbmit-btn-outline" href="{{ route('blog') }}">
+                            <span class="pbmit-button-content-wrapper">
+                                <span class="pbmit-button-text">See all blogs</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-0 align-items-center">
+                <div class="col-md-12 col-xl-4">
+                    <div class="row">
+                        <div class="blog-one-left-col">
+                            @if ($blogs->isNotEmpty())
+                                @foreach ($blogs as $blog)
+                                    <article class="pbmit-ele-blog pbmit-blog-style-2 col-md-12">
+                                        <div class="post-item">
+                                            <div class="pbminfotech-box-content">
+                                                <div class="pbminfotech-content-inner">
+                                                    <div class="pbmit-featured-img-wrapper">
+                                                        <div class="pbmit-featured-wrapper">
+                                                            <img src="{{ $blog->getFeaturedImageUrl('large') }}" class="img-fluid" alt="{{ $blog->title }}">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pbmit-meta-wraper">
+                                                        <div class="pbmit-meta-date-wrapper pbmit-meta-line">
+                                                            <div class="pbmit-meta-date">
+                                                                <span class="pbmit-post-date">
+                                                                    <i class="pbmit-base-icon-calendar-3"></i>{{ $blog->created_at->format('M d, Y') }}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="pbmit-meta-author pbmit-meta-line">
+                                                            <span class="pbmit-post-author">
+                                                                <i class="pbmit-base-icon-user-3"></i>
+                                                                <span>By</span>{{ $blog->author->name ?? 'admin' }}
+                                                            </span>
+                                                        </div>
+                                                        <div class="pbmit-content-wrapper">
+                                                            <h3 class="pbmit-post-title">
+                                                                <a href="{{ route('blog.show', $blog->slug) }}">{{ $blog->title }}</a>
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                @endforeach
+                            @endif
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-xl-8">
+                    <div class="blog-one-right-col">
+                        <article class="pbmit-ele-blog pbmit-blog-style-3">
+                            <div class="post-item d-flex">
+                                <div class="pbmit-featured-container">
+                                    <div class="pbmit-bg-image" style="background-image:url('{{ $featureBlog->getFeaturedImageUrl('large') }}">
+                                        <div class="pbmit-featured-img-wrapper">
+                                            <div class="pbmit-featured-wrapper">
+                                                @if ($featureBlog->hasFeaturedImage())
+                                                    <img src="{{ $featureBlog->getFeaturedImageUrl('large') }}" class="img-fluid" alt="{{ $featureBlog->title }}">
+                                                @else
+                                                    <img src="{{ asset('assets/images/homepage-1/blog/blog-04b.jpg') }}" class="img-fluid" alt="blog-01">
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pbminfotech-box-wrap">
+                                    <div class="pbminfotech-box-content">
+                                        <div class="pbmit-date-admin-wraper d-flex align-items-center">
+                                            <div class="pbmit-meta-date pbmit-meta-line">
+                                                <span class="pbmit-post-date">
+                                                    <i class="pbmit-base-icon-calendar-3"></i>{{ $featureBlog->created_at->format('M d, Y') }}
+                                                </span>
+                                            </div>
+                                            <div class="pbmit-meta-author pbmit-meta-line">
+                                            <span class="pbmit-post-author">
+                                                <i class="pbmit-base-icon-user-3"></i>
+                                                <span>By</span>{{ $featureBlog->author->name ?? 'admin' }}
+                                            </span>
+                                            </div>
+                                        </div>
+                                        <h3 class="pbmit-post-title">
+                                            <a href="{{ route('blog.show', $featureBlog->slug) }}">{{ $featureBlog->title }}</a>
+                                        </h3>
+                                        <div class="pbminfotech-box-desc">
+                                            {{ $featureBlog->content_overview }}
+                                        </div>
+                                    </div>
+                                    <a class="pbmit-blog-btn" href="{{ route('blog.show', $featureBlog->slug) }}">
+                                        <span class="pbmit-button-icon">
+                                            <i class="pbmit-base-icon-pbmit-up-arrow"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog End -->
+
+    <a id="home-floating-whatsapp" href="https://api.whatsapp.com/send?phone=628111999435&text=Halo%2C%20terima%20kasih%20telah%20menghubungi%20Home%20Care%20Interior.%20Saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20desain%20interior%2C%20boleh%20dibantu%20untuk%20konsultasinya.%20" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <span class="visually-hidden-text">Landing Page - Contact on Whatsapp</span>
+        <i class="fa fa-whatsapp"></i>
+    </a>
 </div>
 <!-- Page Content End -->
