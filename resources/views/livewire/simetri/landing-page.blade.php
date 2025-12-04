@@ -332,6 +332,10 @@
     </section>
     <!-- Portfolio End -->
 
+    <a href="https://api.whatsapp.com/send?phone=628111999435&text=Halo%2C%20terima%20kasih%20telah%20menghubungi%20Home%20Care%20Interior.%20Saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20desain%20interior%2C%20boleh%20dibantu%20untuk%20konsultasinya.%20">
+        <img src="https://homecareinterior.co.id/storage/174/banner-furniture.jpg" class="img-fluid" alt="Banner Furniture">
+    </a>
+
     <!-- Static Box Start -->
     <section class="section-xl pbmit-element-static-box-style-4">
         <div class="container">
