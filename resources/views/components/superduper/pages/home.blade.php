@@ -1,115 +1,1169 @@
-<x-superduper.main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Home Page 1</title>
+	<meta name="description" content="Archix - Architecture and Interior Design HTML Template">
+	<meta name="keywords" content="apartments, architect, architecture, building, clean, construction, creative, decoration, interior design, minimal, modern, portfolio, residence, studio">
+	<meta name="author" content="Themexriver">
+	<link rel="shortcut icon" href="{{ asset('assets/img/logo/ficon.png') }}" type="image/x-icon">
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <div class="page-wrapper relative z-[1]">
-        <main class="relative overflow-hidden main-wrapper">
+	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/video.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/slick-theme.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/global.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/twenty.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+</head>
+<body class="archx-home">
+	<div id="preloader"></div>
+	<div class="up">
+		<a href="#" class="text-center scrollup"><i class="fas fa-chevron-up"></i></a>
+	</div>
+<!-- Start of Header section
+	============================================= -->
+	<header id="archx-header" class="archx-header-section">
+		<div class="container">
+			<div class="header-top-content d-flex justify-content-between position-relative">
+				<div class="header-top-cta ul-li">
+					<ul>
+						<li><i class="fal fa-map-marker-alt"></i> Gg. Sanan, Pd. Kacang Bar., Kec. Pd. Aren</li>
+						<li><i class="fal fa-envelope"></i>livingsmeinterior@gmail.com</li>
+					</ul>
+				</div>
+				<div class="brand-logo">
+					<a href="#"><img src="{{ asset('assets/img/logo/logoLV.png') }}" alt=""></a>
+				</div>
+				<div class="header-language-select-social d-flex">
+					<div class="header-social ul-li">
+						<ul>
+							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fab fa-behance"></i></a></li>
+							<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header-main-menu-wrapper d-flex justify-content-between align-items-center position-relative">
+				<div class="archx-side-bar-menu-wrapper d-flex">
+					<div class="archx-side-bar-button navSidebar-button">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<div class="archx-main-navigation-wrap">
+						<nav class="clearfix main-navigation ul-li">
+							<ul id="main-nav" class="clearfix nav navbar-nav">
+								<li class="dropdown">
+									<a href="!#">Home</a>
 
-            <x-superduper.components.hero />
-            
-            <x-superduper.components.value-proposition />
+								</li>
+								<li><a href="about.html">Tentang Kami</a></li>
+								<li class="dropdown">
+									<a href="!#">Proyek</a>
 
-            <x-superduper.components.packages-plugins />
+								</li>
+								<li class="dropdown">
+									<a href="!#">Services</a>
+								</li>
+								<li class="dropdown">
+									<a href="!#">News</a>
+								</li>
+								<li><a href="contact.html">Kontak Kami</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="header-cta-btn-wrapper d-flex align-items-center">
+					<div class="header-cta-number d-flex align-items-center text-uppercase">
+						<div class="header-cta-icon d-flex justify-content-center align-items-center">
+							<i class="fas fa-phone-alt"></i>
+						</div>
+						<div class="header-cta-value">
+							<span class="ar-title">WhatsApp:</span>
+							<span class="ar-value">+62 821-3035-4599</span>
+						</div>
+					</div>
+					<div class="header-cta-btn">
+						<a class="d-flex justify-content-center align-items-center" href="#">Konsultasi Gratis <i class="fal fa-long-arrow-right"></i></a>
+					</div>
+				</div>
+				<div class="mobile_menu">
+					<div class="mobile_menu_button open_mobile_menu">
+						<i class="fal fa-bars"></i>
+					</div>
+					<div class="mobile_menu_wrap">
+						<div class="mobile_menu_overlay open_mobile_menu"></div>
+						<div class="mobile_menu_content">
+							<div class="mobile_menu_close open_mobile_menu">
+								<i class="fal fa-times"></i>
+							</div>
+							<div class="m-brand-logo">
+								<a  href="!#"><img src="{{ asset('assets/img/logo/logo-5.png') }}" alt=""></a>
+							</div>
+							<nav class="clearfix mobile-main-navigation ul-li">
+								<ul id="m-main-nav" class="clearfix nav navbar-nav">
+									<li class="dropdown">
+										<a href="!#">Home</a>
+									</li>
+									<li><a href="about.html">About</a></li>
+									<li class="dropdown">
+										<a href="!#">Project</a>
+									</li>
+									<li class="dropdown">
+										<a href="!#">Service</a>
+									</li>
+									<li class="dropdown">
+										<a href="!#">News</a>
+									</li>
+									<li><a href="contact.html">Contact</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<!-- /Mobile-Menu -->
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- Sidebar sidebar Item -->
+	<div class="xs-sidebar-group info-group">
+		<div class="xs-overlay xs-bg-black">
+			<div class="row loader-area">
+				<div class="col-3 preloader-wrap">
+					<div class="loader-bg"></div>
+				</div>
+				<div class="col-3 preloader-wrap">
+					<div class="loader-bg"></div>
+				</div>
+				<div class="col-3 preloader-wrap">
+					<div class="loader-bg"></div>
+				</div>
+				<div class="col-3 preloader-wrap">
+					<div class="loader-bg"></div>
+				</div>
+			</div>
+		</div>
+		<div class="xs-sidebar-widget">
+			<div class="sidebar-widget-container">
+				<div class="widget-heading">
+					<a href="#" class="close-side-widget">
+						X
+					</a>
+				</div>
+				<div class="sidebar-textwidget">
 
-            {{-- Showcases --}}
-            <div class="relative py-8 overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-b from-background-white to-background-wheat dark:from-primary-900 dark:to-primary-800 -z-10"></div>
-                
-                <div class="container px-4 py-16 mx-auto">
-                    <div class="mb-16 text-center">
-                        <span class="inline-block px-4 py-1 mb-3 text-sm font-medium rounded-full bg-secondary-100 text-secondary-800 dark:bg-secondary-900 dark:text-secondary-200">Content Management</span>
-                        <h2 class="mb-4 font-bold">Feature-Rich Blog Platform, Ready to Publish</h2>
-                        <p class="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-300">Launch your content strategy immediately with SuperDuper's integrated blog system</p>
-                    </div>
-                    
-                    <!-- Blog Showcase -->
-                    <div class="mb-16">
-                        <livewire:super-duper.blog-section-slider
-                            :limit="6"
-                            :featured-only="false"
-                            :category-slug="null"
-                        />
-                    </div>
-                    
-                    <!-- Banner Showcase -->
-                    <div class="pt-8 border-t border-background-light dark:border-primary-700">
-                        <div class="mb-10 text-center">
-                            <span class="inline-block px-4 py-1 mb-3 text-sm font-medium rounded-full bg-secondary-100 text-secondary-800 dark:bg-secondary-900 dark:text-secondary-200">Banner Management</span>
-                            <h2 class="mb-4 text-3xl font-bold">Engaging Banner System</h2>
-                            <p class="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-300">Create eye-catching banners with intuitive management interface</p>
-                        </div>
-                        
-                        <div class="max-w-5xl mx-auto overflow-hidden bg-white rounded-lg shadow-lg">
-                            <x-superduper.components.banner />
-                        </div>
-                        
-                        <div class="mt-8 text-center">
-                            <div class="inline-flex items-center justify-center px-4 py-2 font-medium rounded-lg text-primary-700 bg-primary-100 dark:bg-primary-900 dark:text-primary-200">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                <span>Both blog and banner modules are fully customizable through our admin interface</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="absolute bottom-0 left-0 right-0 h-16 bg-white dark:bg-gray-800 -z-10" style="clip-path: polygon(0 100%, 100% 0, 100% 100%, 0% 100%);"></div>
-            </div>
+					<!-- Sidebar Info Content -->
+					<div class="sidebar-info-contents headline pera-content">
+						<div class="content-inner">
+							<div class="logo">
+								<a href="index.html"><img src="{{ asset('assets/img/logo/logo-3.png') }}" alt=""></a>
+							</div>
+							<div class="content-box">
+								<h5>About Us</h5>
+								<p class="text">The argument in favor of using filler text goes something like this: If you use real content in the Consulting Process, anytime you reach a review point you’ll end up reviewing and negotiating the content itself and not the design.</p>
+							</div>
+							<div class="gallery-box ul-li">
+								<h5>Gallery</h5>
+								<ul>
+									<li>
+										<a href="#"><img src="{{ asset('assets/img/gallery/01.png') }}" alt=""></a>
+									</li>
+									<li>
+										<a href="#"><img src="{{ asset('assets/img/gallery/02.png') }}" alt=""></a>
+									</li>
+									<li>
+										<a href="#"><img src="{{ asset('assets/img/gallery/03.png') }}" alt=""></a>
+									</li>
+									<li>
+										<a href="#"><img src="{{ asset('assets/img/gallery/04.png') }}" alt=""></a>
+									</li>
+									<li>
+										<a href="#"><img src="{{ asset('assets/img/gallery/05.png') }}" alt=""></a>
+									</li>
+									<li>
+										<a href="#"><img src="{{ asset('assets/img/gallery/06.png') }}" alt=""></a>
+									</li>
+								</ul>
+							</div>
+							<!-- Social Box -->
+							<div class="content-box">
+								<h5>Social Account</h5>
+								<ul class="social-box">
+									<li><a href="https://www.facebook.com/" class="fab fa-facebook-f"></a></li>
+									<li><a href="https://www.twitter.com/" class="fab fa-twitter"></a></li>
+									<li><a href="https://dribbble.com/" class="fab fa-dribbble"></a></li>
+									<li><a href="https://www.linkedin.com/" class="fab fa-linkedin"></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- End of Header section
+	============================================= -->
 
-            <div class="container px-4 py-16 mx-auto">
-                <div class="mb-16 text-center">
-                    <h2 class="mb-4 text-3xl font-bold">Frequently Asked Questions</h2>
-                    <p class="max-w-2xl mx-auto text-lg">Get answers to the most common questions about SuperDuper Starter Kit</p>
-                </div>
-                
-                <div class="max-w-4xl mx-auto divide-y divide-gray-200 dark:divide-gray-700">
-                    <div class="py-6">
-                        <div class="flex items-center justify-between cursor-pointer">
-                            <h3 class="text-xl font-semibold">What makes this different from other Filament starter kits?</h3>
-                        </div>
-                        <div class="mt-4" x-show="open">
-                            <p class="text-gray-700 dark:text-gray-300">SuperDuper provides a complete ecosystem, not just scaffolding. It includes integrated modules for content management, user management, media handling, and more. Our focus on developer experience means cleaner code organization, better documentation, and pre-built solutions for common requirements like multilingual support and SEO optimization.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="py-6">
-                        <div class="flex items-center justify-between cursor-pointer">
-                            <h3 class="text-xl font-semibold">Can I use this for commercial projects?</h3>
-                        </div>
-                        <div class="mt-4" x-show="open">
-                            <p class="text-gray-700 dark:text-gray-300">Yes! SuperDuper is released under the MIT license, which means you can use it for personal or commercial projects without restrictions. You're free to modify, distribute, and use it in your own work without attribution, though a shoutout is always appreciated!</p>
-                        </div>
-                    </div>
-                    
-                    <div class="py-6">
-                        <div class="flex items-center justify-between cursor-pointer">
-                            <h3 class="text-xl font-semibold">Do I need to know Laravel or Filament to use this?</h3>
-                        </div>
-                        <div class="mt-4" x-show="open">
-                            <p class="text-gray-700 dark:text-gray-300">Basic familiarity with Laravel and Filament is recommended. However, the starter kit is designed to be intuitive, with thorough documentation to help you understand the structure. If you're new to Filament, this kit actually makes it easier to learn by providing working examples of best practices.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="py-6">
-                        <div class="flex items-center justify-between cursor-pointer">
-                            <h3 class="text-xl font-semibold">How do updates work with this starter kit?</h3>
-                        </div>
-                        <div class="mt-4" x-show="open">
-                            <p class="text-gray-700 dark:text-gray-300">Once you create a project from the starter kit, it becomes your own codebase. We regularly release updates to the template itself, but applying these to an existing project is manual. For critical updates, we provide migration guides in our documentation to help you integrate new features or security patches.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="py-6">
-                        <div class="flex items-center justify-between cursor-pointer">
-                            <h3 class="text-xl font-semibold">Is there support available if I run into issues?</h3>
-                        </div>
-                        <div class="mt-4" x-show="open">
-                            <p class="text-gray-700 dark:text-gray-300">Yes, you can open issues on our GitHub repository and you can often find answers to common questions in our documentation or from other developers. For dedicated support or custom development, you can contact the maintainers directly.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- Start of Slider section
+	============================================= -->
+	<section id="archx-slider" class="archx-slider-section position-relative" data-background="{{ asset('assets/img/slider-2/s2.png') }}">
+		<span class="archx-slider-side1 position-absolute"><a href="#">livingsmeinterior@gmail.com</a></span>
+		<div class="archx-slider-side2 position-absolute ul-li">
+			<ul>
+				<li><a href="#">Twitter</a></li>
+				<li><a href="#">Facebook</a></li>
+				<li><a href="#">Instagram</a></li>
+			</ul>
+		</div>
+		<div class="container">
+			<div class="archx-slider-content position-relative">
+				<div class="row align-items-center">
+					<div class="col-lg-6">
+						<div class="archx-slider-counter position-relative headline-2">
+							<div class="text-center archx-slider-counter-text">
+								<h2><span class="counter">10</span>+</h2>
+								<p>Berpengalaman 10 tahun lebih mengerjakan furniture dan interior rumah, kantor, apartement, kafe dan klinik</p>
+							</div>
+							<div class="ar-slider-shape-img position-absolute">
+								<img src="{{ asset('assets/img/bg/ar-ba.png') }}" alt="">
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="archx-slider-text headline-2 pera-content">
+							<div class="slider-slug wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">Jasa Desain Interior Profesional</div>
+							<h1 class="wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">Wujudkan Interior Impian Anda Bersama Living Interior</h1>
+							<p class=" wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">Kami menghadirkan desain interior modern, elegan, dan fungsional untuk hunian, kantor, dan ruang komersial Anda.</p>
+							<div class="archx-video-play-btn d-flex align-items-center wow fadeInUp" data-wow-delay="800ms" data-wow-duration="1500ms">
+								<div class="archx-slider-btn">
+									<a class="d-flex justify-content-center align-items-center" href="#">Gratis Konsultasi<i class="fal fa-long-arrow-right"></i></a>
+								</div>
 
-        </main>
-    </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- End of Slider section
+	============================================= -->
 
-</x-superduper.main>
+<!-- Start of Feature section
+	============================================= -->
+	<section id="archx-feature" class="archx-feature-section position-relative">
+		<span class="archx-bg position-absolute"><img src="{{ asset('assets/img/bg/ar-bg1.png') }}" alt=""></span>
+		<div class="container">
+			<div class="archx-feature-content_2">
+				<div class="row">
+					<div class="col-lg-3">
+						<div class="archx-feature-img_2 position-relative wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
+							<img src="{{ asset('assets/img/about/ar-ft.png') }}" alt="">
+							<span class="archx-ft-shape position-absolute"><img src="{{ asset('assets/img/shape/ar-ft-sh.png') }}" alt=""></span>
+							<div class="award-wining-text position-absolute">
+								<span>20+</span> Award Winning Company
+							</div>
+							<div class="text-center archx-experience-text position-absolute pera-content">
+								25<sub>+</sub>
+								<p>years of
+								experince</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-9">
+						<div class="archx-feature-content-item_2">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="archx-feature-item_2 position-relative wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+										<div class="archx-feature-icon position-relative">
+											<img src="{{ asset('assets/icon/ar-ic1.png') }}" alt="">
+										</div>
+										<div class="archx-feature-text headline-2 pera-content">
+											<h3>Harga Transparan</h3>
+											<p>Kami memberikan penawaran yang jelas dan detail tanpa biaya tersembunyi.</p>
+											<a href="service-single.html">Selengkapnya <i class="fal fa-long-arrow-right"></i></a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="archx-feature-item_2 position-relative wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+										<div class="archx-feature-icon position-relative">
+											<img src="{{ asset('assets/icon/ar-ic2.png') }}" alt="">
+										</div>
+										<div class="archx-feature-text headline-2 pera-content">
+											<h3>Desain Eksklusif</h3>
+											<p>Setiap desain dibuat sesuai karakter, kebutuhan, dan gaya hidup klien.</p>
+											<a href="service-single.html">Selengkapnya<i class="fal fa-long-arrow-right"></i></a>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="archx-feature-item_2 position-relative wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+										<div class="archx-feature-icon position-relative">
+											<img src="{{ asset('assets/icon/ar-ic3.png') }}" alt="">
+										</div>
+										<div class="archx-feature-text headline-2 pera-content">
+											<h3>Pengerjaan Profesional</h3>
+											<p>Dikerjakan oleh tim berpengalaman dengan hasil rapi dan tepat waktu.</p>
+											<a href="service-single.html">Selengkapnya<i class="fal fa-long-arrow-right"></i></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="archx-feature-cta-text wow fadeInUp" data-wow-delay="900ms" data-wow-duration="1500ms">
+								Siap Mulai Proyek Interior Anda? <a href="contact.html">Hubungi Kami Sekarang:</a>  CALL +62 821-3035-4599
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- End of Feature section
+	============================================= -->
+
+<!-- Start of FAQ section
+	============================================= -->
+	<section id="archx-faq" class="archx-faq-section position-relative">
+		<span class="ar-bg position-absolute"><img src="{{ asset('assets/img/bg/ar-bg2.png') }}" alt=""></span>
+		<div class="container">
+			<div class="archx-faq-content">
+				<div class="row">
+					<div class="col-lg-7">
+						<div class="archx-section-title headline-2 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+							<span class="title-serial">01</span>
+							<h2>Tentang Living Interior<br>
+							 Jawaban untuk <span> Pertanyaan</span> Anda</h2>
+						</div>
+						<div class="archx-faq-content-wrapper">
+							<div class="accordion" id="accordionExample">
+								<div class="accordion-item headline-2 pera-content wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+									<h2 class="accordion-header" id="headingOne">
+										<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+											Apakah hasil desain akan sesuai dengan visual 3D?
+										</button>
+									</h2>
+									<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+										<div class="accordion-body">
+											Ya, kami memastikan hasil akhir sesuai dengan konsep desain yang telah disepakati melalui gambar kerja dan supervisi proyek.
+										</div>
+									</div>
+								</div>
+								<div class="accordion-item headline-2 pera-content wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+									<h2 class="accordion-header" id="headingTwo">
+										<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+											Berapa lama proses desain interior berlangsung?
+										</button>
+									</h2>
+									<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+										<div class="accordion-body">
+											Durasi pengerjaan tergantung pada luas dan kompleksitas ruangan. Umumnya proses desain memakan waktu 1–3 minggu, mulai dari konsultasi, pembuatan konsep, revisi, hingga finalisasi gambar kerja.
+
+											Untuk proyek dengan pengerjaan full interior (design & build), estimasi waktu akan disesuaikan dengan skala proyek.
+										</div>
+									</div>
+								</div>
+								<div class="accordion-item headline-2 pera-content wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+									<h2 class="accordion-header" id="headingThree">
+										<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+											Apakah Living Interior menyediakan layanan desain & build?
+										</button>
+									</h2>
+									<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+										<div class="accordion-body">
+											Ya, kami menyediakan layanan lengkap mulai dari perencanaan desain, pembuatan gambar kerja, hingga tahap produksi dan instalasi di lapangan.
+
+											Kami memastikan setiap detail sesuai dengan desain yang telah disepakati agar hasil akhir maksimal dan presisi.
+										</div>
+									</div>
+								</div>
+								<div class="accordion-item headline-2 pera-content wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+									<h2 class="accordion-header" id="headingThree">
+										<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+											Bagaimana sistem pembayaran di Living Interior?
+										</button>
+									</h2>
+									<div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+										<div class="accordion-body">
+											Pembayaran dilakukan secara bertahap sesuai progress pekerjaan. Skema umum:
+
+											- Konsultasi kebutuhan interior<br>
+											- Survey lokasi <br>
+											- Pembuatan RAB di lokasi <br>
+											- Commitment fee design <br>
+											- DP Fabrikasi 50% <br>
+											- DP Fabrikasi 30% saat fabrikasi <br>
+											- Installasi / Pemasangan <br>
+											- Pelunasan 20% <br>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-5">
+						<div class="archx-faq-img-wrap wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+							<img src="{{ asset('assets/img/about/ar-faq.png') }}" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- End of FAQ section
+	============================================= -->
+
+
+
+<!-- Start of Before After section
+	============================================= -->
+	<section id="archx-before-after" class="archx-before-after-section position-relative" data-background="{{ asset('assets/img/bg/before-after-bg.png') }}">
+		<span class="archx-before-after-shape position-absolute"><img src="{{ asset('assets/img/bg/ar-ba.png') }}" alt=""></span>
+		<div class="container">
+			<div class="text-center archx-section-title headline-2 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+				<span class="title-serial">02</span>
+				<h2>Lihat Perubahan Interior<br>
+					<span>Sebelum</span> & <span>Sesudah</span> dikerjakan</h2>
+				</div>
+				<div class="archx-before-after-content">
+					<div class="row align-items-center">
+						<div class="col-lg-2">
+							<div class="archx-before-after-tab-btn position-relative ul-li-block">
+								<ul class="nav nav-pills" id="pills-tab" role="tablist">
+									<li class="nav-item" role="presentation">
+										<button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Furniture</button>
+									</li>
+									<li class="nav-item" role="presentation">
+										<button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Interior Rumah</button>
+									</li>
+									<li class="nav-item" role="presentation">
+										<button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Interior Kantor </button>
+									</li>
+									<li class="nav-item" role="presentation">
+										<button class="nav-link" id="interior-tab" data-bs-toggle="pill" data-bs-target="#interior" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Apartment</button>
+									</li>
+									<li class="nav-item" role="presentation">
+										<button class="nav-link" id="construction-tab" data-bs-toggle="pill" data-bs-target="#construction" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Kafe</button>
+									</li>
+									<li class="nav-item" role="presentation">
+										<button class="nav-link" id="construction-tab" data-bs-toggle="pill" data-bs-target="#construction" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Klinik</button>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-10">
+							<div class="archx-before-after-img-wrapper">
+								<div class="tab-content" id="pills-tabContent">
+									<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+										<div  class="twentytwenty-container beforeafter-wrap">
+											<div class="arck-before-item before-after-item position-relative">
+												<img src="{{ asset('assets/img/about/ba1.jpg') }}" alt="">
+											</div>
+											<div class="arck-after-item before-after-item position-relative">
+												<img src="{{ asset('assets/img/about/ba2.jpg') }}" alt="">
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+										<div  class="twentytwenty-container beforeafter-wrap">
+											<div class="arck-before-item before-after-item position-relative">
+												<img src="{{ asset('assets/img/about/ba1.jpg') }}" alt="">
+											</div>
+											<div class="arck-after-item before-after-item position-relative">
+												<img src="{{ asset('assets/img/about/ba2.jpg') }}" alt="">
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+										<div  class="twentytwenty-container beforeafter-wrap">
+											<div class="arck-before-item before-after-item position-relative">
+												<img src="{{ asset('assets/img/about/ba1.jpg') }}" alt="">
+											</div>
+											<div class="arck-after-item before-after-item position-relative">
+												<img src="{{ asset('assets/img/about/ba2.jpg') }}" alt="">
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane fade" id="interior" role="tabpanel" aria-labelledby="pills-contact-tab">
+										<div  class="twentytwenty-container beforeafter-wrap">
+											<div class="arck-before-item before-after-item position-relative">
+												<img src="{{ asset('assets/img/about/ba1.jpg') }}" alt="">
+											</div>
+											<div class="arck-after-item before-after-item position-relative">
+												<img src="{{ asset('assets/img/about/ba2.jpg') }}" alt="">
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane fade" id="construction" role="tabpanel" aria-labelledby="pills-contact-tab">
+										<div  class="twentytwenty-container beforeafter-wrap">
+											<div class="arck-before-item before-after-item position-relative">
+												<img src="{{ asset('assets/img/about/ba1.jpg') }}" alt="">
+											</div>
+											<div class="arck-after-item before-after-item position-relative">
+												<img src="{{ asset('assets/img/about/ba2.jpg') }}" alt="">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+<!-- End of Before After section
+	============================================= -->
+
+
+<!-- Start of  About Section
+	============================================= -->
+	<section id="archx-about" class="archx-about-section position-relative">
+		<div class="container">
+			<div class="archx-about-content">
+				<div class="row">
+					<div class="col-lg-5">
+						<div class="archx-about-text-content">
+							<div class="archx-section-title headline-2 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+								<h2>Pastikan Anda Mendapatkan
+									<span>Layanan Interior</span> yang Tepat untuk Ruang Anda
+								</h2>
+							</div>
+							<div class="archx-about-sub-text headline-2 pera-content wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+								<h3>Didukung oleh tim desainer interior berpengalaman dan sistem kerja profesional.</h3>
+							</div>
+							<div class="archx-about-feature-list ul-li-block wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+								<ul>
+									<li>Desain 3D Rendering Realistis</li>
+									<li>Gambar Kerja Detail & Teknis</li>
+									<li>Pemilihan Material & Finishing</li>
+									<li>Pemilihan Material & Finishing</li>
+									<li>Custom Furniture & Built-in</li>
+									<li>Supervisi & Instalasi</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="col-lg-7">
+						<div class="archx-about-sponsor-scroller">
+							<div class="archx-about-sponsor-wrapper">
+								<div class="archx-sponsor-item">
+									<img src="{{ asset('assets/img/sponsor/ar-sp1.png') }}" alt="">
+								</div>
+								<div class="archx-sponsor-item">
+									<img src="{{ asset('assets/img/sponsor/ar-sp2.png') }}" alt="">
+								</div>
+								<div class="archx-sponsor-item">
+									<img src="{{ asset('assets/img/sponsor/ar-sp1.png') }}" alt="">
+								</div>
+								<div class="archx-sponsor-item">
+									<img src="{{ asset('assets/img/sponsor/ar-sp2.png') }}" alt="">
+								</div>
+								<div class="archx-sponsor-item">
+									<img src="{{ asset('assets/img/sponsor/ar-sp1.png') }}" alt="">
+								</div>
+								<div class="archx-sponsor-item">
+									<img src="{{ asset('assets/img/sponsor/ar-sp2.png') }}" alt="">
+								</div>
+							</div>
+							<div class="archx-about-experience-scoller d-flex">
+								<div class="text-center archx-about-experience headline-2 pera-content d-flex align-items-center justify-content-center wow fadeLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
+									<div class="archx-about-exp-text">
+										<h3>
+											10<sub>+</sub>
+										</h3>
+										<p>Layanan Interior Profesional</p>
+									</div>
+								</div>
+								<div class="archx-about-scroller-wrapper wow fadeInRight" data-wow-delay="400ms" data-wow-duration="1500ms">
+									<div class="archx-about-scroller-content">
+										<div class="archx-about-scroller-item headline-2 pera-content">
+											<h3>Desainer Berpengalaman</h3>
+											<p>Tim kami memiliki pengalaman dalam menangani proyek residensial dan komersial dengan berbagai konsep desain.</p>
+										</div>
+										<div class="archx-about-scroller-item headline-2 pera-content">
+											<h3>Desain Fungsional & Estetis</h3>
+											<p>Kami tidak hanya memperhatikan tampilan, tetapi juga kenyamanan dan fungsi ruang.</p>
+										</div>
+										<div class="archx-about-scroller-item headline-2 pera-content">
+											<h3>Detail & Presisi</h3>
+											<p>Setiap elemen dirancang dengan perhitungan matang untuk hasil akhir yang maksimal.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- End of About section
+	============================================= -->
+
+<!-- Start of  Contact Section
+	============================================= -->
+	<section id="archx-contact" class="archx-contact-section">
+		<div class="container">
+			<div class="archx-contact-content">
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="archx-contact-img-counter">
+							<div class="archx-contact-img position-relative wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+								<img src="{{ asset('assets/img/about/ar-cn.png') }}" alt="">
+								<span class="img-shape"></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-8">
+						<div class="archx-contact-form-wrapper">
+							<div class="archx-section-title headline-2 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+								<h2>
+									Konsultasikan <span>Proyek </span>Interior Anda
+								</h2>
+							</div>
+							<div class="archx-contact-form wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+								<form action="#" method="get">
+									<div class="row">
+										<div class="col-md-6">
+											<input type="text" name="name" placeholder="Nama Lengkap*">
+										</div>
+										<div class="col-md-6">
+											<input type="text" name="name" placeholder="Nomor WhatsApp*">
+										</div>
+										<div class="col-md-6">
+											<input type="text" name="name" placeholder="Email*">
+										</div>
+										<div class="col-md-6">
+											<input type="text" name="name" placeholder="Jenis Ruangan (Rumah/Apartemen/Kantor/Komersial)*">
+										</div>
+										<div class="col-md-12">
+											<textarea name="message" placeholder="Pesan Anda*"></textarea>
+										</div>
+										<div class="col-md-12">
+											<button type="submit">Kirim Pesan<i class="fal fa-long-arrow-right"></i></button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- End of  About Section
+	============================================= -->
+
+<!-- Start of  Project Section
+	============================================= -->
+	<section id="archx-project-2" class="archx-project-section-2" data-background="{{ asset('assets/img/bg/ar-pro-bg.png') }}">
+		<div class="container">
+			<div class="archx-project-top-content d-flex justify-content-between align-items-center">
+				<div class="archx-section-title headline-2">
+					<h2>Portofolio <span> Proyek </span> <br>Living Interior
+					</h2>
+				</div>
+				<div class="archx-section-title headline-2">
+					<span class="title-serial">03</span>
+				</div>
+				<div class="carousel_nav">
+					<button type="button" class="ar-pro_left_arrow text-uppercase"><i class="fal fa-long-arrow-left"></i></button>
+					<button type="button" class="ar-pro_right_arrow text-uppercase"><i class="fal fa-long-arrow-right"></i></button>
+				</div>
+			</div>
+		</div>
+		<div class="archx-project-slider-area">
+			<div class="archx-project-slider">
+				<div class="archx-project-item-2">
+					<div class="archx-project-item-content position-relative">
+						<div class="archx-project-img-2">
+							<img src="{{ asset('assets/img/project/ar-pro1.png') }}" alt="">
+						</div>
+						<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
+							01
+						</div>
+						<div class="archx-project-text-2 d-flex justify-content-between headline-2 position-absolute align-items-center">
+							<h3><a href="project-single.html">Book Printing Service</a></h3>
+							<a class="more_btn d-flex align-items-center justify-content-center" href="project-single.html"> <i class="fal fa-long-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="archx-project-item-2">
+					<div class="archx-project-item-content position-relative">
+						<div class="archx-project-img-2">
+							<img src="{{ asset('assets/img/project/ar-pro2.png') }}" alt="">
+						</div>
+						<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
+							02
+						</div>
+						<div class="archx-project-text-2 d-flex justify-content-between headline-2 position-absolute align-items-center">
+							<h3><a href="project-single.html">Book Printing Service</a></h3>
+							<a class="more_btn d-flex align-items-center justify-content-center" href="project-single.html"> <i class="fal fa-long-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="archx-project-item-2">
+					<div class="archx-project-item-content position-relative">
+						<div class="archx-project-img-2">
+							<img src="{{ asset('assets/img/project/ar-pro3.png') }}" alt="">
+						</div>
+						<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
+							03
+						</div>
+						<div class="archx-project-text-2 d-flex justify-content-between headline-2 position-absolute align-items-center">
+							<h3><a href="project-single.html">Book Printing Service</a></h3>
+							<a class="more_btn d-flex align-items-center justify-content-center" href="project-single.html"> <i class="fal fa-long-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="archx-project-item-2">
+					<div class="archx-project-item-content position-relative">
+						<div class="archx-project-img-2">
+							<img src="{{ asset('assets/img/project/ar-pro4.png') }}" alt="">
+						</div>
+						<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
+							04
+						</div>
+						<div class="archx-project-text-2 d-flex justify-content-between headline-2 position-absolute align-items-center">
+							<h3><a href="project-single.html">Book Printing Service</a></h3>
+							<a class="more_btn d-flex align-items-center justify-content-center" href="project-single.html"> <i class="fal fa-long-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="archx-project-item-2">
+					<div class="archx-project-item-content position-relative">
+						<div class="archx-project-img-2">
+							<img src="{{ asset('assets/img/project/ar-pro5.png') }}" alt="">
+						</div>
+						<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
+							05
+						</div>
+						<div class="archx-project-text-2 d-flex justify-content-between headline-2 position-absolute align-items-center">
+							<h3><a href="project-single.html">Book Printing Service</a></h3>
+							<a class="more_btn d-flex align-items-center justify-content-center" href="project-single.html"> <i class="fal fa-long-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="archx-project-item-2">
+					<div class="archx-project-item-content position-relative">
+						<div class="archx-project-img-2">
+							<img src="{{ asset('assets/img/project/ar-pro1.png') }}" alt="">
+						</div>
+						<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
+							06
+						</div>
+						<div class="archx-project-text-2 d-flex justify-content-between headline-2 position-absolute align-items-center">
+							<h3><a href="project-single.html">Book Printing Service</a></h3>
+							<a class="more_btn d-flex align-items-center justify-content-center" href="project-single.html"> <i class="fal fa-long-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="archx-project-item-2">
+					<div class="archx-project-item-content position-relative">
+						<div class="archx-project-img-2">
+							<img src="{{ asset('assets/img/project/ar-pro2.png') }}" alt="">
+						</div>
+						<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
+							07
+						</div>
+						<div class="archx-project-text-2 d-flex justify-content-between headline-2 position-absolute align-items-center">
+							<h3><a href="project-single.html">Book Printing Service</a></h3>
+							<a class="more_btn d-flex align-items-center justify-content-center" href="project-single.html"> <i class="fal fa-long-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="archx-newslatter-wrapper">
+			<div class="container">
+				<div class="archx-newslatter-content d-flex justify-content-between">
+					<div class="archx-newslatter-cta d-flex align-items-center">
+						<div class="inner-icon">
+							<img src="{{ asset('assets/icon/ar-nw.png') }}" alt="">
+						</div>
+						<div class="inner-text">
+							<span class="cta-no">+62 821-3035-4599</span>
+							<span class="cta-text">Jadwalkan Survey Gratis.</span>
+						</div>
+					</div>
+					<div class="archx-newslatter-form">
+						<div class="newslatter-form position-relative">
+							<span class="bg-icon position-absolute"><i class="fas fa-envelope"></i></span>
+							<form action="#" method="get">
+								<input type="email" name="email" placeholder="Enter your Email">
+								<button type="submit">Subscribe</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- End of  Project Section
+	============================================= -->
+
+<!-- Start of  Testimonial Section
+	============================================= -->
+	<section id="archx-testimonial" class="archx-testimonial-section position-relative">
+		<div class="container">
+			<div class="archx-testimonial-content-wrapper">
+				<div class="row">
+					<div class="col-lg-7">
+						<div class="archx-testimonial-top-content d-flex justify-content-between align-items-center">
+							<div class="archx-section-title headline-2">
+								<h2>Apa Kata  <span> Klien </span> Kami
+								</h2>
+							</div>
+							<div class="archx-testimonial-carousel-btn d-flex">
+								<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+									<span class="carousel-control-prev-icon" aria-hidden="true"><i class="fal fa-long-arrow-left"></i></span>
+								</button>
+								<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+									<span class="carousel-control-next-icon" aria-hidden="true"><i class="fal fa-long-arrow-right"></i></span>
+								</button>
+							</div>
+						</div>
+						<div class="archx-testimonial-slider">
+							<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+								<div class="archx-testimonial-content">
+									<div class="carousel-inner">
+										<div class="carousel-item active">
+											<div class="archx-testimonial-item headline-2 pera-content">
+												<h3>Mrs. Yana Depok</h3>
+												<p>Living Interior benar-benar memahami kebutuhan kami. Hasil akhirnya sesuai dengan desain 3D dan sangat memuaskan.
+												</p>
+											</div>
+										</div>
+										<div class="carousel-item">
+											<div class="archx-testimonial-item headline-2 pera-content">
+												<h3>Mr. Doni Tangerang</h3>
+												<p>Prosesnya rapi, komunikatif, dan hasilnya premium. Recommended!
+												</p>
+											</div>
+										</div>
+										<div class="carousel-item">
+											<div class="archx-testimonial-item headline-2 pera-content">
+												<h3>Mrs. Shinta</h3>
+												<p>Pengerjaan semua rapih dengan semua kemauan ku dan sesuai timeline suka bgt!
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="carousel-indicators-wrap d-flex align-items-center">
+									<div class="carousel-indicators">
+										<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"><img src="{{ asset('assets/img/testimonial/tst1.jpg') }}" alt=""></button>
+										<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"><img src="{{ asset('assets/img/testimonial/tst2.jpg') }}" alt=""></button>
+										<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"><img src="{{ asset('assets/img/testimonial/tst3.jpg') }}" alt=""></button>
+									</div>
+									<div class="more-testimonial-btn">
+										<a href="testimonial.html">Lihat Semua Testimoni →<i class="fal fa-long-arrow-right"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-5">
+						<div class="archx-testimonial-img-wrap d-flex justify-content-end">
+							<div class="inner-img position-relative">
+								<img src="{{ asset('assets/img/testimonial/tst-bg1.png') }}" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- End of  Testimonial Section
+	============================================= -->
+
+<!-- Start of  Blog Section
+	============================================= -->
+	<section id="archx-blog" class="archx-blog-section">
+		<div class="container">
+			<div class="text-center archx-section-title headline-2 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+				<h2><span>Artikel </span> & Insight Seputar Interior Design
+				</h2>
+			</div>
+			<div class="archx-blog-content">
+				<div class="row">
+					<div class="col-lg-4 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+						<div class="archx-blog-item">
+							<div class="blog-img position-relative">
+								<img src="{{ asset('assets/img/blog/ar-blg1.png') }}" alt="">
+								<span class="blog-category d-flex justify-content-center align-items-center text-uppercase position-absolute"><a href="#">Story</a></span>
+							</div>
+							<div class="blog-text">
+								<div class="blog-meta ul-li">
+									<ul>
+										<li><a href="#"><i class="fal fa-calendar-alt"></i> 02 Apr 2021</a></li>
+										<li><a href="#"><i class="fal fa-comment"></i> Comments (03)</a></li>
+									</ul>
+								</div>
+								<div class="blog-title headline-2">
+									<h3><a href="blog-single.html">Tren Desain Interior Modern 2025</a></h3>
+								</div>
+								<div class="blog-read-more">
+									<a href="blog-single.html">Selengkapnya<i class="fal fa-long-arrow-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 wow fadeInUp" data-wow-delay="500ms" data-wow-duration="1500ms">
+						<div class="archx-blog-item">
+							<div class="blog-img position-relative">
+								<img src="{{ asset('assets/img/blog/ar-blg2.png') }}" alt="">
+								<span class="blog-category d-flex justify-content-center align-items-center text-uppercase position-absolute"><a href="#">Story</a></span>
+							</div>
+							<div class="blog-text">
+								<div class="blog-meta ul-li">
+									<ul>
+										<li><a href="#"><i class="fal fa-calendar-alt"></i> 02 Apr 2021</a></li>
+										<li><a href="#"><i class="fal fa-comment"></i> Comments (03)</a></li>
+									</ul>
+								</div>
+								<div class="blog-title headline-2">
+									<h3><a href="blog-single.html">Tips Memaksimalkan Ruang Minimalis</a></h3>
+								</div>
+								<div class="blog-read-more">
+									<a href="blog-single.html">Selengkapnya<i class="fal fa-long-arrow-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+						<div class="archx-blog-item">
+							<div class="blog-img position-relative">
+								<img src="{{ asset('assets/img/blog/ar-blg3.png') }}" alt="">
+								<span class="blog-category d-flex justify-content-center align-items-center text-uppercase position-absolute"><a href="#">Story</a></span>
+							</div>
+							<div class="blog-text">
+								<div class="blog-meta ul-li">
+									<ul>
+										<li><a href="#"><i class="fal fa-calendar-alt"></i> 02 Apr 2021</a></li>
+										<li><a href="#"><i class="fal fa-comment"></i> Comments (03)</a></li>
+									</ul>
+								</div>
+								<div class="blog-title headline-2">
+									<h3><a href="blog-single.html">Cara Memilih Material Interior yang Tahan Lama</a></h3>
+								</div>
+								<div class="blog-read-more">
+									<a href="blog-single.html">Selengkapnya<i class="fal fa-long-arrow-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- End of  Blog Section
+	============================================= -->
+
+<!-- Start of  Map Section
+	============================================= -->
+	<section id="archx-map" class="archx-map-section position-relative">
+		<div class="archx-map-wrap">
+			<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6209.242755903148!2d-77.04363602434464!3d38.90977276948481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1394992895496" width="100%" height="470"></iframe>
+		</div>
+		<div class="container">
+			<div class="archx-map-info">
+				<div class="archx-map-contact-info headline-2 pera-content">
+					<div class="archx-map-info-item">
+						<div class="info-title d-flex align-items-center">
+							<span><i class="fas fa-address-book"></i></span>
+							<h3>Alamat Kami</h3>
+						</div>
+						<div class="info-text">
+							 Gg. Sanan, Pd. Kacang Bar., Kec. Pd. Aren
+						</div>
+					</div>
+					<div class="archx-map-info-item">
+						<div class="info-title d-flex align-items-center">
+							<span><i class="fas fa-address-book"></i></span>
+							<h3>Kontak Kami</h3>
+						</div>
+						<div class="info-text ul-li-block">
+							<ul>
+								<li><i class="fas fa-comments"></i> livingsmeinterior@gmail.com</li>
+								<li><i class="fas fa-phone-alt"></i> +62 821-3035-4599</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- End of  Map Section
+	============================================= -->
+
+<!-- Start of  Social Section
+	============================================= -->
+	<section id="archx-social" class="archx-social-section">
+		<div class="archx-social-content d-flex align-items-center">
+			<div class="archx-social-item">
+				<a href="#">
+					<i class="fab fa-facebook-f"></i>
+					<span>Facebook</span>
+				</a>
+			</div>
+			<div class="archx-social-item">
+				<a href="#">
+					<i class="fab fa-linkedin"></i>
+					<span>Linkdin</span>
+				</a>
+			</div>
+			<div class="archx-social-item">
+				<a href="#">
+					<i class="fab fa-twitter"></i>
+					<span>Twitter</span>
+				</a>
+			</div>
+			<div class="archx-social-item">
+				<a href="#">
+					<i class="fab fa-instagram"></i>
+					<span>Instagram</span>
+				</a>
+			</div>
+			<div class="archx-social-item">
+				<a href="#">
+					<i class="fab fa-youtube"></i>
+					<span>Youtube</span>
+				</a>
+			</div>
+			<div class="archx-social-item">
+				<a href="#">
+					<i class="fab fa-pinterest"></i>
+					<span>Pinterest</span>
+				</a>
+			</div>
+		</div>
+	</section>
+<!-- End of  Social Section
+	============================================= -->
+
+<!-- Start of  Footer Section
+	============================================= -->
+	<footer id="archx-footer" class="archx-footer-section position-relative" data-background="{{ asset('assets/img/bg/ar-ft-bg.png') }}">
+		<span class="archx-footer-mail position-absolute">livingsmeinterior@gmail.com</span>
+		<span class="archx-footer-address position-absolute">Gg. Sanan, Pd. Kacang Bar., Kec. Pd. Aren</span>
+		<div class="container">
+			<div class="archx-footer-content">
+				<div class="row">
+					<div class="col-lg-3 col-md-6">
+						<div class="archx-footer-widget headline-2">
+							<div class="logo-widget">
+								<div class="brand-logo">
+									<a href="#"><img src="{{ asset('assets/img/logo/logoLV100.png') }}" alt=""></a>
+								</div>
+								<div class="logo-text">
+									Lebih dari 10 tahun pengalaman dalam desain interior dan pembuatan furniture custom, Living Interior telah dipercaya menangani berbagai proyek hunian dan komersial seperti rumah, kantor, apartemen, kafe, dan klinik.
+								</div>
+								<div class="logo-cta-info ul-li-block">
+									<ul>
+										<li><i class="fal fa-map-marker-alt"></i> Gg. Sanan, Pd. Kacang Bar., Kec. Pd. Aren</li>
+										<li><i class="fas fa-phone-alt"></i> +62 821-3035-4599</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<div class="archx-footer-widget headline-2">
+							<div class="menu-widget ul-li-block">
+								<h3 class="widget-title">Marketplace</h3>
+								<ul>
+									<li><a href="about.html">About Us</a></li>
+									<li><a href="blog.html">Recent News</a></li>
+									<li><a href="contact.html">Contact Us</a></li>
+									<li><a href="service-single.html">Interior Design</a></li>
+									<li><a href="project.html">Recent Project</a></li>
+									<li><a href="service.html">Services</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<div class="archx-footer-widget headline-2">
+							<div class="menu-widget ul-li-block">
+								<h3 class="widget-title">My Account</h3>
+								<ul>
+									<li><a href="about.html">About Us</a></li>
+									<li><a href="blog.html">Recent News</a></li>
+									<li><a href="contact.html">Contact Us</a></li>
+									<li><a href="service-single.html">Interior Design</a></li>
+									<li><a href="project.html">Recent Project</a></li>
+									<li><a href="service.html">Services</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<div class="archx-footer-widget headline-2">
+							<div class="award-widget">
+								<h3 class="widget-title">Our Information</h3>
+								<div class="total-award d-flex align-items-center">
+									<span class="aw-title">Total Awards</span>
+									<span class="aw-number">X8</span>
+								</div>
+								<div class="aw-instagram-wrap ul-li">
+									<ul>
+										<li><a href="#"><img src="{{ asset('assets/img/gallery/ins1.jpg') }}" alt=""> <i class="fab fa-instagram"></i></a></li>
+										<li><a href="#"><img src="{{ asset('assets/img/gallery/ins2.jpg') }}" alt=""> <i class="fab fa-instagram"></i></a></li>
+									</ul>
+								</div>
+								<div class="aw-btn-wrap position-relative">
+									<img src="{{ asset('assets/icon/fr1.png') }}" alt="">We provide fast on-demand <span>printing.</span>
+									<span class="aw-line position-absolute"><img src="{{ asset('assets/icon/line1.png') }}" alt=""></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="archx-footer-copyright d-flex justify-content-between align-items-center">
+				<div class="archx-footer-copyright-text">
+					Copyright © <a href="#"> 2022 </a> by Themexriver. All Rights Reserved.
+				</div>
+				<div class="archx-footer-copyright-social ul-li">
+					<ul>
+						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fab fa-behance"></i></a></li>
+						<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+<!-- End of  Footer Section
+	============================================= -->
+
+
+	<!-- For Js Library -->
+	<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('assets/js/popper.min.js') }}"></script>
+	<script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+	<script src="{{ asset('assets/js/appear.js') }}"></script>
+	<script src="{{ asset('assets/js/slick.js') }}"></script>
+	<script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
+	<script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
+	<script src="{{ asset('assets/js/isotope.pkgd.min.js') }}"></script>
+	<script src="{{ asset('assets/js/twenty.js') }}"></script>
+	<script src="{{ asset('assets/js/imagesloaded.pkgd.min.js') }}"></script>
+	<script src="{{ asset('assets/js/masonry.pkgd.min.js') }}"></script>
+	<script src="{{ asset('assets/js/wow.min.js') }}"></script>
+	<script src="{{ asset('assets/js/jquery.inputarrow.js') }}"></script>
+	<script src="{{ asset('assets/js/script.js') }}"></script>
+</body>
+</html>

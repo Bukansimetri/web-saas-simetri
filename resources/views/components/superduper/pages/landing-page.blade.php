@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Home - Living Interior</title>
+	<meta name="description" content="Archix - Architecture and Interior Design HTML Template">
+	<meta name="keywords" content="apartments, architect, architecture, building, clean, construction, creative, decoration, interior design, minimal, modern, portfolio, residence, studio">
+	<meta name="author" content="Themexriver">
+	<link rel="shortcut icon" href="assets/img/logo/ficon.png" type="image/x-icon">
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/fontawesome-all.css">
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<link rel="stylesheet" href="assets/css/video.min.css">
+	<link rel="stylesheet" href="assets/css/slick.css">
+	<link rel="stylesheet" href="assets/css/slick-theme.css">
+	<link rel="stylesheet" href="assets/css/global.css">
+	<link rel="stylesheet" href="assets/css/twenty.css">
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+	<div id="preloader"></div>
+	<div class="up">
+		<a href="#" class="text-center scrollup"><i class="fas fa-chevron-up"></i></a>
+	</div>
+
+<!-- Start of header section
+	============================================= -->
+	{{-- <header id="arck-header" class="arck-header-section header-style-one">
+		<div class="arck-header-main-content d-flex justify-content-between align-items-center">
+			<div class="brand-logo">
+				<a href="#"><img src="assets/img/logo/logo-4.png" alt=""></a>
+			</div>
+			<div class="arck-main-navigation-wrap">
+				<nav class="clearfix main-navigation ul-li">
+					<ul id="main-nav" class="clearfix nav navbar-nav">
+						<li class="dropdown">
+							<a href="!#">Home</a>
+							<ul class="clearfix dropdown-menu">
+								<li><a href="index-1.html">Home One</a></li>
+								<li><a href="index-2.html">Home Two</a></li>
+								<li><a href="index-3.html">Home Three</a></li>
+								<li><a href="index-4.html">Home Four</a></li>
+							</ul>
+						</li>
+						<li><a href="about.html">About</a></li>
+						<li class="dropdown">
+							<a href="!#">Project</a>
+							<ul class="clearfix dropdown-menu">
+								<li><a href="project.html">Project One</a></li>
+								<li><a href="project-2.html">Project Two</a></li>
+								<li><a href="project-single.html">Project Details</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="!#">Pages</a>
+							<ul class="clearfix dropdown-menu">
+								<li><a href="service.html">Services</a></li>
+								<li class="dropdown">
+									<a href="service-single.html">Services Details</a>
+									<ul class="clearfix dropdown-menu">
+										<li><a href="service-single.html">Construction Building</a></li>
+										<li><a href="service-single-2.html">Architect Design</a></li>
+										<li><a href="service-single-3.html">Interior Design</a></li>
+										<li><a href="service-single-4.html">3D Animation</a></li>
+										<li><a href="service-single-5.html">House Renovation</a></li>
+										<li><a href="service-single-6.html">Ideas & Inspiration</a></li>
+									</ul>
+								</li>
+								<li><a href="team.html">Team Page</a></li>
+								<li><a href="team-single.html">Team DetailsS</a></li>
+								<li><a href="faq.html">FAQ Page</a></li>
+								<li><a href="pricing.html">Pricing Page</a></li>
+								<li><a href="shop.html">Shop Page </a></li>
+								<li><a href="shop-single.html">Shop Details</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="!#">Blog</a>
+							<ul class="clearfix dropdown-menu">
+								<li><a href="blog.html">Blog One</a></li>
+								<li><a href="blog-2.html">Blog Two</a></li>
+								<li><a href="blog-single.html">Blog Details</a></li>
+							</ul>
+						</li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="header-cta-social d-flex align-items-center">
+				<div class="header-cta text-uppercase">
+					call us: <a href="#">( +080 ) 01234578961</a>
+				</div>
+				<div class="header-side-btn">
+					<button class="navSidebar-button"><i class="fal fa-bars"></i></button>
+				</div>
+			</div>
+			<div class="mobile_menu">
+				<div class="mobile_menu_button open_mobile_menu">
+					<i class="fal fa-bars"></i>
+				</div>
+				<div class="mobile_menu_wrap">
+					<div class="mobile_menu_overlay open_mobile_menu"></div>
+					<div class="mobile_menu_content">
+						<div class="mobile_menu_close open_mobile_menu">
+							<i class="fal fa-times"></i>
+						</div>
+						<div class="m-brand-logo">
+							<a  href="!#"><img src="assets/img/logo/logo-5.png" alt=""></a>
+						</div>
+						<nav class="clearfix mobile-main-navigation ul-li">
+							<ul id="m-main-nav" class="clearfix nav navbar-nav">
+								<li class="dropdown">
+									<a href="!#">Home</a>
+									<ul class="clearfix dropdown-menu">
+										<li><a href="index-1.html">Home One</a></li>
+										<li><a href="index-2.html">Home Two</a></li>
+										<li><a href="index-3.html">Home Three</a></li>
+										<li><a href="index-4.html">Home Four</a></li>
+									</ul>
+								</li>
+								<li><a href="about.html">About</a></li>
+								<li class="dropdown">
+									<a href="!#">Project</a>
+									<ul class="clearfix dropdown-menu">
+										<li><a href="project.html">Project One</a></li>
+										<li><a href="project-2.html">Project Two</a></li>
+										<li><a href="project-single.html">Project Details</a></li>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<a href="!#">Pages</a>
+									<ul class="clearfix dropdown-menu">
+										<li><a href="service.html">Services</a></li>
+										<li class="dropdown">
+											<a href="service-single.html">Services Details</a>
+											<ul class="clearfix dropdown-menu">
+												<li><a href="service-single.html">Construction Building</a></li>
+												<li><a href="service-single-2.html">Architect Design</a></li>
+												<li><a href="service-single-3.html">Interior Design</a></li>
+												<li><a href="service-single-4.html">3D Animation</a></li>
+												<li><a href="service-single-5.html">House Renovation</a></li>
+												<li><a href="service-single-6.html">Ideas & Inspiration</a></li>
+											</ul>
+										</li>
+										<li><a href="team.html">Team Page</a></li>
+										<li><a href="team-single.html">Team DetailsS</a></li>
+										<li><a href="faq.html">FAQ Page</a></li>
+										<li><a href="pricing.html">Pricing Page</a></li>
+										<li><a href="shop.html">Shop Page </a></li>
+										<li><a href="shop-single.html">Shop Details</a></li>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<a href="!#">Blog</a>
+									<ul class="clearfix dropdown-menu">
+										<li><a href="blog.html">Blog One</a></li>
+										<li><a href="blog-2.html">Blog Two</a></li>
+										<li><a href="blog-single.html">Blog Details</a></li>
+									</ul>
+								</li>
+								<li><a href="contact.html">Contact</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<!-- /Mobile-Menu -->
+			</div>
+		</div>
+	</header> --}}
+	<!-- Sidebar sidebar Item -->
+	{{-- <div class="xs-sidebar-group info-group">
+		<div class="xs-overlay xs-bg-black">
+			<div class="row loader-area">
+				<div class="col-3 preloader-wrap">
+					<div class="loader-bg"></div>
+				</div>
+				<div class="col-3 preloader-wrap">
+					<div class="loader-bg"></div>
+				</div>
+				<div class="col-3 preloader-wrap">
+					<div class="loader-bg"></div>
+				</div>
+				<div class="col-3 preloader-wrap">
+					<div class="loader-bg"></div>
+				</div>
+			</div>
+		</div>
+		<div class="xs-sidebar-widget">
+			<div class="sidebar-widget-container">
+				<div class="widget-heading">
+					<a href="#" class="close-side-widget">
+						X
+					</a>
+				</div>
+				<div class="sidebar-textwidget">
+
+					<!-- Sidebar Info Content -->
+					<div class="sidebar-info-contents headline pera-content">
+						<div class="content-inner">
+							<div class="logo">
+								<a href="index.html"><img src="assets/img/logo/logo-3.png" alt=""></a>
+							</div>
+							<div class="content-box">
+								<h5>About Us</h5>
+								<p class="text">The argument in favor of using filler text goes something like this: If you use real content in the Consulting Process, anytime you reach a review point you’ll end up reviewing and negotiating the content itself and not the design.</p>
+							</div>
+							<div class="gallery-box ul-li">
+								<h5>Gallery</h5>
+								<ul>
+									<li>
+										<a href="#"><img src="assets/img/gallery/01.png" alt=""></a>
+									</li>
+									<li>
+										<a href="#"><img src="assets/img/gallery/02.png" alt=""></a>
+									</li>
+									<li>
+										<a href="#"><img src="assets/img/gallery/03.png" alt=""></a>
+									</li>
+									<li>
+										<a href="#"><img src="assets/img/gallery/04.png" alt=""></a>
+									</li>
+									<li>
+										<a href="#"><img src="assets/img/gallery/05.png" alt=""></a>
+									</li>
+									<li>
+										<a href="#"><img src="assets/img/gallery/06.png" alt=""></a>
+									</li>
+								</ul>
+							</div>
+							<!-- Social Box -->
+							<div class="content-box">
+								<h5>Social Account</h5>
+								<ul class="social-box">
+									<li><a href="https://www.facebook.com/" class="fab fa-facebook-f"></a></li>
+									<li><a href="https://www.twitter.com/" class="fab fa-twitter"></a></li>
+									<li><a href="https://dribbble.com/" class="fab fa-dribbble"></a></li>
+									<li><a href="https://www.linkedin.com/" class="fab fa-linkedin"></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> --}}
+<!-- End of header section
+	============================================= -->
+
+<!-- Start of slider section
+	============================================= -->
+	<section id="arck-slider-2" class="arck-slider-section-2">
+		<div class="arck-main-slider-area-2 position-relative">
+			<div class="arck-main-slider-area-2 position-relative">
+				<div id="arck-slider-main_2" class="arck-main-slider-2">
+					<div class="arck-main-slider-item-2 position-relative" style="padding-top: 100px !important; padding-bottom: 100px !important;">
+						<div class="arck-slider-img-2 position-absolute">
+							<img src="assets/img/slider/hero-lv-1.webp" alt="">
+						</div>
+						<div class="slider-shape position-absolute">
+							<img src="assets/img/slider/s-sh1.png" alt="">
+						</div>
+						<div class="container">
+							<div class="arck-slider-main-text headline pera-content">
+								<div class="slider-sub-text text-uppercase">
+									Jasa Interior Indonesia
+								</div>
+								<h1 style="font-size: 60px;">Udah Keluar Budget Puluhan Juta, Tapi Hasilnya Malah <span>ZONK?</span></h1>
+								<p>Jangan biarkan impian ruanganmu hancur karena vendor abal-abal. Percayakan pada ahlinya.
+                                    Kami wujudkan desain 3D menjadi kenyataan dengan presisi, tanpa biaya siluman, dan anti-ngaret!</p>
+								<div class="arck-btn-2">
+									<a class="d-flex justify-content-center align-items-center text-uppercase" href="project.html">
+                                        Konsultasi Gratis
+                                    </a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- End of Slider section
+	============================================= -->
+
+<!-- Start of About section
+	============================================= -->
+	<section id="arck-about-2" class="arck-about-section-2 position-relative">
+		<span class="about-shape-1 position-absolute"><img src="assets/img/about/ab-shape1.png" alt=""></span>
+		<div class="container">
+			<div class="arck-about-content-2">
+				<div class="row">
+					<div class="col-lg-6 wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
+						<div class="arck-about-img-wrap-2">
+							<img src="assets/img/about/3.webp" alt="">
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="arck-about-text-wrap-2">
+							<div class="arck-section-title-2 headline pera-content wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+								<span class="sub-title text-uppercase">TENTANG LIVING INTERIOR</span>
+								<h2>Kami Paham Banget Rasanya Kecewa Sama Vendor...</h2>
+								<p>
+                                    Udah ngeluarin tabungan yang nggak sedikit, eh yang didapat malah sakit hati dan stres mikirin 
+                                    tukang yang molor, hasil beda jauh dari desain, dan material yang gampang ngelupas. 
+                                    Kamu nggak sendirian, banyak yang jadi korban vendor yang cuma jualan janji. 
+                                    Solusinya? Percayakan pada ahlinya.
+                                </p>
+							</div>
+							<div class="about-signature-img d-flex wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+								<div class="inner-text headline position-relative">
+									<h3>‘’Dari yang tadinya deg-degan ditagih biaya ini-itu, jadi tenang karena harga pas sesuai kesepakatan awal.’’ </h3>
+								</div>
+							</div>
+							<div class="arck-btn-2 wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+								<a class="d-flex justify-content-center align-items-center text-uppercase" href="about.html">Konsultasi Sekarang</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- End of About section
+	============================================= -->
+
+<!-- Start of Counter section
+	============================================= -->
+	<section id="arck-counter" class="arck-counter-section">
+		<div class="container">
+			<div class="arck-counter-content">
+				<div class="row">
+					<div class="col-lg-3 col-md-6">
+						<div class="text-center arck-counter-inner-item headline pera-content position-relative">
+							<h3><span class="counter">10</span>+</h3>
+							<p>Tahun Pengalaman</p>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<div class="text-center arck-counter-inner-item headline pera-content position-relative">
+							<h3><span class="counter">100</span>+</h3>
+							<p>Proyek Selesai</p>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<div class="text-center arck-counter-inner-item headline pera-content position-relative">
+							<h3><span class="counter">100</span>%</h3>
+							<p>RAB Transparan</p>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<div class="text-center arck-counter-inner-item headline pera-content position-relative">
+							<h3><span>Live</span></h3>
+							<p>Garansi Seumur Hidup</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- End of Counter section
+	============================================= -->
+
+<!-- Start of Service section
+	============================================= -->
+	<section id="arck-service-2" class="arck-service-section-2" style="padding-top: 100px !important;">
+		<div class="container">
+			<div class="text-center arck-section-title-2 headline pera-content wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+				<span class="sub-title text-uppercase">FASILITAS VVIP</span>
+				<h2>Pelayanan Spesial <span>Tanpa Biaya Tambahan</span> .</h2>
+			</div>
+			<div class="arck-service-content-2">
+				<div class="row">
+					<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+						<div class="arck-service-item-2 position-relative">
+							<span class="service-shape position-absolute"><img src="assets/img/shape/ser-icon1.png" alt=""></span>
+							<div class="inner-icon d-flex justify-content-center align-items-center position-relative">
+								<img src="assets/icon/ic11.png" alt="">
+							</div>
+							<div class="inner-text headline pera-content">
+								<h3>Gratis Konsultasi</h3>
+								<p>
+                                    Diskusi kebutuhan interior setiap hari. Ceritain aja maumu gimana, kami bantu carikan solusi terbaiknya.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+						<div class="arck-service-item-2 position-relative">
+							<span class="service-shape position-absolute"><img src="assets/img/shape/ser-icon1.png" alt=""></span>
+							<div class="inner-icon d-flex justify-content-center align-items-center position-relative">
+								<img src="assets/icon/ic12.png" alt="">
+							</div>
+							<div class="inner-text headline pera-content">
+								<h3>Gratis Survey Lokasi</h3>
+								<p>
+                                    Tim ahli kami yang akan datang langsung ke lokasi untuk melakukan pengukuran dengan akurat.
+								</p>
+                            </div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="800ms" data-wow-duration="1500ms">
+						<div class="arck-service-item-2 position-relative">
+							<span class="service-shape position-absolute"><img src="assets/img/shape/ser-icon1.png" alt=""></span>
+							<div class="inner-icon d-flex justify-content-center align-items-center position-relative">
+								<img src="assets/icon/ic14.png" alt="">
+							</div>
+							<div class="inner-text headline pera-content">
+								<h3>Gratis Design 3D</a></h3>
+								<p>
+                                    Biar ada bayangan real sebelum dieksekusi! Kami buatkan visualisasi sampai kamu sreg.
+								</p>
+                            </div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1000ms" data-wow-duration="1500ms">
+						<div class="arck-service-item-2 position-relative">
+							<span class="service-shape position-absolute"><img src="assets/img/shape/ser-icon1.png" alt=""></span>
+							<div class="inner-icon d-flex justify-content-center align-items-center position-relative">
+								<img src="assets/icon/ic15.png" alt="">
+							</div>
+							<div class="inner-text headline pera-content">
+								<h3>RAB Transparan</h3>
+								<p>
+                                    Nggak ada biaya siluman atau harga yang tiba-tiba bengkak di akhir. Semua jelas dari awal.
+								</p>
+                            </div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1200ms" data-wow-duration="1500ms">
+						<div class="arck-service-item-2 position-relative">
+							<span class="service-shape position-absolute"><img src="assets/img/shape/ser-icon1.png" alt=""></span>
+							<div class="inner-icon d-flex justify-content-center align-items-center position-relative">
+								<img src="assets/icon/ic16.png" alt="">
+							</div>
+							<div class="inner-text headline pera-content">
+								<h3>Tim Profesional</h3>
+								<p>
+                                    Dikerjakan langsung oleh tim tukang & desainer berpengalaman. Hasil presisi dan halus.
+								</p>
+                            </div>
+						</div>
+					</div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1200ms" data-wow-duration="1500ms">
+						<div class="arck-service-item-2 position-relative">
+							<span class="service-shape position-absolute"><img src="assets/img/shape/ser-icon1.png" alt=""></span>
+							<div class="inner-icon d-flex justify-content-center align-items-center position-relative">
+								<img src="assets/icon/ic13.png" alt="">
+							</div>
+							<div class="inner-text headline pera-content">
+								<h3>Garansi Seumur Hidup</a></h3>
+								<p>
+                                    Engsel rusak? Rel macet? Kami ganti! Vendor mana lagi yang berani ngasih jaminan ini?
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- End of Service section
+	============================================= -->
+
+<!-- Start of Project section
+	============================================= -->
+	<section id="arck-project-2" class="arck-project-section-2">
+		<div class="container">
+			<div class="arck-project-top-content d-flex justify-content-between align-items-center">
+				<div class="arck-section-title headline pera-content">
+					<h2>Hasil Proyek Nyata Kami</h2>
+				</div>
+				<div class="text-center arck-project-filter-btn ul-li">
+					<div class="clearfix text-center button-group">
+						<button class="filter-button is-checked" data-filter="*">All </button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="arck-project-filter-content">
+			<div class="grid clearfix filtr-container-area" data-isotope="{ &quot;masonry&quot;: { &quot;columnWidth&quot;: 0 } }">
+				<div class="grid-sizer"></div>
+				<div class="grid-item grid-size-50 interiors design" data-category="interiors design">
+					<div class="arck-project-item-2 position-relative">
+						<div class="inner-img">
+							<img src="assets/img/project/IMG-20251029-WA0008.webp" alt="">
+						</div>
+						<div class="inner-text headline pera-content">
+							<h3>Kitchen Inspiration</a></h3>
+							<span class="port-cate text-uppercase"> Architecture</a></span>
+						</div>
+					</div>
+				</div>
+                <div class="grid-item grid-size-25 house_exterior building" data-category="house_exterior building">
+					<div class="arck-project-item-2 position-relative">
+						<div class="inner-img">
+							<img src="assets/img/project/IMG-20260123-WA0024.webp" alt="">
+						</div>
+						<div class="inner-text headline pera-content">
+							<h3>Kitchen Inspiration</a></h3>
+							<span class="port-cate text-uppercase"> Architecture</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="grid-item grid-size-25 house_exterior design" data-category="house_exterior design">
+					<div class="arck-project-item-2 position-relative">
+						<div class="inner-img">
+							<img src="assets/img/project/IMG-20251029-WA0009.webp" alt="">
+						</div>
+						<div class="inner-text headline pera-content">
+							<h3>Kitchen Inspiration</a></h3>
+							<span class="port-cate text-uppercase"> Architecture</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="grid-item grid-size-25 building design" data-category="building design">
+					<div class="arck-project-item-2 position-relative">
+						<div class="inner-img">
+							<img src="assets/img/project/IMG-20251102-WA0025.webp" alt="">
+						</div>
+						<div class="inner-text headline pera-content">
+							<h3>Kitchen Inspiration</a></h3>
+							<span class="port-cate text-uppercase"> Architecture</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="grid-item grid-size-25 house_exterior building" data-category="interiors design">
+					<div class="arck-project-item-2 position-relative">
+						<div class="inner-img">
+							<img src="assets/img/project/IMG-20260123-WA0036.webp" alt="">
+						</div>
+						<div class="inner-text headline pera-content">
+							<h3>Kitchen Inspiration</a></h3>
+							<span class="port-cate text-uppercase"> Architecture</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- End of Project section
+	============================================= -->
+
+<!-- Start of Working Skill section
+	============================================= -->
+	<section id="arck-working-skill" class="arck-working-skill-section">
+		<div class="container">
+			<div class="arck-working-skill-content">
+				<div class="row">
+					<div class="col-lg-6 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+						<div class="arck-working-skill-text-wrap">
+							<div class="arck-section-title-2 headline pera-content">
+								<span class="sub-title text-uppercase">STANDAR KUALITAS</span>
+								<h2>Mengapa Hasil Kami <span>Lebih Awet</span> dan  <span>Presisi?</span></h2>
+								<p>
+                                    Kami tidak mau kompromi soal kualitas. Kami menggunakan material grade A dan 
+                                    finishing tingkat tinggi yang dikerjakan dengan pengawasan ketat, memastikan setiap 
+                                    sudut ruangan Anda sempurna.
+                                </p>
+							</div>
+							<div class="arck-skill-progress-bar">
+								<div class="arck-skill-progress-bar">
+									<div class="skill-set-percent headline">
+										<h4>Ketepatan Waktu Pengerjaan</h4>
+										<div class="progress">
+											<div class="progress-bar" data-percent="98"></div>
+										</div>
+									</div>
+									<div class="skill-set-percent headline">
+										<h4>Kepresisian Hasil vs Desain 3D</h4>
+										<div class="progress">
+											<div class="progress-bar" data-percent="99"></div>
+										</div>
+									</div>
+									<div class="skill-set-percent headline">
+										<h4>Kepuasan Klien Kami</h4>
+										<div class="progress">
+											<div class="progress-bar" data-percent="100"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms" data-wow-duration="1500ms">
+						<div class="arck-working-skill-img">
+							<img src="assets/img/about/4.webp" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- End of Working Skill section
+	============================================= -->
+
+<!-- Start of Pricing section
+	============================================= -->
+	<section id="arck-pricing" class="arck-pricing-section" data-background="assets/img/bg/pr-bg.jpg">
+		<div class="container">
+			<div class="text-center arck-section-title-2 headline pera-content wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+				<span class="sub-title text-uppercase">Pilihan Paket</span>
+				<h2>Sesuaikan Dengan <span>Budget</span> & <span>Kebutuhanmu.</span></h2>
+			</div>
+			<div class="arck-pricing-content">
+				<div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                        <div class="text-center arck-pricing-item">
+                            <div class="inner-title headline pera-content">
+                                <h3>BRONZE</h3>
+                                <div class="inner-price">
+                                    <h4><sup>Rp</sup> 2 JT</h4>
+                                    <span>Per Meter</span>
+                                </div>
+                            </div>
+                            <div class="inner-feature-list ul-li-block">
+                                <ul>
+                                    <li>Blokmelamin 18 mm</li>
+                                    <li>Engsel slowmotion ex Taco</li>
+                                    <li>Rell doubletrack standard</li>
+                                    <li>Rak piring atas/bawah standard</li>
+                                    <li>Rak sendok standard</li>
+                                    <li>Edging ex Taco</li>
+                                    <li>Finishing HPL ex Taco</li>
+                                    <li>Lampu LED dotless</li>
+                                </ul>
+                            </div>
+                            <div class="arck-btn-2 d-flex justify-content-center">
+                                <a class="d-flex justify-content-center align-items-center text-uppercase" href="#">Pilih Paket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+                        <div class="text-center arck-pricing-item">
+                            <div class="inner-title headline pera-content">
+                                <h3>SILVER</h3>
+                                <div class="inner-price">
+                                    <h4><sup>Rp</sup> 2.3 JT</h4>
+                                    <span>Per Meter</span>
+                                </div>
+                            </div>
+                            <div class="inner-feature-list ul-li-block">
+                                <ul>
+                                    <li>Plywood 18 mm</li>
+                                    <li>Engsel slowmotion ex Taco</li>
+                                    <li>Rell doubletrack slowmotion</li>
+                                    <li>Rak piring atas/bawah stainless</li>
+                                    <li>Rak sendok standard</li>
+                                    <li>Edging ex Taco</li>
+                                    <li>Finishing HPL ex Taco</li>
+                                    <li>Lampu LED dotless</li>
+                                </ul>
+                            </div>
+                            <div class="arck-btn-2 d-flex justify-content-center">
+                                <a class="d-flex justify-content-center align-items-center text-uppercase" href="#">Pilih Paket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+                        <div class="text-center arck-pricing-item">
+                            <div class="inner-title headline pera-content">
+                                <h3>GOLD</h3>
+                                <div class="inner-price">
+                                    <h4><sup>Rp</sup> 2.7 JT</h4>
+                                    <span>Per Meter</span>
+                                </div>
+                            </div>
+                            <div class="inner-feature-list ul-li-block">
+                                <ul>
+                                    <li>Plywood 18 mm</li>
+                                    <li>Engsel slowmotion ex Taco</li>
+                                    <li>Rell doubletrack slowmotion</li>
+                                    <li>Rak piring atas/bawah stainless</li>
+                                    <li>Rak sendok custom ex Ikea</li>
+                                    <li>Edging ex Taco</li>
+                                    <li>Finishing HPL ex Taco</li>
+                                    <li>Finisihing kabinet dalam Tacosheet</li>
+                                    <li>Lampu LED dotless</li>
+                                </ul>
+                            </div>
+                            <div class="arck-btn-2 d-flex justify-content-center">
+                                <a class="d-flex justify-content-center align-items-center text-uppercase" href="#">Pilih Paket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="800ms" data-wow-duration="1500ms">
+                        <div class="text-center arck-pricing-item">
+                            <div class="inner-title headline pera-content">
+                                <h3>TITANIUM</h3>
+                                <div class="inner-price">
+                                    <h4><sup>Rp</sup> 3.2 JT</h4>
+                                    <span>Per Meter</span>
+                                </div>
+                            </div>
+                            <div class="inner-feature-list ul-li-block">
+                                <ul>
+                                    <li>PVC Board 18 mm ex Taco</li>
+                                    <li>Engsel slowmotion ex Taco</li>
+                                    <li>Rell doubletrack slowmotion</li>
+                                    <li>Rak piring atas/bawah stainless</li>
+                                    <li>Rak sendok custom ex Ikea</li>
+                                    <li>Edging ex Taco</li>
+                                    <li>Finishing HPL ex Taco</li>
+                                    <li>Lampu LED dotless</li>
+                                </ul>
+                            </div>
+                            <div class="arck-btn-2 d-flex justify-content-center">
+                                <a class="d-flex justify-content-center align-items-center text-uppercase" href="#">Pilih Paket</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1000ms" data-wow-duration="1500ms">
+                        <div class="text-center arck-pricing-item">
+                            <div class="inner-title headline pera-content">
+                                <h3>PLATINUM</h3>
+                                <div class="inner-price">
+                                    <h4><sup>Rp</sup> 3.5 JT</h4>
+                                    <span>Per Meter</span>
+                                </div>
+                            </div>
+                            <div class="inner-feature-list ul-li-block">
+                                <ul>
+                                    <li>Plywood 18 mm</li>
+                                    <li>Engsel slowmotion ex Taco</li>
+                                    <li>Rell doubletrack slowmotion</li>
+                                    <li>Rak piring atas/bawah stainless</li>
+                                    <li>Rak sendok custome ex Ikea</li>
+                                    <li>Finishing Cat Duco ex Propan</li>
+                                    <li>Lampu LED dotless</li>
+                                </ul>
+                            </div>
+                            <div class="arck-btn-2 d-flex justify-content-center">
+                                <a class="d-flex justify-content-center align-items-center text-uppercase" href="#">Pilih Paket</a>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- End of Pricing section
+	============================================= -->
+
+<!-- Start of Service Details section
+	============================================= -->
+	{{-- <section id="arck-service-details" class="arck-service-details-section inner-page-padding">
+		<div class="container">
+			<div class="arck-service-details-testimonial-slider">
+                <div class="arck-section-title headline pera-content">
+                    <span class="sub-title text-uppercase">Client Review</span>
+                    <h2>What Our Client Say</h2>
+                </div>
+                <div class="arck-testimonial-slider-2">
+                    <div class="service-testimonial-item">
+                        <div class="arck-teestimonial-item-2">
+                            <div class="inner-text position-relative">
+                                <i class="fas fa-quote-left"></i> Rorem Ipsum is simply dummy text of the printing and typesetting industry. dummy text ever since the 1500s throughout the duration of your project the of your renovation
+                            </div>
+                            <div class="inner-author">
+                                <div class="author-img">
+                                    <img src="assets/img/about/tst1.jpg" alt="">
+                                </div>
+                                <div class="author-text headline">
+                                    <h3>Thone De Smith </h3>
+                                    <span>House Owner</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-testimonial-item">
+                        <div class="arck-teestimonial-item-2">
+                            <div class="inner-text position-relative">
+                                <i class="fas fa-quote-left"></i> Rorem Ipsum is simply dummy text of the printing and typesetting industry. dummy text ever since the 1500s throughout the duration of your project the of your renovation
+                            </div>
+                            <div class="inner-author">
+                                <div class="author-img">
+                                    <img src="assets/img/about/tst1.jpg" alt="">
+                                </div>
+                                <div class="author-text headline">
+                                    <h3>Thone De Smith </h3>
+                                    <span>House Owner</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-testimonial-item">
+                        <div class="arck-teestimonial-item-2">
+                            <div class="inner-text position-relative">
+                                <i class="fas fa-quote-left"></i> Rorem Ipsum is simply dummy text of the printing and typesetting industry. dummy text ever since the 1500s throughout the duration of your project the of your renovation
+                            </div>
+                            <div class="inner-author">
+                                <div class="author-img">
+                                    <img src="assets/img/about/tst1.jpg" alt="">
+                                </div>
+                                <div class="author-text headline">
+                                    <h3>Thone De Smith </h3>
+                                    <span>House Owner</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-testimonial-item">
+                        <div class="arck-teestimonial-item-2">
+                            <div class="inner-text position-relative">
+                                <i class="fas fa-quote-left"></i> Rorem Ipsum is simply dummy text of the printing and typesetting industry. dummy text ever since the 1500s throughout the duration of your project the of your renovation
+                            </div>
+                            <div class="inner-author">
+                                <div class="author-img">
+                                    <img src="assets/img/about/tst1.jpg" alt="">
+                                </div>
+                                <div class="author-text headline">
+                                    <h3>Thone De Smith </h3>
+                                    <span>House Owner</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</section> --}}
+<!-- End of Service Details section
+	============================================= -->
+
+<!-- Start of Sponsor section
+	============================================= -->
+	<section id="arck-sponsor" class="arck-sponsor-section">
+		<div class="container">
+			<div class="arck-sponsor-slider">
+				<div class="arck-sponsor-slider-item">
+					<img src="assets/img/sponsor/5.webp" alt="">
+				</div>
+				<div class="arck-sponsor-slider-item">
+					<img src="assets/img/sponsor/6.webp" alt="">
+				</div>
+				<div class="arck-sponsor-slider-item">
+					<img src="assets/img/sponsor/7.webp" alt="">
+				</div>
+				<div class="arck-sponsor-slider-item">
+					<img src="assets/img/sponsor/8.webp" alt="">
+				</div>
+				<div class="arck-sponsor-slider-item">
+					<img src="assets/img/sponsor/9.webp" alt="">
+				</div>
+				<div class="arck-sponsor-slider-item">
+					<img src="assets/img/sponsor/10.webp" alt="">
+				</div>
+				<div class="arck-sponsor-slider-item">
+					<img src="assets/img/sponsor/11.webp" alt="">
+				</div>
+				<div class="arck-sponsor-slider-item">
+					<img src="assets/img/sponsor/12.webp" alt="">
+				</div>
+                <div class="arck-sponsor-slider-item">
+					<img src="assets/img/sponsor/13.webp" alt="">
+				</div>
+                <div class="arck-sponsor-slider-item">
+					<img src="assets/img/sponsor/14.webp" alt="">
+				</div>
+                <div class="arck-sponsor-slider-item">
+					<img src="assets/img/sponsor/15.webp" alt="">
+				</div>
+                <div class="arck-sponsor-slider-item">
+					<img src="assets/img/sponsor/16.webp" alt="">
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- End of Sponsor section
+	============================================= -->
+
+<!-- Start of Footer section
+	============================================= -->
+	<footer id="arck-footer" class="arck-footer-section" data-background="assets/img/bg/footer-bg.jpg">
+		<div class="text-center arck-footer-copyright">
+			©2026 All rights reserved. Developed by <a href="#">Simetri Space</a>
+		</div>
+	</footer>
+<!-- End of Footer section
+	============================================= -->
+
+	<!-- For Js Library -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="assets/js/appear.js"></script>
+	<script src="assets/js/slick.js"></script>
+	<script src="assets/js/jquery.counterup.min.js"></script>
+	<script src="assets/js/waypoints.min.js"></script>
+	<script src="assets/js/isotope.pkgd.min.js"></script>
+	<script src="assets/js/imagesloaded.pkgd.min.js"></script>
+	<script src="assets/js/masonry.pkgd.min.js"></script>
+	<script src="assets/js/jquery.filterizr.js"></script>
+	<script src="assets/js/wow.min.js"></script>
+	<script src="assets/js/twenty.js"></script>
+	<script src="assets/js/jquery.inputarrow.js"></script>
+	<script src="assets/js/script.js"></script>
+</body>
+</html>

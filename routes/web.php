@@ -1,7 +1,7 @@
 <?php
 
-use App\Livewire\SuperDuper\BlogList;
 use App\Livewire\SuperDuper\BlogDetails;
+use App\Livewire\SuperDuper\BlogList;
 use App\Livewire\SuperDuper\Pages\ContactUs;
 use Illuminate\Support\Facades\Route;
 use Lab404\Impersonate\Services\ImpersonateManager;
@@ -20,6 +20,10 @@ use Lab404\Impersonate\Services\ImpersonateManager;
 Route::get('/', function () {
     return view('components.superduper.pages.home');
 })->name('home');
+
+Route::get('/landing-page', function () {
+    return view('components.superduper.pages.landing-page');
+})->name('landing-page');
 
 Route::get('/blog', BlogList::class)->name('blog');
 
@@ -43,12 +47,12 @@ Route::post('/contact', [App\Http\Controllers\ContactController::class, 'submit'
     ->name('contact.submit');
 
 // TODO: Create actual blog preview component
-Route::post('/blog-preview', function() {
+Route::post('/blog-preview', function () {
     // Implementation pending
 })->name('blog.preview');
 
-Route::get('impersonate/leave', function() {
-    if(!app(ImpersonateManager::class)->isImpersonating()) {
+Route::get('impersonate/leave', function () {
+    if (! app(ImpersonateManager::class)->isImpersonating()) {
         return redirect('/');
     }
 
@@ -58,4 +62,3 @@ Route::get('impersonate/leave', function() {
         session()->pull('impersonate.back_to')
     );
 })->name('impersonate.leave')->middleware('web');
-
