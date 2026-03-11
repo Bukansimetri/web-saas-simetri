@@ -6,20 +6,20 @@
 	<meta name="description" content="Archix - Architecture and Interior Design HTML Template">
 	<meta name="keywords" content="apartments, architect, architecture, building, clean, construction, creative, decoration, interior design, minimal, modern, portfolio, residence, studio">
 	<meta name="author" content="Themexriver">
-	<link rel="shortcut icon" href="assets/img/logo/ficon.png" type="image/x-icon">
+	<link rel="shortcut icon" href="{{ asset('assets/img/logo/ficon.png') }}" type="image/x-icon">
 	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/fontawesome-all.css">
-	<link rel="stylesheet" href="assets/css/animate.css">
-	<link rel="stylesheet" href="assets/css/video.min.css">
-	<link rel="stylesheet" href="assets/css/slick.css">
-	<link rel="stylesheet" href="assets/css/slick-theme.css">
-	<link rel="stylesheet" href="assets/css/global.css">
-	<link rel="stylesheet" href="assets/css/twenty.css">
-	<link rel="stylesheet" href="assets/css/reset.css">
-	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/video.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/slick-theme.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/global.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/twenty.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
 <body>
 	<div id="preloader"></div>
@@ -32,7 +32,7 @@
 	{{-- <header id="arck-header" class="arck-header-section header-style-one">
 		<div class="arck-header-main-content d-flex justify-content-between align-items-center">
 			<div class="brand-logo">
-				<a href="#"><img src="assets/img/logo/logo-4.png" alt=""></a>
+				<a href="#"><img src="{{ asset('assets/img/logo/logo-4.png') }}" alt=""></a>
 			</div>
 			<div class="arck-main-navigation-wrap">
 				<nav class="clearfix main-navigation ul-li">
@@ -109,7 +109,7 @@
 							<i class="fal fa-times"></i>
 						</div>
 						<div class="m-brand-logo">
-							<a  href="!#"><img src="assets/img/logo/logo-5.png" alt=""></a>
+							<a  href="!#"><img src="{{ asset('assets/img/logo/logo-5.png') }}" alt=""></a>
 						</div>
 						<nav class="clearfix mobile-main-navigation ul-li">
 							<ul id="m-main-nav" class="clearfix nav navbar-nav">
@@ -202,7 +202,7 @@
 					<div class="sidebar-info-contents headline pera-content">
 						<div class="content-inner">
 							<div class="logo">
-								<a href="index.html"><img src="assets/img/logo/logo-3.png" alt=""></a>
+								<a href="index.html"><img src="{{ asset('assets/img/logo/logo-3.png') }}" alt=""></a>
 							</div>
 							<div class="content-box">
 								<h5>About Us</h5>
@@ -212,22 +212,22 @@
 								<h5>Gallery</h5>
 								<ul>
 									<li>
-										<a href="#"><img src="assets/img/gallery/01.png" alt=""></a>
+										<a href="#"><img src="{{ asset('assets/img/gallery/01.png') }}" alt=""></a>
 									</li>
 									<li>
-										<a href="#"><img src="assets/img/gallery/02.png" alt=""></a>
+										<a href="#"><img src="{{ asset('assets/img/gallery/02.png') }}" alt=""></a>
 									</li>
 									<li>
-										<a href="#"><img src="assets/img/gallery/03.png" alt=""></a>
+										<a href="#"><img src="{{ asset('assets/img/gallery/03.png') }}" alt=""></a>
 									</li>
 									<li>
-										<a href="#"><img src="assets/img/gallery/04.png" alt=""></a>
+										<a href="#"><img src="{{ asset('assets/img/gallery/04.png') }}" alt=""></a>
 									</li>
 									<li>
-										<a href="#"><img src="assets/img/gallery/05.png" alt=""></a>
+										<a href="#"><img src="{{ asset('assets/img/gallery/05.png') }}" alt=""></a>
 									</li>
 									<li>
-										<a href="#"><img src="assets/img/gallery/06.png" alt=""></a>
+										<a href="#"><img src="{{ asset('assets/img/gallery/06.png') }}" alt=""></a>
 									</li>
 								</ul>
 							</div>
@@ -258,10 +258,10 @@
 				<div id="arck-slider-main_2" class="arck-main-slider-2">
 					<div class="arck-main-slider-item-2 position-relative" style="padding-top: 100px !important; padding-bottom: 100px !important;">
 						<div class="arck-slider-img-2 position-absolute">
-							<img src="assets/img/slider/hero-lv-1.webp" alt="">
+							<img src="{{ asset('assets/img/slider/hero-lv-1.webp') }}" alt="">
 						</div>
 						<div class="slider-shape position-absolute">
-							<img src="assets/img/slider/s-sh1.png" alt="">
+							<img src="{{ asset('assets/img/slider/s-sh1.png') }}" alt="">
 						</div>
 						<div class="container">
 							<div class="arck-slider-main-text headline pera-content">
@@ -272,7 +272,7 @@
 								<p>Jangan biarkan impian ruanganmu hancur karena vendor abal-abal. Percayakan pada ahlinya.
                                     Kami wujudkan desain 3D menjadi kenyataan dengan presisi, tanpa biaya siluman, dan anti-ngaret!</p>
 								<div class="arck-btn-2">
-									<a class="d-flex justify-content-center align-items-center text-uppercase" href="project.html">
+									<a class="d-flex justify-content-center align-items-center text-uppercase" href="https://api.whatsapp.com/send/?phone=6282130354599&text&type=phone_number&app_absent=0&utm_source=ig">
                                         Konsultasi Gratis
                                     </a>
 								</div>
@@ -289,13 +289,13 @@
 <!-- Start of About section
 	============================================= -->
 	<section id="arck-about-2" class="arck-about-section-2 position-relative">
-		<span class="about-shape-1 position-absolute"><img src="assets/img/about/ab-shape1.png" alt=""></span>
+		<span class="about-shape-1 position-absolute"><img src="{{ asset('assets/img/about/ab-shape1.png') }}" alt=""></span>
 		<div class="container">
 			<div class="arck-about-content-2">
 				<div class="row">
 					<div class="col-lg-6 wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
 						<div class="arck-about-img-wrap-2">
-							<img src="assets/img/about/3.webp" alt="">
+							<img src="{{ asset('assets/img/about/3.webp') }}" alt="">
 						</div>
 					</div>
 					<div class="col-lg-6">
@@ -304,9 +304,9 @@
 								<span class="sub-title text-uppercase">TENTANG LIVING INTERIOR</span>
 								<h2>Kami Paham Banget Rasanya Kecewa Sama Vendor...</h2>
 								<p>
-                                    Udah ngeluarin tabungan yang nggak sedikit, eh yang didapat malah sakit hati dan stres mikirin 
-                                    tukang yang molor, hasil beda jauh dari desain, dan material yang gampang ngelupas. 
-                                    Kamu nggak sendirian, banyak yang jadi korban vendor yang cuma jualan janji. 
+                                    Udah ngeluarin tabungan yang nggak sedikit, eh yang didapat malah sakit hati dan stres mikirin
+                                    tukang yang molor, hasil beda jauh dari desain, dan material yang gampang ngelupas.
+                                    Kamu nggak sendirian, banyak yang jadi korban vendor yang cuma jualan janji.
                                     Solusinya? Percayakan pada ahlinya.
                                 </p>
 							</div>
@@ -376,9 +376,9 @@
 				<div class="row">
 					<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
 						<div class="arck-service-item-2 position-relative">
-							<span class="service-shape position-absolute"><img src="assets/img/shape/ser-icon1.png" alt=""></span>
+							<span class="service-shape position-absolute"><img src="{{ asset('assets/img/shape/ser-icon1.png') }}" alt=""></span>
 							<div class="inner-icon d-flex justify-content-center align-items-center position-relative">
-								<img src="assets/icon/ic11.png" alt="">
+								<img src="{{ asset('assets/icon/ic11.png') }}" alt="">
 							</div>
 							<div class="inner-text headline pera-content">
 								<h3>Gratis Konsultasi</h3>
@@ -390,9 +390,9 @@
 					</div>
 					<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
 						<div class="arck-service-item-2 position-relative">
-							<span class="service-shape position-absolute"><img src="assets/img/shape/ser-icon1.png" alt=""></span>
+							<span class="service-shape position-absolute"><img src="{{ asset('assets/img/shape/ser-icon1.png') }}" alt=""></span>
 							<div class="inner-icon d-flex justify-content-center align-items-center position-relative">
-								<img src="assets/icon/ic12.png" alt="">
+								<img src="{{ asset('assets/icon/ic12.png') }}" alt="">
 							</div>
 							<div class="inner-text headline pera-content">
 								<h3>Gratis Survey Lokasi</h3>
@@ -404,9 +404,9 @@
 					</div>
 					<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="800ms" data-wow-duration="1500ms">
 						<div class="arck-service-item-2 position-relative">
-							<span class="service-shape position-absolute"><img src="assets/img/shape/ser-icon1.png" alt=""></span>
+							<span class="service-shape position-absolute"><img src="{{ asset('assets/img/shape/ser-icon1.png') }}" alt=""></span>
 							<div class="inner-icon d-flex justify-content-center align-items-center position-relative">
-								<img src="assets/icon/ic14.png" alt="">
+								<img src="{{ asset('assets/icon/ic14.png') }}" alt="">
 							</div>
 							<div class="inner-text headline pera-content">
 								<h3>Gratis Design 3D</a></h3>
@@ -418,9 +418,9 @@
 					</div>
 					<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1000ms" data-wow-duration="1500ms">
 						<div class="arck-service-item-2 position-relative">
-							<span class="service-shape position-absolute"><img src="assets/img/shape/ser-icon1.png" alt=""></span>
+							<span class="service-shape position-absolute"><img src="{{ asset('assets/img/shape/ser-icon1.png') }}" alt=""></span>
 							<div class="inner-icon d-flex justify-content-center align-items-center position-relative">
-								<img src="assets/icon/ic15.png" alt="">
+								<img src="{{ asset('assets/icon/ic15.png') }}" alt="">
 							</div>
 							<div class="inner-text headline pera-content">
 								<h3>RAB Transparan</h3>
@@ -432,9 +432,9 @@
 					</div>
 					<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1200ms" data-wow-duration="1500ms">
 						<div class="arck-service-item-2 position-relative">
-							<span class="service-shape position-absolute"><img src="assets/img/shape/ser-icon1.png" alt=""></span>
+							<span class="service-shape position-absolute"><img src="{{ asset('assets/img/shape/ser-icon1.png') }}" alt=""></span>
 							<div class="inner-icon d-flex justify-content-center align-items-center position-relative">
-								<img src="assets/icon/ic16.png" alt="">
+								<img src="{{ asset('assets/icon/ic16.png') }}" alt="">
 							</div>
 							<div class="inner-text headline pera-content">
 								<h3>Tim Profesional</h3>
@@ -446,9 +446,9 @@
 					</div>
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1200ms" data-wow-duration="1500ms">
 						<div class="arck-service-item-2 position-relative">
-							<span class="service-shape position-absolute"><img src="assets/img/shape/ser-icon1.png" alt=""></span>
+							<span class="service-shape position-absolute"><img src="{{ asset('assets/img/shape/ser-icon1.png') }}" alt=""></span>
 							<div class="inner-icon d-flex justify-content-center align-items-center position-relative">
-								<img src="assets/icon/ic13.png" alt="">
+								<img src="{{ asset('assets/icon/ic13.png') }}" alt="">
 							</div>
 							<div class="inner-text headline pera-content">
 								<h3>Garansi Seumur Hidup</a></h3>
@@ -486,7 +486,7 @@
 				<div class="grid-item grid-size-50 interiors design" data-category="interiors design">
 					<div class="arck-project-item-2 position-relative">
 						<div class="inner-img">
-							<img src="assets/img/project/IMG-20251029-WA0008.webp" alt="">
+							<img src="{{ asset('assets/img/project/IMG-20251029-WA0008.webp') }}" alt="">
 						</div>
 						<div class="inner-text headline pera-content">
 							<h3>Kitchen Inspiration</a></h3>
@@ -497,7 +497,7 @@
                 <div class="grid-item grid-size-25 house_exterior building" data-category="house_exterior building">
 					<div class="arck-project-item-2 position-relative">
 						<div class="inner-img">
-							<img src="assets/img/project/IMG-20260123-WA0024.webp" alt="">
+							<img src="{{ asset('assets/img/project/IMG-20260123-WA0024.webp') }}" alt="">
 						</div>
 						<div class="inner-text headline pera-content">
 							<h3>Kitchen Inspiration</a></h3>
@@ -508,7 +508,7 @@
 				<div class="grid-item grid-size-25 house_exterior design" data-category="house_exterior design">
 					<div class="arck-project-item-2 position-relative">
 						<div class="inner-img">
-							<img src="assets/img/project/IMG-20251029-WA0009.webp" alt="">
+							<img src="{{ asset('assets/img/project/IMG-20251029-WA0009.webp') }}" alt="">
 						</div>
 						<div class="inner-text headline pera-content">
 							<h3>Kitchen Inspiration</a></h3>
@@ -519,7 +519,7 @@
 				<div class="grid-item grid-size-25 building design" data-category="building design">
 					<div class="arck-project-item-2 position-relative">
 						<div class="inner-img">
-							<img src="assets/img/project/IMG-20251102-WA0025.webp" alt="">
+							<img src="{{ asset('assets/img/project/IMG-20251102-WA0025.webp') }}" alt="">
 						</div>
 						<div class="inner-text headline pera-content">
 							<h3>Kitchen Inspiration</a></h3>
@@ -530,7 +530,7 @@
 				<div class="grid-item grid-size-25 house_exterior building" data-category="interiors design">
 					<div class="arck-project-item-2 position-relative">
 						<div class="inner-img">
-							<img src="assets/img/project/IMG-20260123-WA0036.webp" alt="">
+							<img src="{{ asset('assets/img/project/IMG-20260123-WA0036.webp') }}" alt="">
 						</div>
 						<div class="inner-text headline pera-content">
 							<h3>Kitchen Inspiration</a></h3>
@@ -556,8 +556,8 @@
 								<span class="sub-title text-uppercase">STANDAR KUALITAS</span>
 								<h2>Mengapa Hasil Kami <span>Lebih Awet</span> dan  <span>Presisi?</span></h2>
 								<p>
-                                    Kami tidak mau kompromi soal kualitas. Kami menggunakan material grade A dan 
-                                    finishing tingkat tinggi yang dikerjakan dengan pengawasan ketat, memastikan setiap 
+                                    Kami tidak mau kompromi soal kualitas. Kami menggunakan material grade A dan
+                                    finishing tingkat tinggi yang dikerjakan dengan pengawasan ketat, memastikan setiap
                                     sudut ruangan Anda sempurna.
                                 </p>
 							</div>
@@ -587,7 +587,7 @@
 					</div>
 					<div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms" data-wow-duration="1500ms">
 						<div class="arck-working-skill-img">
-							<img src="assets/img/about/4.webp" alt="">
+							<img src="{{ asset('assets/img/about/4.webp') }}" alt="">
 						</div>
 					</div>
 				</div>
@@ -599,7 +599,7 @@
 
 <!-- Start of Pricing section
 	============================================= -->
-	<section id="arck-pricing" class="arck-pricing-section" data-background="assets/img/bg/pr-bg.jpg">
+	<section id="arck-pricing" class="arck-pricing-section" data-background="{{ asset('assets/img/bg/pr-bg.jpg') }}">
 		<div class="container">
 			<div class="text-center arck-section-title-2 headline pera-content wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
 				<span class="sub-title text-uppercase">Pilihan Paket</span>
@@ -629,7 +629,7 @@
                                 </ul>
                             </div>
                             <div class="arck-btn-2 d-flex justify-content-center">
-                                <a class="d-flex justify-content-center align-items-center text-uppercase" href="#">Pilih Paket</a>
+                                <a class="d-flex justify-content-center align-items-center text-uppercase" href="https://api.whatsapp.com/send/?phone=6282130354599&text&type=phone_number&app_absent=0&utm_source=ig">Pilih Paket</a>
                             </div>
                         </div>
                     </div>
@@ -656,7 +656,7 @@
                                 </ul>
                             </div>
                             <div class="arck-btn-2 d-flex justify-content-center">
-                                <a class="d-flex justify-content-center align-items-center text-uppercase" href="#">Pilih Paket</a>
+                                <a class="d-flex justify-content-center align-items-center text-uppercase" href="https://api.whatsapp.com/send/?phone=6282130354599&text&type=phone_number&app_absent=0&utm_source=ig">Pilih Paket</a>
                             </div>
                         </div>
                     </div>
@@ -684,7 +684,7 @@
                                 </ul>
                             </div>
                             <div class="arck-btn-2 d-flex justify-content-center">
-                                <a class="d-flex justify-content-center align-items-center text-uppercase" href="#">Pilih Paket</a>
+                                <a class="d-flex justify-content-center align-items-center text-uppercase" href="https://api.whatsapp.com/send/?phone=6282130354599&text&type=phone_number&app_absent=0&utm_source=ig">Pilih Paket</a>
                             </div>
                         </div>
                     </div>
@@ -711,7 +711,7 @@
                                 </ul>
                             </div>
                             <div class="arck-btn-2 d-flex justify-content-center">
-                                <a class="d-flex justify-content-center align-items-center text-uppercase" href="#">Pilih Paket</a>
+                                <a class="d-flex justify-content-center align-items-center text-uppercase" href="https://api.whatsapp.com/send/?phone=6282130354599&text&type=phone_number&app_absent=0&utm_source=ig">Pilih Paket</a>
                             </div>
                         </div>
                     </div>
@@ -737,7 +737,7 @@
                                 </ul>
                             </div>
                             <div class="arck-btn-2 d-flex justify-content-center">
-                                <a class="d-flex justify-content-center align-items-center text-uppercase" href="#">Pilih Paket</a>
+                                <a class="d-flex justify-content-center align-items-center text-uppercase" href="https://api.whatsapp.com/send/?phone=6282130354599&text&type=phone_number&app_absent=0&utm_source=ig">Pilih Paket</a>
                             </div>
                         </div>
                     </div>
@@ -765,7 +765,7 @@
                             </div>
                             <div class="inner-author">
                                 <div class="author-img">
-                                    <img src="assets/img/about/tst1.jpg" alt="">
+                                    <img src="{{ asset('assets/img/about/tst1.jpg') }}" alt="">
                                 </div>
                                 <div class="author-text headline">
                                     <h3>Thone De Smith </h3>
@@ -781,7 +781,7 @@
                             </div>
                             <div class="inner-author">
                                 <div class="author-img">
-                                    <img src="assets/img/about/tst1.jpg" alt="">
+                                    <img src="{{ asset('assets/img/about/tst1.jpg') }}" alt="">
                                 </div>
                                 <div class="author-text headline">
                                     <h3>Thone De Smith </h3>
@@ -797,7 +797,7 @@
                             </div>
                             <div class="inner-author">
                                 <div class="author-img">
-                                    <img src="assets/img/about/tst1.jpg" alt="">
+                                    <img src="{{ asset('assets/img/about/tst1.jpg') }}" alt="">
                                 </div>
                                 <div class="author-text headline">
                                     <h3>Thone De Smith </h3>
@@ -813,7 +813,7 @@
                             </div>
                             <div class="inner-author">
                                 <div class="author-img">
-                                    <img src="assets/img/about/tst1.jpg" alt="">
+                                    <img src="{{ asset('assets/img/about/tst1.jpg') }}" alt="">
                                 </div>
                                 <div class="author-text headline">
                                     <h3>Thone De Smith </h3>
@@ -835,40 +835,40 @@
 		<div class="container">
 			<div class="arck-sponsor-slider">
 				<div class="arck-sponsor-slider-item">
-					<img src="assets/img/sponsor/5.webp" alt="">
+					<img src="{{ asset('assets/img/sponsor/5.webp') }}" alt="">
 				</div>
 				<div class="arck-sponsor-slider-item">
-					<img src="assets/img/sponsor/6.webp" alt="">
+					<img src="{{ asset('assets/img/sponsor/6.webp') }}" alt="">
 				</div>
 				<div class="arck-sponsor-slider-item">
-					<img src="assets/img/sponsor/7.webp" alt="">
+					<img src="{{ asset('assets/img/sponsor/7.webp') }}" alt="">
 				</div>
 				<div class="arck-sponsor-slider-item">
-					<img src="assets/img/sponsor/8.webp" alt="">
+					<img src="{{ asset('assets/img/sponsor/8.webp') }}" alt="">
 				</div>
 				<div class="arck-sponsor-slider-item">
-					<img src="assets/img/sponsor/9.webp" alt="">
+					<img src="{{ asset('assets/img/sponsor/9.webp') }}" alt="">
 				</div>
 				<div class="arck-sponsor-slider-item">
-					<img src="assets/img/sponsor/10.webp" alt="">
+					<img src="{{ asset('assets/img/sponsor/10.webp') }}" alt="">
 				</div>
 				<div class="arck-sponsor-slider-item">
-					<img src="assets/img/sponsor/11.webp" alt="">
+					<img src="{{ asset('assets/img/sponsor/11.webp') }}" alt="">
 				</div>
 				<div class="arck-sponsor-slider-item">
-					<img src="assets/img/sponsor/12.webp" alt="">
+					<img src="{{ asset('assets/img/sponsor/12.webp') }}" alt="">
 				</div>
                 <div class="arck-sponsor-slider-item">
-					<img src="assets/img/sponsor/13.webp" alt="">
+					<img src="{{ asset('assets/img/sponsor/13.webp') }}" alt="">
 				</div>
                 <div class="arck-sponsor-slider-item">
-					<img src="assets/img/sponsor/14.webp" alt="">
+					<img src="{{ asset('assets/img/sponsor/14.webp') }}" alt="">
 				</div>
                 <div class="arck-sponsor-slider-item">
-					<img src="assets/img/sponsor/15.webp" alt="">
+					<img src="{{ asset('assets/img/sponsor/15.webp') }}" alt="">
 				</div>
                 <div class="arck-sponsor-slider-item">
-					<img src="assets/img/sponsor/16.webp" alt="">
+					<img src="{{ asset('assets/img/sponsor/16.webp') }}" alt="">
 				</div>
 			</div>
 		</div>
@@ -878,7 +878,7 @@
 
 <!-- Start of Footer section
 	============================================= -->
-	<footer id="arck-footer" class="arck-footer-section" data-background="assets/img/bg/footer-bg.jpg">
+	<footer id="arck-footer" class="arck-footer-section" data-background="{{ asset('assets/img/bg/footer-bg.jpg') }}">
 		<div class="text-center arck-footer-copyright">
 			©2026 All rights reserved. Developed by <a href="#">Simetri Space</a>
 		</div>
@@ -887,21 +887,21 @@
 	============================================= -->
 
 	<!-- For Js Library -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/popper.min.js"></script>
-	<script src="assets/js/jquery.magnific-popup.min.js"></script>
-	<script src="assets/js/appear.js"></script>
-	<script src="assets/js/slick.js"></script>
-	<script src="assets/js/jquery.counterup.min.js"></script>
-	<script src="assets/js/waypoints.min.js"></script>
-	<script src="assets/js/isotope.pkgd.min.js"></script>
-	<script src="assets/js/imagesloaded.pkgd.min.js"></script>
-	<script src="assets/js/masonry.pkgd.min.js"></script>
-	<script src="assets/js/jquery.filterizr.js"></script>
-	<script src="assets/js/wow.min.js"></script>
-	<script src="assets/js/twenty.js"></script>
-	<script src="assets/js/jquery.inputarrow.js"></script>
-	<script src="assets/js/script.js"></script>
+	<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('assets/js/popper.min.js') }}"></script>
+	<script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+	<script src="{{ asset('assets/js/appear.js') }}"></script>
+	<script src="{{ asset('assets/js/slick.js') }}"></script>
+	<script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
+	<script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
+	<script src="{{ asset('assets/js/isotope.pkgd.min.js') }}"></script>
+	<script src="{{ asset('assets/js/imagesloaded.pkgd.min.js') }}"></script>
+	<script src="{{ asset('assets/js/masonry.pkgd.min.js') }}"></script>
+	<script src="{{ asset('assets/js/jquery.filterizr.js') }}"></script>
+	<script src="{{ asset('assets/js/wow.min.js') }}"></script>
+	<script src="{{ asset('assets/js/twenty.js') }}"></script>
+	<script src="{{ asset('assets/js/jquery.inputarrow.js') }}"></script>
+	<script src="{{ asset('assets/js/script.js') }}"></script>
 </body>
 </html>
