@@ -106,7 +106,6 @@
 
     <!-- Mobile Optimization Meta Tags -->
     <meta name="format-detection" content="telephone=no">
-    <meta name="theme-color" content="#512B0F">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
@@ -170,25 +169,19 @@
         'resources/css/app.css',
     ])
 
-    <!-- Icon Font -->
-    <link rel="preload" href="{{ asset('superduper/fonts/iconfonts/font-awesome/stylesheet.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset('superduper/fonts/iconfonts/font-awesome/stylesheet.css') }}">
-    </noscript>
-    <!-- Site font -->
-    <link rel="stylesheet" href="{{ asset('superduper/fonts/webfonts/public-sans/stylesheet.css') }}" />
+    <!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Vendor CSS -->
-    <link rel="stylesheet" href="{{ asset('superduper/css/vendors/swiper-bundle.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('superduper/css/vendors/jos.css') }}" />
-
-    <link rel="stylesheet" href="{{ asset('superduper/css/style.min.css') }}" />
-
-    <style>
-        [x-cloak] {
-            display: none !important;
-        }
-    </style>
+	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/video.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/slick-theme.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/global.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/twenty.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
     @stack('css')
 
@@ -276,12 +269,22 @@
         'resources/js/app.js',
     ])
 
-    <!--Vendor js-->
-    <script src="{{ asset('superduper/js/vendors/swiper-bundle.min.js') }}"></script>
-    <script src="{{ asset('superduper/js/vendors/fslightbox.js') }}"></script>
-    <script src="{{ asset('superduper/js/vendors/jos.min.js') }}"></script>
-
-    <script src="{{ asset('superduper/js/main.js') }}"></script>
+    <!-- For Js Library -->
+	<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('assets/js/popper.min.js') }}"></script>
+	<script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+	<script src="{{ asset('assets/js/appear.js') }}"></script>
+	<script src="{{ asset('assets/js/slick.js') }}"></script>
+	<script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
+	<script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
+	<script src="{{ asset('assets/js/isotope.pkgd.min.js') }}"></script>
+	<script src="{{ asset('assets/js/twenty.js') }}"></script>
+	<script src="{{ asset('assets/js/imagesloaded.pkgd.min.js') }}"></script>
+	<script src="{{ asset('assets/js/masonry.pkgd.min.js') }}"></script>
+	<script src="{{ asset('assets/js/wow.min.js') }}"></script>
+	<script src="{{ asset('assets/js/jquery.inputarrow.js') }}"></script>
+	<script src="{{ asset('assets/js/script.js') }}"></script>
 
     @livewireScripts
 

@@ -1,5 +1,8 @@
 <?php
 
+use App\Livewire\AboutUs;
+use App\Livewire\Portfolio;
+use App\Livewire\Services;
 use App\Livewire\SuperDuper\BlogDetails;
 use App\Livewire\SuperDuper\BlogList;
 use App\Livewire\SuperDuper\Pages\ContactUs;
@@ -26,6 +29,12 @@ Route::get('/landing-page', function () {
 })->name('landing-page');
 
 Route::get('/blog', BlogList::class)->name('blog');
+
+Route::get('/about-us', AboutUs::class)->name('about-us');
+
+Route::get('/portfolio', Portfolio::class)->name('portfolio');
+
+Route::get('/services', Services::class)->name('services');
 
 Route::get('/blog/{slug}', BlogDetails::class)->name('blog.show');
 

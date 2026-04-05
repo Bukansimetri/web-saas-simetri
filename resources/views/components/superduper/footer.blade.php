@@ -1,203 +1,162 @@
-<footer class="section-footer">
-    <div class="bg-color-denim-darkblue">
-        <div class="relative z-10">
-            <div class="pb-[60px] pt-20 lg:pb-20 lg:pt-[100px] xl:pt-[120px]">
-                <div class="container-default">
-                    <div class="flex flex-col items-center justify-center gap-16">
-                        <div class="max-w-[720px]">
-                            <h2 class="text-3xl font-medium leading-loose text-center text-gray-100 lg:text-5xl xl:text-4xl">
-                                Feel proud of everything you <br/> <span class="text-5xl font-bold text-secondary-600">Start</span> with <span class="text-5xl font-bold text-secondary-600">SuperDuper</span>
-                            </h2>
+@php
+    use Datlechin\FilamentMenuBuilder\Models\Menu;
+
+    // 1. Branding Setup
+    $brandLogo = $generalSettings->brand_logo ?? null;
+    $brandName = $generalSettings->brand_name ?? $siteSettings->name ?? config('app.name', 'Living Interior');
+    $footerLogo = $siteSettings->footer_logo ?? $brandLogo;
+
+    // 2. Menus Setup (Using the first two from your old code)
+    $footerMenu1 = Menu::location('footer');
+    $footerMenu2 = Menu::location('footer-2');
+
+    // 3. Social Links Setup
+    $socialLinks = [
+        'facebook' => $siteSocialSettings->facebook_url ?? null,
+        'twitter' => $siteSocialSettings->twitter_url ?? null,
+        'instagram' => $siteSocialSettings->instagram_url ?? null,
+        'linkedin' => $siteSocialSettings->linkedin_url ?? null,
+        'youtube' => $siteSocialSettings->youtube_url ?? null,
+        'tiktok' => $siteSocialSettings->tiktok_url ?? null,
+    ];
+
+    // FontAwesome 5 classes to match your new HTML template
+    $faIcons = [
+        'facebook' => 'fab fa-facebook-f',
+        'twitter' => 'fab fa-twitter',
+        'instagram' => 'fab fa-instagram',
+        'linkedin' => 'fab fa-linkedin-in',
+        'youtube' => 'fab fa-youtube',
+        'tiktok' => 'fab fa-tiktok',
+    ];
+@endphp
+
+<footer id="archx-footer" class="archx-footer-section position-relative" data-background="{{ asset('assets/img/bg/ar-ft-bg.png') }}">
+
+    <span class="archx-footer-mail position-absolute">{{ $siteSettings->company_email ?? 'livingsmeinterior@gmail.com' }}</span>
+    <span class="archx-footer-address position-absolute">Gg. Sanan, Pd. Kacang Bar., Kec. Pd. Aren</span>
+
+    <div class="container">
+        <div class="archx-footer-content">
+            <div class="row">
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="archx-footer-widget headline-2">
+                        <div class="logo-widget">
+                            <div class="brand-logo">
+                                <a href="{{ route('home') }}">
+                                    @if($footerLogo)
+                                        <img src="{{ Storage::url($footerLogo) }}" alt="{{ $brandName }}" style="max-height: 80px;">
+                                    @else
+                                        <span style="font-size: 1.5rem; font-weight: bold; color: #fff;">{{ $brandName }}</span>
+                                    @endif
+                                </a>
+                            </div>
+                            <div class="logo-text">
+                                {{ $siteSettings->description ?? 'Lebih dari 10 tahun pengalaman dalam desain interior dan pembuatan furniture custom, Living Interior telah dipercaya menangani berbagai proyek hunian dan komersial seperti rumah, kantor, apartemen, kafe, dan klinik.' }}
+                            </div>
+                            <div class="logo-cta-info ul-li-block">
+                                <ul>
+                                    <li><i class="fal fa-map-marker-alt"></i> Gg. Sanan, Pd. Kacang Bar., Kec. Pd. Aren</li>
+                                    <li><i class="fas fa-phone-alt"></i> +62 821-3035-4599</li>
+                                </ul>
+                            </div>
                         </div>
-                        <a href="{{ $siteSettings->footer_cta_button_url ?? '#' }}"
-                            class="inline-block border border-gray-900 btn bg-secondary-700"><span>
-                                Get started— it\'s free
-                            </span></a>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="bg-white horizontal-line"></div>
-
-        <div class="text-white">
-            <div class="py-[60px] lg:py-20">
-                <div class="container-default">
-                    <div class="grid gap-x-8 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1fr_repeat(4,_auto)] xl:gap-x-10 xxl:gap-x-[134px]">
-                        <div class="flex flex-col gap-y-7 md:col-span-3 lg:col-span-1">
-                            <a href="{{ route('home') }}">
-                                @php
-                                    $brandLogo = $generalSettings->brand_logo ?? null;
-                                    $brandName = $generalSettings->brand_name ?? $siteSettings->name ?? config('app.name', 'SuperDuper');
-                                    $footerLogo = $siteSettings->footer_logo ?? $brandLogo;
-                                @endphp
-
-                                @if($footerLogo)
-                                    <img src="{{ Storage::url($footerLogo) }}" alt="{{ $brandName }}" width="220" height="auto" />
-                                @endif
-                            </a>
-
-                            <div>
-                                <div class="lg:max-w-[416px]">
-                                    {{ $siteSettings->description ?? '' }}
-                                </div>
-
-                                <a href="mailto:{{ $siteSettings->company_email ?? 'yourdemo@email.com' }}"
-                                    class="block my-6 transition-all duration-300 underline-offset-4 hover:underline">
-                                    {{ $siteSettings->company_email ?? 'yourdemo@email.com' }}
-                                </a>
-
-                                <div class="flex flex-wrap gap-5">
-                                    @php
-                                        $socialLinks = [
-                                            'facebook' => $siteSocialSettings->facebook_url ?? null,
-                                            'twitter' => $siteSocialSettings->twitter_url ?? null,
-                                            'instagram' => $siteSocialSettings->instagram_url ?? null,
-                                            'linkedin' => $siteSocialSettings->linkedin_url ?? null,
-                                            'youtube' => $siteSocialSettings->youtube_url ?? null,
-                                            'tiktok' => $siteSocialSettings->tiktok_url ?? null,
-                                        ];
-
-                                        $faIcons = [
-                                            'twitter' => 'fa-brands fa-x-twitter',
-                                            'facebook' => 'fa-brands fa-facebook-f',
-                                            'instagram' => 'fa-brands fa-instagram',
-                                            'linkedin' => 'fa-brands fa-linkedin-in',
-                                            'youtube' => 'fa-brands fa-youtube',
-                                            'tiktok' => 'fa-brands fa-tiktok',
-                                        ];
-                                    @endphp
-
-                                    @foreach($socialLinks as $platform => $url)
-                                        @if(!empty($url))
-                                            <a href="{{ $url }}" target="_blank" rel="noopener noreferrer"
-                                                class="flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-white bg-opacity-5 text-sm text-white transition-all duration-300 hover:bg-color-pale-gold hover:text-color-denim-darkblue"
-                                                aria-label="{{ $platform }}">
-                                                <i class="{{ $faIcons[$platform] ?? 'fa-brands fa-'.$platform }}"></i>
-                                            </a>
-                                        @endif
-                                    @endforeach
-
-                                    @if(empty(array_filter($socialLinks)))
-                                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
-                                            class="flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-white bg-opacity-5 text-sm text-white transition-all duration-300 hover:bg-color-pale-gold hover:text-color-denim-darkblue"
-                                            aria-label="twitter">
-                                            <i class="fa-brands fa-x-twitter"></i>
-                                        </a>
-                                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
-                                            class="flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-white bg-opacity-5 text-sm text-white transition-all duration-300 hover:bg-color-pale-gold hover:text-color-denim-darkblue"
-                                            aria-label="facebook">
-                                            <i class="fa-brands fa-facebook-f"></i>
-                                        </a>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex flex-col gap-y-7">
-                            <div class="text-xl font-semibold capitalize">
-                                Main
-                            </div>
-                            @php
-                                use Datlechin\FilamentMenuBuilder\Models\Menu;
-                                $footerMenu = Menu::location('footer');
-                            @endphp
-                            <ul class="flex flex-col gap-y-[10px] capitalize">
-                                @if($footerMenu)
-                                    @foreach($footerMenu->menuItems as $item)
+                <div class="col-lg-3 col-md-6">
+                    <div class="archx-footer-widget headline-2">
+                        <div class="menu-widget ul-li-block">
+                            <h3 class="widget-title">Marketplace</h3>
+                            <ul>
+                                @if($footerMenu1)
+                                    @foreach($footerMenu1->menuItems as $item)
                                         <li>
-                                            <a href="{{ $item->url }}" @if($item->target) target="{{ $item->target }}" @endif
-                                                class="transition-all duration-300 ease-linear hover:opcity-100 underline-offset-4 opacity-80 hover:underline">
+                                            <a href="{{ $item->url }}" @if($item->target) target="{{ $item->target }}" @endif>
                                                 {{ $item->title }}
                                             </a>
                                         </li>
                                     @endforeach
                                 @else
-                                    <li>
-                                        <a href="{{ route('home') }}"
-                                            class="transition-all duration-300 ease-linear hover:opcity-100 underline-offset-4 opacity-80 hover:underline">Home</a>
-                                    </li>
+                                    <li><a href="{{ route('home') }}">Home</a></li>
                                 @endif
                             </ul>
                         </div>
+                    </div>
+                </div>
 
-                        <div class="flex flex-col gap-y-6">
-                            <div class="text-xl font-semibold capitalize">
-                                Sample Pages
-                            </div>
-                            @php
-                                $footerOthers = Menu::location('footer-2');
-                            @endphp
-                            <ul class="flex flex-col gap-y-[10px] capitalize">
-                                @if($footerOthers)
-                                    @foreach($footerOthers->menuItems as $item)
+                <div class="col-lg-3 col-md-6">
+                    <div class="archx-footer-widget headline-2">
+                        <div class="menu-widget ul-li-block">
+                            <h3 class="widget-title">My Account</h3>
+                            <ul>
+                                @if($footerMenu2)
+                                    @foreach($footerMenu2->menuItems as $item)
                                         <li>
-                                            <a href="{{ $item->url }}" @if($item->target) target="{{ $item->target }}" @endif
-                                                class="transition-all duration-300 ease-linear hover:opcity-100 underline-offset-4 opacity-80 hover:underline">
+                                            <a href="{{ $item->url }}" @if($item->target) target="{{ $item->target }}" @endif>
                                                 {{ $item->title }}
                                             </a>
                                         </li>
                                     @endforeach
+                                @else
+                                    <li><a href="{{ route('home') }}">Home</a></li>
                                 @endif
                             </ul>
                         </div>
+                    </div>
+                </div>
 
-                        {{-- # TODO: Create Menu Module --}}
-                        <div class="flex flex-col gap-y-6">
-                            <div class="text-xl font-semibold capitalize">
-                                Resources
+                <div class="col-lg-3 col-md-6">
+                    <div class="archx-footer-widget headline-2">
+                        <div class="award-widget">
+                            <h3 class="widget-title">Our Information</h3>
+                            <div class="total-award d-flex align-items-center">
+                                <span class="aw-title">Total Awards</span>
+                                <span class="aw-number">X8</span>
                             </div>
-                            @php
-                                $footerOthers = Menu::location('footer-3');
-                            @endphp
-                            <ul class="flex flex-col gap-y-[10px] capitalize">
-                                @if($footerOthers)
-                                    @foreach($footerOthers->menuItems as $item)
-                                        <li>
-                                            <a href="{{ $item->url }}" @if($item->target) target="{{ $item->target }}" @endif
-                                                class="transition-all duration-300 ease-linear hover:opcity-100 underline-offset-4 opacity-80 hover:underline">
-                                                {{ $item->title }}
-                                            </a>
-                                        </li>
-                                    @endforeach
-                                @endif
-                            </ul>
-                        </div>
-
-                        {{-- # TODO: Create Menu Module --}}
-                        <div class="flex flex-col gap-y-6">
-                            <div class="text-xl font-semibold capitalize">
-                                Community
+                            <div class="aw-instagram-wrap ul-li">
+                                <ul>
+                                    <li><a href="#"><img src="{{ asset('assets/img/gallery/ins1.jpg') }}" alt=""> <i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#"><img src="{{ asset('assets/img/gallery/ins2.jpg') }}" alt=""> <i class="fab fa-instagram"></i></a></li>
+                                </ul>
                             </div>
-                            @php
-                                $footerOthers = Menu::location('footer-4');
-                            @endphp
-                            <ul class="flex flex-col gap-y-[10px] capitalize">
-                                @if($footerOthers)
-                                    @foreach($footerOthers->menuItems as $item)
-                                        <li>
-                                            <a href="{{ $item->url }}" @if($item->target) target="{{ $item->target }}" @endif
-                                                class="transition-all duration-300 ease-linear hover:opcity-100 underline-offset-4 opacity-80 hover:underline">
-                                                {{ $item->title }}
-                                            </a>
-                                        </li>
-                                    @endforeach
-                                @endif
-                            </ul>
+                            <div class="aw-btn-wrap position-relative">
+                                <img src="{{ asset('assets/icon/fr1.png') }}" alt="">We provide fast on-demand <span>printing.</span>
+                                <span class="aw-line position-absolute"><img src="{{ asset('assets/icon/line1.png') }}" alt=""></span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="bg-white bg-opacity-5">
-            <div class="py-[18px]">
-                <div class="container-default">
-                    <div class="text-center text-white text-opacity-80">
-                        &copy; Copyright {{ date('Y') }}, {{ $siteSettings->copyright_text ?? 'All Rights Reserved' }}
-                        {{ $generalSettings->brand_name ?? $siteSettings->name ?? config('app.name', 'SuperDuper') }}
-                    </div>
-                </div>
+        <div class="archx-footer-copyright d-flex justify-content-between align-items-center">
+            <div class="archx-footer-copyright-text">
+                Copyright © <a href="{{ route('home') }}"> {{ date('Y') }} </a> by {{ $generalSettings->brand_name ?? config('app.name', 'Living Interior') }}. {{ $siteSettings->copyright_text ?? 'All Rights Reserved.' }}
+            </div>
+            <div class="archx-footer-copyright-social ul-li">
+                <ul>
+                    @php $hasSocials = false; @endphp
+
+                    @foreach($socialLinks as $platform => $url)
+                        @if(!empty($url))
+                            @php $hasSocials = true; @endphp
+                            <li>
+                                <a href="{{ $url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ ucfirst($platform) }}">
+                                    <i class="{{ $faIcons[$platform] ?? 'fab fa-'.$platform }}"></i>
+                                </a>
+                            </li>
+                        @endif
+                    @endforeach
+
+                    @if(!$hasSocials)
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    @endif
+                </ul>
             </div>
         </div>
     </div>
