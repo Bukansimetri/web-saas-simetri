@@ -84,15 +84,8 @@
 
 <!-- Start of Slider section
 	============================================= -->
-	<section id="archx-slider" class="archx-slider-section position-relative" data-background="{{ asset('assets/img/slider-2/s2.png') }}">
-		<span class="archx-slider-side1 position-absolute"><a href="#">livingsmeinterior@gmail.com</a></span>
-		<div class="archx-slider-side2 position-absolute ul-li">
-			<ul>
-				<li><a href="#">Twitter</a></li>
-				<li><a href="#">Facebook</a></li>
-				<li><a href="#">Instagram</a></li>
-			</ul>
-		</div>
+	<section id="archx-slider" class="archx-slider-section position-relative" data-background="assets/img/slider-2/home2.jpg">
+
 		<div class="container">
 			<div class="archx-slider-content position-relative">
 				<div class="row align-items-center">
@@ -103,7 +96,7 @@
 								<p>Berpengalaman 10 tahun lebih mengerjakan furniture dan interior rumah, kantor, apartement, kafe dan klinik</p>
 							</div>
 							<div class="ar-slider-shape-img position-absolute">
-								<img src="{{ asset('assets/img/bg/ar-ba.png') }}" alt="">
+								<img src="assets/img/bg/ar-ba.png" alt="">
 							</div>
 						</div>
 					</div>
@@ -130,22 +123,16 @@
 <!-- Start of Feature section
 	============================================= -->
 	<section id="archx-feature" class="archx-feature-section position-relative">
-		<span class="archx-bg position-absolute"><img src="{{ asset('assets/img/bg/ar-bg1.png') }}" alt=""></span>
+		<span class="archx-bg position-absolute"><img src="assets/img/bg/ar-bg1.png" alt=""></span>
 		<div class="container">
 			<div class="archx-feature-content_2">
 				<div class="row">
 					<div class="col-lg-3">
 						<div class="archx-feature-img_2 position-relative wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-							<img src="{{ asset('assets/img/about/ar-ft.png') }}" alt="">
-							<span class="archx-ft-shape position-absolute"><img src="{{ asset('assets/img/shape/ar-ft-sh.png') }}" alt=""></span>
-							<div class="award-wining-text position-absolute">
-								<span>20+</span> Award Winning Company
-							</div>
-							<div class="text-center archx-experience-text position-absolute pera-content">
-								25<sub>+</sub>
-								<p>years of
-								experince</p>
-							</div>
+							<img src="assets/img/about/10thn.jpg" alt="">
+							<span class="archx-ft-shape position-absolute"><img src="assets/img/shape/ar-ft-sh.png" alt=""></span>
+
+
 						</div>
 					</div>
 					<div class="col-lg-9">
@@ -154,7 +141,7 @@
 								<div class="col-md-4">
 									<div class="archx-feature-item_2 position-relative wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
 										<div class="archx-feature-icon position-relative">
-											<img src="{{ asset('assets/icon/ar-ic1.png') }}" alt="">
+											<img src="assets/icon/ar-ic1.png" alt="">
 										</div>
 										<div class="archx-feature-text headline-2 pera-content">
 											<h3>Harga Transparan</h3>
@@ -166,7 +153,7 @@
 								<div class="col-md-4">
 									<div class="archx-feature-item_2 position-relative wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
 										<div class="archx-feature-icon position-relative">
-											<img src="{{ asset('assets/icon/ar-ic2.png') }}" alt="">
+											<img src="assets/icon/ar-ic2.png" alt="">
 										</div>
 										<div class="archx-feature-text headline-2 pera-content">
 											<h3>Desain Eksklusif</h3>
@@ -178,7 +165,7 @@
 								<div class="col-md-4">
 									<div class="archx-feature-item_2 position-relative wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
 										<div class="archx-feature-icon position-relative">
-											<img src="{{ asset('assets/icon/ar-ic3.png') }}" alt="">
+											<img src="assets/icon/ar-ic3.png" alt="">
 										</div>
 										<div class="archx-feature-text headline-2 pera-content">
 											<h3>Pengerjaan Profesional</h3>
@@ -203,7 +190,7 @@
 <!-- Start of FAQ section
 	============================================= -->
 	<section id="archx-faq" class="archx-faq-section position-relative">
-		<span class="ar-bg position-absolute"><img src="{{ asset('assets/img/bg/ar-bg2.png') }}" alt=""></span>
+		<span class="ar-bg position-absolute"><img src="assets/img/bg/ar-bg2.png" alt=""></span>
 		<div class="container">
 			<div class="archx-faq-content">
 				<div class="row">
@@ -281,7 +268,7 @@
 					</div>
 					<div class="col-lg-5">
 						<div class="archx-faq-img-wrap wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
-							<img src="{{ asset('assets/img/about/ar-faq.png') }}" alt="">
+							<img src="assets/img/about/faq.jpg" alt="">
 						</div>
 					</div>
 				</div>
@@ -295,8 +282,8 @@
 
 <!-- Start of Before After section
 	============================================= -->
-	<section id="archx-before-after" class="archx-before-after-section position-relative" data-background="{{ asset('assets/img/bg/before-after-bg.png') }}">
-		<span class="archx-before-after-shape position-absolute"><img src="{{ asset('assets/img/bg/ar-ba.png') }}" alt=""></span>
+	<section id="archx-before-after" class="archx-before-after-section position-relative" data-background="assets/img/bg/before-after-bg.png">
+		<span class="archx-before-after-shape position-absolute"><img src="assets/img/bg/ar-ba.png" alt=""></span>
 		<div class="container">
 			<div class="text-center archx-section-title headline-2 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
 				<span class="title-serial">02</span>
@@ -335,50 +322,50 @@
 									<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 										<div  class="twentytwenty-container beforeafter-wrap">
 											<div class="arck-before-item before-after-item position-relative">
-												<img src="{{ asset('assets/img/about/ba1.jpg') }}" alt="">
+												<img src="assets/img/about/ba1.jpg" alt="">
 											</div>
 											<div class="arck-after-item before-after-item position-relative">
-												<img src="{{ asset('assets/img/about/ba2.jpg') }}" alt="">
+												<img src="assets/img/about/ba2.jpg" alt="">
 											</div>
 										</div>
 									</div>
 									<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 										<div  class="twentytwenty-container beforeafter-wrap">
 											<div class="arck-before-item before-after-item position-relative">
-												<img src="{{ asset('assets/img/about/ba1.jpg') }}" alt="">
+												<img src="assets/img/about/ba1.jpg" alt="">
 											</div>
 											<div class="arck-after-item before-after-item position-relative">
-												<img src="{{ asset('assets/img/about/ba2.jpg') }}" alt="">
+												<img src="assets/img/about/ba2.jpg" alt="">
 											</div>
 										</div>
 									</div>
 									<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
 										<div  class="twentytwenty-container beforeafter-wrap">
 											<div class="arck-before-item before-after-item position-relative">
-												<img src="{{ asset('assets/img/about/ba1.jpg') }}" alt="">
+												<img src="assets/img/about/ba1.jpg" alt="">
 											</div>
 											<div class="arck-after-item before-after-item position-relative">
-												<img src="{{ asset('assets/img/about/ba2.jpg') }}" alt="">
+												<img src="assets/img/about/ba2.jpg" alt="">
 											</div>
 										</div>
 									</div>
 									<div class="tab-pane fade" id="interior" role="tabpanel" aria-labelledby="pills-contact-tab">
 										<div  class="twentytwenty-container beforeafter-wrap">
 											<div class="arck-before-item before-after-item position-relative">
-												<img src="{{ asset('assets/img/about/ba1.jpg') }}" alt="">
+												<img src="assets/img/about/ba1.jpg" alt="">
 											</div>
 											<div class="arck-after-item before-after-item position-relative">
-												<img src="{{ asset('assets/img/about/ba2.jpg') }}" alt="">
+												<img src="assets/img/about/ba2.jpg" alt="">
 											</div>
 										</div>
 									</div>
 									<div class="tab-pane fade" id="construction" role="tabpanel" aria-labelledby="pills-contact-tab">
 										<div  class="twentytwenty-container beforeafter-wrap">
 											<div class="arck-before-item before-after-item position-relative">
-												<img src="{{ asset('assets/img/about/ba1.jpg') }}" alt="">
+												<img src="assets/img/about/ba1.jpg" alt="">
 											</div>
 											<div class="arck-after-item before-after-item position-relative">
-												<img src="{{ asset('assets/img/about/ba2.jpg') }}" alt="">
+												<img src="assets/img/about/ba2.jpg" alt="">
 											</div>
 										</div>
 									</div>
@@ -426,22 +413,40 @@
 						<div class="archx-about-sponsor-scroller">
 							<div class="archx-about-sponsor-wrapper">
 								<div class="archx-sponsor-item">
-									<img src="{{ asset('assets/img/sponsor/ar-sp1.png') }}" alt="">
+									<img src="assets/img/sponsor/aghasar2.jpg" alt="">
 								</div>
 								<div class="archx-sponsor-item">
-									<img src="{{ asset('assets/img/sponsor/ar-sp2.png') }}" alt="">
+									<img src="assets/img/sponsor/bsd.jpg" alt="">
 								</div>
 								<div class="archx-sponsor-item">
-									<img src="{{ asset('assets/img/sponsor/ar-sp1.png') }}" alt="">
+									<img src="assets/img/sponsor/cendana.jpg" alt="">
 								</div>
 								<div class="archx-sponsor-item">
-									<img src="{{ asset('assets/img/sponsor/ar-sp2.png') }}" alt="">
+									<img src="assets/img/sponsor/enchante.jpg" alt="">
 								</div>
 								<div class="archx-sponsor-item">
-									<img src="{{ asset('assets/img/sponsor/ar-sp1.png') }}" alt="">
+									<img src="assets/img/sponsor/alamsutra.jpg" alt="">
 								</div>
 								<div class="archx-sponsor-item">
-									<img src="{{ asset('assets/img/sponsor/ar-sp2.png') }}" alt="">
+									<img src="assets/img/sponsor/mandiri.jpg" alt="">
+								</div>
+								<div class="archx-sponsor-item">
+									<img src="assets/img/sponsor/lippo.jpg" alt="">
+								</div>
+								<div class="archx-sponsor-item">
+									<img src="assets/img/sponsor/upjaya.jpg" alt="">
+								</div>
+								<div class="archx-sponsor-item">
+									<img src="assets/img/sponsor/citragarden.jpg" alt="">
+								</div>
+								<div class="archx-sponsor-item">
+									<img src="assets/img/sponsor/yuradental.jpg" alt="">
+								</div>
+								<div class="archx-sponsor-item">
+									<img src="assets/img/sponsor/summarecon.jpg" alt="">
+								</div>
+								<div class="archx-sponsor-item">
+									<img src="assets/img/sponsor/gadingserpong.jpg" alt="">
 								</div>
 							</div>
 							<div class="archx-about-experience-scoller d-flex">
@@ -488,7 +493,7 @@
 					<div class="col-lg-4">
 						<div class="archx-contact-img-counter">
 							<div class="archx-contact-img position-relative wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-								<img src="{{ asset('assets/img/about/ar-cn.png') }}" alt="">
+								<img src="assets/img/about/contact.jpg" alt="">
 								<span class="img-shape"></span>
 							</div>
 						</div>
@@ -535,7 +540,7 @@
 
 <!-- Start of  Project Section
 	============================================= -->
-	<section id="archx-project-2" class="archx-project-section-2" data-background="{{ asset('assets/img/bg/ar-pro-bg.png') }}">
+	<section id="archx-project-2" class="archx-project-section-2" data-background="assets/img/bg/ar-pro-bg.png">
 		<div class="container">
 			<div class="archx-project-top-content d-flex justify-content-between align-items-center">
 				<div class="archx-section-title headline-2">
@@ -556,7 +561,7 @@
 				<div class="archx-project-item-2">
 					<div class="archx-project-item-content position-relative">
 						<div class="archx-project-img-2">
-							<img src="{{ asset('assets/img/project/ar-pro1.png') }}" alt="">
+							<img src="assets/img/project/ar-pro1.png" alt="">
 						</div>
 						<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
 							01
@@ -570,7 +575,7 @@
 				<div class="archx-project-item-2">
 					<div class="archx-project-item-content position-relative">
 						<div class="archx-project-img-2">
-							<img src="{{ asset('assets/img/project/ar-pro2.png') }}" alt="">
+							<img src="assets/img/project/ar-pro2.png" alt="">
 						</div>
 						<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
 							02
@@ -584,7 +589,7 @@
 				<div class="archx-project-item-2">
 					<div class="archx-project-item-content position-relative">
 						<div class="archx-project-img-2">
-							<img src="{{ asset('assets/img/project/ar-pro3.png') }}" alt="">
+							<img src="assets/img/project/ar-pro3.png" alt="">
 						</div>
 						<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
 							03
@@ -598,7 +603,7 @@
 				<div class="archx-project-item-2">
 					<div class="archx-project-item-content position-relative">
 						<div class="archx-project-img-2">
-							<img src="{{ asset('assets/img/project/ar-pro4.png') }}" alt="">
+							<img src="assets/img/project/ar-pro4.png" alt="">
 						</div>
 						<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
 							04
@@ -612,7 +617,7 @@
 				<div class="archx-project-item-2">
 					<div class="archx-project-item-content position-relative">
 						<div class="archx-project-img-2">
-							<img src="{{ asset('assets/img/project/ar-pro5.png') }}" alt="">
+							<img src="assets/img/project/ar-pro5.png" alt="">
 						</div>
 						<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
 							05
@@ -626,7 +631,7 @@
 				<div class="archx-project-item-2">
 					<div class="archx-project-item-content position-relative">
 						<div class="archx-project-img-2">
-							<img src="{{ asset('assets/img/project/ar-pro1.png') }}" alt="">
+							<img src="assets/img/project/ar-pro1.png" alt="">
 						</div>
 						<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
 							06
@@ -640,7 +645,7 @@
 				<div class="archx-project-item-2">
 					<div class="archx-project-item-content position-relative">
 						<div class="archx-project-img-2">
-							<img src="{{ asset('assets/img/project/ar-pro2.png') }}" alt="">
+							<img src="assets/img/project/ar-pro2.png" alt="">
 						</div>
 						<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
 							07
@@ -658,7 +663,7 @@
 				<div class="archx-newslatter-content d-flex justify-content-between">
 					<div class="archx-newslatter-cta d-flex align-items-center">
 						<div class="inner-icon">
-							<img src="{{ asset('assets/icon/ar-nw.png') }}" alt="">
+							<img src="assets/icon/ar-nw.png" alt="">
 						</div>
 						<div class="inner-text">
 							<span class="cta-no">+62 821-3035-4599</span>
@@ -731,9 +736,9 @@
 								</div>
 								<div class="carousel-indicators-wrap d-flex align-items-center">
 									<div class="carousel-indicators">
-										<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"><img src="{{ asset('assets/img/testimonial/tst1.jpg') }}" alt=""></button>
-										<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"><img src="{{ asset('assets/img/testimonial/tst2.jpg') }}" alt=""></button>
-										<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"><img src="{{ asset('assets/img/testimonial/tst3.jpg') }}" alt=""></button>
+										<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"><img src="assets/img/testimonial/tst1.jpg" alt=""></button>
+										<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"><img src="assets/img/testimonial/tst2.jpg" alt=""></button>
+										<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"><img src="assets/img/testimonial/tst3.jpg" alt=""></button>
 									</div>
 									<div class="more-testimonial-btn">
 										<a href="testimonial.html">Lihat Semua Testimoni →<i class="fal fa-long-arrow-right"></i></a>
@@ -745,7 +750,7 @@
 					<div class="col-lg-5">
 						<div class="archx-testimonial-img-wrap d-flex justify-content-end">
 							<div class="inner-img position-relative">
-								<img src="{{ asset('assets/img/testimonial/tst-bg1.png') }}" alt="">
+								<img src="assets/img/testimonial/testi.jpg" alt="">
 							</div>
 						</div>
 					</div>
@@ -769,7 +774,7 @@
 					<div class="col-lg-4 wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
 						<div class="archx-blog-item">
 							<div class="blog-img position-relative">
-								<img src="{{ asset('assets/img/blog/ar-blg1.png') }}" alt="">
+								<img src="assets/img/blog/ar-blg1.png" alt="">
 								<span class="blog-category d-flex justify-content-center align-items-center text-uppercase position-absolute"><a href="#">Story</a></span>
 							</div>
 							<div class="blog-text">
@@ -791,7 +796,7 @@
 					<div class="col-lg-4 wow fadeInUp" data-wow-delay="500ms" data-wow-duration="1500ms">
 						<div class="archx-blog-item">
 							<div class="blog-img position-relative">
-								<img src="{{ asset('assets/img/blog/ar-blg2.png') }}" alt="">
+								<img src="assets/img/blog/ar-blg2.png" alt="">
 								<span class="blog-category d-flex justify-content-center align-items-center text-uppercase position-absolute"><a href="#">Story</a></span>
 							</div>
 							<div class="blog-text">
@@ -813,7 +818,7 @@
 					<div class="col-lg-4 wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
 						<div class="archx-blog-item">
 							<div class="blog-img position-relative">
-								<img src="{{ asset('assets/img/blog/ar-blg3.png') }}" alt="">
+								<img src="assets/img/blog/ar-blg3.png" alt="">
 								<span class="blog-category d-flex justify-content-center align-items-center text-uppercase position-absolute"><a href="#">Story</a></span>
 							</div>
 							<div class="blog-text">
@@ -843,7 +848,7 @@
 	============================================= -->
 	<section id="archx-map" class="archx-map-section position-relative">
 		<div class="archx-map-wrap">
-			<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6209.242755903148!2d-77.04363602434464!3d38.90977276948481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1394992895496" width="100%" height="470"></iframe>
+			<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.5142938960028!2d106.67996027913325!3d-6.256198512948139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fb44d4dc33bb%3A0xf9dec3a71537b63e!2sWorkshop%20Living%20Interior!5e0!3m2!1sen!2sid!4v1774843905515!5m2!1sen!2sid" width="100%" height="470"></iframe>
 		</div>
 		<div class="container">
 			<div class="archx-map-info">
