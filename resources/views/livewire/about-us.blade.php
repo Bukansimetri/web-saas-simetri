@@ -31,7 +31,7 @@
 							<div class="acrk-img-shape2 position-absolute"><i></i></div>
 							<span class="shape1 position-absolute"><img src="assets/img/bg/dot-shape.png" alt=""></span>
 							<div class="inner-img">
-								<img src="assets/img/about/ab4.jpg" alt="">
+								<img src="assets/img/about/about-us.jpg" alt="">
 							</div>
 						</div>
 					</div>
@@ -67,7 +67,6 @@
 						<div class="text-center arck-service-item position-relative">
 							<span class="serial-no position-absolute">01</span>
 							<div class="hover-img position-absolute">
-								<img src="assets/img/service/ser1.jpg" alt="">
 							</div>
 							<div class="inner-icon position-relative">
 								<img src="assets/icon/ic1.png" alt="">
@@ -83,7 +82,6 @@
 						<div class="text-center arck-service-item position-relative">
 							<span class="serial-no position-absolute">02</span>
 							<div class="hover-img position-absolute">
-								<img src="assets/img/service/ser1.jpg" alt="">
 							</div>
 							<div class="inner-icon position-relative">
 								<img src="assets/icon/ic2.png" alt="">
@@ -99,7 +97,6 @@
 						<div class="text-center arck-service-item position-relative">
 							<span class="serial-no position-absolute">03</span>
 							<div class="hover-img position-absolute">
-								<img src="assets/img/service/ser1.jpg" alt="">
 							</div>
 							<div class="inner-icon position-relative">
 								<img src="assets/icon/ic3.png" alt="">
@@ -120,7 +117,7 @@
 
 <!-- Start of CTA section
 	============================================= -->
-	<section id="arck-cta" class="arck-cta-section position-relative" data-background="assets/img/bg/cta-bg.jpg">
+	<section id="arck-cta" class="arck-cta-section position-relative" data-background="assets/img/bg/bg-about.jpg">
 		<div class="background_overlay"></div>
 		<div class="container">
 			<div class="text-center arck-cta-content headline position-relative">
@@ -198,11 +195,9 @@
 						<div class="arck-faq-video-play-wrap position-relative">
 							<div class="acrk-img-shape1 position-absolute"><i></i></div>
 							<div class="acrk-img-shape2 position-absolute"><i></i></div>
-							<div class="arck-video-play-btn">
-								<a class="d-flex align-items-center justify-content-center" href="#"><i class="fas fa-play"></i></a>
-							</div>
+
 							<div class="inner-img">
-								<img src="assets/img/about/ab5.jpg" alt="">
+								<img src="assets/img/about/about-faq.jpg" alt="">
 							</div>
 						</div>
 					</div>
@@ -251,7 +246,7 @@
 	============================================= -->
 
 <!-- Start of Team Membar section
-	============================================= -->
+	=============================================
 	<section id="arck-team" class="arck-team-section position-relative">
 		<div class="container">
 			<div class="text-center arck-section-title headline pera-content wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
@@ -394,7 +389,7 @@
 							<div class="acrk-img-shape1 position-absolute"><i></i></div>
 							<div class="acrk-img-shape2 position-absolute"><i></i></div>
 							<div class="inner-img">
-								<img src="assets/img/about/ab2.jpg" alt="">
+								<img src="assets/img/testimonial/testi.jpg" alt="">
 							</div>
 						</div>
 					</div>
@@ -408,43 +403,31 @@
 								<div class="arck-testimonial-slider">
 									<div class="arck-teestimonial-item">
 										<div class="inner-text position-relative">
-											<i class="fas fa-quote-left"></i> Living Interior sangat membantu kami dalam merancang interior rumah. Hasil akhirnya sesuai dengan desain 3D dan kualitas pengerjaannya sangat rapi
+											<i class="fas fa-quote-left"></i> Living Interior benar-benar memahami kebutuhan kami. Hasil akhirnya sesuai dengan desain 3D dan sangat memuaskan.
 										</div>
 										<div class="inner-author">
-											<div class="author-img">
-												<img src="assets/img/about/tst1.jpg" alt="">
-											</div>
 											<div class="author-text headline">
-												<h3>MR O </h3>
-												<span>Klien Residential</span>
+												<h3>Mrs. Yana Depok</h3>
 											</div>
 										</div>
 									</div>
 									<div class="arck-teestimonial-item">
 										<div class="inner-text position-relative">
-											<i class="fas fa-quote-left"></i> Rorem Ipsum is simply dummy text of the printing and typesetting industry. dummy text ever since the 1500s throughout the duration of your project the of your renovation
+											<i class="fas fa-quote-left"></i> Prosesnya rapi, komunikatif, dan hasilnya premium. Recommended!
 										</div>
 										<div class="inner-author">
-											<div class="author-img">
-												<img src="assets/img/about/tst1.jpg" alt="">
-											</div>
 											<div class="author-text headline">
-												<h3>Thone De Smith </h3>
-												<span>House Owner</span>
+												<h3>Mr. Doni Tangerang</h3>
 											</div>
 										</div>
 									</div>
 									<div class="arck-teestimonial-item">
 										<div class="inner-text position-relative">
-											<i class="fas fa-quote-left"></i> Rorem Ipsum is simply dummy text of the printing and typesetting industry. dummy text ever since the 1500s throughout the duration of your project the of your renovation
+											<i class="fas fa-quote-left"></i> Pengerjaan semua rapih dengan semua kemauan ku dan sesuai timeline suka bgt!
 										</div>
 										<div class="inner-author">
-											<div class="author-img">
-												<img src="assets/img/about/tst1.jpg" alt="">
-											</div>
 											<div class="author-text headline">
-												<h3>Thone De Smith </h3>
-												<span>House Owner</span>
+												<h3>Mrs. Shinta</h3>
 											</div>
 										</div>
 									</div>
