@@ -139,7 +139,7 @@
 
 <!-- Start of Faq section
 	============================================= -->
-	<section id="arck-faq-video" class="arck-faq-video-section">
+    <section id="arck-faq-video" class="arck-faq-video-section">
 		<div class="container">
 			<div class="arck-faq-video-content">
 				<div class="row">
@@ -151,37 +151,37 @@
 							</div>
 							<div class="arck-faq-accordion">
 								<div class="accordion" id="accordionExample2">
-									<div class="accordion-item headline-2 pera-content wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-										<h2 class="accordion-header" id="headingOne2">
-											<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne">
+									<div class="accordion-item headline-1 pera-content wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+										<h2 class="accordion-header" id="headingOne">
+											<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 												Apakah Living Interior melayani desain saja tanpa pengerjaan?
 											</button>
 										</h2>
-										<div id="collapseOne2" class="accordion-collapse collapse show" aria-labelledby="headingOne2" data-bs-parent="#accordionExample2">
+										<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample2">
 											<div class="accordion-body">
 												Ya. Kami menyediakan layanan desain interior saja, namun juga dapat membantu proses produksi dan instalasi jika dibutuhkan.
 											</div>
 										</div>
 									</div>
 									<div class="accordion-item headline-2 pera-content wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
-										<h2 class="accordion-header" id="headingTwo2">
-											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+										<h2 class="accordion-header" id="headingTwo">
+											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 												Apakah bisa membuat furniture custom sesuai ukuran ruangan?
 											</button>
 										</h2>
-										<div id="collapseTwo2" class="accordion-collapse collapse" aria-labelledby="headingTwo2" data-bs-parent="#accordionExample2">
+										<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample2">
 											<div class="accordion-body">
 												Tentu. Semua furniture yang kami produksi dapat disesuaikan dengan ukuran ruang, konsep desain, dan kebutuhan klien.
 											</div>
 										</div>
 									</div>
-									<div class="accordion-item headline-2 pera-content wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
-										<h2 class="accordion-header" id="headingThree2">
-											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree2" aria-expanded="false" aria-controls="collapseThree2">
+									<div class="accordion-item headline-3 pera-content wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+										<h2 class="accordion-header" id="headingThree">
+											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 												Berapa lama proses pengerjaan interior?
 											</button>
 										</h2>
-										<div id="collapseThree2" class="accordion-collapse collapse" aria-labelledby="headingThree2" data-bs-parent="#accordionExample2">
+										<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample2">
 											<div class="accordion-body">
 												Waktu pengerjaan bergantung pada skala proyek. Untuk desain biasanya memerlukan waktu 1–3 minggu, sedangkan pengerjaan interior akan disesuaikan dengan kompleksitas proyek.
 											</div>
@@ -243,139 +243,6 @@
 		</div>
 	</section>
 <!-- End of Counter section
-	============================================= -->
-
-<!-- Start of Team Membar section
-	=============================================
-	<section id="arck-team" class="arck-team-section position-relative">
-		<div class="container">
-			<div class="text-center arck-section-title headline pera-content wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-				<span class="sub-title text-uppercase">Team Kami</span>
-				<h2>Tim Profesional Living Interior</h2>
-				<p>Living Interior didukung oleh tim desainer interior dan tenaga produksi berpengalaman yang bekerja secara profesional untuk memastikan setiap proyek berjalan dengan baik dan menghasilkan kualitas terbaik.
-				</p>
-			</div>
-			<div class="arck-team-content">
-				<div class="arck-team-slider">
-					<div class="arck-slider-inner-item">
-						<div class="arck-team-item position-relative">
-							<div class="inner-img">
-								<img src="assets/img/team/tm1.jpg" alt="">
-							</div>
-							<div class="text-center inner-text headline pera-content">
-								<h3><a href="team-single.html">Mrowni Rosen</a></h3>
-								<span>Architect</span>
-							</div>
-							<div class="text-center inner-social ul-li">
-								<ul>
-									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fab fa-behance"></i></a></li>
-									<li><a href="#"><i class="fab fa-youtube"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="arck-slider-inner-item">
-						<div class="arck-team-item position-relative">
-							<div class="inner-img">
-								<img src="assets/img/team/tm2.jpg" alt="">
-							</div>
-							<div class="text-center inner-text headline pera-content">
-								<h3><a href="team-single.html">Mrowni Rosen</a></h3>
-								<span>Architect</span>
-							</div>
-							<div class="text-center inner-social ul-li">
-								<ul>
-									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fab fa-behance"></i></a></li>
-									<li><a href="#"><i class="fab fa-youtube"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="arck-slider-inner-item">
-						<div class="arck-team-item position-relative">
-							<div class="inner-img">
-								<img src="assets/img/team/tm3.jpg" alt="">
-							</div>
-							<div class="text-center inner-text headline pera-content">
-								<h3><a href="team-single.html">Mrowni Rosen</a></h3>
-								<span>Architect</span>
-							</div>
-							<div class="text-center inner-social ul-li">
-								<ul>
-									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fab fa-behance"></i></a></li>
-									<li><a href="#"><i class="fab fa-youtube"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="arck-slider-inner-item">
-						<div class="arck-team-item position-relative">
-							<div class="inner-img">
-								<img src="assets/img/team/tm1.jpg" alt="">
-							</div>
-							<div class="text-center inner-text headline pera-content">
-								<h3><a href="team-single.html">Mrowni Rosen</a></h3>
-								<span>Architect</span>
-							</div>
-							<div class="text-center inner-social ul-li">
-								<ul>
-									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fab fa-behance"></i></a></li>
-									<li><a href="#"><i class="fab fa-youtube"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="arck-slider-inner-item">
-						<div class="arck-team-item position-relative">
-							<div class="inner-img">
-								<img src="assets/img/team/tm2.jpg" alt="">
-							</div>
-							<div class="text-center inner-text headline pera-content">
-								<h3><a href="team-single.html">Mrowni Rosen</a></h3>
-								<span>Architect</span>
-							</div>
-							<div class="text-center inner-social ul-li">
-								<ul>
-									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fab fa-behance"></i></a></li>
-									<li><a href="#"><i class="fab fa-youtube"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="arck-slider-inner-item">
-						<div class="arck-team-item position-relative">
-							<div class="inner-img">
-								<img src="assets/img/team/tm3.jpg" alt="">
-							</div>
-							<div class="text-center inner-text headline pera-content">
-								<h3><a href="team-single.html">Mrowni Rosen</a></h3>
-								<span>Architect</span>
-							</div>
-							<div class="text-center inner-social ul-li">
-								<ul>
-									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fab fa-behance"></i></a></li>
-									<li><a href="#"><i class="fab fa-youtube"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-<!-- End of Team Member  section
 	============================================= -->
 
 <!-- Start of Testimonial section

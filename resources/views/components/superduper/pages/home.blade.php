@@ -187,98 +187,85 @@
 <!-- End of Feature section
 	============================================= -->
 
-<!-- Start of FAQ section
-	============================================= -->
+<!-- Start of FAQ section ============================================= -->
 	<section id="archx-faq" class="archx-faq-section position-relative">
-		<span class="ar-bg position-absolute"><img src="assets/img/bg/ar-bg2.png" alt=""></span>
-		<div class="container">
-			<div class="archx-faq-content">
-				<div class="row">
-					<div class="col-lg-7">
-						<div class="archx-section-title headline-2 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-							<span class="title-serial">01</span>
-							<h2>Tentang Living Interior<br>
-							 Jawaban untuk <span> Pertanyaan</span> Anda</h2>
-						</div>
-						<div class="archx-faq-content-wrapper">
-							<div class="accordion" id="accordionExample">
-								<div class="accordion-item headline-2 pera-content wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-									<h2 class="accordion-header" id="headingOne">
-										<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-											Apakah hasil desain akan sesuai dengan visual 3D?
-										</button>
-									</h2>
-									<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-										<div class="accordion-body">
-											Ya, kami memastikan hasil akhir sesuai dengan konsep desain yang telah disepakati melalui gambar kerja dan supervisi proyek.
-										</div>
-									</div>
-								</div>
-								<div class="accordion-item headline-2 pera-content wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-									<h2 class="accordion-header" id="headingTwo">
-										<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-											Berapa lama proses desain interior berlangsung?
-										</button>
-									</h2>
-									<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-										<div class="accordion-body">
-											Durasi pengerjaan tergantung pada luas dan kompleksitas ruangan. Umumnya proses desain memakan waktu 1–3 minggu, mulai dari konsultasi, pembuatan konsep, revisi, hingga finalisasi gambar kerja.
+        <span class="ar-bg position-absolute"><img src="assets/img/bg/ar-bg2.png" alt=""></span>
+        <div class="container">
+            <div class="archx-faq-content">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="archx-section-title headline-2 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            <span class="title-serial">01</span>
+                            <h2>Tentang Living Interior<br>
+                            Jawaban untuk <span> Pertanyaan</span> Anda</h2>
+                        </div>
+                        <div class="archx-faq-content-wrapper">
+                            <div class="accordion" id="accordionExample">
 
-											Untuk proyek dengan pengerjaan full interior (design & build), estimasi waktu akan disesuaikan dengan skala proyek.
-										</div>
-									</div>
-								</div>
-								<div class="accordion-item headline-2 pera-content wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
-									<h2 class="accordion-header" id="headingThree">
-										<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-											Apakah Living Interior menyediakan layanan desain & build?
-										</button>
-									</h2>
-									<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-										<div class="accordion-body">
-											Ya, kami menyediakan layanan lengkap mulai dari perencanaan desain, pembuatan gambar kerja, hingga tahap produksi dan instalasi di lapangan.
+                                <div class="accordion-item headline-2 pera-content wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Apakah hasil desain akan sesuai dengan visual 3D?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            Ya, kami memastikan hasil akhir sesuai dengan konsep desain yang telah disepakati melalui gambar kerja dan supervisi proyek.
+                                        </div>
+                                    </div>
+                                </div>
 
-											Kami memastikan setiap detail sesuai dengan desain yang telah disepakati agar hasil akhir maksimal dan presisi.
-										</div>
-									</div>
-								</div>
-								<div class="accordion-item headline-2 pera-content wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
-									<h2 class="accordion-header" id="headingThree">
-										<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-											Bagaimana sistem pembayaran di Living Interior?
-										</button>
-									</h2>
-									<div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-										<div class="accordion-body">
-											Pembayaran dilakukan secara bertahap sesuai progress pekerjaan. Skema umum:
+                                <div class="accordion-item headline-2 pera-content wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Berapa lama proses desain interior berlangsung?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            Durasi pengerjaan tergantung pada luas dan kompleksitas ruangan. Umumnya proses desain memakan waktu 1–3 minggu, mulai dari konsultasi, pembuatan konsep, revisi, hingga finalisasi gambar kerja.
+                                        </div>
+                                    </div>
+                                </div>
 
-											- Konsultasi kebutuhan interior<br>
-											- Survey lokasi <br>
-											- Pembuatan RAB di lokasi <br>
-											- Commitment fee design <br>
-											- DP Fabrikasi 50% <br>
-											- DP Fabrikasi 30% saat fabrikasi <br>
-											- Installasi / Pemasangan <br>
-											- Pelunasan 20% <br>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-5">
-						<div class="archx-faq-img-wrap wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
-							<img src="assets/img/about/faq.jpg" alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-<!-- End of FAQ section
-	============================================= -->
+                                <div class="accordion-item headline-2 pera-content wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Apakah Living Interior menyediakan layanan desain & build?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            Ya, kami menyediakan layanan lengkap mulai dari perencanaan desain, pembuatan gambar kerja, hingga tahap produksi dan instalasi di lapangan.
+                                        </div>
+                                    </div>
+                                </div>
 
+                                <div class="accordion-item headline-2 pera-content wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+                                    <h2 class="accordion-header" id="headingFour"> <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            Bagaimana sistem pembayaran di Living Interior?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            Pembayaran dilakukan secara bertahap sesuai progress pekerjaan...
+                                        </div>
+                                    </div>
+                                </div>
 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="archx-faq-img-wrap wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <img src="assets/img/about/faq.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- End of FAQ section ============================================= -->
 
 <!-- Start of Before After section
 	============================================= -->
@@ -413,40 +400,40 @@
 						<div class="archx-about-sponsor-scroller">
 							<div class="archx-about-sponsor-wrapper">
 								<div class="archx-sponsor-item">
-									<img src="assets/img/sponsor/aghasar2.jpg" alt="">
+									<img src="{{ asset('assets/img/sponsor/aghasar2.jpg') }}" alt="">
 								</div>
 								<div class="archx-sponsor-item">
-									<img src="assets/img/sponsor/bsd.jpg" alt="">
+									<img src="{{ asset('assets/img/sponsor/bsd.jpg') }}" alt="">
 								</div>
 								<div class="archx-sponsor-item">
-									<img src="assets/img/sponsor/cendana.jpg" alt="">
+									<img src="{{ asset('assets/img/sponsor/cendana.jpg') }}" alt="">
 								</div>
 								<div class="archx-sponsor-item">
-									<img src="assets/img/sponsor/enchante.jpg" alt="">
+									<img src="{{ asset('assets/img/sponsor/enchante.jpg') }}" alt="">
 								</div>
 								<div class="archx-sponsor-item">
-									<img src="assets/img/sponsor/alamsutra.jpg" alt="">
+									<img src="{{ asset('assets/img/sponsor/alamsutra.jpg') }}" alt="">
 								</div>
 								<div class="archx-sponsor-item">
-									<img src="assets/img/sponsor/mandiri.jpg" alt="">
+									<img src="{{ asset('assets/img/sponsor/mandiri.jpg') }}" alt="">
 								</div>
 								<div class="archx-sponsor-item">
-									<img src="assets/img/sponsor/lippo.jpg" alt="">
+									<img src="{{ asset('assets/img/sponsor/lippo.jpg') }}" alt="">
 								</div>
 								<div class="archx-sponsor-item">
-									<img src="assets/img/sponsor/upjaya.jpg" alt="">
+									<img src="{{ asset('assets/img/sponsor/upjaya.jpg') }}" alt="">
 								</div>
 								<div class="archx-sponsor-item">
-									<img src="assets/img/sponsor/citragarden.jpg" alt="">
+									<img src="{{ asset('assets/img/sponsor/citragarden.jpg') }}" alt="">
 								</div>
 								<div class="archx-sponsor-item">
-									<img src="assets/img/sponsor/yuradental.jpg" alt="">
+									<img src="{{ asset('assets/img/sponsor/yuradental.jpg') }}" alt="">
 								</div>
 								<div class="archx-sponsor-item">
-									<img src="assets/img/sponsor/summarecon.jpg" alt="">
+									<img src="{{ asset('assets/img/sponsor/summarecon.jpg') }}" alt="">
 								</div>
 								<div class="archx-sponsor-item">
-									<img src="assets/img/sponsor/gadingserpong.jpg" alt="">
+									<img src="{{ asset('assets/img/sponsor/gadingserpong.jpg') }}" alt="">
 								</div>
 							</div>
 							<div class="archx-about-experience-scoller d-flex">
