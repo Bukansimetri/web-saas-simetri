@@ -164,11 +164,6 @@
     <link rel="shortcut icon" href="{{ $favicon ? Storage::url($favicon) : asset('superduper/img/favicon.png') }}"
         type="image/x-icon">
 
-    <!-- Theme CSS via Vite -->
-    @vite([
-        'resources/css/app.css',
-    ])
-
     <!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -261,10 +256,6 @@
             </div>
         @endif
     @endif
-
-    @vite([
-        'resources/js/app.js',
-    ])
 
     <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
 
