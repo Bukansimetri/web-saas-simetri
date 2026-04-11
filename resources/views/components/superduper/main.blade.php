@@ -164,6 +164,11 @@
     <link rel="shortcut icon" href="{{ $favicon ? Storage::url($favicon) : asset('superduper/img/favicon.png') }}"
         type="image/x-icon">
 
+    <!-- Theme CSS via Vite -->
+    @vite([
+        'resources/css/app.css',
+    ])
+
     <!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -235,9 +240,7 @@
     @else
         <x-superduper.header />
 
-        <main>
-            {{ $slot }}
-        </main>
+        {{ $slot }}
 
         <x-superduper.footer />
 
@@ -259,26 +262,30 @@
         @endif
     @endif
 
-    <!-- For Js Library -->
-	<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-	<script src="{{ asset('assets/js/popper.min.js') }}"></script>
-	<script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
-	<script src="{{ asset('assets/js/appear.js') }}"></script>
-	<script src="{{ asset('assets/js/slick.js') }}"></script>
-	<script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
-	<script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
-	<script src="{{ asset('assets/js/isotope.pkgd.min.js') }}"></script>
-	<script src="{{ asset('assets/js/twenty.js') }}"></script>
-	<script src="{{ asset('assets/js/imagesloaded.pkgd.min.js') }}"></script>
-	<script src="{{ asset('assets/js/masonry.pkgd.min.js') }}"></script>
-	<script src="{{ asset('assets/js/wow.min.js') }}"></script>
-	<script src="{{ asset('assets/js/jquery.inputarrow.js') }}"></script>
-	<script src="{{ asset('assets/js/script.js') }}"></script>
+    @vite([
+        'resources/js/app.js',
+    ])
+
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+
+    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+
+    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/appear.js') }}"></script>
+    <script src="{{ asset('assets/js/slick.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
+    <script src="{{ asset('assets/js/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('assets/js/twenty.js') }}"></script>
+    <script src="{{ asset('assets/js/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ asset('assets/js/masonry.pkgd.min.js') }}"></script>
+    <script src="{{ asset('assets/js/wow.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.inputarrow.js') }}"></script>
+    <script src="{{ asset('assets/js/script.js') }}"></script>
 
     @livewireScripts
 
-    <!-- Custom JS -->
     @if(isset($scriptSettings->custom_js))
         <script>
             {!! $scriptSettings->custom_js !!}
