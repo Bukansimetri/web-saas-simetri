@@ -20,6 +20,37 @@
 	<link rel="stylesheet" href="{{ asset('assets/css/twenty.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18097172538"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-18097172538');
+    </script>
+
+
+    <!-- Event snippet for Outbound click conversion page
+    In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+    function gtag_report_conversion(url) {
+    var callback = function () {
+        if (typeof(url) != 'undefined') {
+        window.location = url;
+        }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18097172538/Zx6ICPDu658cELrgs7VD',
+        'value': 1.0,
+        'currency': 'IDR',
+        'event_callback': callback
+    });
+    return false;
+    }
+    </script>
+
 </head>
 <body>
 	<div id="preloader"></div>
@@ -882,6 +913,7 @@
 		<div class="text-center arck-footer-copyright">
 			©2026 All rights reserved. Developed by <a href="#">Simetri Space</a>
 		</div>
+
 	</footer>
 <!-- End of Footer section
 	============================================= -->
@@ -903,5 +935,34 @@
 	<script src="{{ asset('assets/js/twenty.js') }}"></script>
 	<script src="{{ asset('assets/js/jquery.inputarrow.js') }}"></script>
 	<script src="{{ asset('assets/js/script.js') }}"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18097172538"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'AW-18097172538');
+    </script>
+
+    <!-- Event snippet for Outbound click conversion page
+    In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+        function gtag_report_conversion(url) {
+        var callback = function () {
+            if (typeof(url) != 'undefined') {
+            window.location = url;
+            }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-18097172538/Zx6ICPDu658cELrgs7VD',
+            'value': 1.0,
+            'currency': 'IDR',
+            'event_callback': callback
+        });
+        return false;
+        }
+    </script>
 </body>
 </html>

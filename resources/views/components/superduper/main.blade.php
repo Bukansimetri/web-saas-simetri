@@ -87,7 +87,7 @@
     @endphp
 
     @if (!$generalSettings->search_engine_indexing)
-        <meta name="robots" content="noindex">
+        {{-- <meta name="robots" content="noindex"> --}}
     @endif
 
     <meta charset="UTF-8">
