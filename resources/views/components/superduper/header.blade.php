@@ -38,8 +38,8 @@
             <div class="header-language-select-social d-flex">
                 <div class="header-social ul-li">
                     <ul>
-                        <li><a href="https://www.instagram.com/living_interior.id/"><i class="fab fa-instagram"></i></a></li>
-							<li><a href="https://api.whatsapp.com/send?phone=6282130354599&text=Halo%2C%20saya%20tertarik%20dengan%20layanan%20desain%20interior%20di%20Living%20Interiornya%0A%0ASaya%20ingin%20konsultasi%20untuk%20kebutuhan%20Design%20Interior.%20%0A%0ABoleh%20dibantu%20untuk%20informasi%20lebih%20lanjut%20dan%20estimasi%20biayanya%3F"><i class="fab fa-whatsapp"></i></a></li>
+                        <li><a href="https://www.instagram.com/living_interior.id/"><i class="fab fa-instagram" style="color: {{ $topBarColor }} !important;"></i></a></li>
+						<li><a href="https://api.whatsapp.com/send?phone=6282130354599&text=Halo%2C%20saya%20tertarik%20dengan%20layanan%20desain%20interior%20di%20Living%20Interiornya%0A%0ASaya%20ingin%20konsultasi%20untuk%20kebutuhan%20Design%20Interior.%20%0A%0ABoleh%20dibantu%20untuk%20informasi%20lebih%20lanjut%20dan%20estimasi%20biayanya%3F"><i class="fab fa-whatsapp" style="color: {{ $topBarColor }} !important;"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -88,7 +88,7 @@
                     </div>
                 </div>
                 <div class="header-cta-btn">
-                    <a class="d-flex justify-content-center align-items-center" href="#">Konsultasi Gratis <i class="fal fa-long-arrow-right"></i></a>
+                    <a class="d-flex justify-content-center align-items-center" href="https://api.whatsapp.com/send?phone=6282130354599&text=Halo%2C%20saya%20tertarik%20dengan%20layanan%20desain%20interior%20di%20Living%20Interiornya%0A%0ASaya%20ingin%20konsultasi%20untuk%20kebutuhan%20Design%20Interior.%20%0A%0ABoleh%20dibantu%20untuk%20informasi%20lebih%20lanjut%20dan%20estimasi%20biayanya%3F">Konsultasi Gratis <i class="fal fa-long-arrow-right"></i></a>
                 </div>
             </div>
 
