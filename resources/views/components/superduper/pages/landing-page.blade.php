@@ -51,6 +51,40 @@
     }
     </script>
 
+    <style>
+        /* Styling untuk tombol utama WhatsApp */
+        .whatsapp-float {
+            width: 55px;
+            height: 55px;
+            /* Posisikan 90px dari bawah agar berada di atas tombol scroll up */
+            bottom: 90px; 
+            right: 20px;
+            z-index: 5;
+            position: fixed;
+            line-height: 55px;
+            background-color: #25D366; /* Warna hijau resmi WhatsApp */
+            border-radius: 100%;
+            color: #FFF !important; /* Memastikan icon berwarna putih */
+            text-decoration: none;
+            transition: 500ms; /* Efek transisi halus seperti tombol sebelumnya */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sedikit bayangan */
+            display: block; /* Memastikan link berbentuk kotak/lingkaran penuh */
+        }
+
+        /* Mengatur ukuran dan posisi icon WhatsApp di dalam tombol */
+        .whatsapp-float i {
+            color: rgb(255, 255, 255);
+            font-size: 30px; /* Ukuran icon agak diperbesar agar proporsional */
+            line-height: 55px; /* Menyelaraskan icon secara vertikal di tengah */
+        }
+
+        /* Efek ketika tombol di-hover (disentuh mouse) */
+        .whatsapp-float:hover {
+            background-color: #128C7E; /* Hijau WhatsApp yang lebih gelap */
+            color: #FFF;
+        }
+    </style>
+
 </head>
 <body>
 	<div id="preloader"></div>
@@ -917,6 +951,12 @@
 	</footer>
 <!-- End of Footer section
 	============================================= -->
+
+    <div class="whatsapp-btn">
+        <a href="https://api.whatsapp.com/send?phone=6282130354599&text=Halo%2C%20saya%20tertarik%20dengan%20layanan%20desain%20interior%20di%20Living%20Interiornya%0A%0ASaya%20ingin%20konsultasi%20untuk%20kebutuhan%20Design%20Interior.%20%0A%0ABoleh%20dibantu%20untuk%20informasi%20lebih%20lanjut%20dan%20estimasi%20biayanya%3F" class="text-center whatsapp-float" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
 	<!-- For Js Library -->
 	<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
