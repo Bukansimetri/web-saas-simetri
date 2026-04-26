@@ -309,50 +309,20 @@
 									<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 										<div  class="twentytwenty-container beforeafter-wrap">
 											<div class="arck-before-item before-after-item position-relative">
-												<img src="assets/img/about/ba1.jpg" alt="">
+												<img src="assets/img/about/dabur-before.jpeg" alt="">
 											</div>
 											<div class="arck-after-item before-after-item position-relative">
-												<img src="assets/img/about/ba2.jpg" alt="">
+												<img src="assets/img/about/dapur-after.jpeg" alt="">
 											</div>
 										</div>
 									</div>
 									<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 										<div  class="twentytwenty-container beforeafter-wrap">
 											<div class="arck-before-item before-after-item position-relative">
-												<img src="assets/img/about/ba1.jpg" alt="">
+												<img src="assets/img/about/kamar-before.jpeg" alt="">
 											</div>
 											<div class="arck-after-item before-after-item position-relative">
-												<img src="assets/img/about/ba2.jpg" alt="">
-											</div>
-										</div>
-									</div>
-									<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-										<div  class="twentytwenty-container beforeafter-wrap">
-											<div class="arck-before-item before-after-item position-relative">
-												<img src="assets/img/about/ba1.jpg" alt="">
-											</div>
-											<div class="arck-after-item before-after-item position-relative">
-												<img src="assets/img/about/ba2.jpg" alt="">
-											</div>
-										</div>
-									</div>
-									<div class="tab-pane fade" id="interior" role="tabpanel" aria-labelledby="pills-contact-tab">
-										<div  class="twentytwenty-container beforeafter-wrap">
-											<div class="arck-before-item before-after-item position-relative">
-												<img src="assets/img/about/ba1.jpg" alt="">
-											</div>
-											<div class="arck-after-item before-after-item position-relative">
-												<img src="assets/img/about/ba2.jpg" alt="">
-											</div>
-										</div>
-									</div>
-									<div class="tab-pane fade" id="construction" role="tabpanel" aria-labelledby="pills-contact-tab">
-										<div  class="twentytwenty-container beforeafter-wrap">
-											<div class="arck-before-item before-after-item position-relative">
-												<img src="assets/img/about/ba1.jpg" alt="">
-											</div>
-											<div class="arck-after-item before-after-item position-relative">
-												<img src="assets/img/about/ba2.jpg" alt="">
+												<img src="assets/img/about/kamar-after.jpeg" alt="">
 											</div>
 										</div>
 									</div>
@@ -722,13 +692,8 @@
 									</div>
 								</div>
 								<div class="carousel-indicators-wrap d-flex align-items-center">
-									<div class="carousel-indicators">
-										<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"><img src="assets/img/testimonial/tst1.jpg" alt=""></button>
-										<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"><img src="assets/img/testimonial/tst2.jpg" alt=""></button>
-										<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"><img src="assets/img/testimonial/tst3.jpg" alt=""></button>
-									</div>
 									<div class="more-testimonial-btn">
-										<a href="testimonial.html">Lihat Semua Testimoni →<i class="fal fa-long-arrow-right"></i></a>
+										<a href="#">Lihat Semua Testimoni →<i class="fal fa-long-arrow-right"></i></a>
 									</div>
 								</div>
 							</div>
@@ -750,7 +715,7 @@
 
 <!-- Start of  Blog Section
 	============================================= -->
-	<section id="archx-blog" class="archx-blog-section">
+	{{-- <section id="archx-blog" class="archx-blog-section">
 		<div class="container">
 			<div class="text-center archx-section-title headline-2 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
 				<h2><span>Artikel </span> & Insight Seputar Interior Design
@@ -827,7 +792,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> --}}
 <!-- End of  Blog Section
 	============================================= -->
 
@@ -870,7 +835,7 @@
 
 <!-- Start of  Social Section
 	============================================= -->
-	<section id="archx-social" class="archx-social-section">
+	{{-- <section id="archx-social" class="archx-social-section">
 		<div class="archx-social-content d-flex align-items-center">
 			<div class="archx-social-item">
 				<a href="#">
@@ -909,7 +874,7 @@
 				</a>
 			</div>
 		</div>
-	</section>
+	</section> --}}
 <!-- End of  Social Section
 	============================================= -->
 
