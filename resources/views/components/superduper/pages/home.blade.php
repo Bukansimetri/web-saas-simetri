@@ -1,5 +1,4 @@
 <x-superduper.main>
-    <div id="preloader"></div>
 	<div class="up">
 		<a href="#" class="text-center scrollup"><i class="fas fa-chevron-up"></i></a>
 	</div>
