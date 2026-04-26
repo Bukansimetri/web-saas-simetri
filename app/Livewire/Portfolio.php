@@ -8,6 +8,6 @@ class Portfolio extends Component
 {
     public function render()
     {
-        return view('livewire.portfolio');
+        return view('livewire.portfolio')->layout('components.superduper.main');
     }
 }

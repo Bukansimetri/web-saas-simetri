@@ -1,6 +1,5 @@
 <div>
-    <x-superduper.main>
-        <!-- Start of Breadcrumb section
+    <!-- Start of Breadcrumb section
 	============================================= -->
 	<section id="arck-breadcrumb" class="arck-breadcrumb-section-2 position-relative" data-background="assets/img/bg/ar-shape.png">
 		<div class="slider-side-content position-absolute">
@@ -256,40 +255,52 @@
 <!-- End of Project Page content section
 	============================================= -->
 
+    <iframe src="https://www.juicer.io/api/feeds/lebihdariduapicks/iframe" frameborder="0" width="1000" height="1000" style="display:block;margin:0 auto;width:1000px;height:1000px;"></iframe>
 
 <!-- Start of Sponsor section
 	============================================= -->
 	<section id="arck-sponsor" class="arck-sponsor-section">
-		<div class="container">
-			<div class="arck-sponsor-slider">
-				<div class="arck-sponsor-slider-item">
-					<img src="assets/img/sponsor/sp1.png" alt="">
-				</div>
-				<div class="arck-sponsor-slider-item">
-					<img src="assets/img/sponsor/sp2.png" alt="">
-				</div>
-				<div class="arck-sponsor-slider-item">
-					<img src="assets/img/sponsor/sp3.png" alt="">
-				</div>
-				<div class="arck-sponsor-slider-item">
-					<img src="assets/img/sponsor/sp4.png" alt="">
-				</div>
-				<div class="arck-sponsor-slider-item">
-					<img src="assets/img/sponsor/sp5.png" alt="">
-				</div>
-				<div class="arck-sponsor-slider-item">
-					<img src="assets/img/sponsor/sp1.png" alt="">
-				</div>
-				<div class="arck-sponsor-slider-item">
-					<img src="assets/img/sponsor/sp2.png" alt="">
-				</div>
-				<div class="arck-sponsor-slider-item">
-					<img src="assets/img/sponsor/sp3.png" alt="">
-				</div>
-			</div>
-		</div>
-	</section>
+        <div class="container">
+            <div class="arck-sponsor-slider">
+                <div class="arck-sponsor-slider-item">
+                    <img src="{{ asset('assets/img/sponsor/5.webp') }}" alt="">
+                </div>
+                <div class="arck-sponsor-slider-item">
+                    <img src="{{ asset('assets/img/sponsor/6.webp') }}" alt="">
+                </div>
+                <div class="arck-sponsor-slider-item">
+                    <img src="{{ asset('assets/img/sponsor/7.webp') }}" alt="">
+                </div>
+                <div class="arck-sponsor-slider-item">
+                    <img src="{{ asset('assets/img/sponsor/8.webp') }}" alt="">
+                </div>
+                <div class="arck-sponsor-slider-item">
+                    <img src="{{ asset('assets/img/sponsor/9.webp') }}" alt="">
+                </div>
+                <div class="arck-sponsor-slider-item">
+                    <img src="{{ asset('assets/img/sponsor/10.webp') }}" alt="">
+                </div>
+                <div class="arck-sponsor-slider-item">
+                    <img src="{{ asset('assets/img/sponsor/11.webp') }}" alt="">
+                </div>
+                <div class="arck-sponsor-slider-item">
+                    <img src="{{ asset('assets/img/sponsor/12.webp') }}" alt="">
+                </div>
+                <div class="arck-sponsor-slider-item">
+                    <img src="{{ asset('assets/img/sponsor/13.webp') }}" alt="">
+                </div>
+                <div class="arck-sponsor-slider-item">
+                    <img src="{{ asset('assets/img/sponsor/14.webp') }}" alt="">
+                </div>
+                <div class="arck-sponsor-slider-item">
+                    <img src="{{ asset('assets/img/sponsor/15.webp') }}" alt="">
+                </div>
+                <div class="arck-sponsor-slider-item">
+                    <img src="{{ asset('assets/img/sponsor/16.webp') }}" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
 <!-- End of Sponsor section
 	============================================= -->
-    </x-superduper.main>
 </div>
