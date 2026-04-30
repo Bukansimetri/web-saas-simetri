@@ -517,98 +517,90 @@
 				<div class="archx-project-item-2">
 					<div class="archx-project-item-content position-relative">
 						<div class="archx-project-img-2">
-							<img src="assets/img/project/ar-pro1.png" alt="">
+							<img src="assets/img/project/Backdrop.jpg" alt="">
 						</div>
 						<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
 							01
 						</div>
-						<div class="archx-project-text-2 d-flex justify-content-between headline-2 position-absolute align-items-center">
-							<h3><a href="project-single.html">Book Printing Service</a></h3>
-							<a class="more_btn d-flex align-items-center justify-content-center" href="project-single.html"> <i class="fal fa-long-arrow-right"></i></a>
-						</div>
 					</div>
 				</div>
 				<div class="archx-project-item-2">
 					<div class="archx-project-item-content position-relative">
 						<div class="archx-project-img-2">
-							<img src="assets/img/project/ar-pro2.png" alt="">
+							<img src="assets/img/project/Bedroom_2.jpg" alt="">
 						</div>
 						<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
 							02
 						</div>
-						<div class="archx-project-text-2 d-flex justify-content-between headline-2 position-absolute align-items-center">
-							<h3><a href="project-single.html">Book Printing Service</a></h3>
-							<a class="more_btn d-flex align-items-center justify-content-center" href="project-single.html"> <i class="fal fa-long-arrow-right"></i></a>
-						</div>
 					</div>
 				</div>
 				<div class="archx-project-item-2">
 					<div class="archx-project-item-content position-relative">
 						<div class="archx-project-img-2">
-							<img src="assets/img/project/ar-pro3.png" alt="">
+							<img src="assets/img/project/Bedroom.jpg" alt="">
 						</div>
 						<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
 							03
 						</div>
-						<div class="archx-project-text-2 d-flex justify-content-between headline-2 position-absolute align-items-center">
-							<h3><a href="project-single.html">Book Printing Service</a></h3>
-							<a class="more_btn d-flex align-items-center justify-content-center" href="project-single.html"> <i class="fal fa-long-arrow-right"></i></a>
-						</div>
 					</div>
 				</div>
 				<div class="archx-project-item-2">
 					<div class="archx-project-item-content position-relative">
 						<div class="archx-project-img-2">
-							<img src="assets/img/project/ar-pro4.png" alt="">
+							<img src="assets/img/project/Bedroom_3.jpg" alt="">
 						</div>
 						<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
 							04
 						</div>
-						<div class="archx-project-text-2 d-flex justify-content-between headline-2 position-absolute align-items-center">
-							<h3><a href="project-single.html">Book Printing Service</a></h3>
-							<a class="more_btn d-flex align-items-center justify-content-center" href="project-single.html"> <i class="fal fa-long-arrow-right"></i></a>
-						</div>
 					</div>
 				</div>
 				<div class="archx-project-item-2">
 					<div class="archx-project-item-content position-relative">
 						<div class="archx-project-img-2">
-							<img src="assets/img/project/ar-pro5.png" alt="">
+							<img src="assets/img/project/Cafe.jpg" alt="">
 						</div>
 						<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
 							05
 						</div>
-						<div class="archx-project-text-2 d-flex justify-content-between headline-2 position-absolute align-items-center">
-							<h3><a href="project-single.html">Book Printing Service</a></h3>
-							<a class="more_btn d-flex align-items-center justify-content-center" href="project-single.html"> <i class="fal fa-long-arrow-right"></i></a>
-						</div>
 					</div>
 				</div>
 				<div class="archx-project-item-2">
 					<div class="archx-project-item-content position-relative">
 						<div class="archx-project-img-2">
-							<img src="assets/img/project/ar-pro1.png" alt="">
+							<img src="assets/img/project/Kitchen_1.jpg" alt="">
 						</div>
 						<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
 							06
 						</div>
-						<div class="archx-project-text-2 d-flex justify-content-between headline-2 position-absolute align-items-center">
-							<h3><a href="project-single.html">Book Printing Service</a></h3>
-							<a class="more_btn d-flex align-items-center justify-content-center" href="project-single.html"> <i class="fal fa-long-arrow-right"></i></a>
-						</div>
 					</div>
 				</div>
 				<div class="archx-project-item-2">
 					<div class="archx-project-item-content position-relative">
 						<div class="archx-project-img-2">
-							<img src="assets/img/project/ar-pro2.png" alt="">
+							<img src="assets/img/project/Kitchen_set_2.jpg" alt="">
 						</div>
 						<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
 							07
 						</div>
-						<div class="archx-project-text-2 d-flex justify-content-between headline-2 position-absolute align-items-center">
-							<h3><a href="project-single.html">Book Printing Service</a></h3>
-							<a class="more_btn d-flex align-items-center justify-content-center" href="project-single.html"> <i class="fal fa-long-arrow-right"></i></a>
+					</div>
+				</div>
+                <div class="archx-project-item-2">
+					<div class="archx-project-item-content position-relative">
+						<div class="archx-project-img-2">
+							<img src="assets/img/project/Receptionist.jpg" alt="">
+						</div>
+						<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
+							08
+						</div>
+					</div>
+				</div>
+                <div class="archx-project-item-2">
+					<div class="archx-project-item-content position-relative">
+						<div class="archx-project-img-2">
+							<img src="assets/img/project/Walking_Closet.jpg" alt="">
+						</div>
+						<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
+							09
 						</div>
 					</div>
 				</div>

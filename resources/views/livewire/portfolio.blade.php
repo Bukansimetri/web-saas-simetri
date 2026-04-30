@@ -39,209 +39,155 @@
 				<div class="grid-item grid-size-25 interiors design" data-category="interiors design">
 					<div class="arck-project-item position-relative two">
 						<div class="inner-img">
-							<img src="assets/img/project/pro1.jpg" alt="">
+							<img src="assets/img/project/Backdrop_lg.jpg" alt="">
 						</div>
 						<div class="inner-text">
 							<div class="project-title-desc headline pera-content">
 								<span class="text-uppercase item-category"><a href="#">Architecture</a></span>
-								<h3><a href="project-single.html">Mixitu Duplex Home</a></h3>
-								<p>Information architecture helps organize content overall so it’s easy to find and use. Imagine a storeroom filled to the brim with things these things are all related to sports.</p>
+								<h3><a>Living Interior ID</a></h3>
 							</div>
 						</div>
 						<div class="view-more-btn text-uppercase position-absolute">
-							<a href="project-single.html">View Details <i class="fal fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
 				<div class="grid-item grid-size-25 interiors design" data-category="interiors design">
 					<div class="arck-project-item position-relative two">
 						<div class="inner-img">
-							<img src="assets/img/project/pro2.jpg" alt="">
+							<img src="assets/img/project/Bedroom_2_lg.jpg" alt="">
 						</div>
 						<div class="inner-text">
 							<div class="project-title-desc headline pera-content">
 								<span class="text-uppercase item-category"><a href="#">Architecture</a></span>
-								<h3><a href="project-single.html">Mixitu Duplex Home</a></h3>
-								<p>Information architecture helps organize content overall so it’s easy to find and use. Imagine a storeroom filled to the brim with things these things are all related to sports.</p>
+								<h3><a>Living Interior ID</a></h3>
 							</div>
 						</div>
 						<div class="view-more-btn text-uppercase position-absolute">
-							<a href="project-single.html">View Details <i class="fal fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
 				<div class="grid-item grid-size-25 building design" data-category="building design">
 					<div class="arck-project-item position-relative two">
 						<div class="inner-img">
-							<img src="assets/img/project/pro3.jpg" alt="">
+							<img src="assets/img/project/Bedroom_3_lg.jpg" alt="">
 						</div>
 						<div class="inner-text">
 							<div class="project-title-desc headline pera-content">
 								<span class="text-uppercase item-category"><a href="#">Architecture</a></span>
-								<h3><a href="project-single.html">Mixitu Duplex Home</a></h3>
-								<p>Information architecture helps organize content overall so it’s easy to find and use. Imagine a storeroom filled to the brim with things these things are all related to sports.</p>
+								<h3><a>Living Interior ID</a></h3>
 							</div>
 						</div>
 						<div class="view-more-btn text-uppercase position-absolute">
-							<a href="project-single.html">View Details <i class="fal fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
 				<div class="grid-item grid-size-25 interiors house_exterior" data-category="interiors house_exterior">
 					<div class="arck-project-item position-relative two">
 						<div class="inner-img">
-							<img src="assets/img/project/pro4.jpg" alt="">
+							<img src="assets/img/project/Bedroom_lg.jpg" alt="">
 						</div>
 						<div class="inner-text">
 							<div class="project-title-desc headline pera-content">
 								<span class="text-uppercase item-category"><a href="#">Architecture</a></span>
-								<h3><a href="project-single.html">Mixitu Duplex Home</a></h3>
-								<p>Information architecture helps organize content overall so it’s easy to find and use. Imagine a storeroom filled to the brim with things these things are all related to sports.</p>
+								<h3><a>Living Interior ID</a></h3>
 							</div>
 						</div>
 						<div class="view-more-btn text-uppercase position-absolute">
-							<a href="project-single.html">View Details <i class="fal fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
 				<div class="grid-item grid-size-25 house_exterior" data-category="house_exterior">
 					<div class="arck-project-item position-relative two">
 						<div class="inner-img">
-							<img src="assets/img/project/pro5.jpg" alt="">
+							<img src="assets/img/project/kitchen_set_2_lg.jpg" alt="">
 						</div>
 						<div class="inner-text">
 							<div class="project-title-desc headline pera-content">
 								<span class="text-uppercase item-category"><a href="#">Architecture</a></span>
-								<h3><a href="project-single.html">Mixitu Duplex Home</a></h3>
-								<p>Information architecture helps organize content overall so it’s easy to find and use. Imagine a storeroom filled to the brim with things these things are all related to sports.</p>
+								<h3><a>Living Interior ID</a></h3>
 							</div>
 						</div>
 						<div class="view-more-btn text-uppercase position-absolute">
-							<a href="project-single.html">View Details <i class="fal fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
 				<div class="grid-item grid-size-25 building" data-category="building">
 					<div class="arck-project-item position-relative two">
 						<div class="inner-img">
-							<img src="assets/img/project/pro6.jpg" alt="">
+							<img src="assets/img/project/kitchen_set_3_lg.jpg" alt="">
 						</div>
 						<div class="inner-text">
 							<div class="project-title-desc headline pera-content">
 								<span class="text-uppercase item-category"><a href="#">Architecture</a></span>
-								<h3><a href="project-single.html">Mixitu Duplex Home</a></h3>
-								<p>Information architecture helps organize content overall so it’s easy to find and use. Imagine a storeroom filled to the brim with things these things are all related to sports.</p>
+								<h3><a>Living Interior ID</a></h3>
 							</div>
 						</div>
 						<div class="view-more-btn text-uppercase position-absolute">
-							<a href="project-single.html">View Details <i class="fal fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
 				<div class="grid-item grid-size-25 design" data-category="design">
 					<div class="arck-project-item position-relative two">
 						<div class="inner-img">
-							<img src="assets/img/project/pro7.jpg" alt="">
+							<img src="assets/img/project/Kitchen_set_lg.jpg" alt="">
 						</div>
 						<div class="inner-text">
 							<div class="project-title-desc headline pera-content">
 								<span class="text-uppercase item-category"><a href="#">Architecture</a></span>
-								<h3><a href="project-single.html">Mixitu Duplex Home</a></h3>
-								<p>Information architecture helps organize content overall so it’s easy to find and use. Imagine a storeroom filled to the brim with things these things are all related to sports.</p>
+								<h3><a>Living Interior ID</a></h3>
 							</div>
 						</div>
 						<div class="view-more-btn text-uppercase position-absolute">
-							<a href="project-single.html">View Details <i class="fal fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
 				<div class="grid-item grid-size-25 interiors design house_exterior" data-category="interiors design house_exterior">
 					<div class="arck-project-item position-relative two">
 						<div class="inner-img">
-							<img src="assets/img/project/pro8.jpg" alt="">
+							<img src="assets/img/project/Mini_Bar_lg.jpg" alt="">
 						</div>
 						<div class="inner-text">
 							<div class="project-title-desc headline pera-content">
 								<span class="text-uppercase item-category"><a href="#">Architecture</a></span>
-								<h3><a href="project-single.html">Mixitu Duplex Home</a></h3>
-								<p>Information architecture helps organize content overall so it’s easy to find and use. Imagine a storeroom filled to the brim with things these things are all related to sports.</p>
+								<h3><a>Living Interior ID</a></h3>
 							</div>
 						</div>
 						<div class="view-more-btn text-uppercase position-absolute">
-							<a href="project-single.html">View Details <i class="fal fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
 				<div class="grid-item grid-size-25 interiors design building" data-category="interiors design building">
 					<div class="arck-project-item position-relative two">
 						<div class="inner-img">
-							<img src="assets/img/project/pro9.jpg" alt="">
+							<img src="assets/img/project/Receptionis_lg.jpg" alt="">
 						</div>
 						<div class="inner-text">
 							<div class="project-title-desc headline pera-content">
 								<span class="text-uppercase item-category"><a href="#">Architecture</a></span>
-								<h3><a href="project-single.html">Mixitu Duplex Home</a></h3>
-								<p>Information architecture helps organize content overall so it’s easy to find and use. Imagine a storeroom filled to the brim with things these things are all related to sports.</p>
+								<h3><a>Living Interior ID</a></h3>
 							</div>
 						</div>
 						<div class="view-more-btn text-uppercase position-absolute">
-							<a href="project-single.html">View Details <i class="fal fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
 				<div class="grid-item grid-size-25 interiors" data-category="interiors">
 					<div class="arck-project-item position-relative two">
 						<div class="inner-img">
-							<img src="assets/img/project/pro10.jpg" alt="">
+							<img src="assets/img/project/Walking_Closet_lg.jpg" alt="">
 						</div>
 						<div class="inner-text">
 							<div class="project-title-desc headline pera-content">
 								<span class="text-uppercase item-category"><a href="#">Architecture</a></span>
-								<h3><a href="project-single.html">Mixitu Duplex Home</a></h3>
-								<p>Information architecture helps organize content overall so it’s easy to find and use. Imagine a storeroom filled to the brim with things these things are all related to sports.</p>
+								<h3><a>Living Interior ID</a></h3>
 							</div>
 						</div>
 						<div class="view-more-btn text-uppercase position-absolute">
-							<a href="project-single.html">View Details <i class="fal fa-arrow-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="grid-item grid-size-25 house_exterior design" data-category="house_exterior design">
-					<div class="arck-project-item position-relative two">
-						<div class="inner-img">
-							<img src="assets/img/project/pro11.jpg" alt="">
-						</div>
-						<div class="inner-text">
-							<div class="project-title-desc headline pera-content">
-								<span class="text-uppercase item-category"><a href="#">Architecture</a></span>
-								<h3><a href="project-single.html">Mixitu Duplex Home</a></h3>
-								<p>Information architecture helps organize content overall so it’s easy to find and use. Imagine a storeroom filled to the brim with things these things are all related to sports.</p>
-							</div>
-						</div>
-						<div class="view-more-btn text-uppercase position-absolute">
-							<a href="project-single.html">View Details <i class="fal fa-arrow-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="grid-item grid-size-25 house_exterior" data-category="house_exterior">
-					<div class="arck-project-item position-relative two">
-						<div class="inner-img">
-							<img src="assets/img/project/pro12.jpg" alt="">
-						</div>
-						<div class="inner-text">
-							<div class="project-title-desc headline pera-content">
-								<span class="text-uppercase item-category"><a href="#">Architecture</a></span>
-								<h3><a href="project-single.html">Mixitu Duplex Home</a></h3>
-								<p>Information architecture helps organize content overall so it’s easy to find and use. Imagine a storeroom filled to the brim with things these things are all related to sports.</p>
-							</div>
-						</div>
-						<div class="view-more-btn text-uppercase position-absolute">
-							<a href="project-single.html">View Details <i class="fal fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="text-center arck-pagination ul-li">
+			{{-- <div class="text-center arck-pagination ul-li">
 				<ul>
 					<li><a href="#"><i class="far fa-long-arrow-left"></i></a></li>
 					<li><a class="active" href="#">1</a></li>
@@ -249,14 +195,12 @@
 					<li><a href="#">3</a></li>
 					<li><a href="#"><i class="far fa-long-arrow-right"></i></a></li>
 				</ul>
-			</div>
+			</div> --}}
 		</div>
 	</section>
 <!-- End of Project Page content section
 	============================================= -->
-
-    <iframe src="https://www.juicer.io/api/feeds/lebihdariduapicks/iframe" frameborder="0" width="1000" height="1000" style="display:block;margin:0 auto;width:1000px;height:1000px;"></iframe>
-
+    
 <!-- Start of Sponsor section
 	============================================= -->
 	<section id="arck-sponsor" class="arck-sponsor-section">
