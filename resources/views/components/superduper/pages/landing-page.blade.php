@@ -21,35 +21,21 @@
 	<link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18097172538"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+	<!-- Google Tag Manager -->
+	<script>
+	    (function (w, d, s, l, i) {
+	        w[l] = w[l] || [];
+	        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+	        var f = d.getElementsByTagName(s)[0],
+	            j = d.createElement(s),
+	            dl = l != "dataLayer" ? "&l=" + l : "";
+	        j.async = true;
+	        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+	        f.parentNode.insertBefore(j, f);
+	    })(window, document, "script", "dataLayer", "GTM-M3WG7MPW");
+	</script>
+	<!-- End Google Tag Manager -->
 
-    gtag('config', 'AW-18097172538');
-    </script>
-
-
-    <!-- Event snippet for Outbound click conversion page
-    In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-    <script>
-    function gtag_report_conversion(url) {
-    var callback = function () {
-        if (typeof(url) != 'undefined') {
-        window.location = url;
-        }
-    };
-    gtag('event', 'conversion', {
-        'send_to': 'AW-18097172538/Zx6ICPDu658cELrgs7VD',
-        'value': 1.0,
-        'currency': 'IDR',
-        'event_callback': callback
-    });
-    return false;
-    }
-    </script>
 
     <style>
         /* Styling untuk tombol utama WhatsApp */
@@ -87,233 +73,9 @@
 
 </head>
 <body>
-	<div id="preloader"></div>
 	<div class="up">
 		<a href="#" class="text-center scrollup"><i class="fas fa-chevron-up"></i></a>
 	</div>
-
-<!-- Start of header section
-	============================================= -->
-	{{-- <header id="arck-header" class="arck-header-section header-style-one">
-		<div class="arck-header-main-content d-flex justify-content-between align-items-center">
-			<div class="brand-logo">
-				<a href="#"><img src="{{ asset('assets/img/logo/logo-4.png') }}" alt=""></a>
-			</div>
-			<div class="arck-main-navigation-wrap">
-				<nav class="clearfix main-navigation ul-li">
-					<ul id="main-nav" class="clearfix nav navbar-nav">
-						<li class="dropdown">
-							<a href="!#">Home</a>
-							<ul class="clearfix dropdown-menu">
-								<li><a href="index-1.html">Home One</a></li>
-								<li><a href="index-2.html">Home Two</a></li>
-								<li><a href="index-3.html">Home Three</a></li>
-								<li><a href="index-4.html">Home Four</a></li>
-							</ul>
-						</li>
-						<li><a href="about.html">About</a></li>
-						<li class="dropdown">
-							<a href="!#">Project</a>
-							<ul class="clearfix dropdown-menu">
-								<li><a href="project.html">Project One</a></li>
-								<li><a href="project-2.html">Project Two</a></li>
-								<li><a href="project-single.html">Project Details</a></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="!#">Pages</a>
-							<ul class="clearfix dropdown-menu">
-								<li><a href="service.html">Services</a></li>
-								<li class="dropdown">
-									<a href="service-single.html">Services Details</a>
-									<ul class="clearfix dropdown-menu">
-										<li><a href="service-single.html">Construction Building</a></li>
-										<li><a href="service-single-2.html">Architect Design</a></li>
-										<li><a href="service-single-3.html">Interior Design</a></li>
-										<li><a href="service-single-4.html">3D Animation</a></li>
-										<li><a href="service-single-5.html">House Renovation</a></li>
-										<li><a href="service-single-6.html">Ideas & Inspiration</a></li>
-									</ul>
-								</li>
-								<li><a href="team.html">Team Page</a></li>
-								<li><a href="team-single.html">Team DetailsS</a></li>
-								<li><a href="faq.html">FAQ Page</a></li>
-								<li><a href="pricing.html">Pricing Page</a></li>
-								<li><a href="shop.html">Shop Page </a></li>
-								<li><a href="shop-single.html">Shop Details</a></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="!#">Blog</a>
-							<ul class="clearfix dropdown-menu">
-								<li><a href="blog.html">Blog One</a></li>
-								<li><a href="blog-2.html">Blog Two</a></li>
-								<li><a href="blog-single.html">Blog Details</a></li>
-							</ul>
-						</li>
-						<li><a href="contact.html">Contact</a></li>
-					</ul>
-				</nav>
-			</div>
-			<div class="header-cta-social d-flex align-items-center">
-				<div class="header-cta text-uppercase">
-					call us: <a href="#">( +080 ) 01234578961</a>
-				</div>
-				<div class="header-side-btn">
-					<button class="navSidebar-button"><i class="fal fa-bars"></i></button>
-				</div>
-			</div>
-			<div class="mobile_menu">
-				<div class="mobile_menu_button open_mobile_menu">
-					<i class="fal fa-bars"></i>
-				</div>
-				<div class="mobile_menu_wrap">
-					<div class="mobile_menu_overlay open_mobile_menu"></div>
-					<div class="mobile_menu_content">
-						<div class="mobile_menu_close open_mobile_menu">
-							<i class="fal fa-times"></i>
-						</div>
-						<div class="m-brand-logo">
-							<a  href="!#"><img src="{{ asset('assets/img/logo/logo-5.png') }}" alt=""></a>
-						</div>
-						<nav class="clearfix mobile-main-navigation ul-li">
-							<ul id="m-main-nav" class="clearfix nav navbar-nav">
-								<li class="dropdown">
-									<a href="!#">Home</a>
-									<ul class="clearfix dropdown-menu">
-										<li><a href="index-1.html">Home One</a></li>
-										<li><a href="index-2.html">Home Two</a></li>
-										<li><a href="index-3.html">Home Three</a></li>
-										<li><a href="index-4.html">Home Four</a></li>
-									</ul>
-								</li>
-								<li><a href="about.html">About</a></li>
-								<li class="dropdown">
-									<a href="!#">Project</a>
-									<ul class="clearfix dropdown-menu">
-										<li><a href="project.html">Project One</a></li>
-										<li><a href="project-2.html">Project Two</a></li>
-										<li><a href="project-single.html">Project Details</a></li>
-									</ul>
-								</li>
-								<li class="dropdown">
-									<a href="!#">Pages</a>
-									<ul class="clearfix dropdown-menu">
-										<li><a href="service.html">Services</a></li>
-										<li class="dropdown">
-											<a href="service-single.html">Services Details</a>
-											<ul class="clearfix dropdown-menu">
-												<li><a href="service-single.html">Construction Building</a></li>
-												<li><a href="service-single-2.html">Architect Design</a></li>
-												<li><a href="service-single-3.html">Interior Design</a></li>
-												<li><a href="service-single-4.html">3D Animation</a></li>
-												<li><a href="service-single-5.html">House Renovation</a></li>
-												<li><a href="service-single-6.html">Ideas & Inspiration</a></li>
-											</ul>
-										</li>
-										<li><a href="team.html">Team Page</a></li>
-										<li><a href="team-single.html">Team DetailsS</a></li>
-										<li><a href="faq.html">FAQ Page</a></li>
-										<li><a href="pricing.html">Pricing Page</a></li>
-										<li><a href="shop.html">Shop Page </a></li>
-										<li><a href="shop-single.html">Shop Details</a></li>
-									</ul>
-								</li>
-								<li class="dropdown">
-									<a href="!#">Blog</a>
-									<ul class="clearfix dropdown-menu">
-										<li><a href="blog.html">Blog One</a></li>
-										<li><a href="blog-2.html">Blog Two</a></li>
-										<li><a href="blog-single.html">Blog Details</a></li>
-									</ul>
-								</li>
-								<li><a href="contact.html">Contact</a></li>
-							</ul>
-						</nav>
-					</div>
-				</div>
-				<!-- /Mobile-Menu -->
-			</div>
-		</div>
-	</header> --}}
-	<!-- Sidebar sidebar Item -->
-	{{-- <div class="xs-sidebar-group info-group">
-		<div class="xs-overlay xs-bg-black">
-			<div class="row loader-area">
-				<div class="col-3 preloader-wrap">
-					<div class="loader-bg"></div>
-				</div>
-				<div class="col-3 preloader-wrap">
-					<div class="loader-bg"></div>
-				</div>
-				<div class="col-3 preloader-wrap">
-					<div class="loader-bg"></div>
-				</div>
-				<div class="col-3 preloader-wrap">
-					<div class="loader-bg"></div>
-				</div>
-			</div>
-		</div>
-		<div class="xs-sidebar-widget">
-			<div class="sidebar-widget-container">
-				<div class="widget-heading">
-					<a href="#" class="close-side-widget">
-						X
-					</a>
-				</div>
-				<div class="sidebar-textwidget">
-
-					<!-- Sidebar Info Content -->
-					<div class="sidebar-info-contents headline pera-content">
-						<div class="content-inner">
-							<div class="logo">
-								<a href="index.html"><img src="{{ asset('assets/img/logo/logo-3.png') }}" alt=""></a>
-							</div>
-							<div class="content-box">
-								<h5>About Us</h5>
-								<p class="text">The argument in favor of using filler text goes something like this: If you use real content in the Consulting Process, anytime you reach a review point you’ll end up reviewing and negotiating the content itself and not the design.</p>
-							</div>
-							<div class="gallery-box ul-li">
-								<h5>Gallery</h5>
-								<ul>
-									<li>
-										<a href="#"><img src="{{ asset('assets/img/gallery/01.png') }}" alt=""></a>
-									</li>
-									<li>
-										<a href="#"><img src="{{ asset('assets/img/gallery/02.png') }}" alt=""></a>
-									</li>
-									<li>
-										<a href="#"><img src="{{ asset('assets/img/gallery/03.png') }}" alt=""></a>
-									</li>
-									<li>
-										<a href="#"><img src="{{ asset('assets/img/gallery/04.png') }}" alt=""></a>
-									</li>
-									<li>
-										<a href="#"><img src="{{ asset('assets/img/gallery/05.png') }}" alt=""></a>
-									</li>
-									<li>
-										<a href="#"><img src="{{ asset('assets/img/gallery/06.png') }}" alt=""></a>
-									</li>
-								</ul>
-							</div>
-							<!-- Social Box -->
-							<div class="content-box">
-								<h5>Social Account</h5>
-								<ul class="social-box">
-									<li><a href="https://www.facebook.com/" class="fab fa-facebook-f"></a></li>
-									<li><a href="https://www.twitter.com/" class="fab fa-twitter"></a></li>
-									<li><a href="https://dribbble.com/" class="fab fa-dribbble"></a></li>
-									<li><a href="https://www.linkedin.com/" class="fab fa-linkedin"></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> --}}
-<!-- End of header section
-	============================================= -->
 
 <!-- Start of slider section
 	============================================= -->
@@ -381,7 +143,7 @@
 								</div>
 							</div>
 							<div class="arck-btn-2 wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
-								<a class="d-flex justify-content-center align-items-center text-uppercase" href="about.html">Konsultasi Sekarang</a>
+								<a class="d-flex justify-content-center align-items-center text-uppercase" href="https://api.whatsapp.com/send/?phone=6282130354599&text&type=phone_number&app_absent=0&utm_source=ig">Konsultasi Sekarang</a>
 							</div>
 						</div>
 					</div>
@@ -958,6 +720,18 @@
         </a>
     </div>
 
+    <!-- Google Tag Manager (noscript) -->
+	<noscript>
+	    <iframe
+	        src="https://www.googletagmanager.com/ns.html?id=GTM-M3WG7MPW"
+	        height="0"
+	        width="0"
+	        style="display: none; visibility: hidden">
+	    </iframe>
+	</noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+
 	<!-- For Js Library -->
 	<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
 	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
@@ -975,34 +749,5 @@
 	<script src="{{ asset('assets/js/twenty.js') }}"></script>
 	<script src="{{ asset('assets/js/jquery.inputarrow.js') }}"></script>
 	<script src="{{ asset('assets/js/script.js') }}"></script>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18097172538"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'AW-18097172538');
-    </script>
-
-    <!-- Event snippet for Outbound click conversion page
-    In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-    <script>
-        function gtag_report_conversion(url) {
-        var callback = function () {
-            if (typeof(url) != 'undefined') {
-            window.location = url;
-            }
-        };
-        gtag('event', 'conversion', {
-            'send_to': 'AW-18097172538/Zx6ICPDu658cELrgs7VD',
-            'value': 1.0,
-            'currency': 'IDR',
-            'event_callback': callback
-        });
-        return false;
-        }
-    </script>
 </body>
 </html>
