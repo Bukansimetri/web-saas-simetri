@@ -77,11 +77,11 @@
                             @if($footerLogo)
                                 <img src="{{ Storage::url($footerLogo) }}" alt="{{ $brandName }}" style="max-height: 60px;">
                             @else
-                                <span style="font-size: 1.5rem; font-weight: bold; color: #fff;">{{ $brandName }}</span>
+                                <img src="{{ asset('assets/img/logo/logoLV100.png') }}" alt="{{ $brandName }}" style="max-height: 60px;">
                             @endif
                         </a>
                         <p style="color: #ccc; line-height: 1.8;">
-                            {{ $siteSettings->description ?? 'Lebih dari 10 tahun pengalaman dalam desain interior dan pembuatan furniture custom. Kami telah dipercaya menangani berbagai proyek hunian dan komersial.' }}
+                            {{ $siteSettings->description ?? 'Wujudkan Interior Impian Anda Bersama Living Interior' }}
                         </p>
                     </div>
                 </div>

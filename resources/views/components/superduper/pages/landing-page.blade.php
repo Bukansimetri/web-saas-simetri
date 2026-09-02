@@ -43,7 +43,7 @@
             width: 55px;
             height: 55px;
             /* Posisikan 90px dari bawah agar berada di atas tombol scroll up */
-            bottom: 90px; 
+            bottom: 90px;
             right: 20px;
             z-index: 5;
             position: fixed;
@@ -715,7 +715,7 @@
 	============================================= -->
 
     <div class="whatsapp-btn">
-        <a href="https://api.whatsapp.com/send?phone=6282130354599&text=Halo%2C%20saya%20tertarik%20dengan%20layanan%20desain%20interior%20di%20Living%20Interiornya%0A%0ASaya%20ingin%20konsultasi%20untuk%20kebutuhan%20Design%20Interior.%20%0A%0ABoleh%20dibantu%20untuk%20informasi%20lebih%20lanjut%20dan%20estimasi%20biayanya%3F" class="text-center whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/6282130354599?text=Halo%2C%20saya%20tertarik%20dengan%20layanan%20desain%20interior%20di%20Living%20Interiornya%0A%0ASaya%20ingin%20konsultasi%20untuk%20kebutuhan%20Design%20Interior.%20%0A%0ABoleh%20dibantu%20untuk%20informasi%20lebih%20lanjut%20dan%20estimasi%20biayanya%3F" class="text-center whatsapp-float" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
