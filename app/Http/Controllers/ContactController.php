@@ -41,6 +41,7 @@ class ContactController extends Controller
                 'user_agent' => $request->userAgent(),
                 'metadata' => [
                     'source' => $request->input('source', 'website'),
+                    'room_type' => $request->input('room_type'),
                     'utm_source' => $request->input('utm_source'),
                     'utm_medium' => $request->input('utm_medium'),
                     'utm_campaign' => $request->input('utm_campaign'),

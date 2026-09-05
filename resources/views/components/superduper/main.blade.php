@@ -117,7 +117,7 @@
     <meta itemprop="thumbnailUrl"
         content="{{ $brandLogo ? Storage::url($brandLogo) : asset('storage/images/logo.png') }}">
     <meta itemprop="image"
-        content="{{ $seoSettings->schema_logo ?? ($brandLogo ? Storage::url($brandLogo) : asset('storage/images/logo.png')) }}">
+        content="{{ $seoSettings->schema_logo ? Storage::url($seoSettings->schema_logo) : ($brandLogo ? Storage::url($brandLogo) : asset('storage/images/logo.png')) }}">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="{{ $seoSettings->twitter_card_type ?? 'summary' }}">
@@ -127,7 +127,7 @@
     <meta name="twitter:description"
         content="{{ $seoSettings->twitter_description ?? $pageDescription ?? $seoSettings->meta_description }}" />
     <meta name="twitter:image"
-        content="{{ $seoSettings->twitter_image ?? ($brandLogo ? Storage::url($brandLogo) : asset('storage/images/logo.png')) }}">
+        content="{{ $seoSettings->twitter_image ? Storage::url($seoSettings->twitter_image) : ($brandLogo ? Storage::url($brandLogo) : asset('storage/images/logo.png')) }}">
     <meta name="twitter:url" content="{{ url()->current() }}">
 
     <!-- Open Graph (Facebook, LinkedIn) -->
@@ -138,7 +138,7 @@
         content="{{ $seoSettings->og_description ?? $pageDescription ?? $seoSettings->meta_description }}" />
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:image"
-        content="{{ $seoSettings->og_image ?? ($brandLogo ? Storage::url($brandLogo) : asset('storage/images/logo.png')) }}" />
+        content="{{ $seoSettings->og_image ? Storage::url($seoSettings->og_image) : ($brandLogo ? Storage::url($brandLogo) : asset('storage/images/logo.png')) }}" />
     <meta property="og:image:width" content="1500">
     <meta property="og:image:height" content="1500">
     <meta property="og:image:type" content="image/jpeg" />
@@ -194,6 +194,32 @@
         {!! $scriptSettings->header_scripts !!}
     @endif
 
+    <style>
+        .whatsapp-float {
+            width: 55px;
+            height: 55px;
+            bottom: 90px;
+            right: 20px;
+            z-index: 5;
+            position: fixed;
+            line-height: 55px;
+            background-color: #25D366;
+            border-radius: 100%;
+            display: block;
+            text-align: center;
+            box-shadow: 2px 2px 3px #999;
+        }
+        .whatsapp-float i {
+            color: #fff;
+            font-size: 30px;
+            line-height: 55px;
+        }
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            color: #fff;
+        }
+    </style>
+
     <!--  structured data (JSON-LD) -->
     <script type="application/ld+json">
         {
@@ -201,7 +227,7 @@
         "@type": "{{ $seoSettings->schema_type ?? '' }}",
         "name": "{{ $seoSettings->schema_name ?? $siteName }}",
         "url": "{{ url('/') }}",
-        "logo": "{{ $seoSettings->schema_logo ?? ($brandLogo ? Storage::url($brandLogo) : asset('superduper/img/favicon.png')) }}",
+        "logo": "{{ $seoSettings->schema_logo ? Storage::url($seoSettings->schema_logo) : ($brandLogo ? Storage::url($brandLogo) : asset('superduper/img/favicon.png')) }}",
         "description": "{{ $seoSettings->schema_description ?? $siteSettings->description ?? 'SuperDuper Starter Kit provides everything you need to jumpstart your web project with pre-built components, layouts, and tools that enhance development efficiency and productivity.' }}",
         "address": {
             "@type": "PostalAddress",

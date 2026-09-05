@@ -74,5 +74,24 @@ class ContactUsRequest extends FormRequest
                 'subject' => $this->title,
             ]);
         }
+
+        // Homepage quick-consultation form sends a single "name" field instead
+        // of firstname/lastname, and a "room_type" instead of a subject.
+        if ($this->filled('name') && !$this->filled('firstname') && !$this->filled('lastname')) {
+            $parts = preg_split('/\s+/', trim($this->input('name')), 2);
+
+            $this->merge([
+                'firstname' => $parts[0],
+                'lastname' => $parts[1] ?? $parts[0],
+            ]);
+        }
+
+        if (!$this->filled('subject')) {
+            $this->merge([
+                'subject' => $this->filled('room_type')
+                    ? 'Konsultasi Proyek Interior - ' . $this->input('room_type')
+                    : 'Konsultasi Proyek Interior',
+            ]);
+        }
     }
 }
