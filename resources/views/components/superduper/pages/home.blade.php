@@ -331,6 +331,21 @@
 <!-- End of About section
 	============================================= -->
 
+@push('css')
+<style>
+    /* The theme's .archx-contact-img pulls the image up 170px to overlap the
+       previous section. With this page's shorter About column, that overlap
+       makes the About and Contact sections look joined instead of separate. */
+    #archx-contact {
+        margin-top: 70px;
+    }
+    #archx-contact .archx-contact-img {
+        top: 0;
+        margin-bottom: 0;
+    }
+</style>
+@endpush
+
 <!-- Start of  Contact Section
 	============================================= -->
 	<section id="archx-contact" class="archx-contact-section">
