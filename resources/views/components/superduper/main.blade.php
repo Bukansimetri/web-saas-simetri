@@ -164,12 +164,11 @@
     <link rel="shortcut icon" href="{{ $favicon ? Storage::url($favicon) : asset('superduper/img/favicon.png') }}"
         type="image/x-icon">
 
-    <!-- Fonts: connect early, load without blocking render -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fonts: self-hosted, hero/body faces preloaded -->
+    <link rel="preload" as="font" type="font/woff2" href="{{ asset('assets/fonts/google/space-grotesk-normal-a57c9413.woff2') }}" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="{{ asset('assets/fonts/google/outfit-normal-c8e7a734.woff2') }}" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="{{ asset('assets/fonts/fa-light-300.woff2') }}" crossorigin>
-    <link rel="preload" as="font" type="font/woff2" href="{{ asset('assets/fonts/fa-brands-400.woff2') }}" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Titillium+Web:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ asset('assets/css/google-fonts.css') }}?v={{ filemtime(public_path('assets/css/google-fonts.css')) }}">
 
     @stack('preload')
 
@@ -178,7 +177,6 @@
 	<link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}" media="print" onload="this.media='all'">
 	<link rel="stylesheet" href="{{ asset('assets/css/video.min.css') }}" media="print" onload="this.media='all'">
 	<noscript>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Titillium+Web:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
 		<link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.css') }}?v={{ filemtime(public_path('assets/css/fontawesome-all.css')) }}">
 		<link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
 		<link rel="stylesheet" href="{{ asset('assets/css/video.min.css') }}">
