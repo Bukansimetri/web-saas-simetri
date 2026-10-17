@@ -24,7 +24,7 @@
     }
 @endphp
 {{-- No Livewire components on this page, so skip its ~50KB script. --}}
-<x-superduper.main :livewire="false">
+<x-superduper.main :livewire="false" critical="home" js-bundle="home">
 @push('preload')
 	<link rel="preload" as="image" href="{{ asset('assets/img/slider-2/home2-sm.webp') }}" media="(max-width: 767px)" fetchpriority="high">
 	<link rel="preload" as="image" href="{{ asset('assets/img/slider-2/home2.webp') }}" media="(min-width: 768px)" fetchpriority="high">

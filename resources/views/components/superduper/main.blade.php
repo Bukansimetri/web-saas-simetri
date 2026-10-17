@@ -164,15 +164,31 @@
     <link rel="shortcut icon" href="{{ $favicon ? Storage::url($favicon) : asset('superduper/img/favicon.png') }}"
         type="image/x-icon">
 
+    @php
+        // Pages may pass critical="home" to inline public/assets/css/critical-home.css
+        // (see bin/critical-css) and load the full theme CSS without blocking render.
+        $criticalCssFile = isset($critical) ? public_path('assets/css/critical-' . $critical . '.css') : null;
+        $hasCriticalCss = $criticalCssFile && is_file($criticalCssFile);
+        $bundleCssUrl = asset('assets/css/bundle.css') . '?v=' . filemtime(public_path('assets/css/bundle.css'));
+    @endphp
+
     <!-- Fonts: self-hosted, hero/body faces preloaded -->
     <link rel="preload" as="font" type="font/woff2" href="{{ asset('assets/fonts/google/space-grotesk-normal-a57c9413.woff2') }}" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="{{ asset('assets/fonts/google/outfit-normal-c8e7a734.woff2') }}" crossorigin>
-    <link rel="stylesheet" href="{{ asset('assets/css/google-fonts.css') }}?v={{ filemtime(public_path('assets/css/google-fonts.css')) }}">
+    @unless($hasCriticalCss)
+        <link rel="stylesheet" href="{{ asset('assets/css/google-fonts.css') }}?v={{ filemtime(public_path('assets/css/google-fonts.css')) }}">
+    @endunless
 
     @stack('preload')
 
 	{{-- Theme CSS bundle (bootstrap, slick, global, twenty, reset, style): see bin/bundle-assets.sh --}}
-	<link rel="stylesheet" href="{{ asset('assets/css/bundle.css') }}?v={{ filemtime(public_path('assets/css/bundle.css')) }}">
+	@if($hasCriticalCss)
+		<style>{!! file_get_contents($criticalCssFile) !!}</style>
+		<link rel="preload" as="style" href="{{ $bundleCssUrl }}" onload="this.onload=null;this.rel='stylesheet'">
+		<noscript><link rel="stylesheet" href="{{ $bundleCssUrl }}"></noscript>
+	@else
+		<link rel="stylesheet" href="{{ $bundleCssUrl }}">
+	@endif
 	<link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.css') }}?v={{ filemtime(public_path('assets/css/fontawesome-all.css')) }}" media="print" onload="this.media='all'">
 	<link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}" media="print" onload="this.media='all'">
 	<link rel="stylesheet" href="{{ asset('assets/css/video.min.css') }}" media="print" onload="this.media='all'">
@@ -301,7 +317,8 @@
 
     {{-- Theme JS bundle (jquery, bootstrap, plugins, script.js): see bin/bundle-assets.sh --}}
     {{-- Deferred: inline scripts that need jQuery must wait for DOMContentLoaded. --}}
-    <script src="{{ asset('assets/js/bundle.js') }}?v={{ filemtime(public_path('assets/js/bundle.js')) }}" defer></script>
+    @php($jsBundle = ($jsBundle ?? null) === 'home' ? 'assets/js/bundle-home.js' : 'assets/js/bundle.js')
+    <script src="{{ asset($jsBundle) }}?v={{ filemtime(public_path($jsBundle)) }}" defer></script>
 
     @if(($livewire ?? true) !== false)
         @livewireScripts
