@@ -174,12 +174,12 @@
     @stack('preload')
 
 	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-	<link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.css') }}" media="print" onload="this.media='all'">
+	<link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.css') }}?v={{ filemtime(public_path('assets/css/fontawesome-all.css')) }}" media="print" onload="this.media='all'">
 	<link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}" media="print" onload="this.media='all'">
 	<link rel="stylesheet" href="{{ asset('assets/css/video.min.css') }}" media="print" onload="this.media='all'">
 	<noscript>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Titillium+Web:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
-		<link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.css') }}">
+		<link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.css') }}?v={{ filemtime(public_path('assets/css/fontawesome-all.css')) }}">
 		<link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
 		<link rel="stylesheet" href="{{ asset('assets/css/video.min.css') }}">
 	</noscript>
@@ -188,7 +188,7 @@
 	<link rel="stylesheet" href="{{ asset('assets/css/global.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/twenty.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}">
-	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}?v={{ filemtime(public_path('assets/css/style.css')) }}">
 
     @stack('css')
 
