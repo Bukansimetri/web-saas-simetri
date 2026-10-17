@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Middleware\CachePublicPage;
 use App\Livewire\AboutUs;
 use App\Livewire\Portfolio;
 use App\Livewire\Services;
@@ -23,7 +22,7 @@ use Lab404\Impersonate\Services\ImpersonateManager;
 
 Route::get('/', function () {
     return view('components.superduper.pages.home');
-})->name('home')->middleware(CachePublicPage::class);
+})->name('home');
 
 Route::get('/landing-page', function () {
     return view('components.superduper.pages.landing-page');

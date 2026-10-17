@@ -8,11 +8,8 @@ use Filament\View\PanelsRenderHook;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\ServiceProvider;
 use Opcodes\LogViewer\Facades\LogViewer;
-use App\Http\Middleware\CachePublicPage;
 use App\Models\Blog\Post;
 use App\Observers\PostObserver;
-use Illuminate\Support\Facades\Event;
-use Spatie\LaravelSettings\Events\SettingsSaved;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -30,12 +27,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Post::observe(PostObserver::class);
-
-        // Any content or settings change invalidates the cached public pages.
-        Event::listen(
-            ['eloquent.saved: *', 'eloquent.deleted: *', SettingsSaved::class],
-            fn () => CachePublicPage::flush(),
-        );
 
         Table::configureUsing(function (Table $table): void {
             $table
