@@ -23,7 +23,7 @@ return new class extends Migration
             $table->morphs('from');
 
             //Link
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->uuid('user_id')->index();
             $table->unsignedBigInteger('branch_id')->nullable();
             $table->foreignId('category_id')->nullable()->constrained('types')->onDelete('cascade');
 
@@ -54,7 +54,7 @@ return new class extends Migration
             $table->boolean('send_email')->default(0)->nullable();
 
             //Bank Account
-            $table->foreignId('currency_id')->nullable()->constrained('currencies');
+            $table->unsignedBigInteger('currency_id')->nullable();
             $table->boolean('is_bank_transfer')->default(false)->nullable();
             $table->string('bank_account')->nullable();
             $table->string('bank_account_owner')->nullable();
