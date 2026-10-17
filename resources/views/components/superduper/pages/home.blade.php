@@ -352,8 +352,10 @@
 @push('js')
 <script>
     // Before/after images are lazy-loaded; resize the twentytwenty slider once each arrives.
-    $('.beforeafter-wrap img').on('load', function () {
-        $(window).trigger('resize.twentytwenty');
+    document.addEventListener('DOMContentLoaded', function () {
+        $('.beforeafter-wrap img').on('load', function () {
+            $(window).trigger('resize.twentytwenty');
+        });
     });
 </script>
 @endpush

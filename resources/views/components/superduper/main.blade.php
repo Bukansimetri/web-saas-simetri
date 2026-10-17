@@ -301,7 +301,8 @@
     </div>
 
     {{-- Theme JS bundle (jquery, bootstrap, plugins, script.js): see bin/bundle-assets.sh --}}
-    <script src="{{ asset('assets/js/bundle.js') }}?v={{ filemtime(public_path('assets/js/bundle.js')) }}"></script>
+    {{-- Deferred: inline scripts that need jQuery must wait for DOMContentLoaded. --}}
+    <script src="{{ asset('assets/js/bundle.js') }}?v={{ filemtime(public_path('assets/js/bundle.js')) }}" defer></script>
 
     @if(($livewire ?? true) !== false)
         @livewireScripts
@@ -309,7 +310,9 @@
 
     @if(isset($scriptSettings->custom_js))
         <script>
-            {!! $scriptSettings->custom_js !!}
+            document.addEventListener('DOMContentLoaded', function () {
+                {!! $scriptSettings->custom_js !!}
+            });
         </script>
     @endif
 
