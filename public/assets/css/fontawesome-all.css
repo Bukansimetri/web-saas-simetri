@@ -7139,9 +7139,9 @@ readers do not read off random characters that represent icons */
 @font-face {
   font-weight: 400;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
   font-family: 'Font Awesome 5 Brands';
-  src: url("../fonts/fa-brands-400.ttf") format("truetype")
+  src: url("../fonts/fa-brands-400.woff2") format("woff2"), url("../fonts/fa-brands-400.woff") format("woff"), url("../fonts/fa-brands-400.ttf") format("truetype")
 }
 
 .fab {
@@ -7151,9 +7151,9 @@ readers do not read off random characters that represent icons */
 @font-face {
   font-weight: 900;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
   font-family: 'Font Awesome 5 Duotone';
-  src: url("../fonts/fa-duotone-900.ttf") format("truetype")
+  src: url("../fonts/fa-duotone-900.woff2") format("woff2"), url("../fonts/fa-duotone-900.woff") format("woff"), url("../fonts/fa-duotone-900.ttf") format("truetype")
 }
 
 .fad {
@@ -12757,9 +12757,9 @@ readers do not read off random characters that represent icons */
 @font-face {
   font-weight: 300;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
   font-family: 'Font Awesome 5 Pro';
-  src: url("../fonts/fa-light-300.ttf") format("truetype")
+  src: url("../fonts/fa-light-300.woff2") format("woff2"), url("../fonts/fa-light-300.woff") format("woff"), url("../fonts/fa-light-300.ttf") format("truetype")
 }
 
 .fal {
@@ -12769,9 +12769,9 @@ readers do not read off random characters that represent icons */
 @font-face {
   font-weight: 400;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
   font-family: 'Font Awesome 5 Pro';
-  src: url("../fonts/fa-regular-400.ttf") format("truetype")
+  src: url("../fonts/fa-regular-400.woff2") format("woff2"), url("../fonts/fa-regular-400.woff") format("woff"), url("../fonts/fa-regular-400.ttf") format("truetype")
 }
 
 .far {
@@ -12781,9 +12781,9 @@ readers do not read off random characters that represent icons */
 @font-face {
   font-weight: 900;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
   font-family: 'Font Awesome 5 Pro';
-  src: url("../fonts/fa-solid-900.ttf") format("truetype")
+  src: url("../fonts/fa-solid-900.woff2") format("woff2"), url("../fonts/fa-solid-900.woff") format("woff"), url("../fonts/fa-solid-900.ttf") format("truetype")
 }
 
 .fa,

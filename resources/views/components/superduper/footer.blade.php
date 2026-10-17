@@ -15,11 +15,11 @@
     $email = $siteSettings->company_email ?? 'livingsmeinterior@gmail.com';
 
     // 4. Social Links Setup
-    $instagramUrl = $siteSocialSettings->instagram_url ?? 'https://www.instagram.com/living_interior.id/';
-    $whatsappUrl = $siteSocialSettings->whatsapp_url ?? 'https://api.whatsapp.com/send?phone=6282130354599&text=Halo%2C%20saya%20tertarik%20dengan%20layanan%20desain%20interior%20di%20Living%20Interiornya%0A%0ASaya%20ingin%20konsultasi%20untuk%20kebutuhan%20Design%20Interior.%20%0A%0ABoleh%20dibantu%20untuk%20informasi%20lebih%20lanjut%20dan%20estimasi%20biayanya%3F';
+    $instagramUrl = ($siteSocialSettings->instagram_url ?? null) ?: 'https://www.instagram.com/living_interior.id/';
+    $whatsappUrl = ($siteSocialSettings->whatsapp_url ?? null) ?:'https://api.whatsapp.com/send?phone=6282130354599&text=Halo%2C%20saya%20tertarik%20dengan%20layanan%20desain%20interior%20di%20Living%20Interiornya%0A%0ASaya%20ingin%20konsultasi%20untuk%20kebutuhan%20Design%20Interior.%20%0A%0ABoleh%20dibantu%20untuk%20informasi%20lebih%20lanjut%20dan%20estimasi%20biayanya%3F';
 @endphp
 
-<footer id="arck-footer" class="arck-footer-section" data-background="{{ asset('assets/img/bg/footer-bg.jpg') }}">
+<footer id="arck-footer" class="arck-footer-section" data-background="{{ asset('assets/img/bg/footer-bg.webp') }}">
     <div class="arck-footer-widget-wrapper">
         <div class="container">
             <div class="row">
@@ -75,9 +75,9 @@
                     <div class="arck-footer-widget headline ul-li-block pera-content" style="padding-right: 20px;">
                         <a href="{{ route('home') }}" style="display: inline-block; margin-bottom: 20px;">
                             @if($footerLogo)
-                                <img src="{{ Storage::url($footerLogo) }}" alt="{{ $brandName }}" style="max-height: 60px;">
+                                <img src="{{ Storage::url($footerLogo) }}" alt="{{ $brandName }}" style="max-height: 60px; width: auto;" loading="lazy" decoding="async">
                             @else
-                                <img src="{{ asset('assets/img/logo/logoLV100.png') }}" alt="{{ $brandName }}" style="max-height: 60px;">
+                                <img src="{{ asset('assets/img/logo/logoLV100.png') }}" alt="{{ $brandName }}" style="max-height: 60px; width: auto;" loading="lazy" decoding="async">
                             @endif
                         </a>
                         <p style="color: #ccc; line-height: 1.8;">
@@ -98,8 +98,8 @@
                                 </form>
                             </div>
                             <div class="footer-social ul-li">
-                                <a href="{{ $instagramUrl }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                                <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                                <a href="{{ $instagramUrl }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                                <a href="{{ $whatsappUrl }}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>

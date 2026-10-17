@@ -15,10 +15,28 @@
     $testimonials = ContentItem::categorySlug('testimonial')->active()->orderBy('sort')->get();
     $portfolioHighlights = ContentItem::whereHas('category.parent', fn ($q) => $q->where('slug', 'portofolio'))
         ->active()->orderBy('sort')->with('media')->take(9)->get();
+
+    // Serve a WebP sibling of the configured contact image when one exists.
+    $contactImage = $homeSettings->contact_image;
+    $contactWebp = preg_replace('/\.(jpe?g|png)$/i', '.webp', (string) $contactImage);
+    if ($contactWebp !== $contactImage && is_file(public_path($contactWebp))) {
+        $contactImage = $contactWebp;
+    }
 @endphp
-<x-superduper.main>
+{{-- No Livewire components on this page, so skip its ~50KB script. --}}
+<x-superduper.main :livewire="false">
+@push('preload')
+	<link rel="preload" as="image" href="{{ asset('assets/img/slider-2/home2-sm.webp') }}" media="(max-width: 767px)" fetchpriority="high">
+	<link rel="preload" as="image" href="{{ asset('assets/img/slider-2/home2.webp') }}" media="(min-width: 768px)" fetchpriority="high">
+	<style>
+		#archx-slider { background-image: url('{{ asset('assets/img/slider-2/home2-sm.webp') }}'); }
+		@media (min-width: 768px) {
+			#archx-slider { background-image: url('{{ asset('assets/img/slider-2/home2.webp') }}'); }
+		}
+	</style>
+@endpush
 	<div class="up">
-		<a href="#" class="text-center scrollup"><i class="fas fa-chevron-up"></i></a>
+		<a href="#" class="text-center scrollup" aria-label="Kembali ke atas"><i class="fas fa-chevron-up" aria-hidden="true"></i></a>
 	</div>
 
 	<!-- Sidebar sidebar Item -->
@@ -52,7 +70,7 @@
 					<div class="sidebar-info-contents headline pera-content">
 						<div class="content-inner">
 							<div class="logo">
-								<a href="{{ route('home') }}"><img src="{{ asset('assets/img/logo/logo-3.png') }}" alt=""></a>
+								<a href="{{ route('home') }}"><img src="{{ asset('assets/img/logo/logo-3.png') }}" alt="Living Interior" loading="lazy" decoding="async"></a>
 							</div>
 							<div class="content-box">
 								<h5>About Us</h5>
@@ -63,7 +81,7 @@
 								<ul>
 									@foreach($sponsors->take(6) as $sponsor)
 										<li>
-											<a href="#"><img src="{{ $sponsor->hasImage() ? $sponsor->getImageUrl('thumbnail') : asset('assets/img/gallery/01.png') }}" alt="{{ $sponsor->title }}"></a>
+											<a href="#" aria-label="{{ $sponsor->title }}"><img src="{{ $sponsor->hasImage() ? $sponsor->getImageUrl('thumbnail') : asset('assets/img/gallery/01.png') }}" alt="{{ $sponsor->title }}" loading="lazy" decoding="async"></a>
 										</li>
 									@endforeach
 								</ul>
@@ -72,10 +90,10 @@
 							<div class="content-box">
 								<h5>Social Account</h5>
 								<ul class="social-box">
-									<li><a href="{{ $siteSocialSettings->facebook_url ?? 'https://www.facebook.com/' }}" class="fab fa-facebook-f"></a></li>
-									<li><a href="{{ $siteSocialSettings->twitter_url ?? 'https://www.twitter.com/' }}" class="fab fa-twitter"></a></li>
-									<li><a href="{{ $siteSocialSettings->instagram_url ?? 'https://www.instagram.com/' }}" class="fab fa-dribbble"></a></li>
-									<li><a href="{{ $siteSocialSettings->linkedin_url ?? 'https://www.linkedin.com/' }}" class="fab fa-linkedin"></a></li>
+									<li><a href="{{ $siteSocialSettings->facebook_url ?? 'https://www.facebook.com/' }}" class="fab fa-facebook-f" aria-label="Facebook"></a></li>
+									<li><a href="{{ $siteSocialSettings->twitter_url ?? 'https://www.twitter.com/' }}" class="fab fa-twitter" aria-label="Twitter"></a></li>
+									<li><a href="{{ $siteSocialSettings->instagram_url ?? 'https://www.instagram.com/' }}" class="fab fa-dribbble" aria-label="Instagram"></a></li>
+									<li><a href="{{ $siteSocialSettings->linkedin_url ?? 'https://www.linkedin.com/' }}" class="fab fa-linkedin" aria-label="LinkedIn"></a></li>
 								</ul>
 							</div>
 						</div>
@@ -88,7 +106,7 @@
 
 <!-- Start of Slider section
 	============================================= -->
-	<section id="archx-slider" class="archx-slider-section position-relative" data-background="assets/img/slider-2/home2.jpg">
+	<section id="archx-slider" class="archx-slider-section position-relative">
 
 		<div class="container">
 			@if($heroBanners->isNotEmpty())
@@ -102,16 +120,16 @@
 									<p>{{ $homeSettings->hero_counter_text }}</p>
 								</div>
 								<div class="ar-slider-shape-img position-absolute">
-									<img src="assets/img/bg/ar-ba.png" alt="">
+									<img src="{{ asset('assets/img/bg/ar-ba.webp') }}" alt="" width="487" height="418" decoding="async">
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="archx-slider-text headline-2 pera-content">
-								<div class="slider-slug wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{{ $homeSettings->hero_slug_text }}</div>
-								<h1 class="wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">{{ $banner->title }}</h1>
-								<p class=" wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">{{ $banner->description }}</p>
-								<div class="archx-video-play-btn d-flex align-items-center wow fadeInUp" data-wow-delay="800ms" data-wow-duration="1500ms">
+								<div class="slider-slug">{{ $homeSettings->hero_slug_text }}</div>
+								<h1>{{ $banner->title }}</h1>
+								<p>{{ $banner->description }}</p>
+								<div class="archx-video-play-btn d-flex align-items-center">
 									<div class="archx-slider-btn">
 										<a class="d-flex justify-content-center align-items-center" href="{{ $banner->click_url ?: route('contact-us') }}">{{ $banner->options['button_text'] ?? $homeSettings->hero_button_text }}<i class="fal fa-long-arrow-right"></i></a>
 									</div>
@@ -130,14 +148,14 @@
 <!-- Start of Feature section
 	============================================= -->
 	<section id="archx-feature" class="archx-feature-section position-relative">
-		<span class="archx-bg position-absolute"><img src="assets/img/bg/ar-bg1.png" alt=""></span>
+		<span class="archx-bg position-absolute"><img src="{{ asset('assets/img/bg/ar-bg1.webp') }}" alt="" width="647" height="735" loading="lazy" decoding="async"></span>
 		<div class="container">
 			<div class="archx-feature-content_2">
 				<div class="row">
 					<div class="col-lg-3">
 						<div class="archx-feature-img_2 position-relative wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-							<img src="assets/img/about/10thn.jpg" alt="">
-							<span class="archx-ft-shape position-absolute"><img src="assets/img/shape/ar-ft-sh.png" alt=""></span>
+							<img src="{{ asset('assets/img/about/10thn.webp') }}" alt="10 tahun pengalaman Living Interior" width="365" height="505" loading="lazy" decoding="async">
+							<span class="archx-ft-shape position-absolute"><img src="{{ asset('assets/img/shape/ar-ft-sh.png') }}" alt="" width="411" height="439" loading="lazy" decoding="async"></span>
 
 
 						</div>
@@ -149,7 +167,7 @@
 									<div class="col-md-4">
 										<div class="archx-feature-item_2 position-relative wow fadeInUp" data-wow-delay="{{ 200 * $loop->iteration }}ms" data-wow-duration="1500ms">
 											<div class="archx-feature-icon position-relative">
-												<img src="{{ $feature->hasImage() ? $feature->getImageUrl() : asset('assets/icon/ar-ic1.png') }}" alt="">
+												<img src="{{ $feature->hasImage() ? $feature->getImageUrl('thumbnail') : asset('assets/icon/ar-ic1.png') }}" alt="{{ $feature->title }}" loading="lazy" decoding="async">
 											</div>
 											<div class="archx-feature-text headline-2 pera-content">
 												<h3>{{ $feature->title }}</h3>
@@ -173,7 +191,7 @@
 
 <!-- Start of FAQ section ============================================= -->
 	<section id="archx-faq" class="archx-faq-section position-relative">
-        <span class="ar-bg position-absolute"><img src="assets/img/bg/ar-bg2.png" alt=""></span>
+        <span class="ar-bg position-absolute"><img src="{{ asset('assets/img/bg/ar-bg2.webp') }}" alt="" width="1200" height="777" loading="lazy" decoding="async"></span>
         <div class="container">
             <div class="archx-faq-content">
                 <div class="row">
@@ -204,7 +222,7 @@
                     </div>
                     <div class="col-lg-5">
                         <div class="archx-faq-img-wrap wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
-                            <img src="assets/img/about/faq.jpg" alt="">
+                            <img src="{{ asset('assets/img/about/faq.webp') }}" alt="FAQ Living Interior" width="581" height="701" loading="lazy" decoding="async">
                         </div>
                     </div>
                 </div>
@@ -215,8 +233,8 @@
 
 <!-- Start of Before After section
 	============================================= -->
-	<section id="archx-before-after" class="archx-before-after-section position-relative" data-background="assets/img/bg/before-after-bg.png">
-		<span class="archx-before-after-shape position-absolute"><img src="assets/img/bg/ar-ba.png" alt=""></span>
+	<section id="archx-before-after" class="archx-before-after-section position-relative" data-background="{{ asset('assets/img/bg/before-after-bg.webp') }}">
+		<span class="archx-before-after-shape position-absolute"><img src="{{ asset('assets/img/bg/ar-ba.webp') }}" alt="" width="487" height="418" loading="lazy" decoding="async"></span>
 		<div class="container">
 			<div class="text-center archx-section-title headline-2 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
 				<span class="title-serial">02</span>
@@ -243,10 +261,10 @@
 										<div class="tab-pane fade @if($loop->first) show active @endif" id="pills-{{ $loop->index }}" role="tabpanel">
 											<div  class="twentytwenty-container beforeafter-wrap">
 												<div class="arck-before-item before-after-item position-relative">
-													<img src="{{ $ba->hasImage('images') ? $ba->getImageUrl('', 'images') : asset('assets/img/about/dabur-before.jpeg') }}" alt="">
+													<img src="{{ $ba->hasImage('images') ? $ba->getImageUrl('large', 'images') : asset('assets/img/about/dabur-before.webp') }}" alt="{{ $ba->title }} - sebelum" decoding="async">
 												</div>
 												<div class="arck-after-item before-after-item position-relative">
-													<img src="{{ $ba->hasImage('images_secondary') ? $ba->getImageUrl('', 'images_secondary') : asset('assets/img/about/dapur-after.jpeg') }}" alt="">
+													<img src="{{ $ba->hasImage('images_secondary') ? $ba->getImageUrl('large', 'images_secondary') : asset('assets/img/about/dapur-after.webp') }}" alt="{{ $ba->title }} - sesudah" decoding="async">
 												</div>
 											</div>
 										</div>
@@ -292,7 +310,7 @@
 							<div class="archx-about-sponsor-wrapper">
 								@foreach($sponsors as $sponsor)
 									<div class="archx-sponsor-item">
-										<img src="{{ $sponsor->hasImage() ? $sponsor->getImageUrl() : '' }}" alt="{{ $sponsor->title }}">
+										<img src="{{ $sponsor->hasImage() ? $sponsor->getImageUrl('medium') : '' }}" alt="{{ $sponsor->title }}" loading="lazy" decoding="async">
 									</div>
 								@endforeach
 							</div>
@@ -355,7 +373,7 @@
 					<div class="col-lg-4">
 						<div class="archx-contact-img-counter">
 							<div class="archx-contact-img position-relative wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
-								<img src="{{ asset($homeSettings->contact_image) }}" alt="">
+								<img src="{{ asset($contactImage) }}" alt="Hubungi Living Interior" width="444" height="597" loading="lazy" decoding="async">
 								<span class="img-shape"></span>
 							</div>
 						</div>
@@ -420,7 +438,7 @@
 
 <!-- Start of  Project Section
 	============================================= -->
-	<section id="archx-project-2" class="archx-project-section-2" data-background="assets/img/bg/ar-pro-bg.png">
+	<section id="archx-project-2" class="archx-project-section-2" data-background="{{ asset('assets/img/bg/ar-pro-bg.png') }}">
 		<div class="container">
 			<div class="archx-project-top-content d-flex justify-content-between align-items-center">
 				<div class="archx-section-title headline-2">
@@ -431,8 +449,8 @@
 					<span class="title-serial">03</span>
 				</div>
 				<div class="carousel_nav">
-					<button type="button" class="ar-pro_left_arrow text-uppercase"><i class="fal fa-long-arrow-left"></i></button>
-					<button type="button" class="ar-pro_right_arrow text-uppercase"><i class="fal fa-long-arrow-right"></i></button>
+					<button type="button" class="ar-pro_left_arrow text-uppercase" aria-label="Proyek sebelumnya"><i class="fal fa-long-arrow-left" aria-hidden="true"></i></button>
+					<button type="button" class="ar-pro_right_arrow text-uppercase" aria-label="Proyek berikutnya"><i class="fal fa-long-arrow-right" aria-hidden="true"></i></button>
 				</div>
 			</div>
 		</div>
@@ -442,7 +460,7 @@
 					<div class="archx-project-item-2">
 						<div class="archx-project-item-content position-relative">
 							<div class="archx-project-img-2">
-								<img src="{{ $project->hasImage() ? $project->getImageUrl('large') : '' }}" alt="{{ $project->title }}">
+								<img src="{{ $project->hasImage() ? $project->getImageUrl('large') : '' }}" alt="{{ $project->title }}" loading="lazy" decoding="async">
 							</div>
 							<div class="serial-no d-flex justify-content-center align-items-center position-absolute">
 								{{ sprintf('%02d', $loop->iteration) }}
@@ -457,7 +475,7 @@
 				<div class="archx-newslatter-content d-flex justify-content-between">
 					<div class="archx-newslatter-cta d-flex align-items-center">
 						<div class="inner-icon">
-							<img src="assets/icon/ar-nw.png" alt="">
+							<img src="{{ asset('assets/icon/ar-nw.png') }}" alt="" loading="lazy" decoding="async">
 						</div>
 						<div class="inner-text">
 							<span class="cta-no">{{ $siteSettings->company_phone ?? '' }}</span>
@@ -468,7 +486,7 @@
 						<div class="newslatter-form position-relative">
 							<span class="bg-icon position-absolute"><i class="fas fa-envelope"></i></span>
 							<form action="#" method="get">
-								<input type="email" name="email" placeholder="Enter your Email">
+								<input type="email" name="email" placeholder="Enter your Email" aria-label="Email">
 								<button type="submit">Subscribe</button>
 							</form>
 						</div>
@@ -493,10 +511,10 @@
 								</h2>
 							</div>
 							<div class="archx-testimonial-carousel-btn d-flex">
-								<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+								<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev" aria-label="Testimoni sebelumnya">
 									<span class="carousel-control-prev-icon" aria-hidden="true"><i class="fal fa-long-arrow-left"></i></span>
 								</button>
-								<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+								<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next" aria-label="Testimoni berikutnya">
 									<span class="carousel-control-next-icon" aria-hidden="true"><i class="fal fa-long-arrow-right"></i></span>
 								</button>
 							</div>
@@ -527,7 +545,7 @@
 					<div class="col-lg-5">
 						<div class="archx-testimonial-img-wrap d-flex justify-content-end">
 							<div class="inner-img position-relative">
-								<img src="assets/img/testimonial/testi.jpg" alt="">
+								<img src="{{ asset('assets/img/testimonial/testi.webp') }}" alt="Klien Living Interior" width="444" height="597" loading="lazy" decoding="async">
 							</div>
 						</div>
 					</div>
@@ -542,7 +560,7 @@
 	============================================= -->
 	<section id="archx-map" class="archx-map-section position-relative">
 		<div class="archx-map-wrap">
-			<iframe class="map" src="{{ $homeSettings->map_embed_url }}" width="100%" height="470"></iframe>
+			<iframe class="map" src="{{ $homeSettings->map_embed_url }}" width="100%" height="470" title="Lokasi Living Interior di Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 		</div>
 		<div class="container">
 			<div class="archx-map-info">

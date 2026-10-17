@@ -164,13 +164,25 @@
     <link rel="shortcut icon" href="{{ $favicon ? Storage::url($favicon) : asset('superduper/img/favicon.png') }}"
         type="image/x-icon">
 
-    <!-- Mobile Specific Meta -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Fonts: connect early, load without blocking render -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="{{ asset('assets/fonts/fa-light-300.woff2') }}" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="{{ asset('assets/fonts/fa-brands-400.woff2') }}" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Titillium+Web:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+
+    @stack('preload')
 
 	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-	<link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.css') }}">
-	<link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
-	<link rel="stylesheet" href="{{ asset('assets/css/video.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.css') }}" media="print" onload="this.media='all'">
+	<link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}" media="print" onload="this.media='all'">
+	<link rel="stylesheet" href="{{ asset('assets/css/video.min.css') }}" media="print" onload="this.media='all'">
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Titillium+Web:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+		<link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.css') }}">
+		<link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+		<link rel="stylesheet" href="{{ asset('assets/css/video.min.css') }}">
+	</noscript>
 	<link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/slick-theme.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/global.css') }}">
@@ -187,7 +199,9 @@
         </style>
     @endif
 
-    @livewireStyles
+    @if(($livewire ?? true) !== false)
+        @livewireStyles
+    @endif
 
     <!-- Header scripts -->
     @if(isset($scriptSettings->header_scripts))
@@ -195,6 +209,10 @@
     @endif
 
     <style>
+        /* width/height attributes reserve space against layout shift; keep the aspect ratio when CSS resizes the image. */
+        img[width][height] {
+            height: auto;
+        }
         .whatsapp-float {
             width: 55px;
             height: 55px;
@@ -284,8 +302,8 @@
     @endif
 
     <div class="whatsapp-btn">
-        <a href="https://wa.me/6282130354599?text=Halo%2C%20saya%20tertarik%20dengan%20layanan%20desain%20interior%20di%20Living%20Interiornya%0A%0ASaya%20ingin%20konsultasi%20untuk%20kebutuhan%20Design%20Interior.%20%0A%0ABoleh%20dibantu%20untuk%20informasi%20lebih%20lanjut%20dan%20estimasi%20biayanya%3F" class="text-center whatsapp-float" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-whatsapp"></i>
+        <a href="https://wa.me/6282130354599?text=Halo%2C%20saya%20tertarik%20dengan%20layanan%20desain%20interior%20di%20Living%20Interiornya%0A%0ASaya%20ingin%20konsultasi%20untuk%20kebutuhan%20Design%20Interior.%20%0A%0ABoleh%20dibantu%20untuk%20informasi%20lebih%20lanjut%20dan%20estimasi%20biayanya%3F" class="text-center whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
         </a>
     </div>
 
@@ -307,7 +325,9 @@
     <script src="{{ asset('assets/js/jquery.inputarrow.js') }}"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
 
-    @livewireScripts
+    @if(($livewire ?? true) !== false)
+        @livewireScripts
+    @endif
 
     @if(isset($scriptSettings->custom_js))
         <script>
