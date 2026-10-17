@@ -167,7 +167,7 @@
 									<div class="col-md-4">
 										<div class="archx-feature-item_2 position-relative wow fadeInUp" data-wow-delay="{{ 200 * $loop->iteration }}ms" data-wow-duration="1500ms">
 											<div class="archx-feature-icon position-relative">
-												<img src="{{ $feature->hasImage() ? $feature->getImageUrl('thumbnail') : asset('assets/icon/ar-ic1.png') }}" alt="{{ $feature->title }}" loading="lazy" decoding="async">
+												<img src="{{ $feature->hasImage() ? $feature->getImageUrl() : asset('assets/icon/ar-ic1.png') }}" alt="{{ $feature->title }}" loading="lazy" decoding="async">
 											</div>
 											<div class="archx-feature-text headline-2 pera-content">
 												<h3>{{ $feature->title }}</h3>
@@ -191,7 +191,7 @@
 
 <!-- Start of FAQ section ============================================= -->
 	<section id="archx-faq" class="archx-faq-section position-relative">
-        <span class="ar-bg position-absolute"><img src="{{ asset('assets/img/bg/ar-bg2.webp') }}" alt="" width="1200" height="777" loading="lazy" decoding="async"></span>
+        <span class="ar-bg position-absolute"><img src="{{ asset('assets/img/bg/ar-bg2.webp') }}" srcset="{{ asset('assets/img/bg/ar-bg2-800.webp') }} 800w, {{ asset('assets/img/bg/ar-bg2.webp') }} 1200w" sizes="(max-width: 767px) 100vw, 1200px" alt="" width="1200" height="777" loading="lazy" decoding="async"></span>
         <div class="container">
             <div class="archx-faq-content">
                 <div class="row">
@@ -261,10 +261,10 @@
 										<div class="tab-pane fade @if($loop->first) show active @endif" id="pills-{{ $loop->index }}" role="tabpanel">
 											<div  class="twentytwenty-container beforeafter-wrap">
 												<div class="arck-before-item before-after-item position-relative">
-													<img src="{{ $ba->hasImage('images') ? $ba->getImageUrl('large', 'images') : asset('assets/img/about/dabur-before.webp') }}" alt="{{ $ba->title }} - sebelum" decoding="async">
+													<img src="{{ $ba->hasImage('images') ? $ba->getImageUrl('large', 'images') : asset('assets/img/about/dabur-before.webp') }}" alt="{{ $ba->title }} - sebelum" loading="lazy" decoding="async">
 												</div>
 												<div class="arck-after-item before-after-item position-relative">
-													<img src="{{ $ba->hasImage('images_secondary') ? $ba->getImageUrl('large', 'images_secondary') : asset('assets/img/about/dapur-after.webp') }}" alt="{{ $ba->title }} - sesudah" decoding="async">
+													<img src="{{ $ba->hasImage('images_secondary') ? $ba->getImageUrl('large', 'images_secondary') : asset('assets/img/about/dapur-after.webp') }}" alt="{{ $ba->title }} - sesudah" loading="lazy" decoding="async">
 												</div>
 											</div>
 										</div>
@@ -348,6 +348,15 @@
 	</section>
 <!-- End of About section
 	============================================= -->
+
+@push('js')
+<script>
+    // Before/after images are lazy-loaded; resize the twentytwenty slider once each arrives.
+    $('.beforeafter-wrap img').on('load', function () {
+        $(window).trigger('resize.twentytwenty');
+    });
+</script>
+@endpush
 
 @push('css')
 <style>

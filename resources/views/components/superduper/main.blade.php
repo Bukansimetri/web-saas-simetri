@@ -167,7 +167,7 @@
     <!-- Fonts: self-hosted, hero/body faces preloaded -->
     <link rel="preload" as="font" type="font/woff2" href="{{ asset('assets/fonts/google/space-grotesk-normal-a57c9413.woff2') }}" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="{{ asset('assets/fonts/google/outfit-normal-c8e7a734.woff2') }}" crossorigin>
-    <link rel="preload" as="font" type="font/woff2" href="{{ asset('assets/fonts/fa-light-300.woff2') }}" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="{{ asset('assets/fonts/google/raleway-normal-eec07959.woff2') }}" crossorigin>
     <link rel="stylesheet" href="{{ asset('assets/css/google-fonts.css') }}?v={{ filemtime(public_path('assets/css/google-fonts.css')) }}">
 
     @stack('preload')
