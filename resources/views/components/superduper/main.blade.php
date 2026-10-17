@@ -172,7 +172,8 @@
 
     @stack('preload')
 
-	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+	{{-- Theme CSS bundle (bootstrap, slick, global, twenty, reset, style): see bin/bundle-assets.sh --}}
+	<link rel="stylesheet" href="{{ asset('assets/css/bundle.css') }}?v={{ filemtime(public_path('assets/css/bundle.css')) }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.css') }}?v={{ filemtime(public_path('assets/css/fontawesome-all.css')) }}" media="print" onload="this.media='all'">
 	<link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}" media="print" onload="this.media='all'">
 	<link rel="stylesheet" href="{{ asset('assets/css/video.min.css') }}" media="print" onload="this.media='all'">
@@ -181,12 +182,6 @@
 		<link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
 		<link rel="stylesheet" href="{{ asset('assets/css/video.min.css') }}">
 	</noscript>
-	<link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
-	<link rel="stylesheet" href="{{ asset('assets/css/slick-theme.css') }}">
-	<link rel="stylesheet" href="{{ asset('assets/css/global.css') }}">
-	<link rel="stylesheet" href="{{ asset('assets/css/twenty.css') }}">
-	<link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}">
-	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}?v={{ filemtime(public_path('assets/css/style.css')) }}">
 
     @stack('css')
 
@@ -305,23 +300,8 @@
         </a>
     </div>
 
-    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-
-    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-
-    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('assets/js/appear.js') }}"></script>
-    <script src="{{ asset('assets/js/slick.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
-    <script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
-    <script src="{{ asset('assets/js/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('assets/js/twenty.js') }}"></script>
-    <script src="{{ asset('assets/js/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ asset('assets/js/masonry.pkgd.min.js') }}"></script>
-    <script src="{{ asset('assets/js/wow.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.inputarrow.js') }}"></script>
-    <script src="{{ asset('assets/js/script.js') }}"></script>
+    {{-- Theme JS bundle (jquery, bootstrap, plugins, script.js): see bin/bundle-assets.sh --}}
+    <script src="{{ asset('assets/js/bundle.js') }}?v={{ filemtime(public_path('assets/js/bundle.js')) }}"></script>
 
     @if(($livewire ?? true) !== false)
         @livewireScripts
