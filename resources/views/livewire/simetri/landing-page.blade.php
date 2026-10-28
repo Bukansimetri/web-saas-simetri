@@ -1,6 +1,6 @@
 @push('css')
     {{-- Preload the LCP image so the browser doesn't wait for CSS/JS to discover it --}}
-    <link rel="preload" as="image" href="https://homecareinterior.co.id/storage/159/Banner-Home-1.jpg" fetchpriority="high">
+    <link rel="preload" as="image" imagesrcset="{{ asset('assets/images/hero/hero-1-640.webp') }} 640w,{{ asset('assets/images/hero/hero-1-1280.webp') }} 1280w,{{ asset('assets/images/hero/hero-1-1920.webp') }} 1920w" imagesizes="100vw" fetchpriority="high">
     <style>
         .pbmit-slider-bg .pbmit-slider-bg-img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
     </style>
@@ -13,7 +13,7 @@
                 <div class="swiper-slide">
                     <div class="pbmit-slider-item">
                         <div class="pbmit-slider-bg">
-                            <img class="pbmit-slider-bg-img" src="https://homecareinterior.co.id/storage/159/Banner-Home-1.jpg" alt="Desain Interior Premium Jakarta" width="1920" height="900" fetchpriority="high" decoding="async">
+                            <img class="pbmit-slider-bg-img" src="{{ asset('assets/images/hero/hero-1-1280.webp') }}" srcset="{{ asset('assets/images/hero/hero-1-640.webp') }} 640w,{{ asset('assets/images/hero/hero-1-1280.webp') }} 1280w,{{ asset('assets/images/hero/hero-1-1920.webp') }} 1920w" sizes="100vw" alt="Desain Interior Premium Jakarta" width="1920" height="900" fetchpriority="high" decoding="async">
                         </div>
                         <div class="container">
                             <div class="text-center row">
@@ -39,7 +39,7 @@
                 <div class="swiper-slide">
                     <div class="pbmit-slider-item">
                         <div class="pbmit-slider-bg">
-                            <img class="pbmit-slider-bg-img" src="https://homecareinterior.co.id/storage/160/Banner-home-2.jpg" alt="Ruang Nyaman, Desain Elegan" width="1920" height="900" loading="lazy" decoding="async">
+                            <img class="pbmit-slider-bg-img" src="{{ asset('assets/images/hero/hero-2-1280.webp') }}" srcset="{{ asset('assets/images/hero/hero-2-640.webp') }} 640w,{{ asset('assets/images/hero/hero-2-1280.webp') }} 1280w,{{ asset('assets/images/hero/hero-2-1920.webp') }} 1920w" sizes="100vw" alt="Ruang Nyaman, Desain Elegan" width="1920" height="900" loading="lazy" decoding="async">
                         </div>
                         <div class="container">
                             <div class="text-center row">
@@ -65,7 +65,7 @@
                 <div class="swiper-slide">
                     <div class="pbmit-slider-item">
                         <div class="pbmit-slider-bg">
-                            <img class="pbmit-slider-bg-img" src="https://homecareinterior.co.id/storage/161/Banner-home-3.jpg" alt="Desain Interior Modern dan Berkarakter" width="1920" height="900" loading="lazy" decoding="async">
+                            <img class="pbmit-slider-bg-img" src="{{ asset('assets/images/hero/hero-3-1280.webp') }}" srcset="{{ asset('assets/images/hero/hero-3-640.webp') }} 640w,{{ asset('assets/images/hero/hero-3-1280.webp') }} 1280w,{{ asset('assets/images/hero/hero-3-1920.webp') }} 1920w" sizes="100vw" alt="Desain Interior Modern dan Berkarakter" width="1920" height="900" loading="lazy" decoding="async">
                         </div>
                         <div class="container">
                             <div class="text-center row">
