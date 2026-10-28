@@ -105,6 +105,7 @@
             ->take(5)
             ->get();
     @endphp
+    <style>.pbmit-slider-bg .pbmit-slider-bg-img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}</style>
     <div class="pbmit-slider-area pbmit-slider-one">
         <div class="swiper-slider" data-autoplay="true" data-loop="true" data-dots="true" data-arrows="false" data-columns="1" data-margin="0" data-effect="fade">
             <div class="swiper-wrapper">
@@ -114,7 +115,14 @@
                         <div class="swiper-slide">
                             <div class="pbmit-slider-item">
                                 @if ($banner->hasImage())
-                                    <div class="pbmit-slider-bg" style="background-image: url('{{ $banner->getImageUrl('large') }}');"></div>
+                                    <div class="pbmit-slider-bg">
+                                        <img class="pbmit-slider-bg-img"
+                                            src="{{ $banner->getImageUrl('large') }}"
+                                            srcset="{{ $banner->getImageUrl('medium') }} 950w, {{ $banner->getImageUrl('large') }} 1900w"
+                                            sizes="100vw" width="1900" height="910" alt="{{ $banner->title }}"
+                                            decoding="async"
+                                            @if ($loop->first) fetchpriority="high" @else loading="lazy" @endif>
+                                    </div>
                                 @else
                                     <div class="pbmit-slider-bg" style="background-image: url('https://placehold.co/1920x1080');"></div>
                                 @endif
@@ -173,7 +181,7 @@
                                     <div class="pbmit-ihbox-headingicon">
                                         <div class="pbmit-ihbox-icon">
                                             <div class="pbmit-ihbox-icon-wrapper pbmit-icon-type-icon">
-                                                <img src="https://homecareinterior.co.id/storage/11/home-care-icon.png" width="123" height="133" alt="Home Care Interior Icon">
+                                                <img loading="lazy" decoding="async" src="https://homecareinterior.co.id/storage/11/home-care-icon.png" width="123" height="133" alt="Home Care Interior Icon">
                                             </div>
                                         </div>
                                         <div class="pbmit-sticky-corner pbmit-bottom-left-corner">
@@ -345,9 +353,9 @@
                                                 <div class="pbmit-featured-img-wrapper">
                                                     <div class="pbmit-featured-wrapper">
                                                         @if ($service->hasImage())
-                                                            <img src="{{ $service->getImageUrl('medium') }}" class="img-fluid" alt="{{ $service->title }}">
+                                                            <img loading="lazy" decoding="async" src="{{ $service->getImageUrl('medium') }}" class="img-fluid" alt="{{ $service->title }}">
                                                         @else
-                                                            <img src="{{ asset('assets/images/homepage-1/service/service-01.jpg') }}" class="img-fluid" alt="service-01">
+                                                            <img loading="lazy" decoding="async" src="{{ asset('assets/images/homepage-1/service/service-01.jpg') }}" class="img-fluid" alt="service-01">
                                                         @endif
                                                     </div>
                                                 </div>
@@ -380,7 +388,7 @@
                                         <div class="pbmit-service-image-wrapper">
                                             <div class="pbmit-featured-img-wrapper">
                                                 <div class="pbmit-featured-wrapper">
-                                                    <img src="{{ asset('assets/images/homepage-1/service/service-01.jpg') }}" class="img-fluid" alt="service-01">
+                                                    <img loading="lazy" decoding="async" src="{{ asset('assets/images/homepage-1/service/service-01.jpg') }}" class="img-fluid" alt="service-01">
                                                 </div>
                                             </div>
                                         </div>
@@ -413,7 +421,7 @@
                                         <div class="pbmit-service-image-wrapper">
                                             <div class="pbmit-featured-img-wrapper">
                                                 <div class="pbmit-featured-wrapper">
-                                                    <img src="{{ asset('assets/images/homepage-1/service/service-02.jpg') }}" class="img-fluid" alt="service-01">
+                                                    <img loading="lazy" decoding="async" src="{{ asset('assets/images/homepage-1/service/service-02.jpg') }}" class="img-fluid" alt="service-01">
                                                 </div>
                                             </div>
                                         </div>
@@ -446,7 +454,7 @@
                                         <div class="pbmit-service-image-wrapper">
                                             <div class="pbmit-featured-img-wrapper">
                                                 <div class="pbmit-featured-wrapper">
-                                                    <img src="{{ asset('assets/images/homepage-1/service/service-03.jpg') }}" class="img-fluid" alt="service-01">
+                                                    <img loading="lazy" decoding="async" src="{{ asset('assets/images/homepage-1/service/service-03.jpg') }}" class="img-fluid" alt="service-01">
                                                 </div>
                                             </div>
                                         </div>
@@ -521,12 +529,12 @@
                                     <div class="pbmit-featured-img-wrapper">
                                         <div class="pbmit-featured-wrapper">
                                             @if ($portfolio->hasImage())
-                                                <img src="{{ $portfolio->getImageUrl('medium') }}"
+                                                <img loading="lazy" decoding="async" src="{{ $portfolio->getImageUrl('medium') }}"
                                                     class="img-fluid"
                                                     alt="{{ $portfolio->title }}"
                                                     style="width: 440px !important; height: 348px !important;">
                                             @else
-                                                <img src="{{ asset('assets/images/homepage-1/portfolio/portfolio-01.jpg') }}" class="img-fluid" alt="portfolio-01">
+                                                <img loading="lazy" decoding="async" src="{{ asset('assets/images/homepage-1/portfolio/portfolio-01.jpg') }}" class="img-fluid" alt="portfolio-01">
                                             @endif
                                         </div>
                                     </div>
@@ -554,7 +562,7 @@
                             <div class="pbminfotech-post-content">
                                 <div class="pbmit-featured-img-wrapper">
                                     <div class="pbmit-featured-wrapper">
-                                        <img src="{{ asset('assets/images/homepage-1/portfolio/portfolio-01.jpg') }}" class="img-fluid" alt="portfolio-01">
+                                        <img loading="lazy" decoding="async" src="{{ asset('assets/images/homepage-1/portfolio/portfolio-01.jpg') }}" class="img-fluid" alt="portfolio-01">
                                     </div>
                                 </div>
                                 <div class="pbminfotech-box-content">
@@ -579,7 +587,7 @@
                             <div class="pbminfotech-post-content">
                                 <div class="pbmit-featured-img-wrapper">
                                     <div class="pbmit-featured-wrapper">
-                                        <img src="{{ asset('assets/images/homepage-1/portfolio/portfolio-02.jpg') }}" class="img-fluid" alt="portfolio-01">
+                                        <img loading="lazy" decoding="async" src="{{ asset('assets/images/homepage-1/portfolio/portfolio-02.jpg') }}" class="img-fluid" alt="portfolio-01">
                                     </div>
                                 </div>
                                 <div class="pbminfotech-box-content">
@@ -604,7 +612,7 @@
                             <div class="pbminfotech-post-content">
                                 <div class="pbmit-featured-img-wrapper">
                                     <div class="pbmit-featured-wrapper">
-                                        <img src="{{ asset('assets/images/homepage-1/portfolio/portfolio-03.jpg') }}" class="img-fluid" alt="portfolio-01">
+                                        <img loading="lazy" decoding="async" src="{{ asset('assets/images/homepage-1/portfolio/portfolio-03.jpg') }}" class="img-fluid" alt="portfolio-01">
                                     </div>
                                 </div>
                                 <div class="pbminfotech-box-content">
@@ -992,7 +1000,7 @@
                                                     <div class="pbminfotech-content-inner">
                                                         <div class="pbmit-featured-img-wrapper">
                                                             <div class="pbmit-featured-wrapper">
-                                                                <img src="{{ $blog->getFeaturedImageUrl('large') }}" class="img-fluid" alt="{{ $blog->title }}">
+                                                                <img loading="lazy" decoding="async" src="{{ $blog->getFeaturedImageUrl('large') }}" class="img-fluid" alt="{{ $blog->title }}">
                                                             </div>
                                                         </div>
                                                         <div class="pbmit-meta-wraper">
@@ -1033,9 +1041,9 @@
                                             <div class="pbmit-featured-img-wrapper">
                                                 <div class="pbmit-featured-wrapper">
                                                     @if ($featureBlog->hasFeaturedImage())
-                                                        <img src="{{ $featureBlog->getFeaturedImageUrl('large') }}" class="img-fluid" alt="{{ $featureBlog->title }}">
+                                                        <img loading="lazy" decoding="async" src="{{ $featureBlog->getFeaturedImageUrl('large') }}" class="img-fluid" alt="{{ $featureBlog->title }}">
                                                     @else
-                                                        <img src="{{ asset('assets/images/homepage-1/blog/blog-04b.jpg') }}" class="img-fluid" alt="blog-01">
+                                                        <img loading="lazy" decoding="async" src="{{ asset('assets/images/homepage-1/blog/blog-04b.jpg') }}" class="img-fluid" alt="blog-01">
                                                     @endif
                                                 </div>
                                             </div>

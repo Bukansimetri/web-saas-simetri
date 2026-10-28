@@ -85,7 +85,7 @@ class Package extends Model implements HasMedia
     {
         $this->addMediaConversion('preview')
             ->format('webp')
-            ->quality(90)
+            ->quality(75)
             ->fit(Fit::Contain, 300, 300)
             ->nonQueued();
 

@@ -100,26 +100,26 @@ class Project extends Model implements HasMedia
     {
         $this->addMediaConversion('preview')
             ->format('webp')
-            ->quality(100)
+            ->quality(75)
             ->fit(Fit::Contain, 960, 760)
             ->nonQueued();
 
         // Add responsive image sizes - always convert to WebP
         $this->addMediaConversion('thumbnail')
             ->format('webp')
-            ->quality(100)
+            ->quality(75)
             ->fit(Fit::Contain, 150, 150)
             ->nonQueued();
 
         $this->addMediaConversion('medium')
             ->format('webp')
-            ->quality(100)
+            ->quality(75)
             ->fit(Fit::Contain, 890, 990)
             ->nonQueued();
 
         $this->addMediaConversion('large')
             ->format('webp')
-            ->quality(100)
+            ->quality(75)
             ->fit(Fit::Contain, 1200, 650)
             ->nonQueued();
     }
