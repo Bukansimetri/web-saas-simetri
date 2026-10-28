@@ -8,16 +8,6 @@ use Illuminate\Contracts\Support\Htmlable;
 
 class Login extends BasePage
 {
-    public function mount(): void
-    {
-        parent::mount();
-
-        $this->form->fill([
-            'email' => 'superadmin@simetri.space',
-            'password' => 'superadmin',
-        ]);
-    }
-
     public function form(Form $form): Form
     {
         return $form
