@@ -1,4 +1,5 @@
 @font-face {
+	font-display: swap;
 	font-family: 'themify';
 	src:url('..//fonts/themify.eot?-fvbane');
 	src:url('../fonts/themify.eot?#iefix-fvbane') format('embedded-opentype'),

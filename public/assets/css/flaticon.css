@@ -10,6 +10,7 @@
 */
 
 @font-face {
+	font-display: swap;
 	font-family: "flaticon";
 	src: url("../fonts/flaticon.woff2?553c94bd8a3f0d24e290f55fb5c99649") format("woff2"),
 url("../fonts/flaticon.woff?553c94bd8a3f0d24e290f55fb5c99649") format("woff"),

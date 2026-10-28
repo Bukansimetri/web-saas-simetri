@@ -9,7 +9,7 @@
     <div class="pbmit-search-outer">
         <form class="pbmit-site-searchform">
             <input type="search" class="form-control field searchform-s" name="s" placeholder="Search …">
-            <button type="submit"></button>
+            <button type="submit" aria-label="Search"></button>
         </form>
     </div>
 </div>

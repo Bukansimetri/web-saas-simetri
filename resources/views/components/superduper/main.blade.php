@@ -180,9 +180,13 @@
         <!-- Slick -->
         <link rel="stylesheet" href="{{ asset('assets/css/swiper.min.css') }}">
         <!-- Magnific -->
-        <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}" media="print" onload="this.media='all'">
         <!-- Twentytwenty CSS -->
-        <link rel="stylesheet" href="{{ asset('assets/css/twentytwenty.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/twentytwenty.css') }}" media="print" onload="this.media='all'">
+        <noscript>
+            <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/twentytwenty.css') }}">
+        </noscript>
         <!-- AOS -->
         <link rel="stylesheet" href="{{ asset('assets/css/aos.css') }}">
         <!-- Shortcode CSS -->
@@ -254,7 +258,9 @@
                 <!-- Header Main Area End Here -->
 
                 <!-- Page Content -->
-                {{ $slot }}
+                <main id="main-content">
+                    {{ $slot }}
+                </main>
                 <!-- Page Content End -->
 
                 <!-- footer -->
@@ -328,7 +334,6 @@
         <script src='{{ asset('assets/js/magnetic.js') }}'></script>
         <!-- Morphext JS -->
         <script src="{{ asset('assets/js/morphext.min.js') }}"></script>
-        <script src="{{ asset('assets/js/popper.min.js') }}"></script>
         <!-- GSAP Animation -->
         <script src='{{ asset('assets/js/gsap-animation.js') }}'></script>
         <!-- Isotope JS -->

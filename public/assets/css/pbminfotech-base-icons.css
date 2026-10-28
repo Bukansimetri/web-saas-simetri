@@ -1,4 +1,5 @@
 @font-face {
+	font-display: swap;
   font-family: 'pbminfotech-base-icons';
   src: url('../fonts/pbminfotech-base-icons.eot?45540010');
   src: url('../fonts/pbminfotech-base-icons.eot?45540010#iefix') format('embedded-opentype'),
@@ -14,6 +15,7 @@
 /*
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
+	font-display: swap;
     font-family: 'pbminfotech-base-icons';
     src: url('../font/pbminfotech-base-icons.svg?45540010#pbminfotech-base-icons') format('svg');
   }

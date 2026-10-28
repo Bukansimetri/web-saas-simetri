@@ -16,7 +16,7 @@
                     <div class="pbmit-logo-button-area d-flex justify-content-between align-items-center">
                         <div class="site-branding">
                             <h1 class="site-title">
-                                <a href="{{ route('home') }}">
+                                <a href="{{ route('home') }}" aria-label="{{ $brandName ?? 'Home' }}">
                                     @if($brandLogo)
                                         <img src="{{ Storage::url($brandLogo) }}"
                                             alt="{{ $brandName }}"
@@ -50,7 +50,7 @@
                         <nav class="main-menu navbar-expand-xl navbar-light">
                             <div class="navbar-header">
                                 <!-- Toggle Button -->
-                                <button class="navbar-toggler" type="button">
+                                <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
                                     <i class="pbmit-base-icon-menu-1"></i>
                                 </button>
                             </div>
@@ -91,7 +91,7 @@
                     </div>
                     <div class="pbmit-right-box d-flex align-items-center">
                         <div class="pbmit-header-search-btn">
-                            <a href="#" title="Search">
+                            <a href="#" title="Search" aria-label="Search">
                                 <i class="pbmit-base-icon-search-1"></i>
                             </a>
                         </div>

@@ -1,3 +1,10 @@
+@push('css')
+    {{-- Preload the LCP image so the browser doesn't wait for CSS/JS to discover it --}}
+    <link rel="preload" as="image" href="https://homecareinterior.co.id/storage/159/Banner-Home-1.jpg" fetchpriority="high">
+    <style>
+        .pbmit-slider-bg .pbmit-slider-bg-img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+    </style>
+@endpush
 @section('hero')
     <div class="pbmit-slider-area pbmit-slider-nine">
         <div class="swiper-slider" data-autoplay="true" data-loop="true" data-dots="true" data-arrows="false" data-columns="1" data-margin="0" data-effect="fade">
@@ -5,7 +12,9 @@
                 <!-- Slide1 -->
                 <div class="swiper-slide">
                     <div class="pbmit-slider-item">
-                        <div class="pbmit-slider-bg" style="background-image: url(https://homecareinterior.co.id/storage/159/Banner-Home-1.jpg);"></div>
+                        <div class="pbmit-slider-bg">
+                            <img class="pbmit-slider-bg-img" src="https://homecareinterior.co.id/storage/159/Banner-Home-1.jpg" alt="Desain Interior Premium Jakarta" width="1920" height="900" fetchpriority="high" decoding="async">
+                        </div>
                         <div class="container">
                             <div class="text-center row">
                                 <div class="col-md-12">
@@ -29,7 +38,9 @@
                 <!-- Slide2 -->
                 <div class="swiper-slide">
                     <div class="pbmit-slider-item">
-                        <div class="pbmit-slider-bg" style="background-image: url(https://homecareinterior.co.id/storage/160/Banner-home-2.jpg)"></div>
+                        <div class="pbmit-slider-bg">
+                            <img class="pbmit-slider-bg-img" src="https://homecareinterior.co.id/storage/160/Banner-home-2.jpg" alt="Ruang Nyaman, Desain Elegan" width="1920" height="900" loading="lazy" decoding="async">
+                        </div>
                         <div class="container">
                             <div class="text-center row">
                                 <div class="col-md-12">
@@ -53,7 +64,9 @@
                 <!-- Slide3 -->
                 <div class="swiper-slide">
                     <div class="pbmit-slider-item">
-                        <div class="pbmit-slider-bg" style="background-image: url(https://homecareinterior.co.id/storage/161/Banner-home-3.jpg)"></div>
+                        <div class="pbmit-slider-bg">
+                            <img class="pbmit-slider-bg-img" src="https://homecareinterior.co.id/storage/161/Banner-home-3.jpg" alt="Desain Interior Modern dan Berkarakter" width="1920" height="900" loading="lazy" decoding="async">
+                        </div>
                         <div class="container">
                             <div class="text-center row">
                                 <div class="col-md-12">
@@ -126,7 +139,7 @@
                 <div class="col-md-6 pbmit-col2">
                     <div class="d-flex justify-content-center">
                         <div class="about-nine-img">
-                            <img src="https://homecareinterior.co.id/storage/162/home-banner-3.jpg" class="img-fluid" alt="">
+                            <img loading="lazy" decoding="async" src="https://homecareinterior.co.id/storage/162/home-banner-3.jpg" class="img-fluid" alt="">
                         </div>
                     </div>
                 </div>
@@ -220,7 +233,7 @@
                                 <div class="pbminfotech-post-content">
                                     <div class="pbmit-featured-img-wrapper">
                                         <div class="pbmit-featured-wrapper">
-                                            <img src="https://homecareinterior.co.id/storage/163/indri-cikarang.jpg" class="img-fluid" alt="indri-cikarang">
+                                            <img loading="lazy" decoding="async" src="https://homecareinterior.co.id/storage/163/indri-cikarang.jpg" class="img-fluid" alt="indri-cikarang">
                                         </div>
                                     </div>
                                     <div class="pbminfotech-box-content">
@@ -239,7 +252,7 @@
                                 <div class="pbminfotech-post-content">
                                     <div class="pbmit-featured-img-wrapper">
                                         <div class="pbmit-featured-wrapper">
-                                            <img src="https://homecareinterior.co.id/storage/167/riki-bsd.jpeg" class="img-fluid" alt="riki-bsd">
+                                            <img loading="lazy" decoding="async" src="https://homecareinterior.co.id/storage/167/riki-bsd.jpeg" class="img-fluid" alt="riki-bsd">
                                         </div>
                                     </div>
                                     <div class="pbminfotech-box-content">
@@ -258,7 +271,7 @@
                                 <div class="pbminfotech-post-content">
                                     <div class="pbmit-featured-img-wrapper">
                                         <div class="pbmit-featured-wrapper">
-                                            <img src="https://homecareinterior.co.id/storage/165/jessica-cakung.jpeg" class="img-fluid" alt="jessica-cakung">
+                                            <img loading="lazy" decoding="async" src="https://homecareinterior.co.id/storage/165/jessica-cakung.jpeg" class="img-fluid" alt="jessica-cakung">
                                         </div>
                                     </div>
                                     <div class="pbminfotech-box-content">
@@ -277,7 +290,7 @@
                                 <div class="pbminfotech-post-content">
                                     <div class="pbmit-featured-img-wrapper">
                                         <div class="pbmit-featured-wrapper">
-                                            <img src="https://homecareinterior.co.id/storage/164/stela-depok.jpg" class="img-fluid" alt="stela-depok">
+                                            <img loading="lazy" decoding="async" src="https://homecareinterior.co.id/storage/164/stela-depok.jpg" class="img-fluid" alt="stela-depok">
                                         </div>
                                     </div>
                                     <div class="pbminfotech-box-content">
@@ -296,7 +309,7 @@
                                 <div class="pbminfotech-post-content">
                                     <div class="pbmit-featured-img-wrapper">
                                         <div class="pbmit-featured-wrapper">
-                                            <img src="https://homecareinterior.co.id/storage/166/reyhan-cinere.jpeg" class="img-fluid" alt="reyhan-cinere">
+                                            <img loading="lazy" decoding="async" src="https://homecareinterior.co.id/storage/166/reyhan-cinere.jpeg" class="img-fluid" alt="reyhan-cinere">
                                         </div>
                                     </div>
                                     <div class="pbminfotech-box-content">
@@ -333,7 +346,7 @@
     <!-- Portfolio End -->
 
     <a href="https://api.whatsapp.com/send?phone=628111999435&text=Halo%2C%20terima%20kasih%20telah%20menghubungi%20Home%20Care%20Interior.%20Saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20desain%20interior%2C%20boleh%20dibantu%20untuk%20konsultasinya.%20">
-        <img src="https://homecareinterior.co.id/storage/174/banner-furniture.jpg" class="img-fluid" alt="Banner Furniture">
+        <img loading="lazy" decoding="async" src="https://homecareinterior.co.id/storage/174/banner-furniture.jpg" class="img-fluid" alt="Banner Furniture">
     </a>
 
     <!-- Static Box Start -->
@@ -438,22 +451,22 @@
                         <div class="swiper-slider pbmit-static-image">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="https://homecareinterior.co.id/storage/170/konsultasi.jpg" alt="Konsultasi awal">
+                                    <img loading="lazy" decoding="async" src="https://homecareinterior.co.id/storage/170/konsultasi.jpg" alt="Konsultasi awal">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="https://homecareinterior.co.id/storage/173/survei.jpg" alt="Survei lokasi">
+                                    <img loading="lazy" decoding="async" src="https://homecareinterior.co.id/storage/173/survei.jpg" alt="Survei lokasi">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="https://homecareinterior.co.id/storage/172/rab.jpg" alt="RAB di tempat">
+                                    <img loading="lazy" decoding="async" src="https://homecareinterior.co.id/storage/172/rab.jpg" alt="RAB di tempat">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="https://homecareinterior.co.id/storage/168/dp.jpg" alt="Pembayaran DP">
+                                    <img loading="lazy" decoding="async" src="https://homecareinterior.co.id/storage/168/dp.jpg" alt="Pembayaran DP">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="https://homecareinterior.co.id/storage/169/instalasi.jpg" alt="Instalasi & Produksi">
+                                    <img loading="lazy" decoding="async" src="https://homecareinterior.co.id/storage/169/instalasi.jpg" alt="Instalasi & Produksi">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="https://homecareinterior.co.id/storage/171/pelunasan.jpg" alt="Pelunasan">
+                                    <img loading="lazy" decoding="async" src="https://homecareinterior.co.id/storage/171/pelunasan.jpg" alt="Pelunasan">
                                 </div>
                             </div>
                         </div>
@@ -679,7 +692,7 @@
                                                 <div class="pbminfotech-content-inner">
                                                     <div class="pbmit-featured-img-wrapper">
                                                         <div class="pbmit-featured-wrapper">
-                                                            <img src="{{ $blog->getFeaturedImageUrl('large') }}" class="img-fluid" alt="{{ $blog->title }}">
+                                                            <img loading="lazy" decoding="async" src="{{ $blog->getFeaturedImageUrl('large') }}" class="img-fluid" alt="{{ $blog->title }}">
                                                         </div>
                                                     </div>
                                                     <div class="pbmit-meta-wraper">
@@ -720,9 +733,9 @@
                                         <div class="pbmit-featured-img-wrapper">
                                             <div class="pbmit-featured-wrapper">
                                                 @if ($featureBlog->hasFeaturedImage())
-                                                    <img src="{{ $featureBlog->getFeaturedImageUrl('large') }}" class="img-fluid" alt="{{ $featureBlog->title }}">
+                                                    <img loading="lazy" decoding="async" src="{{ $featureBlog->getFeaturedImageUrl('large') }}" class="img-fluid" alt="{{ $featureBlog->title }}">
                                                 @else
-                                                    <img src="{{ asset('assets/images/homepage-1/blog/blog-04b.jpg') }}" class="img-fluid" alt="blog-01">
+                                                    <img loading="lazy" decoding="async" src="{{ asset('assets/images/homepage-1/blog/blog-04b.jpg') }}" class="img-fluid" alt="blog-01">
                                                 @endif
                                             </div>
                                         </div>

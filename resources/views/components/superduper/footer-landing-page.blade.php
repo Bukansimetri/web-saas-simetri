@@ -76,7 +76,7 @@
                                 @foreach($socialLinks as $platform => $url)
                                     @if($url)
                                         <li class="{{ $licClass[$platform] }}">
-                                            <a title="{{ ucfirst($platform) }}" href="{{ $url }}" target="_blank">
+                                            <a title="{{ ucfirst($platform) }}" aria-label="{{ ucfirst($platform) }}" rel="noopener" href="{{ $url }}" target="_blank">
                                                 <span><i class="{{ $faIcons[$platform] }}"></i></span>
                                             </a>
                                         </li>
@@ -85,22 +85,22 @@
 
                                 @if(empty(array_filter($socialLinks)))
                                     <li class="pbmit-social-li pbmit-social-facebook">
-                                        <a title="Facebook" href="https://facebook.com" target="_blank">
+                                        <a title="Facebook" aria-label="Facebook" rel="noopener" href="https://facebook.com" target="_blank">
                                             <span><i class="pbmit-base-icon-facebook-f"></i></span>
                                         </a>
                                     </li>
                                     <li class="pbmit-social-li pbmit-social-twitter">
-                                        <a title="Twitter" href="https://twitter.com" target="_blank">
+                                        <a title="Twitter" aria-label="Twitter" rel="noopener" href="https://twitter.com" target="_blank">
                                             <span><i class="pbmit-base-icon-twitter-2"></i></span>
                                         </a>
                                     </li>
                                     <li class="pbmit-social-li pbmit-social-linkedin">
-                                        <a title="LinkedIn" href="https://linkedin.com" target="_blank">
+                                        <a title="LinkedIn" aria-label="LinkedIn" rel="noopener" href="https://linkedin.com" target="_blank">
                                             <span><i class="pbmit-base-icon-linkedin-in"></i></span>
                                         </a>
                                     </li>
                                     <li class="pbmit-social-li pbmit-social-instagram">
-                                        <a title="Instagram" href="https://instagram.com" target="_blank">
+                                        <a title="Instagram" aria-label="Instagram" rel="noopener" href="https://instagram.com" target="_blank">
                                             <span><i class="pbmit-base-icon-instagram"></i></span>
                                         </a>
                                     </li>
