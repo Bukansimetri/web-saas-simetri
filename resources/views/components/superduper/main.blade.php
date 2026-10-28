@@ -2,6 +2,8 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="ltr" class="no-js">
    <head>
         @php
+            // Static assets are cached for 1 year (immutable), so bust the cache with the file's mtime
+            $v = fn (string $path) => asset($path) . '?v=' . @filemtime(public_path($path));
             $favicon = $generalSettings->site_favicon;
             $brandLogo = $generalSettings->brand_logo;
             $siteName = $generalSettings->brand_name ?? $siteSettings->name ?? config('app.name', 'SuperDuper Starter Kit');
@@ -166,37 +168,22 @@
         <link rel="shortcut icon" href="{{ $favicon ? Storage::url($favicon) : asset('superduper/img/favicon.png') }}"
             type="image/x-icon">
 
+        <!-- Fonts: preconnect + non-blocking stylesheet (font-display: swap) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Space+Grotesk:wght@300..700&display=swap" media="print" onload="this.media='all'">
+
         <!-- CSS ============================================ -->
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-        <!-- Fontawesome -->
-        <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.min.css') }}">
-        <!-- Flaticon -->
-        <link rel="stylesheet" href="{{ asset('assets/css/flaticon.min.css') }}">
-        <!-- Base Icons -->
-        <link rel="stylesheet" href="{{ asset('assets/css/pbminfotech-base-icons.min.css') }}">
-        <!-- Themify Icons -->
-        <link rel="stylesheet" href="{{ asset('assets/css/themify-icons.min.css') }}">
-        <!-- Slick -->
-        <link rel="stylesheet" href="{{ asset('assets/css/swiper.min.css') }}">
-        <!-- Magnific -->
-        <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.min.css') }}" media="print" onload="this.media='all'">
-        <!-- Twentytwenty CSS -->
-        <link rel="stylesheet" href="{{ asset('assets/css/twentytwenty.min.css') }}" media="print" onload="this.media='all'">
+        <!-- Theme CSS bundle (bootstrap, icons, swiper, aos, shortcode, base, style, responsive) - built by scripts/minify-assets.mjs -->
+        <link rel="stylesheet" href="{{ $v('assets/css/bundle.min.css') }}">
+        <!-- Magnific + Twentytwenty: not needed for first paint -->
+        <link rel="stylesheet" href="{{ $v('assets/css/magnific-popup.min.css') }}" media="print" onload="this.media='all'">
+        <link rel="stylesheet" href="{{ $v('assets/css/twentytwenty.min.css') }}" media="print" onload="this.media='all'">
         <noscript>
-            <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.min.css') }}">
-            <link rel="stylesheet" href="{{ asset('assets/css/twentytwenty.min.css') }}">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Space+Grotesk:wght@300..700&display=swap">
+            <link rel="stylesheet" href="{{ $v('assets/css/magnific-popup.min.css') }}">
+            <link rel="stylesheet" href="{{ $v('assets/css/twentytwenty.min.css') }}">
         </noscript>
-        <!-- AOS -->
-        <link rel="stylesheet" href="{{ asset('assets/css/aos.min.css') }}">
-        <!-- Shortcode CSS -->
-        <link rel="stylesheet" href="{{ asset('assets/css/shortcode.min.css') }}">
-        <!-- Base CSS -->
-        <link rel="stylesheet" href="{{ asset('assets/css/base.min.css') }}">
-        <!-- Style CSS -->
-        <link rel="stylesheet" href="{{ asset('assets/css/style.min.css') }}">
-        <!-- Responsive CSS -->
-        <link rel="stylesheet" href="{{ asset('assets/css/responsive.min.css') }}">
 
         @stack('css')
 
@@ -303,46 +290,46 @@
 
         <!-- JS ============================================ -->
         <!-- jQuery JS -->
-        <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+        <script src="{{ $v('assets/js/jquery.min.js') }}"></script>
         <!-- Popper JS -->
-        <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+        <script src="{{ $v('assets/js/popper.min.js') }}"></script>
         <!-- Bootstrap JS -->
-        <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+        <script src="{{ $v('assets/js/bootstrap.min.js') }}"></script>
         <!-- jquery Waypoints JS -->
-        <script src="{{ asset('assets/js/jquery.waypoints.min.js') }}"></script>
+        <script src="{{ $v('assets/js/jquery.waypoints.min.js') }}"></script>
         <!-- jquery Appear JS -->
-        <script src="{{ asset('assets/js/min/jquery.appear.js') }}"></script>
+        <script src="{{ $v('assets/js/min/jquery.appear.js') }}"></script>
         <!-- Numinate JS -->
-        <script src="{{ asset('assets/js/numinate.min.js') }}"></script>
+        <script src="{{ $v('assets/js/numinate.min.js') }}"></script>
         <!-- Slick JS -->
-        <script src="{{ asset('assets/js/swiper.min.js') }}"></script>
+        <script src="{{ $v('assets/js/swiper.min.js') }}"></script>
         <!-- Magnific JS -->
-        <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+        <script src="{{ $v('assets/js/jquery.magnific-popup.min.js') }}"></script>
         <!-- Circle Progress JS -->
-        <script src="{{ asset('assets/js/min/circle-progress.js') }}"></script>
+        <script src="{{ $v('assets/js/min/circle-progress.js') }}"></script>
         <!-- countdown JS -->
-        <script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
+        <script src="{{ $v('assets/js/jquery.countdown.min.js') }}"></script>
         <!-- AOS -->
-        <script src="{{ asset('assets/js/min/aos.js') }}"></script>
+        <script src="{{ $v('assets/js/min/aos.js') }}"></script>
         <!-- GSAP -->
-        <script src='{{ asset('assets/js/min/gsap.js') }}'></script>
+        <script src='{{ $v('assets/js/min/gsap.js') }}'></script>
         <!-- Scroll Trigger -->
-        <script src='{{ asset('assets/js/min/ScrollTrigger.js') }}'></script>
+        <script src='{{ $v('assets/js/min/ScrollTrigger.js') }}'></script>
         <!-- Split Text -->
-        <script src='{{ asset('assets/js/min/SplitText.js') }}'></script>
+        <script src='{{ $v('assets/js/min/SplitText.js') }}'></script>
         <!-- Magnetic -->
-        <script src='{{ asset('assets/js/min/magnetic.js') }}'></script>
+        <script src='{{ $v('assets/js/min/magnetic.js') }}'></script>
         <!-- Morphext JS -->
-        <script src="{{ asset('assets/js/morphext.min.js') }}"></script>
+        <script src="{{ $v('assets/js/morphext.min.js') }}"></script>
         <!-- GSAP Animation -->
-        <script src='{{ asset('assets/js/min/gsap-animation.js') }}'></script>
+        <script src='{{ $v('assets/js/min/gsap-animation.js') }}'></script>
         <!-- Isotope JS -->
-        <script src="{{ asset('assets/js/isotope.pkgd.min.js') }}"></script>
+        <script src="{{ $v('assets/js/isotope.pkgd.min.js') }}"></script>
         <!-- Twentytwenty JS -->
-        <script src="{{ asset('assets/js/min/jquery.event.move.js') }}"></script>
-        <script src="{{ asset('assets/js/min/jquery.twentytwenty.js') }}"></script>
+        <script src="{{ $v('assets/js/min/jquery.event.move.js') }}"></script>
+        <script src="{{ $v('assets/js/min/jquery.twentytwenty.js') }}"></script>
         <!-- Scripts JS -->
-        <script src="{{ asset('assets/js/min/scripts.js') }}"></script>
+        <script src="{{ $v('assets/js/min/scripts.js') }}"></script>
 
         @livewireScripts
 

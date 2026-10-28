@@ -15,6 +15,13 @@ for (const n of css) {
     writeFileSync(`public/assets/css/${n}.min.css`, out);
     console.log(`css/${n}: ${kb(src.length)} -> ${kb(out.length)}`);
 }
+// Render-blocking theme CSS as one file, in the original <link> order
+const bundle = ['bootstrap.min', 'fontawesome.min', 'flaticon.min', 'pbminfotech-base-icons.min', 'themify-icons.min', 'swiper.min', 'aos.min', 'shortcode.min', 'base.min', 'style.min', 'responsive.min']
+    .map((n) => readFileSync(`public/assets/css/${n}.css`, 'utf8'))
+    .join('\n');
+writeFileSync('public/assets/css/bundle.min.css', bundle);
+console.log(`css/bundle: ${kb(bundle.length)}`);
+
 for (const n of js) {
     const src = readFileSync(`public/assets/js/${n}.js`, 'utf8');
     const out = transformSync(src, { minify: true, target: 'es2017', legalComments: 'none' }).code;
